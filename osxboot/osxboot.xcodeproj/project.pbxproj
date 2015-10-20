@@ -1,0 +1,510 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8643211F1BD5C9F70036EB26 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8643211E1BD5C9F70036EB26 /* AppDelegate.m */; };
+		864321221BD5C9F70036EB26 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 864321211BD5C9F70036EB26 /* main.m */; };
+		864321241BD5C9F70036EB26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 864321231BD5C9F70036EB26 /* Assets.xcassets */; };
+		864321271BD5C9F70036EB26 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 864321251BD5C9F70036EB26 /* MainMenu.xib */; };
+		864321321BD5C9F70036EB26 /* osxbootTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 864321311BD5C9F70036EB26 /* osxbootTests.m */; };
+		8643213D1BD5C9F70036EB26 /* osxbootUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8643213C1BD5C9F70036EB26 /* osxbootUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8643212E1BD5C9F70036EB26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 864321121BD5C9F70036EB26 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 864321191BD5C9F70036EB26;
+			remoteInfo = osxboot;
+		};
+		864321391BD5C9F70036EB26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 864321121BD5C9F70036EB26 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 864321191BD5C9F70036EB26;
+			remoteInfo = osxboot;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8643211A1BD5C9F70036EB26 /* osxboot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = osxboot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8643211D1BD5C9F70036EB26 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8643211E1BD5C9F70036EB26 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		864321211BD5C9F70036EB26 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		864321231BD5C9F70036EB26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		864321261BD5C9F70036EB26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		864321281BD5C9F70036EB26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8643212D1BD5C9F70036EB26 /* osxbootTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = osxbootTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		864321311BD5C9F70036EB26 /* osxbootTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = osxbootTests.m; sourceTree = "<group>"; };
+		864321331BD5C9F70036EB26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		864321381BD5C9F70036EB26 /* osxbootUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = osxbootUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8643213C1BD5C9F70036EB26 /* osxbootUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = osxbootUITests.m; sourceTree = "<group>"; };
+		8643213E1BD5C9F70036EB26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		864321171BD5C9F70036EB26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8643212A1BD5C9F70036EB26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		864321351BD5C9F70036EB26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		864321111BD5C9F70036EB26 = {
+			isa = PBXGroup;
+			children = (
+				8643211C1BD5C9F70036EB26 /* osxboot */,
+				864321301BD5C9F70036EB26 /* osxbootTests */,
+				8643213B1BD5C9F70036EB26 /* osxbootUITests */,
+				8643211B1BD5C9F70036EB26 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8643211B1BD5C9F70036EB26 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8643211A1BD5C9F70036EB26 /* osxboot.app */,
+				8643212D1BD5C9F70036EB26 /* osxbootTests.xctest */,
+				864321381BD5C9F70036EB26 /* osxbootUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8643211C1BD5C9F70036EB26 /* osxboot */ = {
+			isa = PBXGroup;
+			children = (
+				8643211D1BD5C9F70036EB26 /* AppDelegate.h */,
+				8643211E1BD5C9F70036EB26 /* AppDelegate.m */,
+				864321231BD5C9F70036EB26 /* Assets.xcassets */,
+				864321251BD5C9F70036EB26 /* MainMenu.xib */,
+				864321281BD5C9F70036EB26 /* Info.plist */,
+				864321201BD5C9F70036EB26 /* Supporting Files */,
+			);
+			path = osxboot;
+			sourceTree = "<group>";
+		};
+		864321201BD5C9F70036EB26 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				864321211BD5C9F70036EB26 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		864321301BD5C9F70036EB26 /* osxbootTests */ = {
+			isa = PBXGroup;
+			children = (
+				864321311BD5C9F70036EB26 /* osxbootTests.m */,
+				864321331BD5C9F70036EB26 /* Info.plist */,
+			);
+			path = osxbootTests;
+			sourceTree = "<group>";
+		};
+		8643213B1BD5C9F70036EB26 /* osxbootUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8643213C1BD5C9F70036EB26 /* osxbootUITests.m */,
+				8643213E1BD5C9F70036EB26 /* Info.plist */,
+			);
+			path = osxbootUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		864321191BD5C9F70036EB26 /* osxboot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 864321411BD5C9F70036EB26 /* Build configuration list for PBXNativeTarget "osxboot" */;
+			buildPhases = (
+				864321161BD5C9F70036EB26 /* Sources */,
+				864321171BD5C9F70036EB26 /* Frameworks */,
+				864321181BD5C9F70036EB26 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = osxboot;
+			productName = osxboot;
+			productReference = 8643211A1BD5C9F70036EB26 /* osxboot.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8643212C1BD5C9F70036EB26 /* osxbootTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 864321441BD5C9F70036EB26 /* Build configuration list for PBXNativeTarget "osxbootTests" */;
+			buildPhases = (
+				864321291BD5C9F70036EB26 /* Sources */,
+				8643212A1BD5C9F70036EB26 /* Frameworks */,
+				8643212B1BD5C9F70036EB26 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8643212F1BD5C9F70036EB26 /* PBXTargetDependency */,
+			);
+			name = osxbootTests;
+			productName = osxbootTests;
+			productReference = 8643212D1BD5C9F70036EB26 /* osxbootTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		864321371BD5C9F70036EB26 /* osxbootUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 864321471BD5C9F70036EB26 /* Build configuration list for PBXNativeTarget "osxbootUITests" */;
+			buildPhases = (
+				864321341BD5C9F70036EB26 /* Sources */,
+				864321351BD5C9F70036EB26 /* Frameworks */,
+				864321361BD5C9F70036EB26 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8643213A1BD5C9F70036EB26 /* PBXTargetDependency */,
+			);
+			name = osxbootUITests;
+			productName = osxbootUITests;
+			productReference = 864321381BD5C9F70036EB26 /* osxbootUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		864321121BD5C9F70036EB26 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = OSB;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = shuoit.net;
+				TargetAttributes = {
+					864321191BD5C9F70036EB26 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					8643212C1BD5C9F70036EB26 = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 864321191BD5C9F70036EB26;
+					};
+					864321371BD5C9F70036EB26 = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 864321191BD5C9F70036EB26;
+					};
+				};
+			};
+			buildConfigurationList = 864321151BD5C9F70036EB26 /* Build configuration list for PBXProject "osxboot" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 864321111BD5C9F70036EB26;
+			productRefGroup = 8643211B1BD5C9F70036EB26 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				864321191BD5C9F70036EB26 /* osxboot */,
+				8643212C1BD5C9F70036EB26 /* osxbootTests */,
+				864321371BD5C9F70036EB26 /* osxbootUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		864321181BD5C9F70036EB26 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				864321241BD5C9F70036EB26 /* Assets.xcassets in Resources */,
+				864321271BD5C9F70036EB26 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8643212B1BD5C9F70036EB26 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		864321361BD5C9F70036EB26 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		864321161BD5C9F70036EB26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				864321221BD5C9F70036EB26 /* main.m in Sources */,
+				8643211F1BD5C9F70036EB26 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		864321291BD5C9F70036EB26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				864321321BD5C9F70036EB26 /* osxbootTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		864321341BD5C9F70036EB26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8643213D1BD5C9F70036EB26 /* osxbootUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8643212F1BD5C9F70036EB26 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 864321191BD5C9F70036EB26 /* osxboot */;
+			targetProxy = 8643212E1BD5C9F70036EB26 /* PBXContainerItemProxy */;
+		};
+		8643213A1BD5C9F70036EB26 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 864321191BD5C9F70036EB26 /* osxboot */;
+			targetProxy = 864321391BD5C9F70036EB26 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		864321251BD5C9F70036EB26 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				864321261BD5C9F70036EB26 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8643213F1BD5C9F70036EB26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		864321401BD5C9F70036EB26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		864321421BD5C9F70036EB26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = osxboot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.shuoit.osxboot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		864321431BD5C9F70036EB26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = osxboot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.shuoit.osxboot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		864321451BD5C9F70036EB26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = osxbootTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.shuoit.osxbootTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/osxboot.app/Contents/MacOS/osxboot";
+			};
+			name = Debug;
+		};
+		864321461BD5C9F70036EB26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = osxbootTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.shuoit.osxbootTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/osxboot.app/Contents/MacOS/osxboot";
+			};
+			name = Release;
+		};
+		864321481BD5C9F70036EB26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = osxbootUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.shuoit.osxbootUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = osxboot;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		864321491BD5C9F70036EB26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = osxbootUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.shuoit.osxbootUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = osxboot;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		864321151BD5C9F70036EB26 /* Build configuration list for PBXProject "osxboot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8643213F1BD5C9F70036EB26 /* Debug */,
+				864321401BD5C9F70036EB26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		864321411BD5C9F70036EB26 /* Build configuration list for PBXNativeTarget "osxboot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				864321421BD5C9F70036EB26 /* Debug */,
+				864321431BD5C9F70036EB26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		864321441BD5C9F70036EB26 /* Build configuration list for PBXNativeTarget "osxbootTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				864321451BD5C9F70036EB26 /* Debug */,
+				864321461BD5C9F70036EB26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		864321471BD5C9F70036EB26 /* Build configuration list for PBXNativeTarget "osxbootUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				864321481BD5C9F70036EB26 /* Debug */,
+				864321491BD5C9F70036EB26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 864321121BD5C9F70036EB26 /* Project object */;
+}
