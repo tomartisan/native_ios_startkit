@@ -10,8 +10,26 @@
 #ifndef FastApp_Pre_pch
 #define FastApp_Pre_pch
 
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#endif
 
 
+#import "AppMacros.h"
+#import "GloabVariables.h"
+#import "MessageKey.h"
+#import "GlobalCache.h"
+#import "CacheTools.h"
+#import "StringTools.h"
+#import "SecutiryTools.h"
+#import "CommonNetTools.h"
+#import "MBProgressHUD+Show.h"
+#import "PositionTools.h"
+#import "UICretator.h"
 
+
+//Third Libs
+#import "MJExtension.h"
+#import "UIImageView+WebCache.h"
 
 #endif
