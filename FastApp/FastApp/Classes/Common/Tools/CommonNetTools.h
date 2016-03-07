@@ -21,3 +21,5 @@ typedef NS_ENUM(NSInteger, NetWorkErrorType)
 + (void)cacheHTMLDataWithURL:(NSString *)urlString key:(NSString *)key;
 + (NSURLRequest *)getRequestWithURLString:(NSString *)urlString method:(NSString *)method timeOut:(int)second;
 + (void)downloadResourceWithUrl:(NSString *)url savedPath:(NSString *)localSavedPath timeout:(int)timeout;
+
+@end

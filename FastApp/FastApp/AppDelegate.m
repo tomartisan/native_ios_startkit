@@ -7,15 +7,21 @@
 //
 
 #import "AppDelegate.h"
+#import "FSHomeViewController.h"
 
-@interface AppDelegate ()
-
-@end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    FSHomeViewController *rootVC = [[FSHomeViewController alloc] init];
+    self.window.rootViewController = rootVC;
+    
+    [self.window makeKeyAndVisible];
     
     return YES;
 }

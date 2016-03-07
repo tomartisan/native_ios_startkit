@@ -16,11 +16,10 @@
     self.view.backgroundColor = [UIColor lightGrayColor];
     self.tabBarController.tabBar.hidden = YES;
     
-    UIButton *backBtn = [UICreator createButtonWithNormalImage:@"back_pic"
-                                              highlightedImage:@"back_pic"
+    UIButton *backBtn = [UICreator createButtonWithNormalImage:@"prev"
+                                              highlightedImage:@"prev"
                                                         target:self
-                                                        action:@selector(backToParentController)
-                                                         use2X:YES];
+                                                        action:@selector(backToParentController)];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
 }
 

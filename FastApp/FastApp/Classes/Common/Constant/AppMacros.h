@@ -30,6 +30,8 @@
 #define UIColorFromRGBValue(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define RandomColorWithAlpha(a) [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:a]
 
+#define FSTranslucentColor ColorWithAlpha(0,0,0,0.55)  //半透明颜色
+
 // -------------------------------------------------    工具定义开始  -------------------------------//
 //定义构造单例的宏
 #define SharedInstanceInterfaceBuilder(ClassName) \

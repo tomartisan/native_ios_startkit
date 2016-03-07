@@ -12,7 +12,7 @@
 		86814E011C8D78B80097BC8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86814E001C8D78B80097BC8C /* Assets.xcassets */; };
 		86814E0C1C8D7C390097BC8C /* StaticResource in Resources */ = {isa = PBXBuildFile; fileRef = 86814E0B1C8D7C390097BC8C /* StaticResource */; };
 		86814E1A1C8D7D400097BC8C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86814E191C8D7D400097BC8C /* Default-568h@2x.png */; };
-		86814E1E1C8D812D0097BC8C /* UICretator.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E1D1C8D812D0097BC8C /* UICretator.m */; };
+		86814E1E1C8D812D0097BC8C /* UICreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E1D1C8D812D0097BC8C /* UICreator.m */; };
 		86814E211C8D81D50097BC8C /* PositionTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E201C8D81D50097BC8C /* PositionTools.m */; };
 		86814E271C8D91A10097BC8C /* GlobalCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E261C8D91A10097BC8C /* GlobalCache.m */; };
 		86814E2A1C8D92EE0097BC8C /* CacheTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E291C8D92EE0097BC8C /* CacheTools.m */; };
@@ -32,6 +32,7 @@
 		86814E601C8D9A570097BC8C /* FSDeviceTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E5F1C8D9A570097BC8C /* FSDeviceTools.m */; };
 		86814E631C8D9ABD0097BC8C /* FSServerCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E621C8D9ABD0097BC8C /* FSServerCommunicator.m */; };
 		86814E661C8D9C0E0097BC8C /* NSData+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E651C8D9C0E0097BC8C /* NSData+Encryption.m */; };
+		869655991C8DAADA0026E397 /* FSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869655981C8DAADA0026E397 /* FSHomeViewController.m */; };
 		ABE7405D03CB4C6C81049CA4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D8C9C1603382FB6F260223 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -46,8 +47,8 @@
 		86814E0B1C8D7C390097BC8C /* StaticResource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = StaticResource; sourceTree = "<group>"; };
 		86814E191C8D7D400097BC8C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		86814E1B1C8D7E710097BC8C /* FastApp-Pre.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FastApp-Pre.pch"; sourceTree = "<group>"; };
-		86814E1C1C8D812D0097BC8C /* UICretator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICretator.h; sourceTree = "<group>"; };
-		86814E1D1C8D812D0097BC8C /* UICretator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICretator.m; sourceTree = "<group>"; };
+		86814E1C1C8D812D0097BC8C /* UICreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICreator.h; sourceTree = "<group>"; };
+		86814E1D1C8D812D0097BC8C /* UICreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICreator.m; sourceTree = "<group>"; };
 		86814E1F1C8D81D50097BC8C /* PositionTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PositionTools.h; sourceTree = "<group>"; };
 		86814E201C8D81D50097BC8C /* PositionTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PositionTools.m; sourceTree = "<group>"; };
 		86814E221C8D87460097BC8C /* AppMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppMacros.h; sourceTree = "<group>"; };
@@ -90,6 +91,8 @@
 		86814E621C8D9ABD0097BC8C /* FSServerCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSServerCommunicator.m; sourceTree = "<group>"; };
 		86814E641C8D9C0E0097BC8C /* NSData+Encryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Encryption.h"; sourceTree = "<group>"; };
 		86814E651C8D9C0E0097BC8C /* NSData+Encryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Encryption.m"; sourceTree = "<group>"; };
+		869655971C8DAADA0026E397 /* FSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSHomeViewController.h; sourceTree = "<group>"; };
+		869655981C8DAADA0026E397 /* FSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSHomeViewController.m; sourceTree = "<group>"; };
 		C9C2781E8891DA49860E6480 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D8C71976E8CF56F2C0B94D30 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,6 +173,8 @@
 		86814E0F1C8D7C440097BC8C /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				869655971C8DAADA0026E397 /* FSHomeViewController.h */,
+				869655981C8DAADA0026E397 /* FSHomeViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -236,8 +241,8 @@
 		86814E161C8D7C440097BC8C /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				86814E1C1C8D812D0097BC8C /* UICretator.h */,
-				86814E1D1C8D812D0097BC8C /* UICretator.m */,
+				86814E1C1C8D812D0097BC8C /* UICreator.h */,
+				86814E1D1C8D812D0097BC8C /* UICreator.m */,
 				86814E1F1C8D81D50097BC8C /* PositionTools.h */,
 				86814E201C8D81D50097BC8C /* PositionTools.m */,
 				86814E281C8D92EE0097BC8C /* CacheTools.h */,
@@ -449,6 +454,7 @@
 				86814E631C8D9ABD0097BC8C /* FSServerCommunicator.m in Sources */,
 				86814E601C8D9A570097BC8C /* FSDeviceTools.m in Sources */,
 				86814E5A1C8D996B0097BC8C /* FSWebViewController.m in Sources */,
+				869655991C8DAADA0026E397 /* FSHomeViewController.m in Sources */,
 				86814E541C8D987A0097BC8C /* FSBaseViewController.m in Sources */,
 				86814E3E1C8D95230097BC8C /* CommonNetTools.m in Sources */,
 				86814E3B1C8D94D50097BC8C /* MBProgressHUD+Show.m in Sources */,
@@ -459,7 +465,7 @@
 				86814E4A1C8D97440097BC8C /* CommonScrollView.m in Sources */,
 				86814E661C8D9C0E0097BC8C /* NSData+Encryption.m in Sources */,
 				86814E571C8D990F0097BC8C /* FSBaseSubViewController.m in Sources */,
-				86814E1E1C8D812D0097BC8C /* UICretator.m in Sources */,
+				86814E1E1C8D812D0097BC8C /* UICreator.m in Sources */,
 				86814E511C8D98210097BC8C /* FSNavigationController.m in Sources */,
 				86814E441C8D962C0097BC8C /* SecutiryTools.m in Sources */,
 				86814E351C8D94370097BC8C /* GTMBase64.m in Sources */,

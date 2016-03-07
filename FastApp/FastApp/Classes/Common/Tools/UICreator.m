@@ -6,9 +6,9 @@
 //  Copyright © 2016年 www.shuoit.net. All rights reserved.
 //
 
-#import "UICretator.h"
+#import "UICreator.h"
 
-@implementation UICretator
+@implementation UICreator
 
 //For UIView
 + (UIView *)createUIViewWithBgColor:(UIColor *)bgColor Corner:(float)cornerRadius

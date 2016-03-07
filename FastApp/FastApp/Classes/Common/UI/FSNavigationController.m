@@ -7,7 +7,7 @@
 //
 
 #import "FSNavigationController.h"
-#import "BaseViewController.h"
+#import "FSBaseViewController.h"
 
 @implementation FSNavigationController
 
@@ -23,7 +23,7 @@
     [[UIBarButtonItem appearance] setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
 }
 
-- (void)pushViewController:(BaseViewController *)viewController animated:(BOOL)animated{
+- (void)pushViewController:(FSBaseViewController *)viewController animated:(BOOL)animated{
     if(self.viewControllers.count > 0){
         viewController.hidesBottomBarWhenPushed = YES;
     }

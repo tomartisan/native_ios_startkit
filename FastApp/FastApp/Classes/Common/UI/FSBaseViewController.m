@@ -33,10 +33,16 @@
 {
     switch ([notification.object intValue]) {
         case NoConnectionError:
-            [PositionTools placeView:self.reConnectView atTheCenterOfTheView:self.view];
+            [PositionTools layView:self.reConnectView
+                    atCenterOfView:self.view
+                         fixedSize:CGSizeMake(kDeviceWidth, kDeviceHeight)
+                           margins:0];
             break;
         case RequestFailedError:
-            [PositionTools placeView:self.refreshButton atTheCenterOfTheView:self.view];
+            [PositionTools layView:self.refreshButton
+                    atCenterOfView:self.view
+                         fixedSize:CGSizeMake(200, 45)
+                           margins:0];
             break;
     }
 }
@@ -52,7 +58,7 @@
             break;
     }
     SEL freshAction = NSSelectorFromString(self.refreshPageStringMethod);
-    if ([self isKindOfClass:[BaseViewController class]] && [self respondsToSelector:freshAction]) {
+    if ([self isKindOfClass:[FSBaseViewController class]] && [self respondsToSelector:freshAction]) {
         IMP imp = [self methodForSelector:freshAction];
         void (*func)(id,SEL) = (void *)imp;
         func(self,freshAction);
@@ -68,18 +74,15 @@
 - (UIView *)reConnectView
 {
     if (!_reConnectView) {
-        _reConnectView = [[UIView alloc] initWithFrame:FullScreenRect];
-        _reConnectView.backgroundColor = [UIColor whiteColor];
+        _reConnectView = [UICreator createUIViewWithBgColor:[UIColor whiteColor] Corner:0];
         UIButton *reConnBtn = [UICreator createButtonWithTitle:@"无网络连接，点击重试"
-                                                    titleColor:MFQlightGrayColor
+                                                    titleColor:[UIColor lightGrayColor]
                                                           font:[UIFont systemFontOfSize:22]
-                                                         frame:CGRectMake(0, 0, KDeviceWidth, 60)
-                                                    buttonType:UIButtonTypeRoundedRect
                                                         target:self
                                                         action:@selector(refreshPage:)];
         reConnBtn.tag = NoConnectionError;
         reConnBtn.center = _reConnectView.center;
-        [_reConnectView addSubview:reConnBtn];
+        [PositionTools layView:reConnBtn atCenterOfView:_reConnectView fixedSize:CGSizeMake(kDeviceWidth, 60) margins:0];
     }
     return _reConnectView;
 }
@@ -91,16 +94,13 @@
         _refreshButton = [UICreator createButtonWithTitle:@"加载失败，点击刷新"
                                                titleColor:[UIColor whiteColor]
                                                      font:[UIFont systemFontOfSize:14]
-                                                    frame:CGRectMake(0, 0, 200, 45)
-                                               buttonType:UIButtonTypeRoundedRect
                                                    target:self
                                                    action:@selector(refreshPage:)];
         _refreshButton.tag = RequestFailedError;
-        _refreshButton.backgroundColor = MFQTranslucentColor;
+        _refreshButton.backgroundColor = FSTranslucentColor;
         _refreshButton.layer.cornerRadius = 10;
     }
     return _refreshButton;
-    
-    
 }
 
+@end

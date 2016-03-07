@@ -7,9 +7,6 @@
 //  Copyright © 2016年 www.shuoit.net. All rights reserved.
 //
 
-#ifndef FastApp_Pre_pch
-#define FastApp_Pre_pch
-
 #ifdef __OBJC__
 #import <UIKit/UIKit.h>
 #endif
@@ -25,11 +22,10 @@
 #import "CommonNetTools.h"
 #import "MBProgressHUD+Show.h"
 #import "PositionTools.h"
-#import "UICretator.h"
+#import "UICreator.h"
 
 
 //Third Libs
 #import "MJExtension.h"
 #import "UIImageView+WebCache.h"
 
-#endif

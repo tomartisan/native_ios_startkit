@@ -17,7 +17,7 @@ typedef NS_ENUM(NSInteger,BtnImgDirectionType)
     BtnImgDirectionBottom,  //图片居下，文字居上。整体上下机构
 };
 
-@interface UICretator : NSObject
+@interface UICreator : NSObject
 
 //For UIView
 + (UIView *)createUIViewWithBgColor:(UIColor *)bgColor
