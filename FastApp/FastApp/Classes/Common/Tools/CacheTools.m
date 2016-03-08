@@ -35,12 +35,12 @@
 
 + (NSString *)getCachedApiServerUrl
 {
-    return [self getLocalDataWithKey:@"MFQCurrentApiServerUrl"];
+    return [self getLocalDataWithKey:@"FSCurrentApiServerUrl"];
 }
 
 + (void)cacheCurrentApiServerUrl:(NSString *)url
 {
-    return [self saveDataToLocal:url key:@"MFQCurrentApiServerUrl"];
+    return [self saveDataToLocal:url key:@"FSCurrentApiServerUrl"];
 }
 
 #pragma private method
