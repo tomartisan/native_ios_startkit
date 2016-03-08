@@ -285,5 +285,27 @@
     return tableView;
 }
 
++ (UIWebView *)createWebViewWithUrl:(NSString *)webUrl
+                            baseURL:(NSURL *)baseUrl
+                         htmlString:(NSString *)htmlString
+                       scroolEnable:(BOOL)sEnable
+                           delegate:(id<UIWebViewDelegate>)delegate
+{
+    UIWebView *webView = [[UIWebView alloc] init];
+    webView.scrollView.scrollEnabled = sEnable;
+    webView.scrollView.showsHorizontalScrollIndicator = NO;
+    webView.scrollView.showsVerticalScrollIndicator = NO;
+    webView.delegate = delegate;
+    if (![StringTools isEmpty:webUrl]) {
+        NSURLRequest *request = [CommonNetTools getRequestWithURLString:webUrl method:@"GET" timeOut:45];
+        [webView loadRequest:request];
+    }
+    
+    if (![StringTools isEmpty:htmlString]) {
+        [webView loadHTMLString:htmlString baseURL:baseUrl];
+    }
+    
+    return webView;
+}
 
 @end

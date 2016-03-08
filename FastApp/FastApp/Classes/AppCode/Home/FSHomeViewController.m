@@ -8,7 +8,7 @@
 
 #import "FSHomeViewController.h"
 #import "FSNavigationController.h"
-
+#import "FSPersonCenterViewController.h"
 
 @implementation FSHomeViewController
 
@@ -22,23 +22,23 @@
 - (void)addAllChildViewControllers
 {
     //首页
-    UIViewController *indexVC = [[UIViewController alloc] init];
+    FSPersonCenterViewController *indexVC = [[FSPersonCenterViewController alloc] init];
     [self addChildViewController:indexVC title:@"首页" image:nil selectedImage:nil];
     
     //我的
-    UIViewController *mineVC = [[UIViewController alloc] init];
+    FSPersonCenterViewController *mineVC = [[FSPersonCenterViewController alloc] init];
     [self addChildViewController:mineVC title:@"我的" image:nil selectedImage:nil];
     
     //呵呵
-    UIViewController *heheVC = [[UIViewController alloc] init];
+    FSPersonCenterViewController *heheVC = [[FSPersonCenterViewController alloc] init];
     [self addChildViewController:heheVC title:@"呵呵" image:nil selectedImage:nil];
     
     //你的
-    UIViewController *yourVC = [[UIViewController alloc] init];
+    FSPersonCenterViewController *yourVC = [[FSPersonCenterViewController alloc] init];
     [self addChildViewController:yourVC title:@"你的" image:nil selectedImage:nil];
     
     //他的
-    UIViewController *hisVc = [[UIViewController alloc] init];
+    FSPersonCenterViewController *hisVc = [[FSPersonCenterViewController alloc] init];
     [self addChildViewController:hisVc title:@"他的" image:nil selectedImage:nil];
 }
 

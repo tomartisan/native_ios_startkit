@@ -106,24 +106,28 @@
                   Resp:(Class)ObjType
             completion:(void (^)(BOOL success,id respData))completion;
 {
+    [MBProgressHUD loadding:NO];
     @try{
-        [MBProgressHUD loadding:NO];
-        if( responseObject == nil ){
-            [MBProgressHUD handleErrorWithCode:@(HttpStatusReturnNullCode) additional:nil];
+        id resultData;
+        if ([responseObject isKindOfClass:[NSString class]]) {
+            resultData = responseObject;
         }
-        NSDictionary *result = [NSDictionary dictionary];
         if([responseObject isKindOfClass:[NSData class]]){
             NSString *originString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-            result = [NSJSONSerialization JSONObjectWithData:[originString dataUsingEncoding:NSUTF8StringEncoding]
-                                                     options:NSJSONReadingMutableLeaves
-                                                       error:nil];
+            if (originString && [NSJSONSerialization isValidJSONObject:originString]) {
+                resultData = [NSJSONSerialization JSONObjectWithData:[originString dataUsingEncoding:NSUTF8StringEncoding]
+                                                             options:NSJSONReadingMutableLeaves
+                                                               error:nil];
+            }else{
+                resultData = originString;
+            }
         }
-        if (result.allKeys.count > 0) {
-            id data = (nil == ObjType) ? result : [ObjType mj_objectWithKeyValues:result];
+        if (resultData) {
+            id data = (nil == ObjType) ? resultData : [ObjType mj_objectWithKeyValues:resultData];
             completion((nil == data) ? NO : YES,data);
-        }else{
-            [MBProgressHUD handleErrorWithCode:@(HttpStatusReturnNullCode) additional:nil];
+            return;
         }
+        [MBProgressHUD handleErrorWithCode:@(HttpStatusReturnNullCode) additional:nil];
     }@catch(NSException *excep){
         [MBProgressHUD showError:@"数据解析异常"];
         log(excep.reason)

@@ -33,6 +33,7 @@
 		86814E631C8D9ABD0097BC8C /* FSServerCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E621C8D9ABD0097BC8C /* FSServerCommunicator.m */; };
 		86814E661C8D9C0E0097BC8C /* NSData+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E651C8D9C0E0097BC8C /* NSData+Encryption.m */; };
 		869655991C8DAADA0026E397 /* FSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869655981C8DAADA0026E397 /* FSHomeViewController.m */; };
+		869655A11C8E8C540026E397 /* FSPersonCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869655A01C8E8C540026E397 /* FSPersonCenterViewController.m */; };
 		ABE7405D03CB4C6C81049CA4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D8C9C1603382FB6F260223 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +94,8 @@
 		86814E651C8D9C0E0097BC8C /* NSData+Encryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Encryption.m"; sourceTree = "<group>"; };
 		869655971C8DAADA0026E397 /* FSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSHomeViewController.h; sourceTree = "<group>"; };
 		869655981C8DAADA0026E397 /* FSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSHomeViewController.m; sourceTree = "<group>"; };
+		8696559F1C8E8C540026E397 /* FSPersonCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSPersonCenterViewController.h; sourceTree = "<group>"; };
+		869655A01C8E8C540026E397 /* FSPersonCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSPersonCenterViewController.m; sourceTree = "<group>"; };
 		C9C2781E8891DA49860E6480 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D8C71976E8CF56F2C0B94D30 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -182,6 +185,8 @@
 		86814E101C8D7C440097BC8C /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				8696559F1C8E8C540026E397 /* FSPersonCenterViewController.h */,
+				869655A01C8E8C540026E397 /* FSPersonCenterViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -456,6 +461,7 @@
 				86814E5A1C8D996B0097BC8C /* FSWebViewController.m in Sources */,
 				869655991C8DAADA0026E397 /* FSHomeViewController.m in Sources */,
 				86814E541C8D987A0097BC8C /* FSBaseViewController.m in Sources */,
+				869655A11C8E8C540026E397 /* FSPersonCenterViewController.m in Sources */,
 				86814E3E1C8D95230097BC8C /* CommonNetTools.m in Sources */,
 				86814E3B1C8D94D50097BC8C /* MBProgressHUD+Show.m in Sources */,
 				86814E471C8D96F30097BC8C /* TimerButton.m in Sources */,

@@ -117,5 +117,12 @@ typedef NS_ENUM(NSInteger,BtnImgDirectionType)
                            zeroMargin:(BOOL)zeroMargin
                              delegate:(id<UITableViewDelegate, UITableViewDataSource>)delegate;
 
+//For UIWebView
++ (UIWebView *)createWebViewWithUrl:(NSString *)webUrl
+                            baseURL:(NSURL *)baseUrl
+                         htmlString:(NSString *)htmlString
+                       scroolEnable:(BOOL)sEnable
+                           delegate:(id<UIWebViewDelegate>)delegate;
+
 
 @end

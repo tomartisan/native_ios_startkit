@@ -15,7 +15,7 @@ static double const SERVER_CONNECT_TIMEOUT = 45.0f;
 /**
  *  API服务器地址
  */
-static NSString *const API_SERVER_URL = @"";
+static NSString *const API_SERVER_URL = @"http://www.shuoit.net";
 
 /**
  *  DES3 KEY (必须是24位)
