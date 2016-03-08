@@ -28,6 +28,18 @@
     //我的
     UIViewController *mineVC = [[UIViewController alloc] init];
     [self addChildViewController:mineVC title:@"我的" image:nil selectedImage:nil];
+    
+    //呵呵
+    UIViewController *heheVC = [[UIViewController alloc] init];
+    [self addChildViewController:heheVC title:@"呵呵" image:nil selectedImage:nil];
+    
+    //你的
+    UIViewController *yourVC = [[UIViewController alloc] init];
+    [self addChildViewController:yourVC title:@"你的" image:nil selectedImage:nil];
+    
+    //他的
+    UIViewController *hisVc = [[UIViewController alloc] init];
+    [self addChildViewController:hisVc title:@"他的" image:nil selectedImage:nil];
 }
 
 
