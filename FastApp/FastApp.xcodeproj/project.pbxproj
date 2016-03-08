@@ -10,7 +10,6 @@
 		86814DF61C8D78B80097BC8C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814DF51C8D78B80097BC8C /* main.m */; };
 		86814DF91C8D78B80097BC8C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814DF81C8D78B80097BC8C /* AppDelegate.m */; };
 		86814E011C8D78B80097BC8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86814E001C8D78B80097BC8C /* Assets.xcassets */; };
-		86814E0C1C8D7C390097BC8C /* StaticResource in Resources */ = {isa = PBXBuildFile; fileRef = 86814E0B1C8D7C390097BC8C /* StaticResource */; };
 		86814E1A1C8D7D400097BC8C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86814E191C8D7D400097BC8C /* Default-568h@2x.png */; };
 		86814E1E1C8D812D0097BC8C /* UICreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E1D1C8D812D0097BC8C /* UICreator.m */; };
 		86814E211C8D81D50097BC8C /* PositionTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E201C8D81D50097BC8C /* PositionTools.m */; };
@@ -46,7 +45,6 @@
 		86814DF81C8D78B80097BC8C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		86814E001C8D78B80097BC8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86814E051C8D78B80097BC8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		86814E0B1C8D7C390097BC8C /* StaticResource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = StaticResource; sourceTree = "<group>"; };
 		86814E191C8D7D400097BC8C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		86814E1B1C8D7E710097BC8C /* FastApp-Pre.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FastApp-Pre.pch"; sourceTree = "<group>"; };
 		86814E1C1C8D812D0097BC8C /* UICreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICreator.h; sourceTree = "<group>"; };
@@ -137,9 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				86814E0D1C8D7C440097BC8C /* Classes */,
-				86814E0B1C8D7C390097BC8C /* StaticResource */,
-				86814DF71C8D78B80097BC8C /* AppDelegate.h */,
-				86814DF81C8D78B80097BC8C /* AppDelegate.m */,
 				86814DF41C8D78B80097BC8C /* Supporting Files */,
 			);
 			path = FastApp;
@@ -148,6 +143,8 @@
 		86814DF41C8D78B80097BC8C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				86814DF71C8D78B80097BC8C /* AppDelegate.h */,
+				86814DF81C8D78B80097BC8C /* AppDelegate.m */,
 				86814E191C8D7D400097BC8C /* Default-568h@2x.png */,
 				86814E001C8D78B80097BC8C /* Assets.xcassets */,
 				86814E051C8D78B80097BC8C /* Info.plist */,
@@ -396,7 +393,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86814E0C1C8D7C390097BC8C /* StaticResource in Resources */,
 				86814E011C8D78B80097BC8C /* Assets.xcassets in Resources */,
 				86814E1A1C8D7D400097BC8C /* Default-568h@2x.png in Resources */,
 			);
