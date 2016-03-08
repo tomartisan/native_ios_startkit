@@ -161,7 +161,7 @@
         hud.mode = MBProgressHUDModeText;
         hud.removeFromSuperViewOnHide = YES;
         hud.opacity = 0.6;
-        hud.labelFont = [UIFont systemFontOfSize:22];
+        hud.labelFont = [UIFont systemFontOfSize:14];
         [hud hide:YES afterDelay:1.4];
         return hud;
     }

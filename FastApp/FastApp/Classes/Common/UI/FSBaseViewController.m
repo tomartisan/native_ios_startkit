@@ -35,13 +35,13 @@
         case NoConnectionError:
             [PositionTools layView:self.reConnectView
                     atCenterOfView:self.view
-                         fixedSize:CGSizeMake(kDeviceWidth, kDeviceHeight)
+                         maxSize:CGSizeZero
                            margins:0];
             break;
         case RequestFailedError:
             [PositionTools layView:self.refreshButton
                     atCenterOfView:self.view
-                         fixedSize:CGSizeMake(200, 45)
+                         maxSize:CGSizeMake(200, 45)
                            margins:0];
             break;
     }
@@ -82,7 +82,7 @@
                                                         action:@selector(refreshPage:)];
         reConnBtn.tag = NoConnectionError;
         reConnBtn.center = _reConnectView.center;
-        [PositionTools layView:reConnBtn atCenterOfView:_reConnectView fixedSize:CGSizeMake(kDeviceWidth, 60) margins:0];
+        [PositionTools layView:reConnBtn atCenterOfView:_reConnectView maxSize:CGSizeMake(kDeviceWidth, 60) margins:0];
     }
     return _reConnectView;
 }

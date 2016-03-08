@@ -7,19 +7,20 @@
 //
 
 #import "PositionTools.h"
+#import "Masonry.h"
 
 @implementation PositionTools
 
-+ (void)layView:(UIView *)view
- atCenterOfView:(UIView *)superView
-      fixedSize:(CGSize)size
-        margins:(float)margins
++ (void)layView:(UIView *)view atCenterOfView:(UIView *)superView maxSize:(CGSize)size margins:(float)margins
 {
     [superView addSubview:view];
     [view mas_makeConstraints:^(MASConstraintMaker *make) {
-        if (margins > 0) {
-            UIEdgeInsets padding = UIEdgeInsetsMake(margins, margins, margins, margins);
-            make.edges.equalTo(superView).insets(padding);
+        if (CGSizeEqualToSize(size, CGSizeZero)){
+            if (margins > 0) {
+                make.edges.equalTo(superView).insets(UIEdgeInsetsMake(margins, margins, margins, margins));
+            }else{
+                make.edges.equalTo(superView).insets(UIEdgeInsetsZero);
+            }
         }else{
             make.center.equalTo(superView);
             make.size.mas_greaterThanOrEqualTo(size);
@@ -27,126 +28,136 @@
     }];
 }
 
-+ (void)layView:(UIView *)sourceView
-      toTheView:(UIView *)targetView
-   positionType:(UIPositionType)type
-      fixedSize:(CGSize)size
-         offset:(CGSize)offset
-        outside:(BOOL)outside
++ (void)layView:(UIView *)sourceView insideView:(UIView *)targetView type:(UIPositionType)type maxSize:(CGSize)size offset:(CGSize)offset
 {
-    if (outside) {
-        [[targetView superview] addSubview:sourceView];
-    }else{
-        [targetView addSubview:sourceView];
-    }
-    switch (type) {
-        case LeftTop:
-            [self placeView:sourceView atLeftTopOfTheView:targetView fixedSize:size offset:offset outside:outside];
-            break;
-        case LeftMiddle:
-            [self placeView:sourceView atLeftMiddleOfTheView:targetView fixedSize:size offset:offset outside:outside];
-            break;
-        case LeftBottom:
-            [self placeView:sourceView atLeftBottomOfTheView:targetView fixedSize:size offset:offset outside:outside];
-            break;
-        case RightTop:
-            [self placeView:sourceView atRightTopOfTheView:targetView fixedSize:size offset:offset outside:outside];
-            break;
-        case RightMiddle:
-            [self placeView:sourceView atRightMiddleOfTheView:targetView fixedSize:size offset:offset outside:outside];
-            break;
-        case RightBottom:
-            [self placeView:sourceView atRightBottomOfTheView:targetView fixedSize:size offset:offset outside:outside];
-            break;
-        case MiddleTop:
-            [self placeView:sourceView atTopMiddleOfTheView:targetView fixedSize:size offset:offset outside:outside];
-            break;
-        case MiddleBottom:
-            [self placeView:sourceView atBottomMiddleOfTheView:targetView fixedSize:size offset:offset outside:outside];
-            break;
+    [self layView:sourceView toTheView:targetView type:type maxSize:size offset:offset inner:YES];
+}
+
++ (void)layView:(UIView *)sourceView outsideView:(UIView *)targetView type:(UIPositionType)type maxSize:(CGSize)size offset:(CGSize)offset
+{
+    [self layView:sourceView toTheView:targetView type:type maxSize:size offset:offset inner:NO];
+}
+
+#pragma mark - private method
++ (void)layView:(UIView *)sourceView toTheView:(UIView *)targetView type:(UIPositionType)type maxSize:(CGSize)size offset:(CGSize)offset inner:(BOOL)inner
+{
+    @try {
+        if (inner) {
+            [targetView addSubview:sourceView];
+        }else{
+            [[targetView superview] addSubview:sourceView];
+        }
+        switch (type) {
+            case LeftTop:
+                [self placeView:sourceView atLeftTopOfTheView:targetView maxSize:size offset:offset inner:inner];
+                break;
+            case LeftMiddle:
+                [self placeView:sourceView atLeftMiddleOfTheView:targetView maxSize:size offset:offset inner:inner];
+                break;
+            case LeftBottom:
+                [self placeView:sourceView atLeftBottomOfTheView:targetView maxSize:size offset:offset inner:inner];
+                break;
+            case RightTop:
+                [self placeView:sourceView atRightTopOfTheView:targetView maxSize:size offset:offset inner:inner];
+                break;
+            case RightMiddle:
+                [self placeView:sourceView atRightMiddleOfTheView:targetView maxSize:size offset:offset inner:inner];
+                break;
+            case RightBottom:
+                [self placeView:sourceView atRightBottomOfTheView:targetView maxSize:size offset:offset inner:inner];
+                break;
+            case MiddleTop:
+                [self placeView:sourceView atTopMiddleOfTheView:targetView maxSize:size offset:offset inner:inner];
+                break;
+            case MiddleBottom:
+                [self placeView:sourceView atBottomMiddleOfTheView:targetView maxSize:size offset:offset inner:inner];
+                break;
+        }
+    }@catch (NSException *exception) {
+        [MBProgressHUD showError:@"自动布局异常，请检查参数"];
     }
 }
 
-+ (void)placeView:(UIView *)sourceView atLeftTopOfTheView:(UIView *)targetView fixedSize:(CGSize)size offset:(CGSize)offset outside:(BOOL)outside
++ (void)placeView:(UIView *)sourceView atLeftTopOfTheView:(UIView *)targetView maxSize:(CGSize)size offset:(CGSize)offset inner:(BOOL)inner
 {
     [sourceView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_greaterThanOrEqualTo(size);
-        CGFloat finalX = outside ? -(offset.width+size.width) : offset.width;
-        CGFloat finalY = outside ? -(offset.height+size.height) : offset.height;
+        CGFloat finalX = !inner ? -(offset.width+size.width) : offset.width;
+        CGFloat finalY = !inner ? -(offset.height+size.height) : offset.height;
         make.left.equalTo(targetView).with.offset(finalX);
         make.top.equalTo(targetView).with.offset(finalY);
     }];
 }
 
-+ (void)placeView:(UIView *)sourceView atLeftMiddleOfTheView:(UIView *)targetView fixedSize:(CGSize)size offset:(CGSize)offset outside:(BOOL)outside
++ (void)placeView:(UIView *)sourceView atLeftMiddleOfTheView:(UIView *)targetView maxSize:(CGSize)size offset:(CGSize)offset inner:(BOOL)inner
 {
     [sourceView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_greaterThanOrEqualTo(size);
         make.centerY.equalTo(targetView);
-        CGFloat finalX = outside ? -(offset.width+size.width) : offset.width;
+        CGFloat finalX = !inner ? -(offset.width+size.width) : offset.width;
         make.left.equalTo(targetView).with.offset(finalX);
     }];
 }
 
-+ (void)placeView:(UIView *)sourceView atLeftBottomOfTheView:(UIView *)targetView fixedSize:(CGSize)size offset:(CGSize)offset outside:(BOOL)outside
++ (void)placeView:(UIView *)sourceView atLeftBottomOfTheView:(UIView *)targetView maxSize:(CGSize)size offset:(CGSize)offset inner:(BOOL)inner
 {
     [sourceView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_greaterThanOrEqualTo(size);
-        CGFloat finalX = outside ? -(offset.width+size.width) : offset.width;
-        CGFloat finalY = outside ? (offset.height+size.height) : offset.height;
+        CGFloat finalX = !inner ? -(offset.width+size.width) : offset.width;
+        CGFloat finalY = !inner ? (offset.height+size.height) : offset.height;
         make.left.equalTo(targetView).with.offset(finalX);
         make.bottom.equalTo(targetView).with.offset(finalY);
     }];
 }
 
-+ (void)placeView:(UIView *)sourceView atRightTopOfTheView:(UIView *)targetView fixedSize:(CGSize)size offset:(CGSize)offset outside:(BOOL)outside
++ (void)placeView:(UIView *)sourceView atRightTopOfTheView:(UIView *)targetView maxSize:(CGSize)size offset:(CGSize)offset inner:(BOOL)inner
 {
     [sourceView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_greaterThanOrEqualTo(size);
-        CGFloat finalX = outside ? (offset.width+size.width) : offset.width;
-        CGFloat finalY = outside ? -(offset.height+size.height) : offset.height;
+        CGFloat finalX = !inner ? (offset.width+size.width) : offset.width;
+        CGFloat finalY = !inner ? -(offset.height+size.height) : offset.height;
         make.right.equalTo(targetView).with.offset(finalX);
         make.top.equalTo(targetView).with.offset(finalY);
     }];
 }
 
-+ (void)placeView:(UIView *)sourceView atRightMiddleOfTheView:(UIView *)targetView fixedSize:(CGSize)size offset:(CGSize)offset outside:(BOOL)outside
++ (void)placeView:(UIView *)sourceView atRightMiddleOfTheView:(UIView *)targetView maxSize:(CGSize)size offset:(CGSize)offset inner:(BOOL)inner
 {
     [sourceView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_greaterThanOrEqualTo(size);
         make.centerY.equalTo(targetView);
-        CGFloat finalX = outside ? (offset.width+size.width) : offset.width;
+        CGFloat finalX = !inner ? (offset.width+size.width) : offset.width;
         make.right.equalTo(targetView).with.offset(finalX);
     }];
 }
 
-+ (void)placeView:(UIView *)sourceView atRightBottomOfTheView:(UIView *)targetView fixedSize:(CGSize)size offset:(CGSize)offset outside:(BOOL)outside
++ (void)placeView:(UIView *)sourceView atRightBottomOfTheView:(UIView *)targetView maxSize:(CGSize)size offset:(CGSize)offset inner:(BOOL)inner
 {
     [sourceView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_greaterThanOrEqualTo(size);
-        CGFloat finalX = outside ? (offset.width+size.width) : offset.width;
-        CGFloat finalY = outside ? (offset.height+size.height) : offset.height;
+        CGFloat finalX = !inner ? (offset.width+size.width) : offset.width;
+        CGFloat finalY = !inner ? (offset.height+size.height) : offset.height;
         make.right.equalTo(targetView).with.offset(finalX);
         make.bottom.equalTo(targetView).with.offset(finalY);
     }];
 }
 
-+ (void)placeView:(UIView *)sourceView atTopMiddleOfTheView:(UIView *)targetView fixedSize:(CGSize)size offset:(CGSize)offset outside:(BOOL)outside
++ (void)placeView:(UIView *)sourceView atTopMiddleOfTheView:(UIView *)targetView maxSize:(CGSize)size offset:(CGSize)offset inner:(BOOL)inner
 {
     [sourceView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_greaterThanOrEqualTo(size);
         make.centerX.equalTo(targetView);
-        CGFloat finalY = outside ? -(offset.height+size.height) : offset.height;
+        CGFloat finalY = !inner ? -(offset.height+size.height) : offset.height;
         make.top.equalTo(targetView).with.offset(finalY);
     }];
 }
 
-+ (void)placeView:(UIView *)sourceView atBottomMiddleOfTheView:(UIView *)targetView fixedSize:(CGSize)size offset:(CGSize)offset outside:(BOOL)outside
++ (void)placeView:(UIView *)sourceView atBottomMiddleOfTheView:(UIView *)targetView maxSize:(CGSize)size offset:(CGSize)offset inner:(BOOL)inner
 {
     [sourceView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_greaterThanOrEqualTo(size);
         make.centerX.equalTo(targetView);
-        CGFloat finalY = outside ? (offset.height+size.height) : offset.height;
+        CGFloat finalY = !inner ? (offset.height+size.height) : offset.height;
         make.bottom.equalTo(targetView).with.offset(finalY);
     }];
 }

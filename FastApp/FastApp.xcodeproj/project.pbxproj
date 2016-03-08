@@ -34,6 +34,7 @@
 		86814E661C8D9C0E0097BC8C /* NSData+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E651C8D9C0E0097BC8C /* NSData+Encryption.m */; };
 		869655991C8DAADA0026E397 /* FSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869655981C8DAADA0026E397 /* FSHomeViewController.m */; };
 		869655A11C8E8C540026E397 /* FSPersonCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869655A01C8E8C540026E397 /* FSPersonCenterViewController.m */; };
+		869655A41C8EA9FE0026E397 /* FSHeHeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869655A31C8EA9FE0026E397 /* FSHeHeViewController.m */; };
 		ABE7405D03CB4C6C81049CA4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D8C9C1603382FB6F260223 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +97,8 @@
 		869655981C8DAADA0026E397 /* FSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSHomeViewController.m; sourceTree = "<group>"; };
 		8696559F1C8E8C540026E397 /* FSPersonCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSPersonCenterViewController.h; sourceTree = "<group>"; };
 		869655A01C8E8C540026E397 /* FSPersonCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSPersonCenterViewController.m; sourceTree = "<group>"; };
+		869655A21C8EA9FE0026E397 /* FSHeHeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSHeHeViewController.h; sourceTree = "<group>"; };
+		869655A31C8EA9FE0026E397 /* FSHeHeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSHeHeViewController.m; sourceTree = "<group>"; };
 		C9C2781E8891DA49860E6480 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D8C71976E8CF56F2C0B94D30 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,6 +190,8 @@
 			children = (
 				8696559F1C8E8C540026E397 /* FSPersonCenterViewController.h */,
 				869655A01C8E8C540026E397 /* FSPersonCenterViewController.m */,
+				869655A21C8EA9FE0026E397 /* FSHeHeViewController.h */,
+				869655A31C8EA9FE0026E397 /* FSHeHeViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -473,6 +478,7 @@
 				86814E571C8D990F0097BC8C /* FSBaseSubViewController.m in Sources */,
 				86814E1E1C8D812D0097BC8C /* UICreator.m in Sources */,
 				86814E511C8D98210097BC8C /* FSNavigationController.m in Sources */,
+				869655A41C8EA9FE0026E397 /* FSHeHeViewController.m in Sources */,
 				86814E441C8D962C0097BC8C /* SecutiryTools.m in Sources */,
 				86814E351C8D94370097BC8C /* GTMBase64.m in Sources */,
 				86814DF61C8D78B80097BC8C /* main.m in Sources */,

@@ -9,6 +9,7 @@
 #import "FSHomeViewController.h"
 #import "FSNavigationController.h"
 #import "FSPersonCenterViewController.h"
+#import "FSHeHeViewController.h"
 
 @implementation FSHomeViewController
 
@@ -26,19 +27,23 @@
     [self addChildViewController:indexVC title:@"首页" image:nil selectedImage:nil];
     
     //我的
-    FSPersonCenterViewController *mineVC = [[FSPersonCenterViewController alloc] init];
+    FSHeHeViewController *mineVC = [[FSHeHeViewController alloc] init];
+    mineVC.inView = YES;
     [self addChildViewController:mineVC title:@"我的" image:nil selectedImage:nil];
     
     //呵呵
-    FSPersonCenterViewController *heheVC = [[FSPersonCenterViewController alloc] init];
+    FSHeHeViewController *heheVC = [[FSHeHeViewController alloc] init];
+    heheVC.inView = NO;
     [self addChildViewController:heheVC title:@"呵呵" image:nil selectedImage:nil];
     
     //你的
-    FSPersonCenterViewController *yourVC = [[FSPersonCenterViewController alloc] init];
+    FSHeHeViewController *yourVC = [[FSHeHeViewController alloc] init];
+    yourVC.inView = YES;
     [self addChildViewController:yourVC title:@"你的" image:nil selectedImage:nil];
     
     //他的
-    FSPersonCenterViewController *hisVc = [[FSPersonCenterViewController alloc] init];
+    FSHeHeViewController *hisVc = [[FSHeHeViewController alloc] init];
+    hisVc.inView = NO;
     [self addChildViewController:hisVc title:@"他的" image:nil selectedImage:nil];
 }
 
