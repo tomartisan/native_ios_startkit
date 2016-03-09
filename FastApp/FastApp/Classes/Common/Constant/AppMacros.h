@@ -38,6 +38,7 @@
 #define FSBlackColor COLOR(68, 68, 68)             //浅黑色
 #define FSGrayColor COLOR(102, 102, 102)           //灰色
 #define FSlightGrayColor COLOR(153, 153, 153)      //浅灰色
+#define FSCoffeeColor COLOR(185,152,99)            //咖啡色
 #define FSCommonBgColor  COLOR(248, 248, 248)      //灰白色
 #define FSSeparatorLineColor COLOR(232, 232, 232)  //分割线颜色
 #define FSTranslucentColor ColorWithAlpha(0,0,0,0.55)  //半透明颜色

@@ -24,27 +24,27 @@
 {
     //首页
     FSPersonCenterViewController *indexVC = [[FSPersonCenterViewController alloc] init];
-    [self addChildViewController:indexVC title:@"首页" image:nil selectedImage:nil];
+    [self addChildViewController:indexVC title:@"首页" image:@"11" selectedImage:@"12"];
     
-    //我的
+    //分类
     FSHeHeViewController *mineVC = [[FSHeHeViewController alloc] init];
     mineVC.inView = YES;
-    [self addChildViewController:mineVC title:@"我的" image:nil selectedImage:nil];
+    [self addChildViewController:mineVC title:@"分类" image:@"21" selectedImage:@"22"];
     
-    //呵呵
+    //呵呵呵
     FSHeHeViewController *heheVC = [[FSHeHeViewController alloc] init];
     heheVC.inView = NO;
-    [self addChildViewController:heheVC title:@"呵呵" image:nil selectedImage:nil];
+    [self addChildViewController:heheVC title:@"呵呵呵" image:@"31" selectedImage:@"32"];
     
-    //你的
+    //清单
     FSHeHeViewController *yourVC = [[FSHeHeViewController alloc] init];
     yourVC.inView = YES;
-    [self addChildViewController:yourVC title:@"你的" image:nil selectedImage:nil];
+    [self addChildViewController:yourVC title:@"清单" image:@"41" selectedImage:@"42"];
     
-    //他的
+    //我的
     FSHeHeViewController *hisVc = [[FSHeHeViewController alloc] init];
     hisVc.inView = NO;
-    [self addChildViewController:hisVc title:@"他的" image:nil selectedImage:nil];
+    [self addChildViewController:hisVc title:@"我的" image:@"51" selectedImage:@"52"];
 }
 
 
@@ -53,15 +53,16 @@
                          image:(NSString *)normalImageName
                  selectedImage:(NSString *)selectedImageName
 {
-    childController.tabBarItem.title = title;
-    childController.tabBarItem.image = [UIImage imageNamed:normalImageName];
-    childController.tabBarItem.selectedImage = [UIImage imageNamed:selectedImageName];
+    UIImage *normalImage = [[UIImage imageNamed:normalImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *selectedImage = [[UIImage imageNamed:normalImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    //设置字体颜色和阴影
-    NSMutableDictionary *itemAttrs = [NSMutableDictionary dictionary];
-    itemAttrs[NSForegroundColorAttributeName] = [UIColor orangeColor];
-    [childController.tabBarItem setTitleTextAttributes:itemAttrs forState:UIControlStateNormal];
-    [childController.tabBarItem setTitleTextAttributes:itemAttrs forState:UIControlStateHighlighted];
+    childController.tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:normalImage selectedImage:selectedImage];
+    
+    NSDictionary *normalAttr = @{NSForegroundColorAttributeName:FSCoffeeColor,NSFontAttributeName:PFNFontWithSize(11)};
+    NSDictionary *highlightAttr = @{NSForegroundColorAttributeName:FSGrayColor,NSFontAttributeName:PFNFontWithSize(11)};
+    
+    [childController.tabBarItem setTitleTextAttributes:normalAttr forState:UIControlStateNormal];
+    [childController.tabBarItem setTitleTextAttributes:highlightAttr forState:UIControlStateHighlighted];
     
     childController.title = title;
     FSNavigationController *nav = [[FSNavigationController alloc] initWithRootViewController:childController];

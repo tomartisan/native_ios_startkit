@@ -20,14 +20,11 @@
 
 + (void)initialize
 {
-    UINavigationBar *bar = [UINavigationBar appearance];
-    bar.barTintColor = [UIColor orangeColor];
-    NSDictionary* textAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor],
-                                     NSFontAttributeName:[UIFont systemFontOfSize:16]};
-    [bar setTitleTextAttributes:textAttributes];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    [[UIBarButtonItem appearance] setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
+    UINavigationBar *bar = [UINavigationBar appearance];
+    bar.barTintColor = FSWhiteColor;
+    bar.titleTextAttributes = @{NSFontAttributeName:SysFontWithSize(16)};
 }
 
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController {
