@@ -7,7 +7,7 @@
 //  Copyright © 2016年 www.shuoit.net. All rights reserved.
 //
 
-// 开发模式下开启此项，可有日志打印和服务器切换功能。上线时一定要关掉
+// 开发模式选项，可自定义功能。上线时一定要关掉
 #define isDevelopModel 1
 
 // -------------------------------------------------    尺寸定义开始  -------------------------------//
@@ -30,7 +30,23 @@
 #define UIColorFromRGBValue(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define RandomColorWithAlpha(a) [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:a]
 
+//通用视觉规范
+#define FSWhiteColor COLOR(255, 255, 255)          //纯白
+#define FSBlueColor COLOR(0, 153, 255)             //蓝色
+#define FSOrangeColor COLOR(253, 106, 60)          //橙色
+#define FSYellowColor COLOR(239, 166, 68)          //黄色
+#define FSBlackColor COLOR(68, 68, 68)             //浅黑色
+#define FSGrayColor COLOR(102, 102, 102)           //灰色
+#define FSlightGrayColor COLOR(153, 153, 153)      //浅灰色
+#define FSCommonBgColor  COLOR(248, 248, 248)      //灰白色
+#define FSSeparatorLineColor COLOR(232, 232, 232)  //分割线颜色
 #define FSTranslucentColor ColorWithAlpha(0,0,0,0.55)  //半透明颜色
+
+// -------------------------------------------------    字体定义开始  -------------------------------//
+#define SysFontWithSize(size) [UIFont systemFontOfSize:size]
+#define PFNFontWithSize(size) [UIFont fontWithName:@"PingFangSC-Regular" size:size]
+#define PFBFontWithSize(size) [UIFont fontWithName:@"PingFangSC-Thin" size:size]
+#define HTFontWithSize(size) [UIFont fontWithName:@"Heiti SC" size:size]
 
 // -------------------------------------------------    工具定义开始  -------------------------------//
 //定义构造单例的宏
