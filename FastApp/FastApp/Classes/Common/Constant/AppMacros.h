@@ -81,3 +81,4 @@ if ([_tableView respondsToSelector:@selector(setLayoutMargins:)]){\
     [_tableView setLayoutMargins:UIEdgeInsetsZero];\
 }
 
+#define IOSVersion_8 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
