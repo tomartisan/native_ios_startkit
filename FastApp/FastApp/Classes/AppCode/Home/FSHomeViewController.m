@@ -62,7 +62,7 @@
     NSDictionary *highlightAttr = @{NSForegroundColorAttributeName:FSGrayColor,NSFontAttributeName:PFNFontWithSize(11)};
     
     [childController.tabBarItem setTitleTextAttributes:normalAttr forState:UIControlStateNormal];
-    [childController.tabBarItem setTitleTextAttributes:highlightAttr forState:UIControlStateHighlighted];
+    [childController.tabBarItem setTitleTextAttributes:highlightAttr forState:UIControlStateSelected];
     
     childController.title = title;
     FSNavigationController *nav = [[FSNavigationController alloc] initWithRootViewController:childController];
