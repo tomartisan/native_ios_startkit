@@ -18,6 +18,7 @@
 #import "GlobalCache.h"
 #import "CacheTools.h"
 #import "StringTools.h"
+#import "FSDeviceTools.h"
 #import "SecutiryTools.h"
 #import "CommonNetTools.h"
 #import "MBProgressHUD+Show.h"
