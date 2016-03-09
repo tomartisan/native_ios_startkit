@@ -42,7 +42,7 @@
     if(self.viewControllers.count > 0){
         viewController.hidesBottomBarWhenPushed = YES;
     }
-    if (IOSVersion_8) {
+    if ([FSDeviceTools afterIOS7]) {
         [super pushViewController:viewController animated:animated];
     } else {
         if (!self.shouldIgnoreStackRequests) {
@@ -65,7 +65,7 @@
 }
 
 - (UIViewController *)popViewControllerAnimated:(BOOL)animated {
-    if (IOSVersion_8) {
+    if ([FSDeviceTools afterIOS7]) {
         return [super popViewControllerAnimated:animated];
     } else {
         __block UIViewController *popedController = nil;
@@ -98,7 +98,7 @@
 
 #pragma mark - UINavigationController delegate
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    if (!IOSVersion_8) {
+    if (![FSDeviceTools afterIOS7]) {
         [[self transitionCoordinator] notifyWhenInteractionEndsUsingBlock:^(id<UIViewControllerTransitionCoordinatorContext> context) {
             if ([context isCancelled]) {
                 self.shouldIgnoreStackRequests = NO;
@@ -110,9 +110,8 @@
 - (void)navigationController:(UINavigationController *)navigationController
        didShowViewController:(UIViewController *)viewController
                     animated:(BOOL)animated {
-    if (!IOSVersion_8) {
+    if (![FSDeviceTools afterIOS7]) {
         self.shouldIgnoreStackRequests = NO;
-        
         if (0 < self.waitingCommands.count) {
             void (^waitingAction)() = self.waitingCommands.lastObject;
             [self.waitingCommands removeLastObject];

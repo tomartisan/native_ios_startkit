@@ -28,7 +28,7 @@
 + (BOOL)isIOS7;
 + (BOOL)isIOS8;
 + (BOOL)isIOS9;
-
++ (BOOL)afterIOS7;
 
 + (float)getUIScale;
 

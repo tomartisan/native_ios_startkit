@@ -82,6 +82,11 @@
     return (version >= 9.0);
 }
 
++ (BOOL)afterIOS7
+{
+    return [[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0;
+}
+
 + (float)getUIScale
 {
     if ([self isPhone]) {
