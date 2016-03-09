@@ -43,10 +43,10 @@
 #define FSTranslucentColor ColorWithAlpha(0,0,0,0.55)  //半透明颜色
 
 // -------------------------------------------------    字体定义开始  -------------------------------//
-#define SysFontWithSize(size) [UIFont systemFontOfSize:size]
-#define PFNFontWithSize(size) [UIFont fontWithName:@"PingFangSC-Regular" size:size]
-#define PFBFontWithSize(size) [UIFont fontWithName:@"PingFangSC-Thin" size:size]
-#define HTFontWithSize(size) [UIFont fontWithName:@"Heiti SC" size:size]
+#define SysFontWithSize(s) [UIFont systemFontOfSize:s]
+#define PFNFontWithSize(s) [UIFont fontWithName:@"PingFangSC-Regular" size:s]
+#define PFBFontWithSize(s) [UIFont fontWithName:@"PingFangSC-Thin" size:s]
+#define HTFontWithSize(s) [UIFont fontWithName:@"Heiti SC" size:s]
 
 // -------------------------------------------------    工具定义开始  -------------------------------//
 //定义构造单例的宏
