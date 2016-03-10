@@ -23,10 +23,10 @@
                                                                            CGRectGetHeight(self.frame))
                                                   WithImageUrls:urls];
         
-        _adScrollView.pageIndicatorTintColor = UIColorFromRGBValue(0xcccccc);
-        _adScrollView.currentPageIndicatorTintColor = [UIColor whiteColor];
+        _adScrollView.pageIndicatorTintColor = FSGrayColor;
+        _adScrollView.currentPageIndicatorTintColor = FSWhiteColor;
         _adScrollView.AutoScrollDelay = 4.0f;
-        _adScrollView.placeImage = [UIImage imageNamed:@"advertiseDefault"];
+        _adScrollView.placeImage = [UIImage imageWithNamed:@"advertiseDefault"];
         
         [self addSubview:_adScrollView];
     }

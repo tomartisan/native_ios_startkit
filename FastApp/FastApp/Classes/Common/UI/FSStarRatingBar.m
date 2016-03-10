@@ -33,8 +33,8 @@
         self.backgroundColor = [UIColor clearColor];
         
         _starArray = [NSMutableArray arrayWithCapacity:count];
-        _normalImage = [UIImage imageNamed:normal];
-        _hightImage = [UIImage imageNamed:highLight];
+        _normalImage = [UIImage imageWithNamed:normal];
+        _hightImage = [UIImage imageWithNamed:highLight];
         
         _imageWidth = _normalImage.size.width;
         _imageHeight = _normalImage.size.height;

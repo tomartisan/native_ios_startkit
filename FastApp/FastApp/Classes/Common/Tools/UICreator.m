@@ -112,7 +112,7 @@
                              action:(SEL)action
 {
     UIButton *button = [self createButtonWithTitle:title titleColor:nil font:nil target:target action:action];
-    [button setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageWithNamed:imageName] forState:UIControlStateNormal];
     [button setTitleEdgeInsets:titleEdge];
     [button setImageEdgeInsets:imageEdge];
     return button;
@@ -124,8 +124,8 @@
                                    action:(SEL)action
 {
     UIButton *button = [self createButtonWithTitle:nil titleColor:nil font:nil target:target action:action];
-    [button setImage:[UIImage imageNamed:normalImageName] forState:UIControlStateNormal];
-    [button setImage:[UIImage imageNamed:highlightedImageName] forState:UIControlStateHighlighted];
+    [button setImage:[UIImage imageWithNamed:normalImageName] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageWithNamed:highlightedImageName] forState:UIControlStateHighlighted];
     CGSize size = [button imageForState:UIControlStateNormal].size;
     button.bounds = CGRectMake(0, 0, size.width, size.height);
     return button;
@@ -149,7 +149,7 @@
                                             target:target
                                             action:action];
     
-    [button setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageWithNamed:imageName] forState:UIControlStateNormal];
     button.contentHorizontalAlignment = hAlign;
     button.contentVerticalAlignment = vAlign;
     button.contentEdgeInsets = contentEdge;
@@ -182,7 +182,7 @@
 //For UIImageView
 + (UIImageView *)createImageViewFromImagename:(NSString *)imagename round:(BOOL)round
 {
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imagename]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageWithNamed:imagename]];
     imageView.userInteractionEnabled = YES;
     if (round) {
         imageView.layer.cornerRadius = CGRectGetWidth(imageView.frame);

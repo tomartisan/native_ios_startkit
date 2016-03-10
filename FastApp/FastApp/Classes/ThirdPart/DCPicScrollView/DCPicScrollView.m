@@ -89,7 +89,7 @@
             NSURL *imageUrl = [NSURL URLWithString:ImageName.firstObject];
             [img sd_setImageWithURL:imageUrl placeholderImage:_placeImage];
         }else {
-            img.image = [UIImage imageNamed:ImageName.firstObject];
+            img.image = [UIImage imageWithNamed:ImageName.firstObject];
         }
         
         img.userInteractionEnabled = YES;
@@ -363,7 +363,7 @@
     
     if (!_isNetwork) {
         for (NSString *name in imageUrlStrings) {
-            [self.imageData setObject:[UIImage imageNamed:name] forKey:name];
+            [self.imageData setObject:[UIImage imageWithNamed:name] forKey:name];
         }
     }
 }
