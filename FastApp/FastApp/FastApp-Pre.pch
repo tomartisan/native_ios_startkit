@@ -24,7 +24,7 @@
 #import "MBProgressHUD+Show.h"
 #import "PositionTools.h"
 #import "UICreator.h"
-
+#import "UIImage+FSUIImage.h"
 
 //Third Libs
 #import "MJExtension.h"

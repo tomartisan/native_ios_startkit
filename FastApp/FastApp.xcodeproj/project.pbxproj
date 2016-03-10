@@ -34,6 +34,7 @@
 		869655991C8DAADA0026E397 /* FSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869655981C8DAADA0026E397 /* FSHomeViewController.m */; };
 		869655A11C8E8C540026E397 /* FSPersonCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869655A01C8E8C540026E397 /* FSPersonCenterViewController.m */; };
 		869655A41C8EA9FE0026E397 /* FSHeHeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869655A31C8EA9FE0026E397 /* FSHeHeViewController.m */; };
+		86CE81121C914DB400FF9CDB /* UIImage+FSUIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CE81111C914DB400FF9CDB /* UIImage+FSUIImage.m */; };
 		ABE7405D03CB4C6C81049CA4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D8C9C1603382FB6F260223 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +98,8 @@
 		869655A01C8E8C540026E397 /* FSPersonCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSPersonCenterViewController.m; sourceTree = "<group>"; };
 		869655A21C8EA9FE0026E397 /* FSHeHeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSHeHeViewController.h; sourceTree = "<group>"; };
 		869655A31C8EA9FE0026E397 /* FSHeHeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSHeHeViewController.m; sourceTree = "<group>"; };
+		86CE81101C914DB400FF9CDB /* UIImage+FSUIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FSUIImage.h"; sourceTree = "<group>"; };
+		86CE81111C914DB400FF9CDB /* UIImage+FSUIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FSUIImage.m"; sourceTree = "<group>"; };
 		C9C2781E8891DA49860E6480 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D8C71976E8CF56F2C0B94D30 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -213,6 +216,8 @@
 				86814E651C8D9C0E0097BC8C /* NSData+Encryption.m */,
 				86814E391C8D94D50097BC8C /* MBProgressHUD+Show.h */,
 				86814E3A1C8D94D50097BC8C /* MBProgressHUD+Show.m */,
+				86CE81101C914DB400FF9CDB /* UIImage+FSUIImage.h */,
+				86CE81111C914DB400FF9CDB /* UIImage+FSUIImage.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -455,6 +460,7 @@
 			files = (
 				86814E211C8D81D50097BC8C /* PositionTools.m in Sources */,
 				86814E271C8D91A10097BC8C /* GlobalCache.m in Sources */,
+				86CE81121C914DB400FF9CDB /* UIImage+FSUIImage.m in Sources */,
 				86814E411C8D95A00097BC8C /* StringTools.m in Sources */,
 				86814E4E1C8D97BC0097BC8C /* DCPicScrollView.m in Sources */,
 				86814E631C8D9ABD0097BC8C /* FSServerCommunicator.m in Sources */,

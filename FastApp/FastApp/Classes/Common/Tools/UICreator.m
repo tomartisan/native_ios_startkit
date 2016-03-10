@@ -126,6 +126,8 @@
     UIButton *button = [self createButtonWithTitle:nil titleColor:nil font:nil target:target action:action];
     [button setImage:[UIImage imageNamed:normalImageName] forState:UIControlStateNormal];
     [button setImage:[UIImage imageNamed:highlightedImageName] forState:UIControlStateHighlighted];
+    CGSize size = [button imageForState:UIControlStateNormal].size;
+    button.bounds = CGRectMake(0, 0, size.width, size.height);
     return button;
 }
 

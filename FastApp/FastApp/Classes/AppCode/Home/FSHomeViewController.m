@@ -53,13 +53,12 @@
                          image:(NSString *)normalImageName
                  selectedImage:(NSString *)selectedImageName
 {
-    UIImage *normalImage = [[UIImage imageNamed:normalImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIImage *selectedImage = [[UIImage imageNamed:normalImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    childController.tabBarItem = [[UITabBarItem alloc] initWithTitle:title
+                                                               image:[UIImage imageWithNamed:normalImageName]
+                                                       selectedImage:[UIImage imageWithNamed:selectedImageName]];
     
-    childController.tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:normalImage selectedImage:selectedImage];
-    
-    NSDictionary *normalAttr = @{NSForegroundColorAttributeName:FSCoffeeColor,NSFontAttributeName:PFNFontWithSize(11)};
-    NSDictionary *highlightAttr = @{NSForegroundColorAttributeName:FSGrayColor,NSFontAttributeName:PFNFontWithSize(11)};
+    NSDictionary *normalAttr = @{NSForegroundColorAttributeName:FSBlackColor,NSFontAttributeName:PFNFontWithSize(11)};
+    NSDictionary *highlightAttr = @{NSForegroundColorAttributeName:FSCoffeeColor,NSFontAttributeName:PFNFontWithSize(11)};
     
     [childController.tabBarItem setTitleTextAttributes:normalAttr forState:UIControlStateNormal];
     [childController.tabBarItem setTitleTextAttributes:highlightAttr forState:UIControlStateSelected];
