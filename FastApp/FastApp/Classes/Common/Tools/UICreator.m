@@ -161,7 +161,13 @@
     
     switch (type) {
         case BtnImgDirectionDefault:
-            button.titleEdgeInsets = UIEdgeInsetsMake(0, span, 0, 0);
+        {
+            if (UIControlContentHorizontalAlignmentRight == hAlign) {
+                button.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, span);
+            }else{
+                button.titleEdgeInsets = UIEdgeInsetsMake(0, span, 0, 0);
+            }
+        }
             break;
         case BtnImgDirectionRight:
             button.imageEdgeInsets = UIEdgeInsetsMake(0, (totalWidth - imageSize.width) , 0, -titleSize.width);
