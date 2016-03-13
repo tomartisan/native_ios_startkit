@@ -29,6 +29,19 @@
                                                  name:ServerRequestFailure object:nil];
 }
 
+- (void)loadingWithMessage:(NSString *)message
+{
+    if ([StringTools isEmpty:message]) {
+        message = @"玩儿命加载中...";
+    }
+    [MBProgressHUD loaddingWithMessage:message];
+}
+
+- (void)stopLoadding
+{
+    [MBProgressHUD stopLoadding];
+}
+
 - (void)showRefreshActionView:(NSNotification *)notification
 {
     switch ([notification.object intValue]) {

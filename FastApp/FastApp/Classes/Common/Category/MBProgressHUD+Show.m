@@ -38,17 +38,18 @@ typedef NS_ENUM(NSInteger,MBProgressTipType)
 }
 + (void)loaddingWithMessage:(NSString *)message
 {
-    [self loaddingWithMessage:message mode:MBProgressHUDModeIndeterminate];
-}
-+ (void)loaddingWithMessage:(NSString *)message mode:(MBProgressHUDMode)mode
-{
     UIView *loadingView = [[[UIApplication sharedApplication].keyWindow subviews] lastObject];
     if (![loadingView isKindOfClass:[MBProgressHUD class]]) {
         UIWindow * window = [UIApplication sharedApplication].keyWindow;
-        MBProgressHUD * mbHud = [[MBProgressHUD alloc] initWithWindow:window];
-        mbHud.mode = mode;
-        mbHud.dimBackground = NO;
-        mbHud.opacity = 0.5;
+        MBProgressHUD *mbHud = [[MBProgressHUD alloc] initWithWindow:window];
+        mbHud.mode = MBProgressHUDModeIndeterminate;
+        mbHud.activityIndicatorColor = FSBlackColor;
+        
+        mbHud.color = GRAYCOLOR(200);
+        mbHud.detailsLabelText = message;
+        mbHud.detailsLabelColor = FSBlackColor;
+        mbHud.removeFromSuperViewOnHide = YES;
+        
         [window addSubview:mbHud];
         [mbHud show:YES];
     }
@@ -176,16 +177,20 @@ typedef NS_ENUM(NSInteger,MBProgressTipType)
                 break;
         }
         hud.color = GRAYCOLOR(200);
-        hud.minShowTime = 1.5f;
         hud.detailsLabelText = text;
         hud.detailsLabelColor = FSBlackColor;
         hud.removeFromSuperViewOnHide = YES;
-        [UIView animateWithDuration:.5f animations:^{
-            hud.transform = CGAffineTransformMakeScale(0.8, 0.8);
-        } completion:^(BOOL finished) {
-            
-            [hud hide:YES];
-        }];
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
+            sleep(1.0);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [UIView animateWithDuration:0.3 animations:^{
+                    hud.transform = CGAffineTransformMakeScale(0.8, 0.8);
+                } completion:^(BOOL finished) {
+                    hud.minShowTime = 1.7;
+                    [hud hide:YES];
+                }];
+            });
+        });
     }
 }
 

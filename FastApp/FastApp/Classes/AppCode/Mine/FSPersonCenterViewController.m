@@ -20,6 +20,7 @@
 
 - (void)loadDataTest
 {
+    [self loadingWithMessage:nil];
     FSServerCommunicator *serverReq = [[FSServerCommunicator alloc] init];
     __weak typeof(self) weakSelf = self;
     [serverReq doGetWithUri:@"/iOS/1449725518.html"
@@ -42,8 +43,8 @@
                                               htmlString:stringData
                                             scroolEnable:YES
                                                 delegate:nil];
-    
     [PositionTools layView:webView atCenterOfView:self.view maxSize:CGSizeZero margins:0];
+    [self stopLoadding];
 }
 
 

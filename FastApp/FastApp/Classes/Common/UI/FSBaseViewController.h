@@ -13,4 +13,7 @@
 //刷新页面的方法
 @property (nonatomic, copy) NSString *refreshPageStringMethod;
 
+- (void)loadingWithMessage:(NSString *)message;
+- (void)stopLoadding;
+
 @end

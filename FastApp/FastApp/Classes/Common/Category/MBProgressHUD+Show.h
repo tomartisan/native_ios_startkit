@@ -14,11 +14,10 @@
 + (void)showError:(NSString *)error;
 + (void)showSuccess:(NSString *)success;
 
-//加载提示。默认菊花方式
+//菊花加载
 + (void)startLoadding;
 + (void)stopLoadding;
 + (void)loaddingWithMessage:(NSString *)message;
-+ (void)loaddingWithMessage:(NSString *)message mode:(MBProgressHUDMode)mode;
 
 //进度条显示。默认圆圈
 + (void)showProgress:(float)fractionCompleted;
