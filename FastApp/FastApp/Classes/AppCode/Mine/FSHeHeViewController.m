@@ -25,6 +25,13 @@
     UIView *_bot3;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [MBProgressHUD showSuccess:@"你好啊"];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self prepareSubViews];

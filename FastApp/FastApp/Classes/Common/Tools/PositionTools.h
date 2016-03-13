@@ -6,7 +6,7 @@
 //  Copyright © 2016年 www.shuoit.net. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "Masonry.h"
 
 //位置类型
 typedef NS_ENUM(NSInteger,UIPositionType)

@@ -9,23 +9,11 @@
 #import "FSPersonCenterViewController.h"
 #import "FSServerCommunicator.h"
 
-@interface FSPersonCenterViewController () <UIWebViewDelegate>
-
-@end
-
 @implementation FSPersonCenterViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    UIWebView *webView = [UICreator createWebViewWithUrl:API_SERVER_URL
-                                                 baseURL:nil
-                                              htmlString:nil
-                                            scroolEnable:YES
-                                                delegate:self];
-    
-    [PositionTools layView:webView atCenterOfView:self.view maxSize:CGSizeZero margins:0];
     
     [self loadDataTest];
 }
@@ -33,29 +21,30 @@
 - (void)loadDataTest
 {
     FSServerCommunicator *serverReq = [[FSServerCommunicator alloc] init];
+    __weak typeof(self) weakSelf = self;
     [serverReq doGetWithUri:@"/iOS/1449725518.html"
                       param:nil
                     respObj:nil
                     useSign:NO
-                 completion:^(BOOL success, id respData) {
+                   progress:^(NSProgress *progress) {
+                       NSLog(@"已完成：%f",progress.fractionCompleted);
+                }completion:^(BOOL success, id respData) {
                      if (success) {
-                         NSLog(@"服务器返回：%@",respData);
+                         [weakSelf prepareViewWithData:respData];
                      }
-                 }];
+    }];
 }
 
-- (void)webViewDidStartLoad:(UIWebView *)webView
+- (void)prepareViewWithData:(NSString *)stringData
 {
-    [MBProgressHUD loadding:YES];
+    UIWebView *webView = [UICreator createWebViewWithUrl:nil
+                                                 baseURL:[NSURL URLWithString:API_SERVER_URL]
+                                              htmlString:stringData
+                                            scroolEnable:YES
+                                                delegate:nil];
+    
+    [PositionTools layView:webView atCenterOfView:self.view maxSize:CGSizeZero margins:0];
 }
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
-    [MBProgressHUD loadding:NO];
-}
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error
-{
-    [MBProgressHUD loadding:NO];
-    [MBProgressHUD showError:@"加载错误"];
-}
+
 
 @end

@@ -6,46 +6,78 @@
 //  Copyright © 2016年 www.shuoit.net. All rights reserved.
 //
 
+typedef NS_ENUM(NSInteger,MBProgressTipType)
+{
+    MBProgressTipSuccess,
+    MBProgressTipError
+};
+
 #import "MBProgressHUD+Show.h"
 
 @implementation MBProgressHUD (Show)
 
-#pragma mark 显示失败/成功信息。会自动隐藏
+//错误提示
 + (void)showError:(NSString *)error
 {
-    [self showError:error toView:nil];
+    [self show:error type:MBProgressTipError];
 }
-
-+ (void)showError:(NSString *)error toView:(UIView *)view{
-    [self show:error  view:view];
-}
-
+//正确提示
 + (void)showSuccess:(NSString *)success
 {
-    [self showSuccess:success toView:nil];
+    [self show:success type:MBProgressTipSuccess];
 }
 
-+ (void)showSuccess:(NSString *)success toView:(UIView *)view
+//加载提示。默认菊花方式
++ (void)startLoadding
 {
-    [self show:success  view:view];
+    [self loaddingWithMessage:nil];
 }
-
-#pragma mark 显示信息
-+ (MBProgressHUD *)showMessage:(NSString *)message
++ (void)stopLoadding
 {
-    return [self showMessag:message toView:nil];
+    [self hideHUDForView:nil];
 }
-
-+ (MBProgressHUD *)showMessag:(NSString *)message toView:(UIView *)view
++ (void)loaddingWithMessage:(NSString *)message
 {
-    return [self show:message view:view];
+    [self loaddingWithMessage:message mode:MBProgressHUDModeIndeterminate];
+}
++ (void)loaddingWithMessage:(NSString *)message mode:(MBProgressHUDMode)mode
+{
+    UIView *loadingView = [[[UIApplication sharedApplication].keyWindow subviews] lastObject];
+    if (![loadingView isKindOfClass:[MBProgressHUD class]]) {
+        UIWindow * window = [UIApplication sharedApplication].keyWindow;
+        MBProgressHUD * mbHud = [[MBProgressHUD alloc] initWithWindow:window];
+        mbHud.mode = mode;
+        mbHud.dimBackground = NO;
+        mbHud.opacity = 0.5;
+        [window addSubview:mbHud];
+        [mbHud show:YES];
+    }
 }
 
+//进度条显示。默认圆圈
++ (void)showProgress:(float)fractionCompleted
+{
+
+}
+
++ (void)showProgress:(float)fractionCompleted message:(NSString *)message
+{
+
+}
+
++ (void)showProgress:(float)fractionCompleted message:(NSString *)message mode:(MBProgressHUDMode)mode
+{
+
+}
+
+// 提示后响应某个动作
 + (void)showMessage:(NSString *)message completion:(void (^)(void))completion
 {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
     hud.labelText = message;
-    hud.mode = MBProgressHUDModeCustomView;
+    hud.mode = MBProgressHUDModeText;
+    hud.color = GRAYCOLOR(200);
+    hud.labelColor = FSBlackColor;
     [UIView animateWithDuration:0.8 animations:^{
         hud.alpha = 0;
     } completion:^(BOOL finished) {
@@ -54,37 +86,6 @@
             completion();
         }
     }];
-}
-
-+ (void)hideHUDForView:(UIView *)view
-{
-    if (!view) view = [[[UIApplication sharedApplication].keyWindow subviews] lastObject];
-    if (![self hideHUDForView:view animated:YES] && [view isKindOfClass:[MBProgressHUD class]]) {
-        [NSThread sleepForTimeInterval:0.4];
-        [view removeFromSuperview];
-    }
-}
-
-+ (void)hideHUD
-{
-    [self hideHUDForView:nil];
-}
-
-+(void)loadding:(BOOL)isLoadding
-{
-    if (isLoadding) {
-        UIView *loadingView = [[[UIApplication sharedApplication].keyWindow subviews] lastObject];
-        if (![loadingView isKindOfClass:[MBProgressHUD class]]) {
-            UIWindow * window = [UIApplication sharedApplication].keyWindow;
-            MBProgressHUD * mbHud = [[MBProgressHUD alloc] initWithWindow:window];
-            [window addSubview:mbHud];
-            mbHud.dimBackground = NO;
-            mbHud.opacity = 0.5;
-            [mbHud show:YES];
-        }
-    }else{
-        [self hideHUD];
-    }
 }
 
 + (void)handleErrorWithCode:(id)code additional:(id)additional
@@ -138,9 +139,19 @@
     }
 }
 
+
++ (void)hideHUDForView:(UIView *)view
+{
+    if (!view) view = [[[UIApplication sharedApplication].keyWindow subviews] lastObject];
+    if (![self hideHUDForView:view animated:YES] && [view isKindOfClass:[MBProgressHUD class]]) {
+        [NSThread sleepForTimeInterval:0.4];
+        [view removeFromSuperview];
+    }
+}
+
 + (void)handleNetWorkConnectError
 {
-    [MBProgressHUD loadding:NO];
+    [MBProgressHUD stopLoadding];
     if ([GlobalCache sharedInstance].intenetReachable) {
         [[NSNotificationCenter defaultCenter] postNotificationName:ServerRequestFailure
                                                             object:@(RequestFailedError)];
@@ -151,21 +162,31 @@
 }
 
 #pragma mark 私有方法：显示信息，然后自动隐藏
-+ (MBProgressHUD *)show:(NSString *)text  view:(UIView *)view
++ (void)show:(NSString *)text  type:(MBProgressTipType)type
 {
     if (![StringTools isEmpty:text]) {
-        if (view == nil) view = [UIApplication sharedApplication].keyWindow;
-        // 快速显示一个提示信息
-        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-        hud.labelText = text;
-        hud.mode = MBProgressHUDModeText;
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:NO];
+        hud.mode = MBProgressHUDModeCustomView;
+        switch (type) {
+            case MBProgressTipSuccess:
+                hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageWithNamed:@"Checkmark-success"]];
+                break;
+            case MBProgressTipError:
+                hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageWithNamed:@"Checkmark-error"]];
+                break;
+        }
+        hud.color = GRAYCOLOR(200);
+        hud.minShowTime = 1.5f;
+        hud.detailsLabelText = text;
+        hud.detailsLabelColor = FSBlackColor;
         hud.removeFromSuperViewOnHide = YES;
-        hud.opacity = 0.6;
-        hud.labelFont = [UIFont systemFontOfSize:14];
-        [hud hide:YES afterDelay:1.4];
-        return hud;
+        [UIView animateWithDuration:.5f animations:^{
+            hud.transform = CGAffineTransformMakeScale(0.8, 0.8);
+        } completion:^(BOOL finished) {
+            
+            [hud hide:YES];
+        }];
     }
-    return nil;
 }
 
 @end

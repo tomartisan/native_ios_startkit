@@ -10,23 +10,23 @@
 
 @interface MBProgressHUD (Show)
 
+//操作提示
 + (void)showError:(NSString *)error;
-+ (void)showError:(NSString *)error toView:(UIView *)view;
-
 + (void)showSuccess:(NSString *)success;
-+ (void)showSuccess:(NSString *)success toView:(UIView *)view;
 
-+ (MBProgressHUD *)showMessage:(NSString *)message;
-+ (MBProgressHUD *)showMessag:(NSString *)message toView:(UIView *)view;
+//加载提示。默认菊花方式
++ (void)startLoadding;
++ (void)stopLoadding;
++ (void)loaddingWithMessage:(NSString *)message;
++ (void)loaddingWithMessage:(NSString *)message mode:(MBProgressHUDMode)mode;
 
+//进度条显示。默认圆圈
++ (void)showProgress:(float)fractionCompleted;
++ (void)showProgress:(float)fractionCompleted message:(NSString *)message;
++ (void)showProgress:(float)fractionCompleted message:(NSString *)message mode:(MBProgressHUDMode)mode;
+
+// 提示后响应某个动作
 + (void)showMessage:(NSString *)message completion:(void (^)(void))completion;
-
-
-+ (void)hideHUDForView:(UIView *)view;
-+ (void)hideHUD;
-
-// 加载菊花图
-+ (void)loadding:(BOOL)isLoadding;
 
 /**
  *  统一错误处理

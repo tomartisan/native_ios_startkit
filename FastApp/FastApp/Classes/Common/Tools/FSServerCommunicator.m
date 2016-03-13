@@ -17,15 +17,15 @@
 
 - (void)doGetWithUrl:(NSString *)url
              respObj:(Class)obj
-          completion:(void (^)(BOOL success,id respData))completion;
+            progress:(void (^)(NSProgress *progress))progress
+          completion:(void (^)(BOOL success,id respData))completion
 {
     if (url) {
         [self.manager GET:url parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-            
+            progress(downloadProgress);
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             [self handleResponse:responseObject Resp:obj completion:completion];
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            [MBProgressHUD loadding:NO];
             [MBProgressHUD handleErrorWithCode:@(error.code) additional:task.response];
         }];
     }
@@ -34,49 +34,17 @@
 - (void)doPostWithUrl:(NSString *)url
                 param:(NSDictionary *)param
               respObj:(Class)obj
-           completion:(void (^)(BOOL success,id respData))completion;
+             progress:(void (^)(NSProgress *progress))progress
+           completion:(void (^)(BOOL success,id respData))completion
 {
     if (url) {
         [self.manager POST:url parameters:param progress:^(NSProgress * _Nonnull uploadProgress) {
-            
+            progress(uploadProgress);
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             [self handleResponse:responseObject Resp:obj completion:completion];
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            [MBProgressHUD loadding:NO];
             [MBProgressHUD handleErrorWithCode:@(error.code) additional:task.response];
         }];
-    }
-}
-
-- (void)doGetWithUri:(NSString *)uri
-               param:(id)param
-             respObj:(Class)obj
-             useSign:(BOOL)sign
-          completion:(void (^)(BOOL success,id respData))completion;
-{
-    NSString *url = [self urlWithUri:uri params:param];
-    if (url) {
-        if (sign) {
-            //加密规则...
-            
-        }
-        [self doGetWithUrl:url respObj:obj completion:completion];
-    }
-}
-
-- (void)doPostWithUri:(NSString *)uri
-                param:(id)param
-              respObj:(Class)obj
-              useSign:(BOOL)sign
-           completion:(void (^)(BOOL success,id respData))completion;
-{
-    NSString *url = [self urlWithUri:uri params:param];
-    if (url) {
-        if (sign) {
-            //加密规则...
-            
-        }
-        [self doPostWithUrl:url param:param respObj:obj completion:completion];
     }
 }
 
@@ -84,6 +52,7 @@
                      file:(NSData *)fileData
                      name:(NSString *)fileName
                   respObj:(Class)obj
+                 progress:(void (^)(NSProgress *progress))progress
                completion:(void (^)(BOOL success,id respData))completion
 {
     NSString *finalUrl = [self urlWithUri:url params:nil];
@@ -91,13 +60,46 @@
         [self.manager POST:finalUrl parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
             [formData appendPartWithFileData:fileData name:fileName fileName:fileName mimeType:@"image/jpg"];
         } progress:^(NSProgress * _Nonnull uploadProgress) {
-            
+            progress(uploadProgress);
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             [self handleResponse:responseObject Resp:obj completion:completion];
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            [MBProgressHUD loadding:NO];
             [MBProgressHUD handleErrorWithCode:@(error.code) additional:task.response];
-        }];
+        }]; 
+    }
+}
+
+- (void)doGetWithUri:(NSString *)uri
+               param:(id)param
+             respObj:(Class)obj
+             useSign:(BOOL)sign
+            progress:(void (^)(NSProgress *progress))progress
+          completion:(void (^)(BOOL success,id respData))completion
+{
+    NSString *url = [self urlWithUri:uri params:param];
+    if (url) {
+        if (sign) {
+            //加密规则...
+            
+        }
+        [self doGetWithUrl:url respObj:obj progress:progress completion:completion];
+    }
+}
+
+- (void)doPostWithUri:(NSString *)uri
+                param:(id)param
+              respObj:(Class)obj
+              useSign:(BOOL)sign
+             progress:(void (^)(NSProgress *progress))progress
+           completion:(void (^)(BOOL success,id respData))completion
+{
+    NSString *url = [self urlWithUri:uri params:param];
+    if (url) {
+        if (sign) {
+            //加密规则...
+            
+        }
+        [self doPostWithUrl:url param:param respObj:obj progress:progress completion:completion];
     }
 }
 
@@ -106,7 +108,6 @@
                   Resp:(Class)ObjType
             completion:(void (^)(BOOL success,id respData))completion;
 {
-    [MBProgressHUD loadding:NO];
     @try{
         id resultData;
         if ([responseObject isKindOfClass:[NSString class]]) {

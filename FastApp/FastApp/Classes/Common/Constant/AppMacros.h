@@ -7,6 +7,7 @@
 //  Copyright © 2016年 www.shuoit.net. All rights reserved.
 //
 
+
 // 开发模式选项，可自定义功能。上线时一定要关掉
 #define isDevelopModel 1
 
@@ -18,10 +19,10 @@
 #define kDeviceHeight [UIScreen mainScreen].bounds.size.height
 #define FullViewWidth self.frame.size.width
 #define FullViewHeight self.frame.size.height
-#define SINGLE_LINE_ADJUST_OFFSET  ((1 / [UIScreen mainScreen].scale) / 2)
-
-//满屏CGRect
+#define FullVCRect CGRectMake(0,0, KDeviceWidth, KDeviceHeight-64)
+#define FullScreenSize [UIScreen mainScreen].bounds.size
 #define FullScreenRect CGRectMake(0, 0, KDeviceWidth, KDeviceHeight)
+#define SINGLE_LINE_ADJUST_OFFSET  ((1 / [UIScreen mainScreen].scale) / 2)
 
 // -------------------------------------------------    颜色定义开始  -------------------------------//
 #define COLOR(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]

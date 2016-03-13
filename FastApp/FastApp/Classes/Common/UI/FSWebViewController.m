@@ -48,15 +48,15 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
-    [MBProgressHUD loadding:YES];
+    [MBProgressHUD startLoadding];
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    [MBProgressHUD loadding:NO];
+    [MBProgressHUD stopLoadding];
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error
 {
-    [MBProgressHUD loadding:NO];
+    [MBProgressHUD stopLoadding];
     [MBProgressHUD showError:@"加载错误"];
 }
 

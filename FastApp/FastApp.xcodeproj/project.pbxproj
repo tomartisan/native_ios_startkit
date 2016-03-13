@@ -34,6 +34,7 @@
 		869655991C8DAADA0026E397 /* FSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869655981C8DAADA0026E397 /* FSHomeViewController.m */; };
 		869655A11C8E8C540026E397 /* FSPersonCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869655A01C8E8C540026E397 /* FSPersonCenterViewController.m */; };
 		869655A41C8EA9FE0026E397 /* FSHeHeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869655A31C8EA9FE0026E397 /* FSHeHeViewController.m */; };
+		86B87B281C945FD7008AE45D /* UIView+FSAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B87B271C945FD7008AE45D /* UIView+FSAutoLayout.m */; };
 		86CE81121C914DB400FF9CDB /* UIImage+FSUIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CE81111C914DB400FF9CDB /* UIImage+FSUIImage.m */; };
 		86CE81151C915AB000FF9CDB /* CommonSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CE81141C915AB000FF9CDB /* CommonSearchBar.m */; };
 		ABE7405D03CB4C6C81049CA4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D8C9C1603382FB6F260223 /* libPods.a */; };
@@ -99,6 +100,8 @@
 		869655A01C8E8C540026E397 /* FSPersonCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSPersonCenterViewController.m; sourceTree = "<group>"; };
 		869655A21C8EA9FE0026E397 /* FSHeHeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSHeHeViewController.h; sourceTree = "<group>"; };
 		869655A31C8EA9FE0026E397 /* FSHeHeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSHeHeViewController.m; sourceTree = "<group>"; };
+		86B87B261C945FD7008AE45D /* UIView+FSAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FSAutoLayout.h"; sourceTree = "<group>"; };
+		86B87B271C945FD7008AE45D /* UIView+FSAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FSAutoLayout.m"; sourceTree = "<group>"; };
 		86CE81101C914DB400FF9CDB /* UIImage+FSUIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FSUIImage.h"; sourceTree = "<group>"; };
 		86CE81111C914DB400FF9CDB /* UIImage+FSUIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FSUIImage.m"; sourceTree = "<group>"; };
 		86CE81131C915AB000FF9CDB /* CommonSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonSearchBar.h; sourceTree = "<group>"; };
@@ -221,6 +224,8 @@
 				86814E3A1C8D94D50097BC8C /* MBProgressHUD+Show.m */,
 				86CE81101C914DB400FF9CDB /* UIImage+FSUIImage.h */,
 				86CE81111C914DB400FF9CDB /* UIImage+FSUIImage.m */,
+				86B87B261C945FD7008AE45D /* UIView+FSAutoLayout.h */,
+				86B87B271C945FD7008AE45D /* UIView+FSAutoLayout.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -463,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86B87B281C945FD7008AE45D /* UIView+FSAutoLayout.m in Sources */,
 				86814E211C8D81D50097BC8C /* PositionTools.m in Sources */,
 				86814E271C8D91A10097BC8C /* GlobalCache.m in Sources */,
 				86CE81121C914DB400FF9CDB /* UIImage+FSUIImage.m in Sources */,
