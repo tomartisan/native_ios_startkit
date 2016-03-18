@@ -58,17 +58,37 @@ typedef NS_ENUM(NSInteger,MBProgressTipType)
 //进度条显示。默认圆圈
 + (void)showProgress:(float)fractionCompleted
 {
-
+    [self showProgress:fractionCompleted message:nil];
 }
 
 + (void)showProgress:(float)fractionCompleted message:(NSString *)message
 {
-
+    [self showProgress:fractionCompleted message:message mode:MBProgressHUDModeDeterminate];
 }
 
 + (void)showProgress:(float)fractionCompleted message:(NSString *)message mode:(MBProgressHUDMode)mode
 {
+    UIView *loadingView = [[[UIApplication sharedApplication].keyWindow subviews] lastObject];
+    if (![loadingView isKindOfClass:[MBProgressHUD class]]) {
+        UIWindow * window = [UIApplication sharedApplication].keyWindow;
+        MBProgressHUD *mbHud = [[MBProgressHUD alloc] initWithWindow:window];
+        mbHud.mode = mode;
+        mbHud.progress = fractionCompleted;
+        
+        mbHud.activityIndicatorColor = FSBlackColor;
+        mbHud.detailsLabelText = message;
+        mbHud.detailsLabelColor = FSBlackColor;
+        mbHud.removeFromSuperViewOnHide = YES;
+        
+        [window addSubview:mbHud];
+        
+        if (fractionCompleted == 1) {
+            [mbHud hide:YES];
+        }else{
+            [mbHud show:YES];
+        }
 
+    }
 }
 
 // 提示后响应某个动作

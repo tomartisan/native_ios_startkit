@@ -17,12 +17,11 @@
 
 - (void)doGetWithUrl:(NSString *)url
              respObj:(Class)obj
-            progress:(void (^)(NSProgress *progress))progress
           completion:(void (^)(BOOL success,id respData))completion
 {
     if (url) {
         [self.manager GET:url parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-            progress(downloadProgress);
+
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             [self handleResponse:responseObject Resp:obj completion:completion];
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -73,7 +72,6 @@
                param:(id)param
              respObj:(Class)obj
              useSign:(BOOL)sign
-            progress:(void (^)(NSProgress *progress))progress
           completion:(void (^)(BOOL success,id respData))completion
 {
     NSString *url = [self urlWithUri:uri params:param];
@@ -82,7 +80,7 @@
             //加密规则...
             
         }
-        [self doGetWithUrl:url respObj:obj progress:progress completion:completion];
+        [self doGetWithUrl:url respObj:obj completion:completion];
     }
 }
 

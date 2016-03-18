@@ -8,8 +8,6 @@
 
 #import "AppDelegate.h"
 #import "FSHomeViewController.h"
-#import "FSPersonCenterViewController.h"
-#import "FSNavigationController.h"
 
 @implementation AppDelegate
 
@@ -22,10 +20,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     
-//    FSHomeViewController *rootVC = [[FSHomeViewController alloc] init];
-//    self.window.rootViewController = rootVC;
-
-    FSNavigationController *rootVC = [[FSNavigationController alloc] initWithRootViewController:[FSPersonCenterViewController new]];
+    FSHomeViewController *rootVC = [[FSHomeViewController alloc] init];
     self.window.rootViewController = rootVC;
     
     [self.window makeKeyAndVisible];

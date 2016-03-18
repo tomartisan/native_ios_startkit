@@ -13,7 +13,6 @@
 //通用请求(用于请求第三方服务器)
 - (void)doGetWithUrl:(NSString *)url
              respObj:(Class)obj
-            progress:(void (^)(NSProgress *progress))progress
           completion:(void (^)(BOOL success,id respData))completion;
 
 - (void)doPostWithUrl:(NSString *)url
@@ -36,7 +35,6 @@
                param:(id)param
              respObj:(Class)obj
              useSign:(BOOL)sign
-            progress:(void (^)(NSProgress *progress))progress
           completion:(void (^)(BOOL success,id respData))completion;
 
 - (void)doPostWithUri:(NSString *)uri
