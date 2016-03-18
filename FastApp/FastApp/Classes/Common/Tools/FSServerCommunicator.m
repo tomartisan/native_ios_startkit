@@ -26,7 +26,7 @@
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             [self handleResponse:responseObject Resp:obj completion:completion];
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            [MBProgressHUD handleErrorWithCode:@(error.code) additional:task.response];
+            [MBProgressHUD handleErrorWithCode:error.code additional:task.response];
         }];
     }
 }
@@ -43,7 +43,7 @@
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             [self handleResponse:responseObject Resp:obj completion:completion];
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            [MBProgressHUD handleErrorWithCode:@(error.code) additional:task.response];
+            [MBProgressHUD handleErrorWithCode:error.code additional:task.response];
         }];
     }
 }
@@ -64,7 +64,7 @@
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             [self handleResponse:responseObject Resp:obj completion:completion];
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            [MBProgressHUD handleErrorWithCode:@(error.code) additional:task.response];
+            [MBProgressHUD handleErrorWithCode:error.code additional:task.response];
         }]; 
     }
 }
@@ -128,7 +128,7 @@
             completion((nil == data) ? NO : YES,data);
             return;
         }
-        [MBProgressHUD handleErrorWithCode:@(HttpStatusReturnNullCode) additional:nil];
+        [MBProgressHUD handleErrorWithCode:HttpStatusReturnNullCode additional:nil];
     }@catch(NSException *excep){
         [MBProgressHUD showError:@"数据解析异常"];
         log(excep.reason)

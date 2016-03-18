@@ -23,6 +23,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = FSCommonBgColor;
     self.edgesForExtendedLayout = UIRectEdgeNone;
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(showRefreshActionView:)
@@ -95,7 +96,7 @@
                                                         action:@selector(refreshPage:)];
         reConnBtn.tag = NoConnectionError;
         reConnBtn.center = _reConnectView.center;
-        [PositionTools layView:reConnBtn atCenterOfView:_reConnectView maxSize:CGSizeMake(kDeviceWidth, 60) margins:0];
+        [PositionTools layView:reConnBtn atCenterOfView:_reConnectView maxSize:CGSizeMake(KDeviceHeight, 60) margins:0];
     }
     return _reConnectView;
 }

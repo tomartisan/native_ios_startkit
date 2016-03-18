@@ -7,6 +7,7 @@
 //
 
 #import "FSPersonCenterViewController.h"
+#import "FSWebViewController.h"
 #import "FSServerCommunicator.h"
 
 @implementation FSPersonCenterViewController
@@ -14,38 +15,38 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"说IT"
+                                                                              style:UIBarButtonItemStylePlain
+                                                                             target:self
+                                                                             action:@selector(webViewControllerTest)];
     
-    [self loadDataTest];
 }
 
+//服务器请求演示，带进度的
 - (void)loadDataTest
 {
     [self loadingWithMessage:nil];
     FSServerCommunicator *serverReq = [[FSServerCommunicator alloc] init];
     __weak typeof(self) weakSelf = self;
-    [serverReq doGetWithUri:@"/iOS/1449725518.html"
-                      param:nil
-                    respObj:nil
-                    useSign:NO
-                   progress:^(NSProgress *progress) {
+    [serverReq doPostWithUrl:@"http://www.qq.com"
+                       param:nil
+                     respObj:nil
+                    progress:^(NSProgress *progress) {
                        NSLog(@"已完成：%f",progress.fractionCompleted);
-                }completion:^(BOOL success, id respData) {
+                 }completion:^(BOOL success, id respData) {
                      if (success) {
-                         [weakSelf prepareViewWithData:respData];
+                         NSLog(@"服务成功返回：%@",respData);
                      }
     }];
 }
 
-- (void)prepareViewWithData:(NSString *)stringData
-{
-    UIWebView *webView = [UICreator createWebViewWithUrl:nil
-                                                 baseURL:[NSURL URLWithString:API_SERVER_URL]
-                                              htmlString:stringData
-                                            scroolEnable:YES
-                                                delegate:nil];
-    [PositionTools layView:webView atCenterOfView:self.view maxSize:CGSizeZero margins:0];
-    [self stopLoadding];
-}
 
+
+- (void)webViewControllerTest
+{
+    FSWebViewController *webVC = [[FSWebViewController alloc] initWithTitle:@"关注技术和人文的原创IT博客" webUrl:API_SERVER_URL];
+    
+    [self.navigationController pushViewController:webVC animated:YES];
+}
 
 @end

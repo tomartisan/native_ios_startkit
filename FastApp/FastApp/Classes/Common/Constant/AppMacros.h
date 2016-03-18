@@ -15,14 +15,15 @@
 //屏幕宽高定义
 #define kVCWIDTH self.view.frame.size.width
 #define kVCHEIGHT self.view.frame.size.height
-#define kDeviceWidth [UIScreen mainScreen].bounds.size.width
-#define kDeviceHeight [UIScreen mainScreen].bounds.size.height
+#define KDeviceWidth [UIScreen mainScreen].bounds.size.width
+#define KDeviceHeight [UIScreen mainScreen].bounds.size.height
 #define FullViewWidth self.frame.size.width
 #define FullViewHeight self.frame.size.height
 #define FullVCRect CGRectMake(0,0, KDeviceWidth, KDeviceHeight-64)
-#define FullScreenSize [UIScreen mainScreen].bounds.size
-#define FullScreenRect CGRectMake(0, 0, KDeviceWidth, KDeviceHeight)
-#define SINGLE_LINE_ADJUST_OFFSET  ((1 / [UIScreen mainScreen].scale) / 2)
+#define SINGLE_LINE_ADJUST_OFFSET   ((1 / [UIScreen mainScreen].scale) / 2)
+
+//满屏CGRect
+#define FullScreenRect [UIScreen mainScreen].bounds)
 
 // -------------------------------------------------    颜色定义开始  -------------------------------//
 #define COLOR(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]

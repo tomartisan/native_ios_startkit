@@ -89,9 +89,9 @@ typedef NS_ENUM(NSInteger,MBProgressTipType)
     }];
 }
 
-+ (void)handleErrorWithCode:(id)code additional:(id)additional
++ (void)handleErrorWithCode:(NSInteger)code additional:(id)additional
 {
-    switch ([code integerValue]) {
+    switch (code) {
         case HttpStatusReturnNullCode:
             [self showError:@"数据返回为空"];
             break;
@@ -131,7 +131,8 @@ typedef NS_ENUM(NSInteger,MBProgressTipType)
                 [self showError:additional];
             }else if ([additional isKindOfClass:[NSHTTPURLResponse class]]) {
                 NSHTTPURLResponse *resp = (NSHTTPURLResponse *)additional;
-                [self showError:[NSHTTPURLResponse localizedStringForStatusCode:resp.statusCode]];
+                NSString *description = [NSHTTPURLResponse localizedStringForStatusCode:resp.statusCode];
+                [self handleErrorWithCode:resp.statusCode additional:description];
             }else{
                 [self handleNetWorkConnectError];
             }

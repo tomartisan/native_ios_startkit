@@ -73,7 +73,7 @@
                             buttonType:UIButtonTypeCustom
                                bgColor:nil
                                 corner:0
-                                target:self
+                                target:target
                                 action:action];
 }
 

@@ -8,17 +8,24 @@
 
 #import "AppDelegate.h"
 #import "FSHomeViewController.h"
-
+#import "FSPersonCenterViewController.h"
+#import "FSNavigationController.h"
 
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{    
+    //添加网络监听
+    [CommonNetTools addNetworkStatusListener];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    FSHomeViewController *rootVC = [[FSHomeViewController alloc] init];
+//    FSHomeViewController *rootVC = [[FSHomeViewController alloc] init];
+//    self.window.rootViewController = rootVC;
+
+    FSNavigationController *rootVC = [[FSNavigationController alloc] initWithRootViewController:[FSPersonCenterViewController new]];
     self.window.rootViewController = rootVC;
     
     [self.window makeKeyAndVisible];

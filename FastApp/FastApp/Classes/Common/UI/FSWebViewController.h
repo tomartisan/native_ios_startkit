@@ -8,7 +8,7 @@
 
 #import "FSBaseSubViewController.h"
 
-@interface FSWebViewController : FSBaseSubViewController
+@interface FSWebViewController : FSBaseSubViewController <UIWebViewDelegate>
 
 @property (nonatomic, strong) UIWebView *webView;
 

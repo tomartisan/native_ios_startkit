@@ -12,10 +12,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.view.backgroundColor = [UIColor lightGrayColor];
-    self.tabBarController.tabBar.hidden = YES;
-    
+    self.navigationItem.hidesBackButton = YES;
+    //自定义返回按钮
     UIButton *backBtn = [UICreator createButtonWithNormalImage:@"prev"
                                               highlightedImage:@"prev"
                                                         target:self

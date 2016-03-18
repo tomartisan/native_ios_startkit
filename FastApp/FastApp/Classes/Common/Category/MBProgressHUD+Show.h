@@ -32,6 +32,6 @@
  *  @param code 错误码，字符串或数字均可
  *  @param additional 附加信息（可以是错误信息，也可以是NSHTTPURLResponse）
  */
-+ (void)handleErrorWithCode:(id)code additional:(id)additional;
++ (void)handleErrorWithCode:(NSInteger)code additional:(id)additional;
 
 @end

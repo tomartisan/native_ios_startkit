@@ -8,9 +8,6 @@
 
 #import "FSWebViewController.h"
 
-@interface FSWebViewController () <UIWebViewDelegate>
-
-@end
 
 @implementation FSWebViewController
 {
@@ -35,29 +32,30 @@
     [self.webView loadRequest:[CommonNetTools getRequestWithURLString:_webUrl method:@"GET" timeOut:SERVER_CONNECT_TIMEOUT]];
 }
 
-- (UIWebView *)webView
-{
-    if (!_webView) {
-        _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kDeviceHeight - 64)];
-        _webView.scrollView.bounces = NO;
-        _webView.scrollView.showsVerticalScrollIndicator = NO;
-        _webView.delegate = self;
-    }
-    return _webView;
-}
-
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
-    [MBProgressHUD startLoadding];
+    [self loadingWithMessage:nil];
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    [MBProgressHUD stopLoadding];
+    [self stopLoadding];
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error
 {
-    [MBProgressHUD stopLoadding];
-    [MBProgressHUD showError:@"加载错误"];
+    [self stopLoadding];
+    [MBProgressHUD showError:@"网页加载错误"];
+}
+
+- (UIWebView *)webView
+{
+    if (!_webView) {
+        _webView = [[UIWebView alloc] initWithFrame:FullVCRect];
+        _webView.scrollView.bounces = NO;
+        _webView.scrollView.showsVerticalScrollIndicator = NO;
+        _webView.scrollView.showsHorizontalScrollIndicator = NO;
+        _webView.delegate = self;
+    }
+    return _webView;
 }
 
 @end
