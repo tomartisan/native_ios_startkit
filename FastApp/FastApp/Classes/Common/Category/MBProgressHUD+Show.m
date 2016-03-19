@@ -68,19 +68,20 @@ typedef NS_ENUM(NSInteger,MBProgressTipType)
 
 + (void)showProgress:(float)fractionCompleted message:(NSString *)message mode:(MBProgressHUDMode)mode
 {
-    MBProgressHUD *mbHud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
-    mbHud.mode = mode;
-
-    mbHud.labelText = message;
-    mbHud.labelColor = FSBlackColor;
-
-    dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [MBProgressHUD HUDForView:[UIApplication sharedApplication].keyWindow].progress = fractionCompleted;
-        });
-        dispatch_async(dispatch_get_main_queue(), ^{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        MBProgressHUD *mbHud = [MBProgressHUD HUDForView:[UIApplication sharedApplication].keyWindow];
+        if (!mbHud) {
+            mbHud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
+            mbHud.mode = mode;
+            mbHud.color = GRAYCOLOR(200);
+            mbHud.labelColor = FSBlackColor;
+        }
+        if (fractionCompleted == 1.0f) {
             [mbHud hide:YES];
-        });
+        }else{
+            mbHud.progress = fractionCompleted;
+            mbHud.labelText = message;
+        }
     });
 }
 

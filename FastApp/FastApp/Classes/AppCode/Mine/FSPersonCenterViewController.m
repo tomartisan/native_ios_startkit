@@ -39,11 +39,15 @@
     [serverReq doGetWithUrl:@"http://goodidea-big.qiniudn.com/screenclean.swf"
                      respObj:nil
                     progress:^(NSProgress *progress) {
-//                        [MBProgressHUD showProgress:progress.fractionCompleted];
-                        NSLog(@"已完成：%f",progress.fractionCompleted);
+                        NSString *completed = [NSString stringWithFormat:@"已完成：%.2f%%",progress.fractionCompleted * 100];
+                        [MBProgressHUD showProgress:progress.fractionCompleted
+                                            message:completed
+                                               mode:MBProgressHUDModeDeterminateHorizontalBar];
                  }completion:^(BOOL success, id respData) {
                      if (success) {
-                         weakSelf.textView.text = [NSString stringWithFormat:@"服务器返回；%@",respData];
+                         [MBProgressHUD showMessage:@"响应完成" completion:^{
+                             weakSelf.textView.text = [NSString stringWithFormat:@"%@",respData];
+                         }];
                      }
     }];
 }
