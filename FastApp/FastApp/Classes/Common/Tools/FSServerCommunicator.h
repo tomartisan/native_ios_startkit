@@ -10,9 +10,10 @@
 
 @interface FSServerCommunicator : NSObject
 
-//通用请求(用于请求第三方服务器)
+//通用(GET|POST),GET可用于下载
 - (void)doGetWithUrl:(NSString *)url
              respObj:(Class)obj
+            progress:(void (^)(NSProgress *progress))progress
           completion:(void (^)(BOOL success,id respData))completion;
 
 - (void)doPostWithUrl:(NSString *)url
@@ -25,7 +26,7 @@
 - (void)uploadFileWithUrl:(NSString *)url
                      file:(NSData *)fileData
                      name:(NSString *)fileName
-                  respObj:(Class)obj
+                 mimeType:(NSString *)mimeType
                  progress:(void (^)(NSProgress *progress))progress
                completion:(void (^)(BOOL success,id respData))completion;
 
@@ -35,6 +36,7 @@
                param:(id)param
              respObj:(Class)obj
              useSign:(BOOL)sign
+            progress:(void (^)(NSProgress *progress))progress
           completion:(void (^)(BOOL success,id respData))completion;
 
 - (void)doPostWithUri:(NSString *)uri

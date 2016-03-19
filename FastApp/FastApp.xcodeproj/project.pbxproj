@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		86814B5E1C9BED9000965F0F /* testData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 86814B5D1C9BED9000965F0F /* testData.txt */; };
 		86814DF61C8D78B80097BC8C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814DF51C8D78B80097BC8C /* main.m */; };
 		86814DF91C8D78B80097BC8C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814DF81C8D78B80097BC8C /* AppDelegate.m */; };
 		86814E011C8D78B80097BC8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86814E001C8D78B80097BC8C /* Assets.xcassets */; };
@@ -43,7 +42,6 @@
 
 /* Begin PBXFileReference section */
 		58D8C9C1603382FB6F260223 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		86814B5D1C9BED9000965F0F /* testData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testData.txt; sourceTree = "<group>"; };
 		86814DF11C8D78B80097BC8C /* FastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86814DF51C8D78B80097BC8C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		86814DF71C8D78B80097BC8C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -196,7 +194,6 @@
 		86814E101C8D7C440097BC8C /* Mine */ = {
 			isa = PBXGroup;
 			children = (
-				86814B5D1C9BED9000965F0F /* testData.txt */,
 				8696559F1C8E8C540026E397 /* FSPersonCenterViewController.h */,
 				869655A01C8E8C540026E397 /* FSPersonCenterViewController.m */,
 				869655A21C8EA9FE0026E397 /* FSHeHeViewController.h */,
@@ -411,7 +408,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86814B5E1C9BED9000965F0F /* testData.txt in Resources */,
 				86814E011C8D78B80097BC8C /* Assets.xcassets in Resources */,
 				86814E1A1C8D7D400097BC8C /* Default-568h@2x.png in Resources */,
 			);

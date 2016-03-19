@@ -63,32 +63,25 @@ typedef NS_ENUM(NSInteger,MBProgressTipType)
 
 + (void)showProgress:(float)fractionCompleted message:(NSString *)message
 {
-    [self showProgress:fractionCompleted message:message mode:MBProgressHUDModeDeterminate];
+    [self showProgress:fractionCompleted message:message mode:MBProgressHUDModeAnnularDeterminate];
 }
 
 + (void)showProgress:(float)fractionCompleted message:(NSString *)message mode:(MBProgressHUDMode)mode
 {
-    UIView *loadingView = [[[UIApplication sharedApplication].keyWindow subviews] lastObject];
-    if (![loadingView isKindOfClass:[MBProgressHUD class]]) {
-        UIWindow * window = [UIApplication sharedApplication].keyWindow;
-        MBProgressHUD *mbHud = [[MBProgressHUD alloc] initWithWindow:window];
-        mbHud.mode = mode;
-        mbHud.progress = fractionCompleted;
-        
-        mbHud.activityIndicatorColor = FSBlackColor;
-        mbHud.detailsLabelText = message;
-        mbHud.detailsLabelColor = FSBlackColor;
-        mbHud.removeFromSuperViewOnHide = YES;
-        
-        [window addSubview:mbHud];
-        
-        if (fractionCompleted == 1) {
-            [mbHud hide:YES];
-        }else{
-            [mbHud show:YES];
-        }
+    MBProgressHUD *mbHud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
+    mbHud.mode = mode;
 
-    }
+    mbHud.labelText = message;
+    mbHud.labelColor = FSBlackColor;
+
+    dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD HUDForView:[UIApplication sharedApplication].keyWindow].progress = fractionCompleted;
+        });
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [mbHud hide:YES];
+        });
+    });
 }
 
 // 提示后响应某个动作

@@ -17,12 +17,12 @@
 
 - (void)doGetWithUrl:(NSString *)url
              respObj:(Class)obj
+            progress:(void (^)(NSProgress *progress))progress
           completion:(void (^)(BOOL success,id respData))completion
 {
     if (url) {
-        [self.manager GET:url parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-
-        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [self.manager GET:url parameters:nil progress:progress
+                  success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             [self handleResponse:responseObject Resp:obj completion:completion];
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             [MBProgressHUD handleErrorWithCode:error.code additional:task.response];
@@ -37,9 +37,8 @@
            completion:(void (^)(BOOL success,id respData))completion
 {
     if (url) {
-        [self.manager POST:url parameters:param progress:^(NSProgress * _Nonnull uploadProgress) {
-            progress(uploadProgress);
-        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [self.manager POST:url parameters:param progress:progress
+                   success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             [self handleResponse:responseObject Resp:obj completion:completion];
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             [MBProgressHUD handleErrorWithCode:error.code additional:task.response];
@@ -50,18 +49,15 @@
 - (void)uploadFileWithUrl:(NSString *)url
                      file:(NSData *)fileData
                      name:(NSString *)fileName
-                  respObj:(Class)obj
+                 mimeType:(NSString *)mimeType
                  progress:(void (^)(NSProgress *progress))progress
                completion:(void (^)(BOOL success,id respData))completion
 {
-    NSString *finalUrl = [self urlWithUri:url params:nil];
-    if (finalUrl) {
-        [self.manager POST:finalUrl parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-            [formData appendPartWithFileData:fileData name:fileName fileName:fileName mimeType:@"image/jpg"];
-        } progress:^(NSProgress * _Nonnull uploadProgress) {
-            progress(uploadProgress);
-        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            [self handleResponse:responseObject Resp:obj completion:completion];
+    if (url) {
+        [self.manager POST:url parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+            [formData appendPartWithFileData:fileData name:fileName fileName:fileName mimeType:mimeType];
+        } progress:progress success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            [self handleResponse:responseObject Resp:nil completion:completion];
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             [MBProgressHUD handleErrorWithCode:error.code additional:task.response];
         }]; 
@@ -72,6 +68,7 @@
                param:(id)param
              respObj:(Class)obj
              useSign:(BOOL)sign
+            progress:(void (^)(NSProgress *progress))progress
           completion:(void (^)(BOOL success,id respData))completion
 {
     NSString *url = [self urlWithUri:uri params:param];
@@ -80,7 +77,7 @@
             //加密规则...
             
         }
-        [self doGetWithUrl:url respObj:obj completion:completion];
+        [self doGetWithUrl:url respObj:obj progress:progress completion:completion];
     }
 }
 
@@ -107,22 +104,19 @@
             completion:(void (^)(BOOL success,id respData))completion;
 {
     @try{
-        id resultData;
-        if ([responseObject isKindOfClass:[NSString class]]) {
-            resultData = responseObject;
-        }
         if([responseObject isKindOfClass:[NSData class]]){
             NSString *originString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
             if (originString && [NSJSONSerialization isValidJSONObject:originString]) {
-                resultData = [NSJSONSerialization JSONObjectWithData:[originString dataUsingEncoding:NSUTF8StringEncoding]
+                responseObject = [NSJSONSerialization JSONObjectWithData:[originString dataUsingEncoding:NSUTF8StringEncoding]
                                                              options:NSJSONReadingMutableLeaves
                                                                error:nil];
-            }else{
-                resultData = originString;
+            }
+            if (![StringTools isEmpty:originString]) {
+                responseObject = originString;
             }
         }
-        if (resultData) {
-            id data = (nil == ObjType) ? resultData : [ObjType mj_objectWithKeyValues:resultData];
+        if (responseObject) {
+            id data = (nil == ObjType) ? responseObject : [ObjType mj_objectWithKeyValues:responseObject];
             completion((nil == data) ? NO : YES,data);
             return;
         }

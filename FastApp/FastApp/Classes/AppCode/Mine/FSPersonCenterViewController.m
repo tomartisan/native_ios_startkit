@@ -34,14 +34,9 @@
 //服务器请求演示，带进度的
 - (void)loadDataTest
 {
-    NSString *filePath = [CacheTools getFilePathByName:@"testData" subffix:@"txt"];
-    NSString *StringData = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-    NSDictionary *params = @{@"operatorId":@"84",@"dataCode":StringData,@"type":@(1)};
-    
     FSServerCommunicator *serverReq = [[FSServerCommunicator alloc] init];
     __weak typeof(self) weakSelf = self;
-    [serverReq doPostWithUrl:@"http://192.168.1.250:8090/APIService/common/upload/photo"
-                       param:params
+    [serverReq doGetWithUrl:@"http://goodidea-big.qiniudn.com/screenclean.swf"
                      respObj:nil
                     progress:^(NSProgress *progress) {
 //                        [MBProgressHUD showProgress:progress.fractionCompleted];
@@ -63,7 +58,7 @@
 - (UIButton *)loadDataBtn
 {
     if (!_loadDataBtn) {
-        _loadDataBtn  = [UICreator createButtonWithTitle:@"数据提交测试"
+        _loadDataBtn  = [UICreator createButtonWithTitle:@"下载开始"
                                               titleColor:FSWhiteColor
                                                     font:SysFontWithSize(14)
                                                   target:self
