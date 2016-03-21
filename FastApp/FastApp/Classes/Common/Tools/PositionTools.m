@@ -156,7 +156,7 @@
     [sourceView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_greaterThanOrEqualTo(size);
         make.centerX.equalTo(targetView);
-        CGFloat finalY = !inner ? (offset.height+size.height) : offset.height;
+        CGFloat finalY = !inner ? (offset.height+size.height) : -offset.height;
         make.bottom.equalTo(targetView).with.offset(finalY);
     }];
 }
