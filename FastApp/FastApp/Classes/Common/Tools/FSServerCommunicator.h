@@ -26,6 +26,7 @@
 - (void)uploadFileWithUrl:(NSString *)url
                      file:(NSData *)fileData
                      name:(NSString *)fileName
+                    param:(NSDictionary *)param
                  mimeType:(NSString *)mimeType
                  progress:(void (^)(NSProgress *progress))progress
                completion:(void (^)(BOOL success,id respData))completion;

@@ -49,12 +49,13 @@
 - (void)uploadFileWithUrl:(NSString *)url
                      file:(NSData *)fileData
                      name:(NSString *)fileName
+                    param:(NSDictionary *)param
                  mimeType:(NSString *)mimeType
                  progress:(void (^)(NSProgress *progress))progress
                completion:(void (^)(BOOL success,id respData))completion
 {
     if (url) {
-        [self.manager POST:url parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        [self.manager POST:url parameters:param constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
             [formData appendPartWithFileData:fileData name:fileName fileName:fileName mimeType:mimeType];
         } progress:progress success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             [self handleResponse:responseObject Resp:nil completion:completion];
