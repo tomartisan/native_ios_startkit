@@ -67,6 +67,10 @@
     return instance;\
 }
 
+//app版本信息(升级版本号和编译版本号)
+#define AppVersionNumber [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleShortVersionString"]
+#define AppBuildVersionNumber [[[NSBundle mainBundle] infoDictionary] valueForKey:(NSString *)kCFBundleVersionKey]
+
 //日志打印
 #if isDevelopModel
 #define log(msg,...) NSLog(@"%@ ===> %s line at %d" , msg, __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);

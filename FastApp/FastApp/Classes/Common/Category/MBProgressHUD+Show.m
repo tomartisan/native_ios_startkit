@@ -168,7 +168,7 @@ typedef NS_ENUM(NSInteger,MBProgressTipType)
 + (void)handleNetWorkConnectError
 {
     [MBProgressHUD stopLoadding];
-    if ([GlobalCache sharedInstance].intenetReachable) {
+    if ([FSNetTools sharedInstance].netReachable) {
         [[NSNotificationCenter defaultCenter] postNotificationName:ServerRequestFailure
                                                             object:@(RequestFailedError)];
     }else{
@@ -180,7 +180,7 @@ typedef NS_ENUM(NSInteger,MBProgressTipType)
 #pragma mark 私有方法：显示信息，然后自动隐藏
 + (void)show:(NSString *)text  type:(MBProgressTipType)type
 {
-    if (![StringTools isEmpty:text]) {
+    if (![FSStringTools isEmpty:text]) {
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:NO];
         hud.mode = MBProgressHUDModeCustomView;
         switch (type) {

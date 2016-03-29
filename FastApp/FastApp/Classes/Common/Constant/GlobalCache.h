@@ -14,21 +14,7 @@
 SharedInstanceInterfaceBuilder(GlobalCache)
 
 //当前api服务器名称和地址
-@property (nonatomic, copy) NSString *appServerUrl;
-
-//当前版本号
-@property (nonatomic, copy) NSString *versionNumber;
-//编译版本号
-@property (nonatomic, copy) NSString *buildVersion;
-
-//银行卡对象
-@property (nonatomic, copy) NSArray *banksInfo;
-
-//地址对象列表
-@property (nonatomic, copy) NSArray *addressArray;
-
-//是否有网络链接
-@property (nonatomic, assign) BOOL intenetReachable;
+@property (nonatomic, copy) NSURL *appServerUrl;
 
 
 @end

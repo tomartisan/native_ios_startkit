@@ -15,11 +15,11 @@
 		86814E1E1C8D812D0097BC8C /* UICreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E1D1C8D812D0097BC8C /* UICreator.m */; };
 		86814E211C8D81D50097BC8C /* PositionTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E201C8D81D50097BC8C /* PositionTools.m */; };
 		86814E271C8D91A10097BC8C /* GlobalCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E261C8D91A10097BC8C /* GlobalCache.m */; };
-		86814E2A1C8D92EE0097BC8C /* CacheTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E291C8D92EE0097BC8C /* CacheTools.m */; };
+		86814E2A1C8D92EE0097BC8C /* FSCacheTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E291C8D92EE0097BC8C /* FSCacheTools.m */; };
 		86814E351C8D94370097BC8C /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E331C8D94370097BC8C /* GTMBase64.m */; };
 		86814E3B1C8D94D50097BC8C /* MBProgressHUD+Show.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E3A1C8D94D50097BC8C /* MBProgressHUD+Show.m */; };
-		86814E3E1C8D95230097BC8C /* CommonNetTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E3D1C8D95230097BC8C /* CommonNetTools.m */; };
-		86814E411C8D95A00097BC8C /* StringTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E401C8D95A00097BC8C /* StringTools.m */; };
+		86814E3E1C8D95230097BC8C /* FSNetTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E3D1C8D95230097BC8C /* FSNetTools.m */; };
+		86814E411C8D95A00097BC8C /* FSStringTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E401C8D95A00097BC8C /* FSStringTools.m */; };
 		86814E441C8D962C0097BC8C /* SecutiryTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E431C8D962C0097BC8C /* SecutiryTools.m */; };
 		86814E471C8D96F30097BC8C /* TimerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E461C8D96F30097BC8C /* TimerButton.m */; };
 		86814E4A1C8D97440097BC8C /* CommonScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E491C8D97440097BC8C /* CommonScrollView.m */; };
@@ -38,6 +38,7 @@
 		86B87B281C945FD7008AE45D /* UIView+FSAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B87B271C945FD7008AE45D /* UIView+FSAutoLayout.m */; };
 		86CE81121C914DB400FF9CDB /* UIImage+FSUIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CE81111C914DB400FF9CDB /* UIImage+FSUIImage.m */; };
 		86CE81151C915AB000FF9CDB /* CommonSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CE81141C915AB000FF9CDB /* CommonSearchBar.m */; };
+		86FED4EE1CAA7A12000C31F2 /* FSPathTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FED4ED1CAA7A12000C31F2 /* FSPathTools.m */; };
 		ABE7405D03CB4C6C81049CA4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D8C9C1603382FB6F260223 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -62,17 +63,17 @@
 		86814E241C8D891E0097BC8C /* MessageKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageKey.h; sourceTree = "<group>"; };
 		86814E251C8D91A10097BC8C /* GlobalCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalCache.h; sourceTree = "<group>"; };
 		86814E261C8D91A10097BC8C /* GlobalCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalCache.m; sourceTree = "<group>"; };
-		86814E281C8D92EE0097BC8C /* CacheTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheTools.h; sourceTree = "<group>"; };
-		86814E291C8D92EE0097BC8C /* CacheTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheTools.m; sourceTree = "<group>"; };
+		86814E281C8D92EE0097BC8C /* FSCacheTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCacheTools.h; sourceTree = "<group>"; };
+		86814E291C8D92EE0097BC8C /* FSCacheTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCacheTools.m; sourceTree = "<group>"; };
 		86814E321C8D94370097BC8C /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		86814E331C8D94370097BC8C /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		86814E341C8D94370097BC8C /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		86814E391C8D94D50097BC8C /* MBProgressHUD+Show.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Show.h"; sourceTree = "<group>"; };
 		86814E3A1C8D94D50097BC8C /* MBProgressHUD+Show.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Show.m"; sourceTree = "<group>"; };
-		86814E3C1C8D95230097BC8C /* CommonNetTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonNetTools.h; sourceTree = "<group>"; };
-		86814E3D1C8D95230097BC8C /* CommonNetTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonNetTools.m; sourceTree = "<group>"; };
-		86814E3F1C8D95A00097BC8C /* StringTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringTools.h; sourceTree = "<group>"; };
-		86814E401C8D95A00097BC8C /* StringTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringTools.m; sourceTree = "<group>"; };
+		86814E3C1C8D95230097BC8C /* FSNetTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSNetTools.h; sourceTree = "<group>"; };
+		86814E3D1C8D95230097BC8C /* FSNetTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSNetTools.m; sourceTree = "<group>"; };
+		86814E3F1C8D95A00097BC8C /* FSStringTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSStringTools.h; sourceTree = "<group>"; };
+		86814E401C8D95A00097BC8C /* FSStringTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSStringTools.m; sourceTree = "<group>"; };
 		86814E421C8D962C0097BC8C /* SecutiryTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecutiryTools.h; sourceTree = "<group>"; };
 		86814E431C8D962C0097BC8C /* SecutiryTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecutiryTools.m; sourceTree = "<group>"; };
 		86814E451C8D96F30097BC8C /* TimerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerButton.h; sourceTree = "<group>"; };
@@ -109,6 +110,8 @@
 		86CE81111C914DB400FF9CDB /* UIImage+FSUIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FSUIImage.m"; sourceTree = "<group>"; };
 		86CE81131C915AB000FF9CDB /* CommonSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonSearchBar.h; sourceTree = "<group>"; };
 		86CE81141C915AB000FF9CDB /* CommonSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonSearchBar.m; sourceTree = "<group>"; };
+		86FED4EC1CAA7A12000C31F2 /* FSPathTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSPathTools.h; sourceTree = "<group>"; };
+		86FED4ED1CAA7A12000C31F2 /* FSPathTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSPathTools.m; sourceTree = "<group>"; };
 		C9C2781E8891DA49860E6480 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D8C71976E8CF56F2C0B94D30 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -269,16 +272,18 @@
 				86814E1D1C8D812D0097BC8C /* UICreator.m */,
 				86814E1F1C8D81D50097BC8C /* PositionTools.h */,
 				86814E201C8D81D50097BC8C /* PositionTools.m */,
-				86814E281C8D92EE0097BC8C /* CacheTools.h */,
-				86814E291C8D92EE0097BC8C /* CacheTools.m */,
-				86814E3C1C8D95230097BC8C /* CommonNetTools.h */,
-				86814E3D1C8D95230097BC8C /* CommonNetTools.m */,
-				86814E3F1C8D95A00097BC8C /* StringTools.h */,
-				86814E401C8D95A00097BC8C /* StringTools.m */,
+				86814E281C8D92EE0097BC8C /* FSCacheTools.h */,
+				86814E291C8D92EE0097BC8C /* FSCacheTools.m */,
+				86814E3C1C8D95230097BC8C /* FSNetTools.h */,
+				86814E3D1C8D95230097BC8C /* FSNetTools.m */,
+				86814E3F1C8D95A00097BC8C /* FSStringTools.h */,
+				86814E401C8D95A00097BC8C /* FSStringTools.m */,
 				86814E5E1C8D9A570097BC8C /* FSDeviceTools.h */,
 				86814E5F1C8D9A570097BC8C /* FSDeviceTools.m */,
 				86814E611C8D9ABD0097BC8C /* FSServerCommunicator.h */,
 				86814E621C8D9ABD0097BC8C /* FSServerCommunicator.m */,
+				86FED4EC1CAA7A12000C31F2 /* FSPathTools.h */,
+				86FED4ED1CAA7A12000C31F2 /* FSPathTools.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -478,7 +483,7 @@
 				86814E211C8D81D50097BC8C /* PositionTools.m in Sources */,
 				86814E271C8D91A10097BC8C /* GlobalCache.m in Sources */,
 				86CE81121C914DB400FF9CDB /* UIImage+FSUIImage.m in Sources */,
-				86814E411C8D95A00097BC8C /* StringTools.m in Sources */,
+				86814E411C8D95A00097BC8C /* FSStringTools.m in Sources */,
 				86814E4E1C8D97BC0097BC8C /* DCPicScrollView.m in Sources */,
 				86814E631C8D9ABD0097BC8C /* FSServerCommunicator.m in Sources */,
 				86814E601C8D9A570097BC8C /* FSDeviceTools.m in Sources */,
@@ -486,14 +491,15 @@
 				869655991C8DAADA0026E397 /* FSHomeViewController.m in Sources */,
 				86814E541C8D987A0097BC8C /* FSBaseViewController.m in Sources */,
 				869655A11C8E8C540026E397 /* FSPersonCenterViewController.m in Sources */,
-				86814E3E1C8D95230097BC8C /* CommonNetTools.m in Sources */,
+				86814E3E1C8D95230097BC8C /* FSNetTools.m in Sources */,
 				86814E3B1C8D94D50097BC8C /* MBProgressHUD+Show.m in Sources */,
 				86814E471C8D96F30097BC8C /* TimerButton.m in Sources */,
-				86814E2A1C8D92EE0097BC8C /* CacheTools.m in Sources */,
+				86814E2A1C8D92EE0097BC8C /* FSCacheTools.m in Sources */,
 				86CE81151C915AB000FF9CDB /* CommonSearchBar.m in Sources */,
 				86814E5D1C8D99F70097BC8C /* FSStarRatingBar.m in Sources */,
 				86814DF91C8D78B80097BC8C /* AppDelegate.m in Sources */,
 				86814E4A1C8D97440097BC8C /* CommonScrollView.m in Sources */,
+				86FED4EE1CAA7A12000C31F2 /* FSPathTools.m in Sources */,
 				86814E661C8D9C0E0097BC8C /* NSData+Encryption.m in Sources */,
 				86814E571C8D990F0097BC8C /* FSBaseSubViewController.m in Sources */,
 				86814E1E1C8D812D0097BC8C /* UICreator.m in Sources */,

@@ -29,7 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.webView loadRequest:[CommonNetTools getRequestWithURLString:_webUrl method:@"GET" timeOut:SERVER_CONNECT_TIMEOUT]];
+    [self.webView loadRequest:[FSNetTools getRequestWithURLString:_webUrl method:@"GET" timeOut:SERVER_CONNECT_TIMEOUT]];
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView

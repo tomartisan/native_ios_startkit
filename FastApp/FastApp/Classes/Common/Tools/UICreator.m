@@ -304,12 +304,12 @@
     webView.scrollView.showsHorizontalScrollIndicator = NO;
     webView.scrollView.showsVerticalScrollIndicator = NO;
     webView.delegate = delegate;
-    if (![StringTools isEmpty:webUrl]) {
-        NSURLRequest *request = [CommonNetTools getRequestWithURLString:webUrl method:@"GET" timeOut:45];
+    if (![FSStringTools isEmpty:webUrl]) {
+        NSURLRequest *request = [FSNetTools getRequestWithURLString:webUrl method:@"GET" timeOut:45];
         [webView loadRequest:request];
     }
     
-    if (![StringTools isEmpty:htmlString]) {
+    if (![FSStringTools isEmpty:htmlString]) {
         [webView loadHTMLString:htmlString baseURL:baseUrl];
     }
     

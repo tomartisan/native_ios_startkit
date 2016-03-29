@@ -112,7 +112,7 @@
                                                              options:NSJSONReadingMutableLeaves
                                                                error:nil];
             }
-            if (![StringTools isEmpty:originString]) {
+            if (![FSStringTools isEmpty:originString]) {
                 responseObject = originString;
             }
         }
@@ -130,18 +130,15 @@
 
 - (NSString *)urlWithUri:(NSString *)uri params:(id)params
 {
-    NSString *urlPrefix = [GlobalCache sharedInstance].appServerUrl;
-    NSString *url = [NSString stringWithFormat:@"%@%@",urlPrefix,uri];
-    
+    NSString *url = [NSString stringWithFormat:@"%@%@",[GlobalCache sharedInstance].appServerUrl,uri];
     NSMutableString *mUrl = [NSMutableString stringWithString:url];
     if ([params isKindOfClass:[NSString class]]) {
         [mUrl appendString:params];
     }
     if ([params isKindOfClass:[NSDictionary class]]) {
-        [mUrl appendString:[StringTools paramStringFromDict:params]];
+        [mUrl appendString:[FSStringTools paramStringFromDict:params]];
     }
     log(mUrl)
-    
     return mUrl;
 }
 

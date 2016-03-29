@@ -10,7 +10,6 @@
 
 @interface FSBaseViewController ()
 @property (nonatomic, strong) UIView *reConnectView;
-@property (nonatomic, strong) UIButton *refreshButton;
 @end
 
 @implementation FSBaseViewController
@@ -32,7 +31,7 @@
 
 - (void)loadingWithMessage:(NSString *)message
 {
-    if ([StringTools isEmpty:message]) {
+    if ([FSStringTools isEmpty:message]) {
         message = @"玩儿命加载中...";
     }
     [MBProgressHUD loaddingWithMessage:message];
@@ -53,35 +52,20 @@
                            margins:0];
             break;
         case RequestFailedError:
-            [PositionTools layView:self.refreshButton
-                    atCenterOfView:self.view
-                         maxSize:CGSizeMake(200, 45)
-                           margins:0];
+            [MBProgressHUD showError:@"请求失败，请稍后再试"];
             break;
     }
 }
 
-- (void)refreshPageWithErrorType:(NetWorkErrorType)type
+- (void)refreshPage:(UIButton *)btn
 {
-    switch (type) {
-        case NoConnectionError:
-            [self.reConnectView removeFromSuperview];
-            break;
-        case RequestFailedError:
-            [self.refreshButton removeFromSuperview];
-            break;
-    }
+    [self.reConnectView removeFromSuperview];
     SEL freshAction = NSSelectorFromString(self.refreshPageStringMethod);
     if ([self isKindOfClass:[FSBaseViewController class]] && [self respondsToSelector:freshAction]) {
         IMP imp = [self methodForSelector:freshAction];
         void (*func)(id,SEL) = (void *)imp;
         func(self,freshAction);
     }
-}
-
-- (void)refreshPage:(UIButton *)btn
-{
-    [self refreshPageWithErrorType:btn.tag];
 }
 
 //无网络链接显示
@@ -99,22 +83,6 @@
         [PositionTools layView:reConnBtn atCenterOfView:_reConnectView maxSize:CGSizeMake(KDeviceHeight, 60) margins:0];
     }
     return _reConnectView;
-}
-
-//有网连接失败时显示
-- (UIButton *)refreshButton
-{
-    if (!_refreshButton) {
-        _refreshButton = [UICreator createButtonWithTitle:@"加载失败，点击刷新"
-                                               titleColor:[UIColor whiteColor]
-                                                     font:[UIFont systemFontOfSize:14]
-                                                   target:self
-                                                   action:@selector(refreshPage:)];
-        _refreshButton.tag = RequestFailedError;
-        _refreshButton.backgroundColor = FSTranslucentColor;
-        _refreshButton.layer.cornerRadius = 10;
-    }
-    return _refreshButton;
 }
 
 @end

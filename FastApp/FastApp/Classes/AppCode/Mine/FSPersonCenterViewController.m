@@ -11,8 +11,6 @@
 #import "FSServerCommunicator.h"
 #import <MediaPlayer/MediaPlayer.h>
 
-#define filePath @"/Users/tangkunyin/Desktop/hello.swf"
-
 typedef NS_ENUM(NSInteger,BtnType)
 {
     DownloadBtnType,
@@ -34,6 +32,10 @@ typedef NS_ENUM(NSInteger,BtnType)
                                                                              action:@selector(webViewControllerTest)];
     
     [PositionTools layView:self.btn insideView:self.view type:MiddleBottom maxSize:CGSizeMake(120, 60) offset:CGSizeMake(0, 80)];
+    
+    
+    NSLog(@"homePath is:%@",[FSPathTools homePath]);
+  
 }
 
 - (void)clickAction:(UIButton *)btn
@@ -53,7 +55,7 @@ typedef NS_ENUM(NSInteger,BtnType)
 {
     FSServerCommunicator *serverReq = [[FSServerCommunicator alloc] init];
     __weak typeof(self) weakSelf = self;
-    [serverReq doGetWithUrl:@"http://goodidea-big.qiniudn.com/screenclean.swf"
+    [serverReq doGetWithUrl:@"http://7xseox.com1.z0.glb.clouddn.com/mp4ForDownloadTest.mp4"
                      respObj:nil
                     progress:^(NSProgress *progress) {
                         NSString *completed = [NSString stringWithFormat:@"%.0f%%",progress.fractionCompleted * 100];
@@ -62,7 +64,7 @@ typedef NS_ENUM(NSInteger,BtnType)
                                                mode:MBProgressHUDModeAnnularDeterminate];
                  }completion:^(BOOL success, id respData) {
                      if (success) {
-                         [[NSData dataWithData:respData] writeToFile:filePath atomically:YES];
+                         [FSCacheTools cacheTmpData:respData forKey:@"mp4ForDownloadTest.mp4"];
                          [MBProgressHUD showMessage:@"下载完成" completion:^{
                              [weakSelf.btn setTitle:@"开始播放" forState:UIControlStateNormal];
                              [weakSelf.btn setBackgroundColor:FSBlueColor];
@@ -74,7 +76,7 @@ typedef NS_ENUM(NSInteger,BtnType)
 
 - (void)playVideo
 {
-    NSURL *url = [NSURL URLWithString:filePath];
+    NSURL *url = [NSURL URLWithString:[FSPathTools pathForKey:@"mp4ForDownloadTest.mp4" type:FSTmpPathType]];
     MPMoviePlayerController *movie = [[MPMoviePlayerController alloc] initWithContentURL:url];
     movie.controlStyle = MPMovieControlStyleFullscreen;
     movie.view.frame = self.view.bounds;

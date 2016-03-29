@@ -1,5 +1,5 @@
 //
-//  StringTools.h
+//  FSStringTools.h
 //  FastApp
 //
 //  Created by tangkunyin on 16/3/7.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface StringTools : NSObject
+@interface FSStringTools : NSObject
 
 + (NSString *)uuid;
 + (NSString *)urlEncodeWithUTF8:(NSString *)sourceString;

@@ -1,5 +1,5 @@
 //
-//  CommonNetTools.h
+//  FSNetTools.h
 //  FastApp
 //
 //  Created by tangkunyin on 16/3/7.
@@ -14,11 +14,16 @@ typedef NS_ENUM(NSInteger, NetWorkErrorType)
     RequestFailedError//请求失败
 };
 
-@interface CommonNetTools : NSObject
+@interface FSNetTools : NSObject
 
-+ (void)addNetworkStatusListener;
+SharedInstanceInterfaceBuilder(FSNetTools)
 
-+ (void)cacheHTMLDataWithURL:(NSString *)urlString key:(NSString *)key;
+//是否有网络链接
+@property (nonatomic, assign) BOOL netReachable;
+
+- (void)addNetworkStatusListener;
+
+
 + (NSURLRequest *)getRequestWithURLString:(NSString *)urlString method:(NSString *)method timeOut:(int)second;
 + (void)downloadResourceWithUrl:(NSString *)url savedPath:(NSString *)localSavedPath timeout:(int)timeout;
 

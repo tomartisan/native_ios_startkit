@@ -7,6 +7,8 @@
 //  Copyright © 2016年 www.shuoit.net. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 /**
  *  服务器连接超时时间
  */
