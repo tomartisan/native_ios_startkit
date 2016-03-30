@@ -9,13 +9,16 @@
 #import "FSPersonCenterViewController.h"
 #import "FSWebViewController.h"
 #import "FSServerCommunicator.h"
-#import <MediaPlayer/MediaPlayer.h>
+#import <AVKit/AVKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 typedef NS_ENUM(NSInteger,BtnType)
 {
     DownloadBtnType,
     PlayerBtnType
 };
+
+static NSString *const fileName = @"mp4ForDownloadTest.mp4";
 
 @interface FSPersonCenterViewController ()
 @property (nonatomic, strong) UIButton *btn;
@@ -33,9 +36,11 @@ typedef NS_ENUM(NSInteger,BtnType)
     
     [PositionTools layView:self.btn insideView:self.view type:MiddleBottom maxSize:CGSizeMake(120, 60) offset:CGSizeMake(0, 80)];
     
-    
-    NSLog(@"homePath is:%@",[FSPathTools homePath]);
-  
+    if ([FSPathTools exists:[FSPathTools pathForKey:fileName type:FSTmpPathType] autoCreate:NO]) {
+        self.btn.tag = PlayerBtnType;
+        [self.btn setTitle:@"播放视频" forState:UIControlStateNormal];
+        [self.btn setBackgroundColor:FSBlueColor];
+    }
 }
 
 - (void)clickAction:(UIButton *)btn
@@ -55,7 +60,7 @@ typedef NS_ENUM(NSInteger,BtnType)
 {
     FSServerCommunicator *serverReq = [[FSServerCommunicator alloc] init];
     __weak typeof(self) weakSelf = self;
-    [serverReq doGetWithUrl:@"http://7xseox.com1.z0.glb.clouddn.com/mp4ForDownloadTest.mp4"
+    [serverReq doGetWithUrl:[NSString stringWithFormat:@"http://7xseox.com1.z0.glb.clouddn.com/%@",fileName]
                      respObj:nil
                     progress:^(NSProgress *progress) {
                         NSString *completed = [NSString stringWithFormat:@"%.0f%%",progress.fractionCompleted * 100];
@@ -64,9 +69,9 @@ typedef NS_ENUM(NSInteger,BtnType)
                                                mode:MBProgressHUDModeAnnularDeterminate];
                  }completion:^(BOOL success, id respData) {
                      if (success) {
-                         [FSCacheTools cacheTmpData:respData forKey:@"mp4ForDownloadTest.mp4"];
+                         [FSCacheTools cacheTmpData:respData forKey:fileName];
                          [MBProgressHUD showMessage:@"下载完成" completion:^{
-                             [weakSelf.btn setTitle:@"开始播放" forState:UIControlStateNormal];
+                             [weakSelf.btn setTitle:@"播放视频" forState:UIControlStateNormal];
                              [weakSelf.btn setBackgroundColor:FSBlueColor];
                              weakSelf.btn.tag = PlayerBtnType;
                          }];
@@ -76,32 +81,23 @@ typedef NS_ENUM(NSInteger,BtnType)
 
 - (void)playVideo
 {
-    NSURL *url = [NSURL URLWithString:[FSPathTools pathForKey:@"mp4ForDownloadTest.mp4" type:FSTmpPathType]];
-    MPMoviePlayerController *movie = [[MPMoviePlayerController alloc] initWithContentURL:url];
-    movie.controlStyle = MPMovieControlStyleFullscreen;
-    movie.view.frame = self.view.bounds;
-    movie.initialPlaybackTime = -1;
-    
-    [self.view addSubview:movie.view];
-    
-    // 注册一个播放结束的通知
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(myMovieFinishedCallback:)
-                                                 name:MPMoviePlayerPlaybackDidFinishNotification
-                                               object:movie];
-    [movie play];
-
-}
-
--(void)myMovieFinishedCallback:(NSNotification*)notify
-{
-    //视频播放对象
-    MPMoviePlayerController* theMovie = [notify object];
-    //销毁播放通知
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:MPMoviePlayerPlaybackDidFinishNotification
-                                                  object:theMovie];
-    [theMovie.view removeFromSuperview];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"mp4ForDownloadTest" ofType:@"mp4"];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+        NSURL *url = [NSURL fileURLWithPath:filePath isDirectory:NO];
+        
+        AVPlayerViewController *playerVC = [[AVPlayerViewController alloc] init];
+        
+        AVAsset *movieAsset = [AVURLAsset URLAssetWithURL:url options:nil];
+        AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:movieAsset];
+        AVPlayer *player = [AVPlayer playerWithPlayerItem:playerItem];
+        
+        playerVC.player = player;
+        
+        [self presentViewController:playerVC animated:YES completion:^{
+            [player play];
+        }];
+        
+    }
 }
 
 - (void)webViewControllerTest
@@ -114,7 +110,7 @@ typedef NS_ENUM(NSInteger,BtnType)
 - (UIButton *)btn
 {
     if (!_btn) {
-        _btn  = [UICreator createButtonWithTitle:@"开始下载"
+        _btn  = [UICreator createButtonWithTitle:@"下载视频"
                                       titleColor:FSWhiteColor
                                             font:SysFontWithSize(14)
                                           target:self

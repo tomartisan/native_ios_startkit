@@ -42,7 +42,7 @@
                 dataPath = [NSString stringWithFormat:@"%@/%@",[self libCachePath],key];
                 break;
             case FSTmpPathType:
-                dataPath = [NSString stringWithFormat:@"%@/%@",[self tmpPath],key];
+                dataPath = [NSString stringWithFormat:@"%@%@",[self tmpPath],key];
                 break;
         }
         return dataPath;

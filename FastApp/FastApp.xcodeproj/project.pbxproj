@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		862F0B2E1CA030EA00915A83 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 862F0B2D1CA030EA00915A83 /* MediaPlayer.framework */; };
 		86814DF61C8D78B80097BC8C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814DF51C8D78B80097BC8C /* main.m */; };
 		86814DF91C8D78B80097BC8C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814DF81C8D78B80097BC8C /* AppDelegate.m */; };
 		86814E011C8D78B80097BC8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86814E001C8D78B80097BC8C /* Assets.xcassets */; };
@@ -39,13 +38,13 @@
 		86CE81121C914DB400FF9CDB /* UIImage+FSUIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CE81111C914DB400FF9CDB /* UIImage+FSUIImage.m */; };
 		86CE81151C915AB000FF9CDB /* CommonSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CE81141C915AB000FF9CDB /* CommonSearchBar.m */; };
 		86FED4EE1CAA7A12000C31F2 /* FSPathTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FED4ED1CAA7A12000C31F2 /* FSPathTools.m */; };
+		86FED4F71CABA512000C31F2 /* mp4ForDownloadTest.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 86FED4F61CABA512000C31F2 /* mp4ForDownloadTest.mp4 */; };
+		86FED4F91CABA5F4000C31F2 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86FED4F81CABA5F4000C31F2 /* CoreMedia.framework */; };
 		ABE7405D03CB4C6C81049CA4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D8C9C1603382FB6F260223 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		58D8C9C1603382FB6F260223 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		862F0B2B1CA02EA600915A83 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		862F0B2D1CA030EA00915A83 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		86814DF11C8D78B80097BC8C /* FastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86814DF51C8D78B80097BC8C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		86814DF71C8D78B80097BC8C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -112,6 +111,10 @@
 		86CE81141C915AB000FF9CDB /* CommonSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonSearchBar.m; sourceTree = "<group>"; };
 		86FED4EC1CAA7A12000C31F2 /* FSPathTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSPathTools.h; sourceTree = "<group>"; };
 		86FED4ED1CAA7A12000C31F2 /* FSPathTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSPathTools.m; sourceTree = "<group>"; };
+		86FED4EF1CAB6800000C31F2 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		86FED4F21CAB6981000C31F2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		86FED4F61CABA512000C31F2 /* mp4ForDownloadTest.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = mp4ForDownloadTest.mp4; sourceTree = "<group>"; };
+		86FED4F81CABA5F4000C31F2 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		C9C2781E8891DA49860E6480 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D8C71976E8CF56F2C0B94D30 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,7 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				862F0B2E1CA030EA00915A83 /* MediaPlayer.framework in Frameworks */,
+				86FED4F91CABA5F4000C31F2 /* CoreMedia.framework in Frameworks */,
 				ABE7405D03CB4C6C81049CA4 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,6 +162,7 @@
 		86814DF41C8D78B80097BC8C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				86FED4F61CABA512000C31F2 /* mp4ForDownloadTest.mp4 */,
 				86814DF71C8D78B80097BC8C /* AppDelegate.h */,
 				86814DF81C8D78B80097BC8C /* AppDelegate.m */,
 				86814E191C8D7D400097BC8C /* Default-568h@2x.png */,
@@ -351,8 +355,9 @@
 		C7E8E020466F7B95B04CF07B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				862F0B2D1CA030EA00915A83 /* MediaPlayer.framework */,
-				862F0B2B1CA02EA600915A83 /* AVFoundation.framework */,
+				86FED4F81CABA5F4000C31F2 /* CoreMedia.framework */,
+				86FED4F21CAB6981000C31F2 /* AVFoundation.framework */,
+				86FED4EF1CAB6800000C31F2 /* AVKit.framework */,
 				58D8C9C1603382FB6F260223 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -393,6 +398,11 @@
 				TargetAttributes = {
 					86814DF01C8D78B80097BC8C = {
 						CreatedOnToolsVersion = 7.2;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -420,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86814E011C8D78B80097BC8C /* Assets.xcassets in Resources */,
+				86FED4F71CABA512000C31F2 /* mp4ForDownloadTest.mp4 in Resources */,
 				86814E1A1C8D7D400097BC8C /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
