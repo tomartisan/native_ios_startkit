@@ -81,23 +81,20 @@ static NSString *const fileName = @"mp4ForDownloadTest.mp4";
 
 - (void)playVideo
 {
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"mp4ForDownloadTest" ofType:@"mp4"];
-    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
-        NSURL *url = [NSURL fileURLWithPath:filePath isDirectory:NO];
-        
-        AVPlayerViewController *playerVC = [[AVPlayerViewController alloc] init];
-        
-        AVAsset *movieAsset = [AVURLAsset URLAssetWithURL:url options:nil];
-        AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:movieAsset];
-        AVPlayer *player = [AVPlayer playerWithPlayerItem:playerItem];
-        
-        playerVC.player = player;
-        
-        [self presentViewController:playerVC animated:YES completion:^{
-            [player play];
-        }];
-        
-    }
+    NSURL *url = [NSURL fileURLWithPath:[FSPathTools pathForKey:fileName type:FSTmpPathType] isDirectory:NO];
+    
+    AVPlayerViewController *playerVC = [[AVPlayerViewController alloc] init];
+    
+    AVAsset *movieAsset = [AVURLAsset URLAssetWithURL:url options:nil];
+    AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:movieAsset];
+    AVPlayer *player = [AVPlayer playerWithPlayerItem:playerItem];
+    
+    playerVC.player = player;
+    
+    [self presentViewController:playerVC animated:YES completion:^{
+        [player play];
+    }];
+    
 }
 
 - (void)webViewControllerTest
