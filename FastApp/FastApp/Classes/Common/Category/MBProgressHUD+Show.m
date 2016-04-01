@@ -19,12 +19,12 @@ typedef NS_ENUM(NSInteger,MBProgressTipType)
 //错误提示
 + (void)showError:(NSString *)error
 {
-    [self show:error type:MBProgressTipError];
+    [self show:error type:MBProgressTipError completion:nil];
 }
 //正确提示
 + (void)showSuccess:(NSString *)success
 {
-    [self show:success type:MBProgressTipSuccess];
+    [self show:success type:MBProgressTipSuccess completion:nil];
 }
 
 //加载提示。默认菊花方式
@@ -88,19 +88,7 @@ typedef NS_ENUM(NSInteger,MBProgressTipType)
 // 提示后响应某个动作
 + (void)showMessage:(NSString *)message completion:(void (^)(void))completion
 {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
-    hud.labelText = message;
-    hud.mode = MBProgressHUDModeText;
-    hud.color = GRAYCOLOR(200);
-    hud.labelColor = FSBlackColor;
-    [UIView animateWithDuration:0.8 animations:^{
-        hud.alpha = 0;
-    } completion:^(BOOL finished) {
-        [hud removeFromSuperview];
-        if (completion) {
-            completion();
-        }
-    }];
+    [self showMessage:message completion:completion];
 }
 
 + (void)handleErrorWithCode:(NSInteger)code additional:(id)additional
@@ -178,7 +166,7 @@ typedef NS_ENUM(NSInteger,MBProgressTipType)
 }
 
 #pragma mark 私有方法：显示信息，然后自动隐藏
-+ (void)show:(NSString *)text  type:(MBProgressTipType)type
++ (void)show:(NSString *)text  type:(MBProgressTipType)type completion:(void (^)(void))completion
 {
     if (![FSStringTools isEmpty:text]) {
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:NO];
@@ -195,14 +183,18 @@ typedef NS_ENUM(NSInteger,MBProgressTipType)
         hud.detailsLabelText = text;
         hud.detailsLabelColor = FSBlackColor;
         hud.removeFromSuperViewOnHide = YES;
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
-            sleep(1.0);
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(600 * NSEC_PER_MSEC)), dispatch_get_main_queue(), ^{
             dispatch_async(dispatch_get_main_queue(), ^{
-                [UIView animateWithDuration:0.3 animations:^{
+                [UIView animateWithDuration:0.2f animations:^{
                     hud.transform = CGAffineTransformMakeScale(0.8, 0.8);
                 } completion:^(BOOL finished) {
-                    hud.minShowTime = 1.7;
-                    [hud hide:YES];
+                    //800毫秒延迟
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(800 * NSEC_PER_MSEC)), dispatch_get_main_queue(), ^{
+                        [hud removeFromSuperview];
+                        if (completion) {
+                            completion();
+                        }
+                    });
                 }];
             });
         });
