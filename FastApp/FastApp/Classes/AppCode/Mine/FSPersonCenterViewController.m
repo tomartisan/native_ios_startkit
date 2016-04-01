@@ -81,19 +81,34 @@ static NSString *const fileName = @"mp4ForDownloadTest.mp4";
 
 - (void)playVideo
 {
-    NSURL *url = [NSURL fileURLWithPath:[FSPathTools pathForKey:fileName type:FSTmpPathType] isDirectory:NO];
+//    NSURL *url = [NSURL fileURLWithPath:[FSPathTools pathForKey:fileName type:FSTmpPathType] isDirectory:NO];
     
-    AVPlayerViewController *playerVC = [[AVPlayerViewController alloc] init];
+//    AVPlayerViewController *playerVC = [[AVPlayerViewController alloc] init];
+//    
+//    AVAsset *movieAsset = [AVURLAsset URLAssetWithURL:url options:nil];
+//    AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:movieAsset];
+//    AVPlayer *player = [AVPlayer playerWithPlayerItem:playerItem];
+//    
+//    playerVC.player = player;
+//    
+//    [self presentViewController:playerVC animated:YES completion:^{
+//        [player play];
+//    }];
     
-    AVAsset *movieAsset = [AVURLAsset URLAssetWithURL:url options:nil];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://7xseox.com1.z0.glb.clouddn.com/%@",fileName]];
+    
+    AVAsset *movieAsset = [AVURLAsset assetWithURL:url];
     AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:movieAsset];
+    
     AVPlayer *player = [AVPlayer playerWithPlayerItem:playerItem];
     
-    playerVC.player = player;
+    AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:player];
+    playerLayer.frame = CGRectMake(0, 0, KDeviceWidth, 300);
+    playerLayer.videoGravity=AVLayerVideoGravityResize;
     
-    [self presentViewController:playerVC animated:YES completion:^{
-        [player play];
-    }];
+    [self.view.layer addSublayer:playerLayer];
+    
+    [player play];
     
 }
 
