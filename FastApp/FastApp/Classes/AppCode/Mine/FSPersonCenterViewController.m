@@ -95,8 +95,10 @@ static NSString *const fileName = @"mp4ForDownloadTest.mp4";
 //        [player play];
 //    }];
     
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://7xseox.com1.z0.glb.clouddn.com/%@",fileName]];
+//    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://7xseox.com1.z0.glb.clouddn.com/%@",fileName]];
     
+    
+    NSURL *url = [NSURL fileURLWithPath:@"/Users/tangkunyin/Desktop/mp4ForDownloadTest.mp4"];
     AVAsset *movieAsset = [AVURLAsset assetWithURL:url];
     AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:movieAsset];
     
