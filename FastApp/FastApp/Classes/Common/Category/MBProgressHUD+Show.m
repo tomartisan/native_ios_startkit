@@ -8,8 +8,9 @@
 
 typedef NS_ENUM(NSInteger,MBProgressTipType)
 {
-    MBProgressTipSuccess,
-    MBProgressTipError
+    MBProgressTipNone,      //无提示符
+    MBProgressTipSuccess,   //正确提示符
+    MBProgressTipError      //错误提示符
 };
 
 #import "MBProgressHUD+Show.h"
@@ -88,7 +89,7 @@ typedef NS_ENUM(NSInteger,MBProgressTipType)
 // 提示后响应某个动作
 + (void)showMessage:(NSString *)message completion:(void (^)(void))completion
 {
-    [self showMessage:message completion:completion];
+    [self show:message type:MBProgressTipNone completion:completion];
 }
 
 + (void)handleErrorWithCode:(NSInteger)code additional:(id)additional
@@ -172,6 +173,9 @@ typedef NS_ENUM(NSInteger,MBProgressTipType)
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:NO];
         hud.mode = MBProgressHUDModeCustomView;
         switch (type) {
+            case MBProgressTipNone:
+                hud.mode = MBProgressHUDModeText;
+                break;
             case MBProgressTipSuccess:
                 hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageWithNamed:@"Checkmark-success"]];
                 break;
