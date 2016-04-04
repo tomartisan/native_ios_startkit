@@ -29,22 +29,22 @@
     //分类
     FSHeHeViewController *mineVC = [[FSHeHeViewController alloc] init];
     mineVC.inView = YES;
-    [self addChildViewController:mineVC title:@"分类" image:@"21" selectedImage:@"22"];
+    [self addChildViewController:mineVC title:@"界面" image:@"21" selectedImage:@"22"];
     
     //呵呵呵
     FSHeHeViewController *heheVC = [[FSHeHeViewController alloc] init];
     heheVC.inView = NO;
-    [self addChildViewController:heheVC title:@"呵呵呵" image:@"31" selectedImage:@"32"];
+    [self addChildViewController:heheVC title:@"其他" image:@"31" selectedImage:@"32"];
     
     //清单
     FSHeHeViewController *yourVC = [[FSHeHeViewController alloc] init];
     yourVC.inView = YES;
-    [self addChildViewController:yourVC title:@"清单" image:@"41" selectedImage:@"42"];
+    [self addChildViewController:yourVC title:@"购物" image:@"41" selectedImage:@"42"];
     
     //我的
     FSHeHeViewController *hisVc = [[FSHeHeViewController alloc] init];
     hisVc.inView = NO;
-    [self addChildViewController:hisVc title:@"我的" image:@"51" selectedImage:@"52"];
+    [self addChildViewController:hisVc title:@"用户" image:@"51" selectedImage:@"52"];
 }
 
 

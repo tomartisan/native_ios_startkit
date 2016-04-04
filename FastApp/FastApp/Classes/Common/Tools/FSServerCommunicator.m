@@ -65,6 +65,21 @@
     }
 }
 
+- (void)downloadWithUrl:(NSString *)url
+             resumeData:(NSData *)data
+               progress:(void (^)(NSProgress *downloadProgress))downloadProgress
+            destination:(NSURL * (^)(NSURL *targetPath, NSURLResponse *response))destination
+      completionHandler:(void (^)(NSURLResponse *response, NSURL *filePath, NSError *error))completionHandler
+{
+    if (![FSStringTools isEmpty:url]) {
+        NSURLRequest *req = [FSNetTools getRequestWithURLString:url method:@"GET" timeOut:SERVER_CONNECT_TIMEOUT];
+        [self.manager downloadTaskWithRequest:req progress:downloadProgress destination:destination completionHandler:completionHandler];
+    }
+    if (data) {
+        [self.manager downloadTaskWithResumeData:data progress:downloadProgress destination:destination completionHandler:completionHandler];
+    }
+}
+
 - (void)doGetWithUri:(NSString *)uri
                param:(id)param
              respObj:(Class)obj

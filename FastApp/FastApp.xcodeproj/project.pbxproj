@@ -34,6 +34,7 @@
 		869655991C8DAADA0026E397 /* FSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869655981C8DAADA0026E397 /* FSHomeViewController.m */; };
 		869655A11C8E8C540026E397 /* FSPersonCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869655A01C8E8C540026E397 /* FSPersonCenterViewController.m */; };
 		869655A41C8EA9FE0026E397 /* FSHeHeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869655A31C8EA9FE0026E397 /* FSHeHeViewController.m */; };
+		86A1DEC61CB28D920093DA2B /* FSTestDownLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A1DEC51CB28D920093DA2B /* FSTestDownLoadViewController.m */; };
 		86B87B281C945FD7008AE45D /* UIView+FSAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B87B271C945FD7008AE45D /* UIView+FSAutoLayout.m */; };
 		86CE81121C914DB400FF9CDB /* UIImage+FSUIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CE81111C914DB400FF9CDB /* UIImage+FSUIImage.m */; };
 		86CE81151C915AB000FF9CDB /* CommonSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CE81141C915AB000FF9CDB /* CommonSearchBar.m */; };
@@ -102,6 +103,8 @@
 		869655A01C8E8C540026E397 /* FSPersonCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSPersonCenterViewController.m; sourceTree = "<group>"; };
 		869655A21C8EA9FE0026E397 /* FSHeHeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSHeHeViewController.h; sourceTree = "<group>"; };
 		869655A31C8EA9FE0026E397 /* FSHeHeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSHeHeViewController.m; sourceTree = "<group>"; };
+		86A1DEC41CB28D920093DA2B /* FSTestDownLoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTestDownLoadViewController.h; sourceTree = "<group>"; };
+		86A1DEC51CB28D920093DA2B /* FSTestDownLoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTestDownLoadViewController.m; sourceTree = "<group>"; };
 		86B87B261C945FD7008AE45D /* UIView+FSAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FSAutoLayout.h"; sourceTree = "<group>"; };
 		86B87B271C945FD7008AE45D /* UIView+FSAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FSAutoLayout.m"; sourceTree = "<group>"; };
 		86CE81101C914DB400FF9CDB /* UIImage+FSUIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FSUIImage.h"; sourceTree = "<group>"; };
@@ -174,6 +177,7 @@
 		86814E0D1C8D7C440097BC8C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				86A1DEC31CB28AB70093DA2B /* Demos */,
 				86814E0E1C8D7C440097BC8C /* AppCode */,
 				86814E111C8D7C440097BC8C /* Common */,
 				86814E181C8D7C440097BC8C /* ThirdPart */,
@@ -338,6 +342,15 @@
 				86814E4D1C8D97BC0097BC8C /* DCPicScrollView.m */,
 			);
 			path = DCPicScrollView;
+			sourceTree = "<group>";
+		};
+		86A1DEC31CB28AB70093DA2B /* Demos */ = {
+			isa = PBXGroup;
+			children = (
+				86A1DEC41CB28D920093DA2B /* FSTestDownLoadViewController.h */,
+				86A1DEC51CB28D920093DA2B /* FSTestDownLoadViewController.m */,
+			);
+			path = Demos;
 			sourceTree = "<group>";
 		};
 		C3804B58DD944F4BE7B77976 /* Pods */ = {
@@ -509,6 +522,7 @@
 				86FED4EE1CAA7A12000C31F2 /* FSPathTools.m in Sources */,
 				86814E661C8D9C0E0097BC8C /* NSData+Encryption.m in Sources */,
 				86814E571C8D990F0097BC8C /* FSBaseSubViewController.m in Sources */,
+				86A1DEC61CB28D920093DA2B /* FSTestDownLoadViewController.m in Sources */,
 				86814E1E1C8D812D0097BC8C /* UICreator.m in Sources */,
 				86814E511C8D98210097BC8C /* FSNavigationController.m in Sources */,
 				869655A41C8EA9FE0026E397 /* FSHeHeViewController.m in Sources */,
