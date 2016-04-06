@@ -1,17 +1,21 @@
 //
-//  FSHomeViewController.m
+//  FSAppHomeViewController.m
 //  FastApp
 //
 //  Created by tangkunyin on 16/3/7.
 //  Copyright © 2016年 www.shuoit.net. All rights reserved.
 //
 
-#import "FSHomeViewController.h"
+#import "FSAppHomeViewController.h"
 #import "FSNavigationController.h"
-#import "FSPersonCenterViewController.h"
-#import "FSHeHeViewController.h"
+#import "FSIndexViewController.h"
+#import "FSUIDemoViewController.h"
+#import "FSOtherViewController.h"
+#import "FSShopingViewController.h"
+#import "FSUserViewController.h"
 
-@implementation FSHomeViewController
+
+@implementation FSAppHomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,28 +26,24 @@
 
 - (void)addAllChildViewControllers
 {
-    //首页
-    FSPersonCenterViewController *indexVC = [[FSPersonCenterViewController alloc] init];
+    //首页说明
+    FSIndexViewController *indexVC = [[FSIndexViewController alloc] init];
     [self addChildViewController:indexVC title:@"首页" image:@"11" selectedImage:@"12"];
     
-    //分类
-    FSHeHeViewController *mineVC = [[FSHeHeViewController alloc] init];
-    mineVC.inView = YES;
-    [self addChildViewController:mineVC title:@"界面" image:@"21" selectedImage:@"22"];
+    //界面使用
+    FSUIDemoViewController *uiVC = [[FSUIDemoViewController alloc] init];
+    [self addChildViewController:uiVC title:@"界面" image:@"21" selectedImage:@"22"];
     
-    //呵呵呵
-    FSHeHeViewController *heheVC = [[FSHeHeViewController alloc] init];
-    heheVC.inView = NO;
-    [self addChildViewController:heheVC title:@"其他" image:@"31" selectedImage:@"32"];
+    //其他工具使用
+    FSOtherViewController *othersVC = [[FSOtherViewController alloc] init];
+    [self addChildViewController:othersVC title:@"其他" image:@"31" selectedImage:@"32"];
     
-    //清单
-    FSHeHeViewController *yourVC = [[FSHeHeViewController alloc] init];
-    yourVC.inView = YES;
-    [self addChildViewController:yourVC title:@"购物" image:@"41" selectedImage:@"42"];
+    //购物模块
+    FSShopingViewController *shopVC = [[FSShopingViewController alloc] init];
+    [self addChildViewController:shopVC title:@"购物" image:@"41" selectedImage:@"42"];
     
-    //我的
-    FSHeHeViewController *hisVc = [[FSHeHeViewController alloc] init];
-    hisVc.inView = NO;
+    //用户模块
+    FSUserViewController *hisVc = [[FSUserViewController alloc] init];
     [self addChildViewController:hisVc title:@"用户" image:@"51" selectedImage:@"52"];
 }
 

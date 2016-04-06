@@ -8,6 +8,9 @@
 
 #import "FSBaseSubViewController.h"
 
+//自动布局工具演示
 @interface FSTestLayoutViewController : FSBaseSubViewController
+
+@property (nonatomic, assign) BOOL inView;
 
 @end

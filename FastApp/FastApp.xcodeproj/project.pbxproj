@@ -31,14 +31,17 @@
 		86814E601C8D9A570097BC8C /* FSDeviceTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E5F1C8D9A570097BC8C /* FSDeviceTools.m */; };
 		86814E631C8D9ABD0097BC8C /* FSServerCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E621C8D9ABD0097BC8C /* FSServerCommunicator.m */; };
 		86814E661C8D9C0E0097BC8C /* NSData+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E651C8D9C0E0097BC8C /* NSData+Encryption.m */; };
-		869655991C8DAADA0026E397 /* FSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869655981C8DAADA0026E397 /* FSHomeViewController.m */; };
-		869655A11C8E8C540026E397 /* FSPersonCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869655A01C8E8C540026E397 /* FSPersonCenterViewController.m */; };
-		869655A41C8EA9FE0026E397 /* FSHeHeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869655A31C8EA9FE0026E397 /* FSHeHeViewController.m */; };
 		86A1DEC61CB28D920093DA2B /* FSTestDownLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A1DEC51CB28D920093DA2B /* FSTestDownLoadViewController.m */; };
 		86B87B281C945FD7008AE45D /* UIView+FSAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B87B271C945FD7008AE45D /* UIView+FSAutoLayout.m */; };
 		86CE81121C914DB400FF9CDB /* UIImage+FSUIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CE81111C914DB400FF9CDB /* UIImage+FSUIImage.m */; };
 		86CE81151C915AB000FF9CDB /* CommonSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CE81141C915AB000FF9CDB /* CommonSearchBar.m */; };
 		86FD458B1CB4BE9200C1EC12 /* FSTestLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FD458A1CB4BE9200C1EC12 /* FSTestLayoutViewController.m */; };
+		86FD45901CB4EAE700C1EC12 /* FSUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FD458C1CB4EAE700C1EC12 /* FSUserViewController.m */; };
+		86FD45941CB4EB2400C1EC12 /* FSAppHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FD45931CB4EB2400C1EC12 /* FSAppHomeViewController.m */; };
+		86FD45971CB4EBD500C1EC12 /* FSIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FD45961CB4EBD500C1EC12 /* FSIndexViewController.m */; };
+		86FD459A1CB4EBE500C1EC12 /* FSOtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FD45991CB4EBE500C1EC12 /* FSOtherViewController.m */; };
+		86FD459D1CB4EC1C00C1EC12 /* FSShopingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FD459C1CB4EC1C00C1EC12 /* FSShopingViewController.m */; };
+		86FD45A01CB4ECA300C1EC12 /* FSUIDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FD459F1CB4ECA300C1EC12 /* FSUIDemoViewController.m */; };
 		86FED4EE1CAA7A12000C31F2 /* FSPathTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FED4ED1CAA7A12000C31F2 /* FSPathTools.m */; };
 		86FED4F91CABA5F4000C31F2 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86FED4F81CABA5F4000C31F2 /* CoreMedia.framework */; };
 		ABE7405D03CB4C6C81049CA4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D8C9C1603382FB6F260223 /* libPods.a */; };
@@ -98,12 +101,6 @@
 		86814E621C8D9ABD0097BC8C /* FSServerCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSServerCommunicator.m; sourceTree = "<group>"; };
 		86814E641C8D9C0E0097BC8C /* NSData+Encryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Encryption.h"; sourceTree = "<group>"; };
 		86814E651C8D9C0E0097BC8C /* NSData+Encryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Encryption.m"; sourceTree = "<group>"; };
-		869655971C8DAADA0026E397 /* FSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSHomeViewController.h; sourceTree = "<group>"; };
-		869655981C8DAADA0026E397 /* FSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSHomeViewController.m; sourceTree = "<group>"; };
-		8696559F1C8E8C540026E397 /* FSPersonCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSPersonCenterViewController.h; sourceTree = "<group>"; };
-		869655A01C8E8C540026E397 /* FSPersonCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSPersonCenterViewController.m; sourceTree = "<group>"; };
-		869655A21C8EA9FE0026E397 /* FSHeHeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSHeHeViewController.h; sourceTree = "<group>"; };
-		869655A31C8EA9FE0026E397 /* FSHeHeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSHeHeViewController.m; sourceTree = "<group>"; };
 		86A1DEC41CB28D920093DA2B /* FSTestDownLoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTestDownLoadViewController.h; sourceTree = "<group>"; };
 		86A1DEC51CB28D920093DA2B /* FSTestDownLoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTestDownLoadViewController.m; sourceTree = "<group>"; };
 		86B87B261C945FD7008AE45D /* UIView+FSAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FSAutoLayout.h"; sourceTree = "<group>"; };
@@ -114,6 +111,18 @@
 		86CE81141C915AB000FF9CDB /* CommonSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonSearchBar.m; sourceTree = "<group>"; };
 		86FD45891CB4BE9200C1EC12 /* FSTestLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTestLayoutViewController.h; sourceTree = "<group>"; };
 		86FD458A1CB4BE9200C1EC12 /* FSTestLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTestLayoutViewController.m; sourceTree = "<group>"; };
+		86FD458C1CB4EAE700C1EC12 /* FSUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSUserViewController.m; sourceTree = "<group>"; };
+		86FD458F1CB4EAE700C1EC12 /* FSUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSUserViewController.h; sourceTree = "<group>"; };
+		86FD45921CB4EB2400C1EC12 /* FSAppHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSAppHomeViewController.h; sourceTree = "<group>"; };
+		86FD45931CB4EB2400C1EC12 /* FSAppHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSAppHomeViewController.m; sourceTree = "<group>"; };
+		86FD45951CB4EBD500C1EC12 /* FSIndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSIndexViewController.h; sourceTree = "<group>"; };
+		86FD45961CB4EBD500C1EC12 /* FSIndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSIndexViewController.m; sourceTree = "<group>"; };
+		86FD45981CB4EBE500C1EC12 /* FSOtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSOtherViewController.h; sourceTree = "<group>"; };
+		86FD45991CB4EBE500C1EC12 /* FSOtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSOtherViewController.m; sourceTree = "<group>"; };
+		86FD459B1CB4EC1C00C1EC12 /* FSShopingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSShopingViewController.h; sourceTree = "<group>"; };
+		86FD459C1CB4EC1C00C1EC12 /* FSShopingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSShopingViewController.m; sourceTree = "<group>"; };
+		86FD459E1CB4ECA300C1EC12 /* FSUIDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSUIDemoViewController.h; sourceTree = "<group>"; };
+		86FD459F1CB4ECA300C1EC12 /* FSUIDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSUIDemoViewController.m; sourceTree = "<group>"; };
 		86FED4EC1CAA7A12000C31F2 /* FSPathTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSPathTools.h; sourceTree = "<group>"; };
 		86FED4ED1CAA7A12000C31F2 /* FSPathTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSPathTools.m; sourceTree = "<group>"; };
 		86FED4EF1CAB6800000C31F2 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
@@ -166,6 +175,8 @@
 		86814DF41C8D78B80097BC8C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				86FD45921CB4EB2400C1EC12 /* FSAppHomeViewController.h */,
+				86FD45931CB4EB2400C1EC12 /* FSAppHomeViewController.m */,
 				86814DF71C8D78B80097BC8C /* AppDelegate.h */,
 				86814DF81C8D78B80097BC8C /* AppDelegate.m */,
 				86814E191C8D7D400097BC8C /* Default-568h@2x.png */,
@@ -191,30 +202,18 @@
 		86814E0E1C8D7C440097BC8C /* AppCode */ = {
 			isa = PBXGroup;
 			children = (
-				86814E0F1C8D7C440097BC8C /* Home */,
-				86814E101C8D7C440097BC8C /* Mine */,
+				86FD458F1CB4EAE700C1EC12 /* FSUserViewController.h */,
+				86FD458C1CB4EAE700C1EC12 /* FSUserViewController.m */,
+				86FD45951CB4EBD500C1EC12 /* FSIndexViewController.h */,
+				86FD45961CB4EBD500C1EC12 /* FSIndexViewController.m */,
+				86FD45981CB4EBE500C1EC12 /* FSOtherViewController.h */,
+				86FD45991CB4EBE500C1EC12 /* FSOtherViewController.m */,
+				86FD459B1CB4EC1C00C1EC12 /* FSShopingViewController.h */,
+				86FD459C1CB4EC1C00C1EC12 /* FSShopingViewController.m */,
+				86FD459E1CB4ECA300C1EC12 /* FSUIDemoViewController.h */,
+				86FD459F1CB4ECA300C1EC12 /* FSUIDemoViewController.m */,
 			);
 			path = AppCode;
-			sourceTree = "<group>";
-		};
-		86814E0F1C8D7C440097BC8C /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				869655971C8DAADA0026E397 /* FSHomeViewController.h */,
-				869655981C8DAADA0026E397 /* FSHomeViewController.m */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		86814E101C8D7C440097BC8C /* Mine */ = {
-			isa = PBXGroup;
-			children = (
-				8696559F1C8E8C540026E397 /* FSPersonCenterViewController.h */,
-				869655A01C8E8C540026E397 /* FSPersonCenterViewController.m */,
-				869655A21C8EA9FE0026E397 /* FSHeHeViewController.h */,
-				869655A31C8EA9FE0026E397 /* FSHeHeViewController.m */,
-			);
-			path = Mine;
 			sourceTree = "<group>";
 		};
 		86814E111C8D7C440097BC8C /* Common */ = {
@@ -510,14 +509,14 @@
 				86CE81121C914DB400FF9CDB /* UIImage+FSUIImage.m in Sources */,
 				86814E411C8D95A00097BC8C /* FSStringTools.m in Sources */,
 				86FD458B1CB4BE9200C1EC12 /* FSTestLayoutViewController.m in Sources */,
+				86FD45A01CB4ECA300C1EC12 /* FSUIDemoViewController.m in Sources */,
 				86814E4E1C8D97BC0097BC8C /* DCPicScrollView.m in Sources */,
 				86814E631C8D9ABD0097BC8C /* FSServerCommunicator.m in Sources */,
 				86814E601C8D9A570097BC8C /* FSDeviceTools.m in Sources */,
 				86814E5A1C8D996B0097BC8C /* FSWebViewController.m in Sources */,
-				869655991C8DAADA0026E397 /* FSHomeViewController.m in Sources */,
 				86814E541C8D987A0097BC8C /* FSBaseViewController.m in Sources */,
-				869655A11C8E8C540026E397 /* FSPersonCenterViewController.m in Sources */,
 				86814E3E1C8D95230097BC8C /* FSNetTools.m in Sources */,
+				86FD459A1CB4EBE500C1EC12 /* FSOtherViewController.m in Sources */,
 				86814E3B1C8D94D50097BC8C /* MBProgressHUD+Show.m in Sources */,
 				86814E471C8D96F30097BC8C /* TimerButton.m in Sources */,
 				86814E2A1C8D92EE0097BC8C /* FSCacheTools.m in Sources */,
@@ -525,13 +524,16 @@
 				86814E5D1C8D99F70097BC8C /* FSStarRatingBar.m in Sources */,
 				86814DF91C8D78B80097BC8C /* AppDelegate.m in Sources */,
 				86814E4A1C8D97440097BC8C /* CommonScrollView.m in Sources */,
+				86FD45971CB4EBD500C1EC12 /* FSIndexViewController.m in Sources */,
 				86FED4EE1CAA7A12000C31F2 /* FSPathTools.m in Sources */,
 				86814E661C8D9C0E0097BC8C /* NSData+Encryption.m in Sources */,
 				86814E571C8D990F0097BC8C /* FSBaseSubViewController.m in Sources */,
 				86A1DEC61CB28D920093DA2B /* FSTestDownLoadViewController.m in Sources */,
+				86FD459D1CB4EC1C00C1EC12 /* FSShopingViewController.m in Sources */,
 				86814E1E1C8D812D0097BC8C /* UICreator.m in Sources */,
+				86FD45941CB4EB2400C1EC12 /* FSAppHomeViewController.m in Sources */,
+				86FD45901CB4EAE700C1EC12 /* FSUserViewController.m in Sources */,
 				86814E511C8D98210097BC8C /* FSNavigationController.m in Sources */,
-				869655A41C8EA9FE0026E397 /* FSHeHeViewController.m in Sources */,
 				86814E441C8D962C0097BC8C /* SecutiryTools.m in Sources */,
 				86814E351C8D94370097BC8C /* GTMBase64.m in Sources */,
 				86814DF61C8D78B80097BC8C /* main.m in Sources */,
