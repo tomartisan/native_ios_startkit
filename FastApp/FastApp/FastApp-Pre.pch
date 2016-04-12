@@ -9,6 +9,9 @@
 
 #ifdef __OBJC__
 
+//Third Libs
+#import "MJExtension.h"
+#import "UIImageView+WebCache.h"
 
 //Usefull Tools
 #import "AppMacros.h"
@@ -26,10 +29,7 @@
 #import "PositionTools.h"
 #import "UICreator.h"
 #import "UIImage+FSUIImage.h"
-
-//Third Libs
-#import "MJExtension.h"
-#import "UIImageView+WebCache.h"
+#import "UITextField+FSLimitString.h"
 
 
 

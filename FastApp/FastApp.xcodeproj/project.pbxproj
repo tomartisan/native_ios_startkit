@@ -42,6 +42,7 @@
 		86FD459A1CB4EBE500C1EC12 /* FSOtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FD45991CB4EBE500C1EC12 /* FSOtherViewController.m */; };
 		86FD459D1CB4EC1C00C1EC12 /* FSShopingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FD459C1CB4EC1C00C1EC12 /* FSShopingViewController.m */; };
 		86FD45A01CB4ECA300C1EC12 /* FSUIDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FD459F1CB4ECA300C1EC12 /* FSUIDemoViewController.m */; };
+		86FD45F21CBCA36C00C1EC12 /* UITextField+FSLimitString.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FD45F11CBCA36C00C1EC12 /* UITextField+FSLimitString.m */; };
 		86FED4EE1CAA7A12000C31F2 /* FSPathTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FED4ED1CAA7A12000C31F2 /* FSPathTools.m */; };
 		86FED4F91CABA5F4000C31F2 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86FED4F81CABA5F4000C31F2 /* CoreMedia.framework */; };
 		ABE7405D03CB4C6C81049CA4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D8C9C1603382FB6F260223 /* libPods.a */; };
@@ -123,6 +124,8 @@
 		86FD459C1CB4EC1C00C1EC12 /* FSShopingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSShopingViewController.m; sourceTree = "<group>"; };
 		86FD459E1CB4ECA300C1EC12 /* FSUIDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSUIDemoViewController.h; sourceTree = "<group>"; };
 		86FD459F1CB4ECA300C1EC12 /* FSUIDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSUIDemoViewController.m; sourceTree = "<group>"; };
+		86FD45F01CBCA36C00C1EC12 /* UITextField+FSLimitString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+FSLimitString.h"; sourceTree = "<group>"; };
+		86FD45F11CBCA36C00C1EC12 /* UITextField+FSLimitString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+FSLimitString.m"; sourceTree = "<group>"; };
 		86FED4EC1CAA7A12000C31F2 /* FSPathTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSPathTools.h; sourceTree = "<group>"; };
 		86FED4ED1CAA7A12000C31F2 /* FSPathTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSPathTools.m; sourceTree = "<group>"; };
 		86FED4EF1CAB6800000C31F2 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
@@ -240,6 +243,8 @@
 				86CE81111C914DB400FF9CDB /* UIImage+FSUIImage.m */,
 				86B87B261C945FD7008AE45D /* UIView+FSAutoLayout.h */,
 				86B87B271C945FD7008AE45D /* UIView+FSAutoLayout.m */,
+				86FD45F01CBCA36C00C1EC12 /* UITextField+FSLimitString.h */,
+				86FD45F11CBCA36C00C1EC12 /* UITextField+FSLimitString.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -520,6 +525,7 @@
 				86814E3B1C8D94D50097BC8C /* MBProgressHUD+Show.m in Sources */,
 				86814E471C8D96F30097BC8C /* TimerButton.m in Sources */,
 				86814E2A1C8D92EE0097BC8C /* FSCacheTools.m in Sources */,
+				86FD45F21CBCA36C00C1EC12 /* UITextField+FSLimitString.m in Sources */,
 				86CE81151C915AB000FF9CDB /* CommonSearchBar.m in Sources */,
 				86814E5D1C8D99F70097BC8C /* FSStarRatingBar.m in Sources */,
 				86814DF91C8D78B80097BC8C /* AppDelegate.m in Sources */,
