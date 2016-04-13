@@ -258,6 +258,8 @@
     }
     textView.editable = eEnable;
     textView.scrollEnabled = sEnable;
+    textView.showsHorizontalScrollIndicator = NO;
+    textView.showsVerticalScrollIndicator = NO;
     return textView;
 }
 

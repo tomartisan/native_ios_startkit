@@ -8,30 +8,33 @@
 
 #import "FSIndexViewController.h"
 
-@interface FSIndexViewController ()
-
-@end
 
 @implementation FSIndexViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    UITextView *textView = [UICreator createTextViewWithAttrString:[self prepareIntrocueText] editEnable:NO scroolEnable:YES];
+    
+    [PositionTools layView:textView atCenterOfView:self.view maxSize:CGSizeZero margins:0];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (NSAttributedString *)prepareIntrocueText
+{
+    NSMutableAttributedString *introText = [[NSMutableAttributedString alloc] init];
+    NSArray *introTexts = [NSArray arrayWithContentsOfFile:[FSPathTools pathForKey:@"introduce.plist" type:FSBundlePathType]];
+    
+    [introTexts enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        NSDictionary *attributes = @{NSFontAttributeName:SysFontWithSize(12),
+                                     NSForegroundColorAttributeName:RandomColorWithAlpha(1)};
+        
+        NSString *introduce = [NSString stringWithFormat:@"%ld. %@\n\n\n\n",idx,obj];
+        
+        [introText appendAttributedString:[[NSAttributedString alloc] initWithString:introduce attributes:attributes]];
+    }];
+    
+    return introText;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

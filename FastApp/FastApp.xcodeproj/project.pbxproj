@@ -43,6 +43,7 @@
 		86FD459D1CB4EC1C00C1EC12 /* FSShopingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FD459C1CB4EC1C00C1EC12 /* FSShopingViewController.m */; };
 		86FD45A01CB4ECA300C1EC12 /* FSUIDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FD459F1CB4ECA300C1EC12 /* FSUIDemoViewController.m */; };
 		86FD45F21CBCA36C00C1EC12 /* UITextField+FSLimitString.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FD45F11CBCA36C00C1EC12 /* UITextField+FSLimitString.m */; };
+		86FD45F71CBE2B6000C1EC12 /* introduce.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86FD45F61CBE2B6000C1EC12 /* introduce.plist */; };
 		86FED4EE1CAA7A12000C31F2 /* FSPathTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FED4ED1CAA7A12000C31F2 /* FSPathTools.m */; };
 		86FED4F91CABA5F4000C31F2 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86FED4F81CABA5F4000C31F2 /* CoreMedia.framework */; };
 		ABE7405D03CB4C6C81049CA4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D8C9C1603382FB6F260223 /* libPods.a */; };
@@ -126,6 +127,7 @@
 		86FD459F1CB4ECA300C1EC12 /* FSUIDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSUIDemoViewController.m; sourceTree = "<group>"; };
 		86FD45F01CBCA36C00C1EC12 /* UITextField+FSLimitString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+FSLimitString.h"; sourceTree = "<group>"; };
 		86FD45F11CBCA36C00C1EC12 /* UITextField+FSLimitString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+FSLimitString.m"; sourceTree = "<group>"; };
+		86FD45F61CBE2B6000C1EC12 /* introduce.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = introduce.plist; sourceTree = "<group>"; };
 		86FED4EC1CAA7A12000C31F2 /* FSPathTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSPathTools.h; sourceTree = "<group>"; };
 		86FED4ED1CAA7A12000C31F2 /* FSPathTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSPathTools.m; sourceTree = "<group>"; };
 		86FED4EF1CAB6800000C31F2 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
@@ -358,6 +360,7 @@
 				86A1DEC51CB28D920093DA2B /* FSTestDownLoadViewController.m */,
 				86FD45891CB4BE9200C1EC12 /* FSTestLayoutViewController.h */,
 				86FD458A1CB4BE9200C1EC12 /* FSTestLayoutViewController.m */,
+				86FD45F61CBE2B6000C1EC12 /* introduce.plist */,
 			);
 			path = Demos;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 			files = (
 				86814E011C8D78B80097BC8C /* Assets.xcassets in Resources */,
 				86814E1A1C8D7D400097BC8C /* Default-568h@2x.png in Resources */,
+				86FD45F71CBE2B6000C1EC12 /* introduce.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
