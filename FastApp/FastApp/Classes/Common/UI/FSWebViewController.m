@@ -21,6 +21,7 @@
         self.title = title;
         _webUrl = url;
         [self.view addSubview:self.webView];
+        [PositionTools layView:self.webView atCenterOfView:self.view maxSize:CGSizeZero margins:0];
     }
     return self;
 }
@@ -43,13 +44,15 @@
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error
 {
     [self stopLoadding];
-    [MBProgressHUD showError:@"网页加载错误"];
+    NSString *localErrorDes = [error.userInfo valueForKey:NSLocalizedDescriptionKey];
+    NSString *errorMsg = (nil == localErrorDes) ? @"页面加载出错" : localErrorDes;
+    [MBProgressHUD showError:errorMsg];
 }
 
 - (UIWebView *)webView
 {
     if (!_webView) {
-        _webView = [[UIWebView alloc] initWithFrame:FullVCRect];
+        _webView = [[UIWebView alloc] init];
         _webView.scrollView.bounces = NO;
         _webView.scrollView.showsVerticalScrollIndicator = NO;
         _webView.scrollView.showsHorizontalScrollIndicator = NO;
