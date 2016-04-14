@@ -7,6 +7,7 @@
 //
 
 #import "FSIndexViewController.h"
+#import "FSWebViewController.h"
 
 @interface FSIndexViewController ()
 @property (nonatomic, strong) UITextView *textView;
@@ -16,6 +17,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"微博"
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:self
+                                                                            action:@selector(viewWebsite:)];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"说IT"
+                                                                              style:UIBarButtonItemStylePlain
+                                                                             target:self
+                                                                             action:@selector(viewWebsite:)];
     
     [PositionTools layView:self.textView atCenterOfView:self.view maxSize:CGSizeZero margins:0];
 }
@@ -41,6 +52,13 @@
     }];
     
     return introText;
+}
+
+- (void)viewWebsite:(UIBarButtonItem *)bar
+{
+    NSString *webUrl = [bar.title isEqualToString:@"微博"] ? @"http://weibo.com/tangkunyin" : @"http://shuoit.net";
+    FSWebViewController *webVC = [[FSWebViewController alloc] initWithTitle:bar.title webUrl:webUrl];
+    [self.navigationController pushViewController:webVC animated:YES];
 }
 
 - (UITextView *)textView
