@@ -1,5 +1,5 @@
 //
-//  PositionTools.h
+//  FSAutolayoutor.h
 //  FastApp
 //
 //  Created by tangkunyin on 16/3/7.
@@ -22,7 +22,7 @@ typedef NS_ENUM(NSInteger,UIPositionType)
 };
 
 //使用Masonry库封装的自动布局相关工具。支持旋屏
-@interface PositionTools : NSObject
+@interface FSAutolayoutor : NSObject
 
 
 /**

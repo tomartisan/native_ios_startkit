@@ -21,7 +21,7 @@
         self.title = title;
         _webUrl = url;
         [self.view addSubview:self.webView];
-        [PositionTools layView:self.webView atCenterOfView:self.view maxSize:CGSizeZero margins:0];
+        [FSAutolayoutor layView:self.webView atCenterOfView:self.view maxSize:CGSizeZero margins:0];
     }
     return self;
 }

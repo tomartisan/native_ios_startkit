@@ -1,14 +1,14 @@
 //
-//  UICretator.m
+//  FSUICreator.m
 //  FastApp
 //
 //  Created by tangkunyin on 16/3/7.
 //  Copyright © 2016年 www.shuoit.net. All rights reserved.
 //
 
-#import "UICreator.h"
+#import "FSUICreator.h"
 
-@implementation UICreator
+@implementation FSUICreator
 
 //For UIView
 + (UIView *)createUIViewWithBgColor:(UIColor *)bgColor Corner:(float)cornerRadius

@@ -27,8 +27,8 @@ static NSString *const stringUrl = @"http://7xseox.com1.z0.glb.clouddn.com/mp4Fo
 {
     [super viewDidLoad];
     
-    [PositionTools layView:self.downBtn insideView:self.view type:LeftBottom maxSize:CGSizeMake(60, 45) offset:CGSizeMake(20, 0)];
-    [PositionTools layView:self.playBtn insideView:self.view type:RightBottom maxSize:CGSizeMake(60, 45) offset:CGSizeMake(20, 0)];
+    [FSAutolayoutor layView:self.downBtn insideView:self.view type:LeftBottom maxSize:CGSizeMake(60, 45) offset:CGSizeMake(20, 0)];
+    [FSAutolayoutor layView:self.playBtn insideView:self.view type:RightBottom maxSize:CGSizeMake(60, 45) offset:CGSizeMake(20, 0)];
     
     if ([FSPathTools exists:[FSPathTools pathForKey:fileName type:FSTmpPathType] autoCreate:NO]) {
         
@@ -60,7 +60,7 @@ static NSString *const stringUrl = @"http://7xseox.com1.z0.glb.clouddn.com/mp4Fo
 - (UIButton *)downBtn
 {
     if (!_downBtn) {
-        _downBtn  = [UICreator createButtonWithTitle:@"下 载"
+        _downBtn  = [FSUICreator createButtonWithTitle:@"下 载"
                                           titleColor:FSWhiteColor
                                                 font:SysFontWithSize(14)
                                               target:self
@@ -74,7 +74,7 @@ static NSString *const stringUrl = @"http://7xseox.com1.z0.glb.clouddn.com/mp4Fo
 - (UIButton *)playBtn
 {
     if (!_playBtn) {
-        _playBtn  = [UICreator createButtonWithTitle:@"播 放"
+        _playBtn  = [FSUICreator createButtonWithTitle:@"播 放"
                                           titleColor:FSWhiteColor
                                                 font:SysFontWithSize(14)
                                               target:self

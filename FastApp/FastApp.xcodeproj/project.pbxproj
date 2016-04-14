@@ -11,8 +11,8 @@
 		86814DF91C8D78B80097BC8C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814DF81C8D78B80097BC8C /* AppDelegate.m */; };
 		86814E011C8D78B80097BC8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86814E001C8D78B80097BC8C /* Assets.xcassets */; };
 		86814E1A1C8D7D400097BC8C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86814E191C8D7D400097BC8C /* Default-568h@2x.png */; };
-		86814E1E1C8D812D0097BC8C /* UICreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E1D1C8D812D0097BC8C /* UICreator.m */; };
-		86814E211C8D81D50097BC8C /* PositionTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E201C8D81D50097BC8C /* PositionTools.m */; };
+		86814E1E1C8D812D0097BC8C /* FSUICreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E1D1C8D812D0097BC8C /* FSUICreator.m */; };
+		86814E211C8D81D50097BC8C /* FSAutolayoutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E201C8D81D50097BC8C /* FSAutolayoutor.m */; };
 		86814E271C8D91A10097BC8C /* GlobalCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E261C8D91A10097BC8C /* GlobalCache.m */; };
 		86814E2A1C8D92EE0097BC8C /* FSCacheTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E291C8D92EE0097BC8C /* FSCacheTools.m */; };
 		86814E351C8D94370097BC8C /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E331C8D94370097BC8C /* GTMBase64.m */; };
@@ -59,10 +59,10 @@
 		86814E051C8D78B80097BC8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86814E191C8D7D400097BC8C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		86814E1B1C8D7E710097BC8C /* FastApp-Pre.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FastApp-Pre.pch"; sourceTree = "<group>"; };
-		86814E1C1C8D812D0097BC8C /* UICreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICreator.h; sourceTree = "<group>"; };
-		86814E1D1C8D812D0097BC8C /* UICreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICreator.m; sourceTree = "<group>"; };
-		86814E1F1C8D81D50097BC8C /* PositionTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PositionTools.h; sourceTree = "<group>"; };
-		86814E201C8D81D50097BC8C /* PositionTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PositionTools.m; sourceTree = "<group>"; };
+		86814E1C1C8D812D0097BC8C /* FSUICreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSUICreator.h; sourceTree = "<group>"; };
+		86814E1D1C8D812D0097BC8C /* FSUICreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSUICreator.m; sourceTree = "<group>"; };
+		86814E1F1C8D81D50097BC8C /* FSAutolayoutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSAutolayoutor.h; sourceTree = "<group>"; };
+		86814E201C8D81D50097BC8C /* FSAutolayoutor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSAutolayoutor.m; sourceTree = "<group>"; };
 		86814E221C8D87460097BC8C /* AppMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppMacros.h; sourceTree = "<group>"; };
 		86814E231C8D88430097BC8C /* GloabVariables.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GloabVariables.h; sourceTree = "<group>"; };
 		86814E241C8D891E0097BC8C /* MessageKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageKey.h; sourceTree = "<group>"; };
@@ -282,10 +282,10 @@
 		86814E161C8D7C440097BC8C /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				86814E1C1C8D812D0097BC8C /* UICreator.h */,
-				86814E1D1C8D812D0097BC8C /* UICreator.m */,
-				86814E1F1C8D81D50097BC8C /* PositionTools.h */,
-				86814E201C8D81D50097BC8C /* PositionTools.m */,
+				86814E1C1C8D812D0097BC8C /* FSUICreator.h */,
+				86814E1D1C8D812D0097BC8C /* FSUICreator.m */,
+				86814E1F1C8D81D50097BC8C /* FSAutolayoutor.h */,
+				86814E201C8D81D50097BC8C /* FSAutolayoutor.m */,
 				86814E281C8D92EE0097BC8C /* FSCacheTools.h */,
 				86814E291C8D92EE0097BC8C /* FSCacheTools.m */,
 				86814E3C1C8D95230097BC8C /* FSNetTools.h */,
@@ -514,7 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86B87B281C945FD7008AE45D /* UIView+FSAutoLayout.m in Sources */,
-				86814E211C8D81D50097BC8C /* PositionTools.m in Sources */,
+				86814E211C8D81D50097BC8C /* FSAutolayoutor.m in Sources */,
 				86814E271C8D91A10097BC8C /* GlobalCache.m in Sources */,
 				86CE81121C914DB400FF9CDB /* UIImage+FSUIImage.m in Sources */,
 				86814E411C8D95A00097BC8C /* FSStringTools.m in Sources */,
@@ -541,7 +541,7 @@
 				86814E571C8D990F0097BC8C /* FSBaseSubViewController.m in Sources */,
 				86A1DEC61CB28D920093DA2B /* FSTestDownLoadViewController.m in Sources */,
 				86FD459D1CB4EC1C00C1EC12 /* FSShopingViewController.m in Sources */,
-				86814E1E1C8D812D0097BC8C /* UICreator.m in Sources */,
+				86814E1E1C8D812D0097BC8C /* FSUICreator.m in Sources */,
 				86FD45941CB4EB2400C1EC12 /* FSAppHomeViewController.m in Sources */,
 				86FD45901CB4EAE700C1EC12 /* FSUserViewController.m in Sources */,
 				86814E511C8D98210097BC8C /* FSNavigationController.m in Sources */,

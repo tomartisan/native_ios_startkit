@@ -46,7 +46,7 @@
 {
     switch ([notification.object intValue]) {
         case NoConnectionError:
-            [PositionTools layView:self.reConnectView
+            [FSAutolayoutor layView:self.reConnectView
                     atCenterOfView:self.view
                          maxSize:CGSizeZero
                            margins:0];
@@ -72,15 +72,15 @@
 - (UIView *)reConnectView
 {
     if (!_reConnectView) {
-        _reConnectView = [UICreator createUIViewWithBgColor:[UIColor whiteColor] Corner:0];
-        UIButton *reConnBtn = [UICreator createButtonWithTitle:@"无网络连接，点击重试"
+        _reConnectView = [FSUICreator createUIViewWithBgColor:[UIColor whiteColor] Corner:0];
+        UIButton *reConnBtn = [FSUICreator createButtonWithTitle:@"无网络连接，点击重试"
                                                     titleColor:[UIColor lightGrayColor]
                                                           font:[UIFont systemFontOfSize:22]
                                                         target:self
                                                         action:@selector(refreshPage:)];
         reConnBtn.tag = NoConnectionError;
         reConnBtn.center = _reConnectView.center;
-        [PositionTools layView:reConnBtn atCenterOfView:_reConnectView maxSize:CGSizeMake(KDeviceHeight, 60) margins:0];
+        [FSAutolayoutor layView:reConnBtn atCenterOfView:_reConnectView maxSize:CGSizeMake(KDeviceHeight, 60) margins:0];
     }
     return _reConnectView;
 }

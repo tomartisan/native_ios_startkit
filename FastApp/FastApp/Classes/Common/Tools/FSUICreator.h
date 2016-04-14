@@ -1,5 +1,5 @@
 //
-//  UICretator.h
+//  FSUICreator.h
 //  FastApp
 //
 //  Created by tangkunyin on 16/3/7.
@@ -17,7 +17,7 @@ typedef NS_ENUM(NSInteger,BtnImgDirectionType)
     BtnImgDirectionBottom,  //图片居下，文字居上。整体上下机构
 };
 
-@interface UICreator : NSObject
+@interface FSUICreator : NSObject
 
 //For UIView
 + (UIView *)createUIViewWithBgColor:(UIColor *)bgColor

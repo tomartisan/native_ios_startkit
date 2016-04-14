@@ -14,7 +14,7 @@
     [super viewDidLoad];
     self.navigationItem.hidesBackButton = YES;
     //自定义返回按钮
-    UIButton *backBtn = [UICreator createButtonWithNormalImage:@"prev"
+    UIButton *backBtn = [FSUICreator createButtonWithNormalImage:@"prev"
                                               highlightedImage:@"prev"
                                                         target:self
                                                         action:@selector(backToParentController)];
