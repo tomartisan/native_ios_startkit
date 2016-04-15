@@ -11,63 +11,78 @@
 @implementation FSUICreator
 
 //For UIView
-+ (UIView *)createUIViewWithBgColor:(UIColor *)bgColor Corner:(float)cornerRadius
++ (UIView *)createViewWithSize:(CGSize)size
+                       bgColor:(UIColor *)bgColor
+                        radius:(float)cornerRadius
 {
-    UIView *view = [[UIView alloc] init];
+    UIView *view = [[UIView alloc] initWithFrame:FSRectFromSize(size)];
     view.backgroundColor = bgColor;
     view.layer.cornerRadius = cornerRadius;
     return view;
 }
 
-+ (UIView *)createUIViewWithBgColor:(UIColor *)bgColor Corner:(float)cornerRadius actionGesture:(UIGestureRecognizer *)gesture
++ (UIView *)createViewWithSize:(CGSize)size
+                       bgColor:(UIColor *)bgColor
+                        radius:(float)cornerRadius
+                       gesture:(UIGestureRecognizer *)gesture
 {
-    UIView *view = [self createUIViewWithBgColor:bgColor Corner:cornerRadius];
+    UIView *view = [self createViewWithSize:size bgColor:bgColor radius:cornerRadius];
     [view addGestureRecognizer:gesture];
     return view;
 }
 
 //For UILabel
-+ (UILabel *)createLabel:(NSString *)text fontSize:(int)fontSize
++ (UILabel *)createLabelWithSize:(CGSize)size
+                            text:(NSString *)text
+                     sysFontSize:(int)fontSize
 {
-    UILabel *label = [[UILabel alloc] init];
-    label.text = text;
-    if (fontSize > 0) {
-        label.font = [UIFont systemFontOfSize:fontSize];
-    }
+    UILabel *label = [self createLabelWithSize:size text:text color:FSBlackColor font:SysFontWithSize(fontSize)];
     return label;
 }
 
-+ (UILabel *)createLabel:(NSAttributedString *)aText bgColor:(UIColor *)bgColor
++ (UILabel *)createLabelWithSize:(CGSize)size
+                            text:(NSString *)text
+                           color:(UIColor *)color
+                            font:(UIFont *)font
 {
-    UILabel *label = [self createLabel:nil fontSize:0];
-    label.backgroundColor = bgColor;
+    NSAttributedString *aText = [[NSAttributedString alloc] initWithString:text
+                                                                attributes:@{NSFontAttributeName:font,
+                                                                             NSForegroundColorAttributeName:color}];
+    UILabel *label = [self createLabelWithSize:size aText:aText bgColor:nil];
+    return label;
+}
+
++ (UILabel *)createLabelWithSize:(CGSize)size
+                           aText:(NSAttributedString *)aText
+                         bgColor:(UIColor *)bgColor
+{
+    UILabel *label = [[UILabel alloc] initWithFrame:FSRectFromSize(size)];
     label.attributedText = aText;
-    return label;
-}
-
-+ (UILabel *)createLabel:(NSString *)text color:(UIColor *)color font:(UIFont *)font
-{
-    UILabel *label = [self createLabel:text fontSize:0];
-    label.textColor = color;
-    label.font = font;
-    return label;
-}
-
-+ (UILabel *)createLabel:(NSString *)text color:(UIColor *)color bgColor:(UIColor *)bgColor font:(UIFont *)font
-{
-    UILabel *label = [self createLabel:text color:color font:font];
     label.backgroundColor = bgColor;
+    label.numberOfLines = 0;
+    label.lineBreakMode = NSLineBreakByTruncatingTail;
     return label;
 }
+
++ (UILabel *)createLabelWithFont:(UIFont *)font
+                           aText:(NSAttributedString *)aText
+{
+    //此处根据font确定控件大小
+    UILabel *label = [self createLabelWithSize:[aText size] aText:aText bgColor:nil];
+    return label;
+}
+
 
 //For UIButton
 + (UIButton *)createButtonWithTitle:(NSString *)title
+                               size:(CGSize)size
                          titleColor:(UIColor *)titleColor
                                font:(UIFont *)font
                              target:(id)target
                              action:(SEL)action
 {
     return [self createButtonWithTitle:title
+                                  size:(CGSize)size
                             titleColor:titleColor
                                   font:font
                             buttonType:UIButtonTypeCustom
@@ -78,6 +93,7 @@
 }
 
 + (UIButton *)createButtonWithTitle:(NSString *)title
+                               size:(CGSize)size
                          titleColor:(UIColor *)titleColor
                                font:(UIFont *)font
                          buttonType:(UIButtonType)buttonType
@@ -87,6 +103,7 @@
                              action:(SEL)action
 {
     UIButton *button = [UIButton buttonWithType:buttonType];
+    button.frame = FSRectFromSize(size);
     [button setTitle:title forState:UIControlStateNormal];
     if (titleColor) {
         [button setTitleColor:titleColor forState:UIControlStateNormal];
@@ -105,33 +122,22 @@
 }
 
 + (UIButton *)createButtonWithTitle:(NSString *)title
+                               size:(CGSize)size
                               image:(NSString *)imageName
                           titleEdge:(UIEdgeInsets)titleEdge
                           imageEdge:(UIEdgeInsets)imageEdge
                              target:(id)target
                              action:(SEL)action
 {
-    UIButton *button = [self createButtonWithTitle:title titleColor:nil font:nil target:target action:action];
+    UIButton *button = [self createButtonWithTitle:title size:size titleColor:nil font:nil target:target action:action];
     [button setImage:[UIImage imageWithNamed:imageName] forState:UIControlStateNormal];
     [button setTitleEdgeInsets:titleEdge];
     [button setImageEdgeInsets:imageEdge];
     return button;
 }
 
-+ (UIButton *)createButtonWithNormalImage:(NSString *)normalImageName
-                         highlightedImage:(NSString *)highlightedImageName
-                                   target:(id)target
-                                   action:(SEL)action
-{
-    UIButton *button = [self createButtonWithTitle:nil titleColor:nil font:nil target:target action:action];
-    [button setImage:[UIImage imageWithNamed:normalImageName] forState:UIControlStateNormal];
-    [button setImage:[UIImage imageWithNamed:highlightedImageName] forState:UIControlStateHighlighted];
-    CGSize size = [button imageForState:UIControlStateNormal].size;
-    button.bounds = CGRectMake(0, 0, size.width, size.height);
-    return button;
-}
-
 + (UIButton *)createButtonWithTitle:(NSString *)title
+                               size:(CGSize)size
                               image:(NSString *)imageName
                          titleColor:(UIColor *)titleColor
                                font:(UIFont *)font
@@ -144,6 +150,7 @@
                              action:(SEL)action
 {
     UIButton *button = [self createButtonWithTitle:title
+                                              size:size
                                         titleColor:titleColor
                                               font:font
                                             target:target
@@ -185,76 +192,83 @@
     return button;
 }
 
-//For UIImageView
-+ (UIImageView *)createImageViewFromImagename:(NSString *)imagename round:(BOOL)round
++ (UIButton *)createButtonWithNormalImage:(NSString *)normalImageName
+                         highlightedImage:(NSString *)highlightedImageName
+                                   target:(id)target
+                                   action:(SEL)action
 {
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageWithNamed:imagename]];
+    UIButton *button = [self createButtonWithTitle:nil size:CGSizeZero titleColor:nil font:nil target:target action:action];
+    [button setImage:[UIImage imageWithNamed:normalImageName] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageWithNamed:highlightedImageName] forState:UIControlStateHighlighted];
+    CGSize size = [button imageForState:UIControlStateNormal].size;
+    button.frame = FSRectFromSize(size);;
+    return button;
+}
+
+//For UIImageView
++ (UIImageView *)createImageViewWithName:(NSString *)imageName
+{
+    CGSize size = [UIImage imageWithNamed:imageName].size;
+    return [self createImageViewWithName:imageName size:size];
+}
+
++ (UIImageView *)createImageViewWithName:(NSString *)imageName size:(CGSize)size
+{
+    return [self createImageViewWithName:imageName size:size radius:0];
+}
+
++ (UIImageView *)createImageViewWithName:(NSString *)imageName size:(CGSize)size radius:(float)cornerRadius
+{
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:FSRectFromSize(size)];
+    imageView.image = [UIImage imageWithNamed:imageName];
     imageView.userInteractionEnabled = YES;
-    if (round) {
-        imageView.layer.cornerRadius = CGRectGetWidth(imageView.frame);
-        imageView.layer.masksToBounds = YES;
-    }
+    imageView.layer.cornerRadius = cornerRadius;
+    imageView.layer.masksToBounds = YES;
     return imageView;
 }
 
 
 //For UITextFiled
-+ (UITextField *)createTextFieldWithFont:(UIFont *)font
-                               textColor:(UIColor *)textColor
-                         backgroundColor:(UIColor *)backgroundColor
-                             borderStyle:(UITextBorderStyle)borderStyle
++ (UITextField *)createTextFieldWithSize:(CGSize)size
                              placeholder:(NSString *)placeholder
                                 delegate:(id<UITextFieldDelegate>)delegate
 {
-    UITextField *textField = [[UITextField alloc] init];
-    textField.font = font;
-    textField.textColor = textColor;
-    textField.backgroundColor = backgroundColor;
-    textField.borderStyle = borderStyle;
+    UITextField *textField = [[UITextField alloc] initWithFrame:FSRectFromSize(size)];
     textField.placeholder = placeholder;
     textField.delegate = delegate;
     return textField;
 }
 
-+ (UITextField *)createTextFieldWithLeftAttrTitle:(NSAttributedString *)aTitle
-                                             font:(UIFont *)font
-                                        textColor:(UIColor *)textColor
-                                  backgroundColor:(UIColor *)backgroundColor
-                                      placeholder:(NSString *)placeholder
-                                     keyboardType:(UIKeyboardType)keyboardType
-                                    returnKeyType:(UIReturnKeyType)returnKeyType
-                                         delegate:(id<UITextFieldDelegate>)delegate
++ (UITextField *)createTextFieldWithSize:(CGSize)size
+                                    Font:(UIFont *)font
+                               textColor:(UIColor *)textColor
+                         backgroundColor:(UIColor *)backgroundColor
+                             borderStyle:(UITextBorderStyle)borderStyle
+                             placeholder:(NSString *)placeholder
+                            keyboardType:(UIKeyboardType)keyboardType
+                           returnKeyType:(UIReturnKeyType)returnKeyType
+                                delegate:(id<UITextFieldDelegate>)delegate
 {
-    UITextField *textField = [self createTextFieldWithFont:font
-                                                 textColor:textColor
-                                           backgroundColor:backgroundColor
-                                               borderStyle:UITextBorderStyleNone
-                                               placeholder:placeholder
-                                                  delegate:delegate];
+    UITextField *textField = [self createTextFieldWithSize:size placeholder:placeholder delegate:delegate];
+    textField.font = font;
+    textField.textColor = textColor;
+    textField.backgroundColor = backgroundColor;
+    textField.borderStyle = borderStyle;
     textField.keyboardType = keyboardType;
     textField.returnKeyType = returnKeyType;
-    
-    UILabel *label = [[UILabel alloc] init];
-    label.attributedText = aTitle;
-    
-    textField.leftView = label;
-    textField.leftViewMode = UITextFieldViewModeAlways;
-    
-    textField.enablesReturnKeyAutomatically = YES;
-    textField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    textField.autocorrectionType = UITextAutocorrectionTypeNo;
-    
     return textField;
 }
 
+
 //For UITextView
-+ (UITextView *)createTextViewWithAttrString:(NSAttributedString *)aString
-                                  editEnable:(BOOL)eEnable
-                                scroolEnable:(BOOL)sEnable
++ (UITextView *)createTextViewWithSize:(CGSize)size
+                               aString:(NSAttributedString *)atrributeString
+                            editEnable:(BOOL)eEnable
+                          scroolEnable:(BOOL)sEnable
 {
-    UITextView *textView = [[UITextView alloc] init];
-    if (aString) {
-        textView.attributedText = aString;
+    UITextView *textView = [[UITextView alloc] initWithFrame:FSRectFromSize(size)];
+    if (atrributeString) {
+        textView.attributedText = atrributeString;
     }
     textView.editable = eEnable;
     textView.scrollEnabled = sEnable;
@@ -265,15 +279,32 @@
 
 
 //For UITableView
-+ (UITableView *)createTableWithStyle:(UITableViewStyle)style
-                   seporatorLineColor:(UIColor *)seporatorLineColor
-                           headerView:(UIView *)headerView
-                           footerView:(UIView *)footerView
-                           zeroMargin:(BOOL)zeroMargin
-                             delegate:(id<UITableViewDelegate, UITableViewDataSource>)delegate
++ (UITableView *)createTableViewWithSize:(CGSize)size
+                                   style:(UITableViewStyle)style
+                               rowHeight:(float)height
+                                delegate:(id<UITableViewDelegate, UITableViewDataSource>)delegate
 {
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:style];
-    tableView.separatorColor = seporatorLineColor;
+    UITableView *tableView = [[UITableView alloc] initWithFrame:FSRectFromSize(size) style:style];
+    if (height == 0) {
+        height = 44;
+    }
+    tableView.rowHeight = height;
+    tableView.delegate = delegate;
+    tableView.dataSource = delegate;
+    return tableView;
+}
+
++ (UITableView *)createTableViewWithSize:(CGSize)size
+                                   style:(UITableViewStyle)style
+                              headerView:(UIView *)headerView
+                              footerView:(UIView *)footerView
+                            scrollEnable:(BOOL)sEnable
+                           bouncesEnable:(BOOL)bEnable
+                              zeroMargin:(BOOL)zeroMargin
+                      seporatorLineColor:(UIColor *)seporatorLineColor
+                                delegate:(id<UITableViewDelegate, UITableViewDataSource>)delegate
+{
+    UITableView *tableView = [self createTableViewWithSize:size style:style rowHeight:0 delegate:delegate];
     if (headerView) {
         tableView.tableHeaderView = headerView;
     }
@@ -282,8 +313,6 @@
     }else{
         tableView.tableFooterView = [[UIView alloc] init];
     }
-    tableView.delegate = delegate;
-    tableView.dataSource = delegate;
     if (zeroMargin) {
         if ([tableView respondsToSelector:@selector(setSeparatorInset:)]){
             [tableView setSeparatorInset:UIEdgeInsetsZero];
@@ -292,22 +321,27 @@
             [tableView setLayoutMargins:UIEdgeInsetsZero];
         }
     }
+    tableView.scrollEnabled = sEnable;
+    tableView.bounces = bEnable;
+    tableView.separatorColor = seporatorLineColor;
     return tableView;
 }
 
-+ (UIWebView *)createWebViewWithUrl:(NSString *)webUrl
-                            baseURL:(NSURL *)baseUrl
-                         htmlString:(NSString *)htmlString
-                       scroolEnable:(BOOL)sEnable
-                           delegate:(id<UIWebViewDelegate>)delegate
++ (UIWebView *)createWebViewWithSize:(CGSize)size
+                              webUrl:(NSString *)url
+                             baseURL:(NSURL *)baseUrl
+                          htmlString:(NSString *)htmlString
+                        scroolEnable:(BOOL)sEnable
+                            delegate:(id<UIWebViewDelegate>)delegate
 {
-    UIWebView *webView = [[UIWebView alloc] init];
+    UIWebView *webView = [[UIWebView alloc] initWithFrame:FSRectFromSize(size)];
     webView.scrollView.scrollEnabled = sEnable;
     webView.scrollView.showsHorizontalScrollIndicator = NO;
     webView.scrollView.showsVerticalScrollIndicator = NO;
     webView.delegate = delegate;
-    if (![FSStringTools isEmpty:webUrl]) {
-        NSURLRequest *request = [FSNetTools getRequestWithURLString:webUrl method:@"GET" timeOut:45];
+
+    if (![FSStringTools isEmpty:url]) {
+        NSURLRequest *request = [FSNetTools getRequestWithURLString:url method:@"GET" timeOut:45];
         [webView loadRequest:request];
     }
     

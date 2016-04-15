@@ -46,10 +46,7 @@
 {
     switch ([notification.object intValue]) {
         case NoConnectionError:
-            [FSAutolayoutor layView:self.reConnectView
-                    atCenterOfView:self.view
-                         maxSize:CGSizeZero
-                           margins:0];
+            [FSAutolayoutor layView:self.reConnectView fullOfTheView:self.view];
             break;
         case RequestFailedError:
             [MBProgressHUD showError:@"请求失败，请稍后再试"];
@@ -80,7 +77,7 @@
                                                         action:@selector(refreshPage:)];
         reConnBtn.tag = NoConnectionError;
         reConnBtn.center = _reConnectView.center;
-        [FSAutolayoutor layView:reConnBtn atCenterOfView:_reConnectView maxSize:CGSizeMake(KDeviceHeight, 60) margins:0];
+        [FSAutolayoutor layView:reConnBtn atCenterOfTheView:_reConnectView maxSize:CGSizeMake(KDeviceHeight, 60) margins:0];
     }
     return _reConnectView;
 }

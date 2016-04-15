@@ -9,31 +9,45 @@
 #import "Masonry.h"
 
 //位置类型
-typedef NS_ENUM(NSInteger,UIPositionType)
+typedef NS_ENUM(NSInteger,FSLayoutAlignmentType)
 {
-    LeftTop,        //左上角
-    LeftMiddle,     //左中央
-    LeftBottom,     //左下角
-    RightTop,       //右上角
-    RightMiddle,    //右中央
-    RightBottom,    //右下角
-    MiddleTop,      //中上方
-    MiddleBottom    //中下方
+    AlignmentCenter=0,//默认居中
+    AlignmentTop,
+    AlignmentBottom,
+    AlignmentLeft,
+    AlignmentRight
 };
 
 //使用Masonry库封装的自动布局相关工具。支持旋屏
 @interface FSAutolayoutor : NSObject
 
 
-/**
- *  在父视图中央放置一个固定Size大小的子视图
- *
- *  @param view      子视图
- *  @param superView 父视图
- *  @param size      子视图大小，当size为CGSizeZero且margins为UIEdgeInsetsZero时，子视图大小与父视图相等
- *  @param margins   子视图相对父视图的内边距。
- */
-+ (void)layView:(UIView *)view atCenterOfView:(UIView *)superView maxSize:(CGSize)size margins:(float)margins;
++ (void)layView:(UIView *)view fullOfTheView:(UIView *)superView;
++ (void)layView:(UIView *)view atCenterOfTheView:(UIView *)superView;
++ (void)layView:(UIView *)view atCenterOfTheView:(UIView *)superView margins:(float)margins;
+
+
+
+
++ (void)layView:(UIView*)subview atTheLeftMiddleOfTheView:(UIView*)container offset:(float)offset;
++ (void)layView:(UIView*)subview atTheRightMiddleOfTheView:(UIView*)container offset:(float)offset;
++ (void)layView:(UIView*)subview atTheTopMiddleOfTheView:(UIView*)container offset:(float)offset;
++ (void)layView:(UIView*)subview atTheBottomMiddleOfTheView:(UIView*)container offset:(float)offset;
+
++ (void)layView:(UIView*)subview atTheLeftTopOfTheView:(UIView*)container offset:(CGSize)offset;
++ (void)layView:(UIView*)subview atTheRightTopOfTheView:(UIView*)container offset:(CGSize)offset;
++ (void)layView:(UIView*)subview atTheLeftBottomOfTheView:(UIView*)container offset:(CGSize)offset;
++ (void)layView:(UIView*)subview atTheRightBottomOfTheView:(UIView*)container offset:(CGSize)offset;
+
++ (void)layView:(UIView *)sourceView toTheRightOfTheView:(UIView*)targetView span:(float)span;
++ (void)layView:(UIView *)sourceView toTheLeftOfTheView:(UIView*)targetView span:(float)span;
++ (void)layView:(UIView *)sourceView aboveTheView:(UIView*)targetView span:(float)span;
++ (void)layView:(UIView *)sourceView belowTheView:(UIView*)targetView span:(float)span;
+
++ (void)layView:(UIView *)sourceView toTheRightOfTheView:(UIView*)targetView span:(float)span alignmentType:(FSLayoutAlignmentType)alignmentType;
++ (void)layView:(UIView *)sourceView toTheLeftOfTheView:(UIView*)targetView span:(float)span alignmentType:(FSLayoutAlignmentType)alignmentType;
++ (void)layView:(UIView *)sourceView aboveTheView:(UIView*)targetView span:(float)span alignmentType:(FSLayoutAlignmentType)alignmentType;
++ (void)layView:(UIView *)sourceView belowTheView:(UIView*)targetView span:(float)span alignmentType:(FSLayoutAlignmentType)alignmentType;
 
 
 /**
@@ -45,8 +59,6 @@ typedef NS_ENUM(NSInteger,UIPositionType)
  *  @param size       最大值
  *  @param offset     距离位置类型处的横纵向距离
  */
-+ (void)layView:(UIView *)sourceView insideView:(UIView *)targetView type:(UIPositionType)type maxSize:(CGSize)size offset:(CGSize)offset;
-
 
 /**
  *  根据位置类型，在targetView外放置sourceView。targetView与sourceView为平级关系
@@ -57,6 +69,7 @@ typedef NS_ENUM(NSInteger,UIPositionType)
  *  @param size       最大值
  *  @param offset     距离位置类型处的横纵向距离
  */
-+ (void)layView:(UIView *)sourceView outsideView:(UIView *)targetView type:(UIPositionType)type maxSize:(CGSize)size offset:(CGSize)offset;
+
+
 
 @end

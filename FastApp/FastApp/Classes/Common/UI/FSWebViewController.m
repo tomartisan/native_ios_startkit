@@ -20,8 +20,8 @@
     if (self) {
         self.title = title;
         _webUrl = url;
-        [self.view addSubview:self.webView];
-        [FSAutolayoutor layView:self.webView atCenterOfView:self.view maxSize:CGSizeZero margins:0];
+        [self.view addSubview:self.webView];        
+        [FSAutolayoutor layView:self.webView fullOfTheView:self.view];
     }
     return self;
 }

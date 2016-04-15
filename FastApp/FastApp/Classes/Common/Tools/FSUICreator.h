@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define FSRectFromSize(size) CGRectMake(0,0,size.width,size,height)
+
 //用于按钮中，文字和图片相对方向
 typedef NS_ENUM(NSInteger,BtnImgDirectionType)
 {
@@ -20,34 +22,44 @@ typedef NS_ENUM(NSInteger,BtnImgDirectionType)
 @interface FSUICreator : NSObject
 
 //For UIView
-+ (UIView *)createUIViewWithBgColor:(UIColor *)bgColor
-                             Corner:(float)cornerRadius;
-+ (UIView *)createUIViewWithBgColor:(UIColor *)bgColor
-                             Corner:(float)cornerRadius
-                      actionGesture:(UIGestureRecognizer *)gesture;
++ (UIView *)createViewWithSize:(CGSize)size
+                       bgColor:(UIColor *)bgColor
+                        radius:(float)cornerRadius;
+
++ (UIView *)createViewWithSize:(CGSize)size
+                       bgColor:(UIColor *)bgColor
+                        radius:(float)cornerRadius
+                       gesture:(UIGestureRecognizer *)gesture;
 
 
 //For UILabel
-+ (UILabel *)createLabel:(NSString *)text
-                fontSize:(int)fontSize;
-+ (UILabel *)createLabel:(NSAttributedString *)aText
-                 bgColor:(UIColor *)bgColor;
-+ (UILabel *)createLabel:(NSString *)text
-                   color:(UIColor *)color
-                    font:(UIFont *)font;
-+ (UILabel *)createLabel:(NSString *)text
-                   color:(UIColor *)color
-                 bgColor:(UIColor *)bgColor
-                    font:(UIFont *)font;
++ (UILabel *)createLabelWithSize:(CGSize)size
+                            text:(NSString *)text
+                     sysFontSize:(int)fontSize;
+
++ (UILabel *)createLabelWithSize:(CGSize)size
+                            text:(NSString *)text
+                           color:(UIColor *)color
+                            font:(UIFont *)font;
+
++ (UILabel *)createLabelWithSize:(CGSize)size
+                           aText:(NSAttributedString *)aText
+                         bgColor:(UIColor *)bgColor;
+
++ (UILabel *)createLabelWithFont:(UIFont *)font
+                           aText:(NSAttributedString *)aText;
+
 
 //For UIButton
 + (UIButton *)createButtonWithTitle:(NSString *)title
+                               size:(CGSize)size
                          titleColor:(UIColor *)titleColor
                                font:(UIFont *)font
                              target:(id)target
                              action:(SEL)action;
 
 + (UIButton *)createButtonWithTitle:(NSString *)title
+                               size:(CGSize)size
                          titleColor:(UIColor *)titleColor
                                font:(UIFont *)font
                          buttonType:(UIButtonType)buttonType
@@ -57,18 +69,15 @@ typedef NS_ENUM(NSInteger,BtnImgDirectionType)
                              action:(SEL)action;
 
 + (UIButton *)createButtonWithTitle:(NSString *)title
+                               size:(CGSize)size
                               image:(NSString *)imageName
                           titleEdge:(UIEdgeInsets)titleEdge
                           imageEdge:(UIEdgeInsets)imageEdge
                              target:(id)target
                              action:(SEL)action;
 
-+ (UIButton *)createButtonWithNormalImage:(NSString *)normalImageName
-                         highlightedImage:(NSString *)highlightedImageName
-                                   target:(id)target
-                                   action:(SEL)action;
-
 + (UIButton *)createButtonWithTitle:(NSString *)title
+                               size:(CGSize)size
                               image:(NSString *)imageName
                          titleColor:(UIColor *)titleColor
                                font:(UIFont *)font
@@ -80,48 +89,64 @@ typedef NS_ENUM(NSInteger,BtnImgDirectionType)
                              target:(id)target
                              action:(SEL)action;
 
++ (UIButton *)createButtonWithNormalImage:(NSString *)normalImageName
+                         highlightedImage:(NSString *)highlightedImageName
+                                   target:(id)target
+                                   action:(SEL)action;
+
 
 //For UIImageView
-+ (UIImageView *)createImageViewFromImagename:(NSString *)imagename round:(BOOL)round;
++ (UIImageView *)createImageViewWithName:(NSString *)imageName;
++ (UIImageView *)createImageViewWithName:(NSString *)imageName size:(CGSize)size;
++ (UIImageView *)createImageViewWithName:(NSString *)imageName size:(CGSize)size radius:(float)cornerRadius;
 
 
 //For UITextFiled
-+ (UITextField *)createTextFieldWithFont:(UIFont *)font
++ (UITextField *)createTextFieldWithSize:(CGSize)size
+                             placeholder:(NSString *)placeholder
+                                delegate:(id<UITextFieldDelegate>)delegate;
+
++ (UITextField *)createTextFieldWithSize:(CGSize)size
+                                    Font:(UIFont *)font
                                textColor:(UIColor *)textColor
                          backgroundColor:(UIColor *)backgroundColor
                              borderStyle:(UITextBorderStyle)borderStyle
                              placeholder:(NSString *)placeholder
+                            keyboardType:(UIKeyboardType)keyboardType
+                           returnKeyType:(UIReturnKeyType)returnKeyType
                                 delegate:(id<UITextFieldDelegate>)delegate;
-
-+ (UITextField *)createTextFieldWithLeftAttrTitle:(NSAttributedString *)aTitle
-                                             font:(UIFont*)font
-                                        textColor:(UIColor*)textColor
-                                  backgroundColor:(UIColor*)backgroundColor
-                                      placeholder:(NSString*)placeholder
-                                     keyboardType:(UIKeyboardType)keyboardType
-                                    returnKeyType:(UIReturnKeyType)returnKeyType
-                                         delegate:(id<UITextFieldDelegate>)delegate;
 
 
 //For UITextView
-+ (UITextView *)createTextViewWithAttrString:(NSAttributedString *)aString
-                                  editEnable:(BOOL)eEnable
-                                scroolEnable:(BOOL)sEnable;
++ (UITextView *)createTextViewWithSize:(CGSize)size
+                               aString:(NSAttributedString *)atrributeString
+                            editEnable:(BOOL)eEnable
+                          scroolEnable:(BOOL)sEnable;
 
 
 //For UITableView
-+ (UITableView *)createTableWithStyle:(UITableViewStyle)style
-                   seporatorLineColor:(UIColor *)seporatorLineColor
-                           headerView:(UIView *)headerView
-                           footerView:(UIView *)footerView
-                           zeroMargin:(BOOL)zeroMargin
-                             delegate:(id<UITableViewDelegate, UITableViewDataSource>)delegate;
++ (UITableView *)createTableViewWithSize:(CGSize)size
+                                   style:(UITableViewStyle)style
+                               rowHeight:(float)height
+                                delegate:(id<UITableViewDelegate, UITableViewDataSource>)delegate;
+
++ (UITableView *)createTableViewWithSize:(CGSize)size
+                                   style:(UITableViewStyle)style
+                              headerView:(UIView *)headerView
+                              footerView:(UIView *)footerView
+                            scrollEnable:(BOOL)sEnable
+                           bouncesEnable:(BOOL)bEnable
+                              zeroMargin:(BOOL)zeroMargin
+                      seporatorLineColor:(UIColor *)seporatorLineColor
+                                delegate:(id<UITableViewDelegate, UITableViewDataSource>)delegate;
+
 
 //For UIWebView
-+ (UIWebView *)createWebViewWithUrl:(NSString *)webUrl
-                            baseURL:(NSURL *)baseUrl
-                         htmlString:(NSString *)htmlString
-                       scroolEnable:(BOOL)sEnable
++ (UIWebView *)createWebViewWithSize:(CGSize)size
+                              webUrl:(NSString *)url
+                             baseURL:(NSURL *)baseUrl
+                          htmlString:(NSString *)htmlString
+                        scroolEnable:(BOOL)sEnable
                            delegate:(id<UIWebViewDelegate>)delegate;
 
 

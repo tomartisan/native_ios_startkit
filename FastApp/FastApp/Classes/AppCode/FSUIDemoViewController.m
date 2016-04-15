@@ -8,30 +8,65 @@
 
 #import "FSUIDemoViewController.h"
 
-@interface FSUIDemoViewController ()
-
+@interface FSUIDemoViewController () <UITableViewDelegate,UITableViewDataSource>
+@property (nonatomic, strong) UITableView *tableView;
 @end
 
 @implementation FSUIDemoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    
+    
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 5;
 }
-*/
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *const cellIdentifier = @"cellIdentifier";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+}
+
+clearTableViewSeparator
+
+#pragma mark - getter
+- (UITableView *)tableView
+{
+    if (nil == _tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.tableFooterView = [[UIView alloc] init];
+        _tableView.scrollEnabled = NO;
+        _tableView.separatorColor = FSSeparatorLineColor;
+        setTableViewSeparatorZeroMargin(_tableView)
+    }
+    return _tableView;
+}
+
+
 
 @end
