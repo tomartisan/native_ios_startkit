@@ -69,15 +69,16 @@
 - (UIView *)reConnectView
 {
     if (!_reConnectView) {
-        _reConnectView = [FSUICreator createUIViewWithBgColor:[UIColor whiteColor] Corner:0];
+        _reConnectView = [FSUICreator createViewWithSize:CGSizeZero bgColor:FSWhiteColor radius:0];
         UIButton *reConnBtn = [FSUICreator createButtonWithTitle:@"无网络连接，点击重试"
+                                                            size:CGSizeMake(KDeviceHeight, 60)
                                                     titleColor:[UIColor lightGrayColor]
                                                           font:[UIFont systemFontOfSize:22]
                                                         target:self
                                                         action:@selector(refreshPage:)];
         reConnBtn.tag = NoConnectionError;
         reConnBtn.center = _reConnectView.center;
-        [FSAutolayoutor layView:reConnBtn atCenterOfTheView:_reConnectView maxSize:CGSizeMake(KDeviceHeight, 60) margins:0];
+        
     }
     return _reConnectView;
 }

@@ -27,12 +27,12 @@ static NSString *const stringUrl = @"http://7xseox.com1.z0.glb.clouddn.com/mp4Fo
 {
     [super viewDidLoad];
     
-    [FSAutolayoutor layView:self.downBtn insideView:self.view type:LeftBottom maxSize:CGSizeMake(60, 45) offset:CGSizeMake(20, 0)];
-    [FSAutolayoutor layView:self.playBtn insideView:self.view type:RightBottom maxSize:CGSizeMake(60, 45) offset:CGSizeMake(20, 0)];
-    
-    if ([FSPathTools exists:[FSPathTools pathForKey:fileName type:FSTmpPathType] autoCreate:NO]) {
-        
-    }
+//    [FSAutolayoutor layView:self.downBtn insideView:self.view type:LeftBottom maxSize:CGSizeMake(60, 45) offset:CGSizeMake(20, 0)];
+//    [FSAutolayoutor layView:self.playBtn insideView:self.view type:RightBottom maxSize:CGSizeMake(60, 45) offset:CGSizeMake(20, 0)];
+//    
+//    if ([FSPathTools exists:[FSPathTools pathForKey:fileName type:FSTmpPathType] autoCreate:NO]) {
+//        
+//    }
 }
 
 - (void)playVideo
@@ -57,32 +57,32 @@ static NSString *const stringUrl = @"http://7xseox.com1.z0.glb.clouddn.com/mp4Fo
 }
 
 #pragma mark - getters
-- (UIButton *)downBtn
-{
-    if (!_downBtn) {
-        _downBtn  = [FSUICreator createButtonWithTitle:@"下 载"
-                                          titleColor:FSWhiteColor
-                                                font:SysFontWithSize(14)
-                                              target:self
-                                              action:@selector(downAction)];
-        _downBtn.backgroundColor = FSOrangeColor;
-        _downBtn.layer.cornerRadius = 5;
-    }
-    return _downBtn;
-}
-
-- (UIButton *)playBtn
-{
-    if (!_playBtn) {
-        _playBtn  = [FSUICreator createButtonWithTitle:@"播 放"
-                                          titleColor:FSWhiteColor
-                                                font:SysFontWithSize(14)
-                                              target:self
-                                              action:@selector(playAction)];
-        _playBtn.backgroundColor = FSBlueColor;
-        _playBtn.layer.cornerRadius = 5;
-    }
-    return _playBtn;
-}
+//- (UIButton *)downBtn
+//{
+//    if (!_downBtn) {
+//        _downBtn  = [FSUICreator createButtonWithTitle:@"下 载"
+//                                          titleColor:FSWhiteColor
+//                                                font:SysFontWithSize(14)
+//                                              target:self
+//                                              action:@selector(downAction)];
+//        _downBtn.backgroundColor = FSOrangeColor;
+//        _downBtn.layer.cornerRadius = 5;
+//    }
+//    return _downBtn;
+//}
+//
+//- (UIButton *)playBtn
+//{
+//    if (!_playBtn) {
+//        _playBtn  = [FSUICreator createButtonWithTitle:@"播 放"
+//                                          titleColor:FSWhiteColor
+//                                                font:SysFontWithSize(14)
+//                                              target:self
+//                                              action:@selector(playAction)];
+//        _playBtn.backgroundColor = FSBlueColor;
+//        _playBtn.layer.cornerRadius = 5;
+//    }
+//    return _playBtn;
+//}
 
 @end

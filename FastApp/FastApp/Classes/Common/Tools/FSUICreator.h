@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#define FSRectFromSize(size) CGRectMake(0,0,size.width,size,height)
+#define FSRectFromSize(size) CGRectMake(0,0,size.width,size.height)
 
 //用于按钮中，文字和图片相对方向
 typedef NS_ENUM(NSInteger,BtnImgDirectionType)

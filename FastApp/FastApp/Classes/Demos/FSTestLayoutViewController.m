@@ -84,17 +84,17 @@
 
 - (void)prepareSubViews
 {
-    _top1 = [FSUICreator createUIViewWithBgColor:RandomColorWithAlpha(1) Corner:0];
-    _top2 = [FSUICreator createUIViewWithBgColor:RandomColorWithAlpha(1) Corner:0];
-    _top3 = [FSUICreator createUIViewWithBgColor:RandomColorWithAlpha(1) Corner:0];
+    _top1 = [FSUICreator createViewWithSize:viewSize bgColor:RandomColorWithAlpha(1) radius:0];
+    _top2 = [FSUICreator createViewWithSize:viewSize bgColor:RandomColorWithAlpha(1) radius:0];
+    _top3 = [FSUICreator createViewWithSize:viewSize bgColor:RandomColorWithAlpha(1) radius:0];
     
-    _mid1 = [FSUICreator createUIViewWithBgColor:RandomColorWithAlpha(1) Corner:0];
-    _mid2 = [FSUICreator createUIViewWithBgColor:RandomColorWithAlpha(1) Corner:0];
-    _mid3 = [FSUICreator createUIViewWithBgColor:RandomColorWithAlpha(1) Corner:0];
+    _mid1 = [FSUICreator createViewWithSize:viewSize bgColor:RandomColorWithAlpha(1) radius:0];
+    _mid2 = [FSUICreator createViewWithSize:viewSize bgColor:RandomColorWithAlpha(1) radius:0];
+    _mid3 = [FSUICreator createViewWithSize:viewSize bgColor:RandomColorWithAlpha(1) radius:0];
     
-    _bot1 = [FSUICreator createUIViewWithBgColor:RandomColorWithAlpha(1) Corner:0];
-    _bot2 = [FSUICreator createUIViewWithBgColor:RandomColorWithAlpha(1) Corner:0];
-    _bot3 = [FSUICreator createUIViewWithBgColor:RandomColorWithAlpha(1) Corner:0];
+    _bot1 = [FSUICreator createViewWithSize:viewSize bgColor:RandomColorWithAlpha(1) radius:0];
+    _bot2 = [FSUICreator createViewWithSize:viewSize bgColor:RandomColorWithAlpha(1) radius:0];
+    _bot3 = [FSUICreator createViewWithSize:viewSize bgColor:RandomColorWithAlpha(1) radius:0];
 }
 
 @end
