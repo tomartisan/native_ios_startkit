@@ -8,20 +8,39 @@
 
 #import "FSAutolayoutor.h"
 
+#define FSLayoutErrorSizeAssert(view) NSAssert(!CGSizeEqualToSize(view.fsSize, CGSizeZero), @"The value of sourceView.frame.size must not be CGSizeZero")
+
 @implementation FSAutolayoutor
 
 //中间定位
 + (void)layView:(UIView *)view fullOfTheView:(UIView *)superView
 {
-
+    [superView addSubview:view];
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(superView);
+        make.edges.equalTo(superView).insets(UIEdgeInsetsZero);
+    }];
 }
 + (void)layView:(UIView *)view atCenterOfTheView:(UIView *)superView
 {
-
+    FSLayoutErrorSizeAssert(view);
+    [superView addSubview:view];
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(superView);
+        make.size.mas_greaterThanOrEqualTo(view.fsSize);
+    }];
 }
 + (void)layView:(UIView *)view atCenterOfTheView:(UIView *)superView margins:(float)margins
 {
-
+    if (margins > 0) {
+        [superView addSubview:view];
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.center.equalTo(superView);
+            make.edges.equalTo(superView).insets(UIEdgeInsetsMake(margins, margins, margins, margins));
+        }];
+    }else{
+        [self layView:view fullOfTheView:superView];
+    }
 }
 
 

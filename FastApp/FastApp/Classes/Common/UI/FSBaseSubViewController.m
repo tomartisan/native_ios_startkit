@@ -34,7 +34,7 @@
 - (void)setBackUseGesture:(BOOL)backUseGesture
 {
     _backUseGesture = backUseGesture;
-    if (_backUseGesture && !_backUseGesture) {
+    if (_backUseGesture && !_backGesture) {
         _backGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(backToParentController)];
         _backGesture.direction = UISwipeGestureRecognizerDirectionRight;
         [self.view addGestureRecognizer:_backGesture];

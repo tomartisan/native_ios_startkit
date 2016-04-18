@@ -28,7 +28,7 @@
                                                                              target:self
                                                                              action:@selector(viewWebsite:)];
     
-//    [FSAutolayoutor layView:self.textView atCenterOfView:self.view maxSize:CGSizeZero margins:0];
+    [FSAutolayoutor layView:self.textView fullOfTheView:self.view];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -64,7 +64,7 @@
 - (UITextView *)textView
 {
     if (!_textView) {
-        _textView = [FSUICreator createTextViewWithSize:CGSizeZero aString:nil editEnable:NO scroolEnable:NO];
+        _textView = [FSUICreator createTextViewWithSize:CGSizeZero aString:nil editEnable:NO scroolEnable:YES];
     }
     return _textView;
 }

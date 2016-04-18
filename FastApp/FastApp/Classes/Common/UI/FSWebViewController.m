@@ -20,7 +20,6 @@
                                                    webUrl:url
                                                   baseURL:nil
                                                htmlString:nil
-                                             scroolEnable:NO
                                                  delegate:weakSelf];
         [FSAutolayoutor layView:self.webView fullOfTheView:self.view];
     }

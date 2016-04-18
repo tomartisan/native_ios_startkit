@@ -331,13 +331,9 @@
                               webUrl:(NSString *)url
                              baseURL:(NSURL *)baseUrl
                           htmlString:(NSString *)htmlString
-                        scroolEnable:(BOOL)sEnable
                             delegate:(id<UIWebViewDelegate>)delegate
 {
     UIWebView *webView = [[UIWebView alloc] initWithFrame:FSRectFromSize(size)];
-    webView.scrollView.scrollEnabled = sEnable;
-    webView.scrollView.showsHorizontalScrollIndicator = NO;
-    webView.scrollView.showsVerticalScrollIndicator = NO;
     webView.delegate = delegate;
 
     if (![FSStringTools isEmpty:url]) {

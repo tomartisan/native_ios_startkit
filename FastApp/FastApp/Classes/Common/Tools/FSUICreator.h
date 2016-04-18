@@ -146,8 +146,7 @@ typedef NS_ENUM(NSInteger,BtnImgDirectionType)
                               webUrl:(NSString *)url
                              baseURL:(NSURL *)baseUrl
                           htmlString:(NSString *)htmlString
-                        scroolEnable:(BOOL)sEnable
-                           delegate:(id<UIWebViewDelegate>)delegate;
+                            delegate:(id<UIWebViewDelegate>)delegate;
 
 
 @end

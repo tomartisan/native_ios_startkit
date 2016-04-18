@@ -13,6 +13,12 @@
 #import "MJExtension.h"
 #import "UIImageView+WebCache.h"
 
+//diy categories
+#import "UIView+FSAutoLayout.h"
+#import "MBProgressHUD+Show.h"
+#import "UIImage+FSUIImage.h"
+#import "UITextField+FSLimitString.h"
+
 //Usefull Tools
 #import "AppMacros.h"
 #import "GloabVariables.h"
@@ -24,13 +30,8 @@
 #import "FSDeviceTools.h"
 #import "SecutiryTools.h"
 #import "FSNetTools.h"
-#import "MBProgressHUD+Show.h"
-#import "UIView+FSAutoLayout.h"
 #import "FSAutolayoutor.h"
 #import "FSUICreator.h"
-#import "UIImage+FSUIImage.h"
-#import "UITextField+FSLimitString.h"
-
 
 
 #endif
