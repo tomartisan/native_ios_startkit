@@ -341,7 +341,7 @@
     webView.delegate = delegate;
 
     if (![FSStringTools isEmpty:url]) {
-        NSURLRequest *request = [FSNetTools getRequestWithURLString:url method:@"GET" timeOut:45];
+        NSURLRequest *request = [FSNetTools getRequestWithURLString:url method:@"GET" timeOut:SERVER_CONNECT_TIMEOUT];
         [webView loadRequest:request];
     }
     
