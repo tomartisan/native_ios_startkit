@@ -57,11 +57,10 @@
 - (void)refreshPage:(UIButton *)btn
 {
     [self.reConnectView removeFromSuperview];
-    SEL freshAction = NSSelectorFromString(self.refreshPageStringMethod);
-    if ([self isKindOfClass:[FSBaseViewController class]] && [self respondsToSelector:freshAction]) {
-        IMP imp = [self methodForSelector:freshAction];
+    if ([self isKindOfClass:[FSBaseViewController class]] && [self respondsToSelector:_pageRefreshingAction]) {
+        IMP imp = [self methodForSelector:_pageRefreshingAction];
         void (*func)(id,SEL) = (void *)imp;
-        func(self,freshAction);
+        func(self,_pageRefreshingAction);
     }
 }
 
@@ -78,7 +77,6 @@
                                                         action:@selector(refreshPage:)];
         reConnBtn.tag = NoConnectionError;
         reConnBtn.center = _reConnectView.center;
-        
     }
     return _reConnectView;
 }

@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+//控制器基类，所有共有特性或公共方法均包含于此
 @interface FSBaseViewController : UIViewController
 
 //刷新页面的方法
-@property (nonatomic, copy) NSString *refreshPageStringMethod;
+@property (nonatomic, assign) SEL pageRefreshingAction;
 
+//菊花加载图
 - (void)loadingWithMessage:(NSString *)message;
 - (void)stopLoadding;
 
