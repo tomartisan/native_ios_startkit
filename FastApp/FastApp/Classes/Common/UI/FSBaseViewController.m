@@ -9,7 +9,7 @@
 #import "FSBaseViewController.h"
 
 @interface FSBaseViewController ()
-@property (nonatomic, strong) UIView *reConnectView;
+@property (nonatomic, strong) UIButton *reConnectBtn;
 @end
 
 @implementation FSBaseViewController
@@ -46,7 +46,7 @@
 {
     switch ([notification.object intValue]) {
         case NoConnectionError:
-            [FSAutolayoutor layView:self.reConnectView fullOfTheView:self.view];
+            [FSAutolayoutor layView:self.reConnectBtn fullOfTheView:self.view];
             break;
         case RequestFailedError:
             [MBProgressHUD showError:@"请求失败，请稍后再试"];
@@ -56,7 +56,7 @@
 
 - (void)refreshPage:(UIButton *)btn
 {
-    [self.reConnectView removeFromSuperview];
+    [self.reConnectBtn removeFromSuperview];
     if ([self isKindOfClass:[FSBaseViewController class]] && [self respondsToSelector:_pageRefreshingAction]) {
         IMP imp = [self methodForSelector:_pageRefreshingAction];
         void (*func)(id,SEL) = (void *)imp;
@@ -65,20 +65,17 @@
 }
 
 //无网络链接显示
-- (UIView *)reConnectView
+- (UIButton *)reConnectBtn
 {
-    if (!_reConnectView) {
-        _reConnectView = [FSUICreator createViewWithSize:CGSizeZero bgColor:FSWhiteColor radius:0];
-        UIButton *reConnBtn = [FSUICreator createButtonWithTitle:@"无网络连接，点击重试"
-                                                            size:CGSizeMake(KDeviceHeight, 60)
-                                                    titleColor:[UIColor lightGrayColor]
-                                                          font:[UIFont systemFontOfSize:22]
-                                                        target:self
-                                                        action:@selector(refreshPage:)];
-        reConnBtn.tag = NoConnectionError;
-        reConnBtn.center = _reConnectView.center;
+    if (!_reConnectBtn) {
+        _reConnectBtn = [FSUICreator createButtonWithTitle:@"网络已断开，点击重试"
+                                                      size:CGSizeZero
+                                                titleColor:[UIColor lightGrayColor]
+                                                      font:[UIFont systemFontOfSize:22]
+                                                    target:self
+                                                    action:@selector(refreshPage:)];
     }
-    return _reConnectView;
+    return _reConnectBtn;
 }
 
 @end
