@@ -29,7 +29,7 @@ typedef NS_ENUM(NSInteger,FSLayoutAlignmentType)
 //以下三个方法均为中心定位
 + (void)layView:(UIView *)view fullOfTheView:(UIView *)superView;
 + (void)layView:(UIView *)view atCenterOfTheView:(UIView *)superView;
-+ (void)layView:(UIView *)view atCenterOfTheView:(UIView *)superView margins:(float)margins;
++ (void)layView:(UIView *)view atCenterOfTheView:(UIView *)superView margins:(UIEdgeInsets)margins;
 
 
 //以下三个方法均为左定位（左上，左中，左下）

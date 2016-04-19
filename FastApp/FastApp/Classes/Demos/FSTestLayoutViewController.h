@@ -8,9 +8,18 @@
 
 #import "FSBaseSubViewController.h"
 
+typedef NS_ENUM(NSInteger,FSTestLayoutType)
+{
+    FSTestLayoutType11,
+    FSTestLayoutType12,
+    FSTestLayoutType13,
+    FSTestLayoutType14,
+    FSTestLayoutType15
+};
+
 //自动布局工具演示
 @interface FSTestLayoutViewController : FSBaseSubViewController
 
-@property (nonatomic, assign) BOOL inView;
+@property (nonatomic, assign) FSTestLayoutType type;
 
 @end
