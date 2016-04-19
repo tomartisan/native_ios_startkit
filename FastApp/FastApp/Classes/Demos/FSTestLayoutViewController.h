@@ -10,11 +10,11 @@
 
 typedef NS_ENUM(NSInteger,FSTestLayoutType)
 {
-    FSTestLayoutType11,
-    FSTestLayoutType12,
-    FSTestLayoutType13,
-    FSTestLayoutType14,
-    FSTestLayoutType15
+    FSTestLayoutType11=11,
+    FSTestLayoutType12=12,
+    FSTestLayoutType13=13,
+    FSTestLayoutType14=14,
+    FSTestLayoutType15=15
 };
 
 //自动布局工具演示

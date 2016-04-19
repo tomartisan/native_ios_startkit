@@ -7,6 +7,7 @@
 //
 
 #import "FSUIDemoViewController.h"
+#import "FSTestLayoutViewController.h"
 
 @interface FSUIDemoViewController () <UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
@@ -68,7 +69,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    FSTestLayoutViewController *testUIVC = [FSTestLayoutViewController new];
+    testUIVC.type = [[NSString stringWithFormat:@"%ld%ld",indexPath.section+1,indexPath.row+1] integerValue];
+    [self.navigationController pushViewController:testUIVC animated:YES];
 }
 
 clearTableViewSeparator
