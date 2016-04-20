@@ -16,7 +16,7 @@
 
     switch (_type) {
         case FSTestLayoutType11:
-            [FSAutolayoutor layView:[self textViewWithSize:CGSizeZero type:_type] fullOfTheView:self.view];
+            [FSAutolayoutor layView:[self textViewWithSize:CGSizeZero] fullOfTheView:self.view];
             break;
             
         default:
@@ -25,13 +25,13 @@
     
 }
 
-- (UITextView *)textViewWithSize:(CGSize)size type:(NSInteger)type
+- (UITextView *)textViewWithSize:(CGSize)size
 {
-    NSAttributedString *guide = [self guideTextWithType:type];
-    
-    UITextView *textView = [FSUICreator createTextViewWithSize:CGSizeZero aString:guide editEnable:NO scroolEnable:YES];
+    UITextView *textView = [FSUICreator createTextViewWithSize:CGSizeZero
+                                                       aString:[self guideTextWithType:_type]
+                                                    editEnable:NO
+                                                  scroolEnable:YES];
     textView.backgroundColor = RandomColorWithAlpha(1);
-    
     return textView;
 }
 
