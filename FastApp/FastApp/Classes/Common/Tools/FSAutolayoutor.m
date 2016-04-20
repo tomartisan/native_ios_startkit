@@ -25,7 +25,8 @@
     [superView addSubview:view];
     [view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(superView);
-        make.size.mas_greaterThanOrEqualTo(view.fsSize);
+        make.width.mas_equalTo(@(view.fsSize.width));
+        make.height.mas_equalTo(@(view.fsSize.height));
     }];
 }
 + (void)layView:(UIView *)view atCenterOfTheView:(UIView *)superView margins:(UIEdgeInsets)margins
