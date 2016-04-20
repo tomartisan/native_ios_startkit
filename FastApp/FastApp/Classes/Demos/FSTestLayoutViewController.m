@@ -8,7 +8,7 @@
 
 #import "FSTestLayoutViewController.h"
 
-#define squareViewSize CGSizeMake(150, 150)
+#define squareViewSize CGSizeMake(200, 200)
 #define rectangleViewSize CGSizeMake(300, 200)
 
 @implementation FSTestLayoutViewController
@@ -95,12 +95,14 @@
     
 }
 
-- (UIView *)viewWithSize:(CGSize)size
+- (UITextView *)viewWithSize:(CGSize)size
 {    
-    UILabel *testView = [FSUICreator createLabelWithSize:size
-                                                   aText:[self guideTextWithType:_type]
-                                                 bgColor:RandomColorWithAlpha(1)];
-    return testView;
+    UITextView *textView = [FSUICreator createTextViewWithSize:size
+                                                       aString:[self guideTextWithType:_type]
+                                                    editEnable:NO
+                                                  scroolEnable:YES];
+    textView.backgroundColor = RandomColorWithAlpha(1);
+    return textView;
 }
 
 - (NSAttributedString *)guideTextWithType:(NSInteger)type
