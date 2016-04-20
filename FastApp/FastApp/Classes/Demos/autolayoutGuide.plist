@@ -23,6 +23,8 @@
     <string>全屏演示</string>
     <key>25</key>
     <string>全屏演示</string>
+    <key>26</key>
+    <string>全屏演示</string>
     
     <key>31</key>
     <string>全屏演示</string>
@@ -34,6 +36,8 @@
     <string>全屏演示</string>
     <key>35</key>
     <string>全屏演示</string>
+    <key>36</key>
+    <string>全屏演示</string>
     
     <key>41</key>
     <string>全屏演示</string>
@@ -42,8 +46,6 @@
     <key>43</key>
     <string>全屏演示</string>
     <key>44</key>
-    <string>全屏演示</string>
-    <key>45</key>
     <string>全屏演示</string>
     
     <key>51</key>
@@ -55,6 +57,12 @@
     <key>54</key>
     <string>全屏演示</string>
     <key>55</key>
+    <string>全屏演示</string>
+    <key>56</key>
+    <string>全屏演示</string>
+    <key>57</key>
+    <string>全屏演示</string>
+    <key>58</key>
     <string>全屏演示</string>
 </dict>
 </plist>

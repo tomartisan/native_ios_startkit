@@ -14,7 +14,35 @@ typedef NS_ENUM(NSInteger,FSTestLayoutType)
     FSTestLayoutType12=12,
     FSTestLayoutType13=13,
     FSTestLayoutType14=14,
-    FSTestLayoutType15=15
+    FSTestLayoutType15=15,
+    
+    FSTestLayoutType21=21,
+    FSTestLayoutType22=22,
+    FSTestLayoutType23=23,
+    FSTestLayoutType24=24,
+    FSTestLayoutType25=25,
+    FSTestLayoutType26=26,
+    
+    FSTestLayoutType31=31,
+    FSTestLayoutType32=32,
+    FSTestLayoutType33=33,
+    FSTestLayoutType34=34,
+    FSTestLayoutType35=35,
+    FSTestLayoutType36=36,
+    
+    FSTestLayoutType41=41,
+    FSTestLayoutType42=42,
+    FSTestLayoutType43=43,
+    FSTestLayoutType44=44,
+    
+    FSTestLayoutType51=51,
+    FSTestLayoutType52=52,
+    FSTestLayoutType53=53,
+    FSTestLayoutType54=54,
+    FSTestLayoutType55=55,
+    FSTestLayoutType56=56,
+    FSTestLayoutType57=57,
+    FSTestLayoutType58=58
 };
 
 //自动布局工具演示

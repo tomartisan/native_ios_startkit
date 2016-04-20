@@ -35,7 +35,7 @@ typedef NS_ENUM(NSInteger,FSLayoutAlignmentType)
 @interface FSAutolayoutor : NSObject
 
 
-//以下三个方法均为中心定位
+//中心定位或局部满屏定位
 + (void)layView:(UIView *)view fullOfTheView:(UIView *)superView;
 + (void)layView:(UIView *)view atCenterOfTheView:(UIView *)superView;
 + (void)layView:(UIView *)view atCenterOfTheView:(UIView *)superView margins:(UIEdgeInsets)margins;
