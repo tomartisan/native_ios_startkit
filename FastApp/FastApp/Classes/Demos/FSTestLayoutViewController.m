@@ -16,7 +16,30 @@
 
     switch (_type) {
         case FSTestLayoutType11:
-            [FSAutolayoutor layView:[self textViewWithSize:CGSizeZero] fullOfTheView:self.view];
+            [FSAutolayoutor layView:[self textViewWithSize:CGSizeZero]
+                      fullOfTheView:self.view];
+            break;
+        case FSTestLayoutType12:
+            [FSAutolayoutor layView:[self textViewWithSize:CGSizeZero]
+                  atCenterOfTheView:self.view
+                            margins:FS_EqualMargins(10)];
+            break;
+        case FSTestLayoutType13:
+            [FSAutolayoutor layView:[self textViewWithSize:CGSizeMake(300, 200)]
+                  atCenterOfTheView:self.view];
+            break;
+        case FSTestLayoutType14:
+            [FSAutolayoutor layView:[self textViewWithSize:CGSizeZero]
+                  atCenterOfTheView:self.view
+                            margins:UIEdgeInsetsMake(10, 20, 30, 40)];
+            break;
+        case FSTestLayoutType15:
+            [FSAutolayoutor layView:[self textViewWithSize:CGSizeZero]
+                  atCenterOfTheView:self.view
+                            margins:FS_WidthEqualMargins(50)];
+            [FSAutolayoutor layView:[self textViewWithSize:CGSizeZero]
+                  atCenterOfTheView:self.view
+                            margins:FS_HeightEqualMargins(50)];
             break;
             
         default:
@@ -27,7 +50,7 @@
 
 - (UITextView *)textViewWithSize:(CGSize)size
 {
-    UITextView *textView = [FSUICreator createTextViewWithSize:CGSizeZero
+    UITextView *textView = [FSUICreator createTextViewWithSize:size
                                                        aString:[self guideTextWithType:_type]
                                                     editEnable:NO
                                                   scroolEnable:YES];

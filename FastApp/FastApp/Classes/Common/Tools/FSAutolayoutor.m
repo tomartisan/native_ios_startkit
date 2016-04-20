@@ -8,7 +8,6 @@
 
 #import "FSAutolayoutor.h"
 
-#define FSLayoutErrorSizeAssert(view) NSAssert(!CGSizeEqualToSize(view.fsSize, CGSizeZero), @"The value of view's size must not be CGSizeZero")
 
 @implementation FSAutolayoutor
 
@@ -17,13 +16,12 @@
 {
     [superView addSubview:view];
     [view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(superView);
         make.edges.equalTo(superView).insets(UIEdgeInsetsZero);
     }];
 }
 + (void)layView:(UIView *)view atCenterOfTheView:(UIView *)superView
-{
-    FSLayoutErrorSizeAssert(view);
+{    
+    FSLayoutZeroSizeErrorAssert(view);
     [superView addSubview:view];
     [view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(superView);
@@ -37,7 +35,6 @@
     }else{
         [superView addSubview:view];
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.center.equalTo(superView);
             make.edges.equalTo(superView).insets(margins);
         }];
     }
