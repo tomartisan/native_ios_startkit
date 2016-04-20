@@ -45,7 +45,7 @@
             [FSAutolayoutor layView:[self viewWithSize:squareViewSize] atTheLeftMiddleOfTheView:self.view offset:0];
             break;
         case FSTestLayoutType24:
-            [FSAutolayoutor layView:[self viewWithSize:squareViewSize] atTheLeftMiddleOfTheView:self.view offset:20];
+            [FSAutolayoutor layView:[self viewWithSize:CGSizeMake(150, 0)] atTheLeftMiddleOfTheView:self.view offset:20];
             break;
         case FSTestLayoutType25:
             [FSAutolayoutor layView:[self viewWithSize:squareViewSize] atTheLeftBottomOfTheView:self.view offset:CGSizeZero];
@@ -65,7 +65,7 @@
             [FSAutolayoutor layView:[self viewWithSize:squareViewSize] atTheRightMiddleOfTheView:self.view offset:0];
             break;
         case FSTestLayoutType34:
-            [FSAutolayoutor layView:[self viewWithSize:squareViewSize] atTheRightMiddleOfTheView:self.view offset:20];
+            [FSAutolayoutor layView:[self viewWithSize:CGSizeMake(150, 0)] atTheRightMiddleOfTheView:self.view offset:20];
             break;
         case FSTestLayoutType35:
             [FSAutolayoutor layView:[self viewWithSize:squareViewSize] atTheRightBottomOfTheView:self.view offset:CGSizeZero];
@@ -79,13 +79,13 @@
             [FSAutolayoutor layView:[self viewWithSize:squareViewSize] atTheTopMiddleOfTheView:self.view offset:0];
             break;
         case FSTestLayoutType42:
-            [FSAutolayoutor layView:[self viewWithSize:squareViewSize] atTheTopMiddleOfTheView:self.view offset:20];
+            [FSAutolayoutor layView:[self viewWithSize:CGSizeMake(0, 150)] atTheTopMiddleOfTheView:self.view offset:10];
             break;
         case FSTestLayoutType43:
             [FSAutolayoutor layView:[self viewWithSize:squareViewSize] atTheBottomMiddleOfTheView:self.view offset:0];
             break;
         case FSTestLayoutType44:
-            [FSAutolayoutor layView:[self viewWithSize:squareViewSize] atTheBottomMiddleOfTheView:self.view offset:20];
+            [FSAutolayoutor layView:[self viewWithSize:CGSizeMake(0, 150)] atTheBottomMiddleOfTheView:self.view offset:10];
             break;
             
             

@@ -8,6 +8,9 @@
 
 #import "FSAutolayoutor.h"
 
+//布局错误提示和错误断言
+#define FSLayoutZeroSizeErrorMsg @"The value of view's size must not be CGSizeZero"
+#define FSLayoutZeroSizeErrorAssert(view) NSAssert(!CGSizeEqualToSize(view.fsSize, CGSizeZero), FSLayoutZeroSizeErrorMsg)
 
 @implementation FSAutolayoutor
 
@@ -25,8 +28,8 @@
     [superView addSubview:view];
     [view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(superView);
-        make.width.mas_equalTo(@(view.fsSize.width));
-        make.height.mas_equalTo(@(view.fsSize.height));
+        make.width.mas_equalTo(@(CGRectGetWidth(view.frame)));
+        make.height.mas_equalTo(@(CGRectGetHeight(view.frame)));
     }];
 }
 + (void)layView:(UIView *)view atTheView:(UIView *)superView margins:(UIEdgeInsets)margins
@@ -50,8 +53,8 @@
     [subview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(container).with.offset(offset.width);
         make.top.equalTo(container).with.offset(offset.height);
-        make.width.mas_equalTo(@(subview.fsSize.width));
-        make.height.mas_equalTo(@(subview.fsSize.height));
+        make.width.mas_equalTo(@(CGRectGetWidth(subview.frame)));
+        make.height.mas_equalTo(@(CGRectGetHeight(subview.frame)));
     }];
 }
 + (void)layView:(UIView *)subview atTheLeftMiddleOfTheView:(UIView *)container offset:(float)offset
@@ -61,8 +64,17 @@
     [subview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(container);
         make.left.equalTo(container).with.offset(offset);
-        make.width.mas_equalTo(@(subview.fsSize.width));
-        make.height.mas_equalTo(@(subview.fsSize.height));
+        if (0 == CGRectGetWidth(subview.frame)) {
+            make.width.equalTo(container);
+        }else{
+            make.width.mas_equalTo(@(CGRectGetWidth(subview.frame)));
+        }
+        
+        if (0 == CGRectGetHeight(subview.frame)) {
+            make.height.equalTo(container);
+        }else{
+            make.height.mas_equalTo(@(CGRectGetHeight(subview.frame)));
+        }
     }];
 }
 + (void)layView:(UIView *)subview atTheLeftBottomOfTheView:(UIView *)container offset:(CGSize)offset
@@ -72,8 +84,8 @@
     [subview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(container).with.offset(offset.width);
         make.bottom.equalTo(container).with.offset(-offset.height);
-        make.width.mas_equalTo(@(subview.fsSize.width));
-        make.height.mas_equalTo(@(subview.fsSize.height));
+        make.width.mas_equalTo(@(CGRectGetWidth(subview.frame)));
+        make.height.mas_equalTo(@(CGRectGetHeight(subview.frame)));
     }];
 }
 
@@ -85,8 +97,8 @@
     [subview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(container).with.offset(-offset.width);
         make.top.equalTo(container).with.offset(offset.height);
-        make.width.mas_equalTo(@(subview.fsSize.width));
-        make.height.mas_equalTo(@(subview.fsSize.height));
+        make.width.mas_equalTo(@(CGRectGetWidth(subview.frame)));
+        make.height.mas_equalTo(@(CGRectGetHeight(subview.frame)));
     }];
 }
 + (void)layView:(UIView *)subview atTheRightMiddleOfTheView:(UIView *)container offset:(float)offset
@@ -96,8 +108,17 @@
     [subview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(container);
         make.right.equalTo(container).with.offset(-offset);
-        make.width.mas_equalTo(@(subview.fsSize.width));
-        make.height.mas_equalTo(@(subview.fsSize.height));
+        if (0 == CGRectGetWidth(subview.frame)) {
+            make.width.equalTo(container);
+        }else{
+            make.width.mas_equalTo(@(CGRectGetWidth(subview.frame)));
+        }
+        
+        if (0 == CGRectGetHeight(subview.frame)) {
+            make.height.equalTo(container);
+        }else{
+            make.height.mas_equalTo(@(CGRectGetHeight(subview.frame)));
+        }
     }];
 }
 + (void)layView:(UIView *)subview atTheRightBottomOfTheView:(UIView *)container offset:(CGSize)offset
@@ -107,22 +128,32 @@
     [subview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(container).with.offset(-offset.width);
         make.bottom.equalTo(container).with.offset(-offset.height);
-        make.width.mas_equalTo(@(subview.fsSize.width));
-        make.height.mas_equalTo(@(subview.fsSize.height));
+        make.width.mas_equalTo(@(CGRectGetWidth(subview.frame)));
+        make.height.mas_equalTo(@(CGRectGetHeight(subview.frame)));
     }];
 }
 
-//中部定位
+//上下定位
 + (void)layView:(UIView *)subview atTheTopMiddleOfTheView:(UIView *)container offset:(float)offset
 {
     FSLayoutZeroSizeErrorAssert(subview);
     [container addSubview:subview];
     [subview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(container);
-        
         make.top.equalTo(container).with.offset(offset);
-        make.width.mas_equalTo(@(subview.fsSize.width));
-        make.height.mas_equalTo(@(subview.fsSize.height));
+        
+        if (0 == CGRectGetWidth(subview.frame)) {
+            make.width.equalTo(container);
+        }else{
+            make.width.mas_equalTo(@(CGRectGetWidth(subview.frame)));
+        }
+        
+        if (0 == CGRectGetHeight(subview.frame)) {
+            make.height.equalTo(container);
+        }else{
+            make.height.mas_equalTo(@(CGRectGetHeight(subview.frame)));
+        }
+        
     }];
 }
 + (void)layView:(UIView *)subview atTheBottomMiddleOfTheView:(UIView *)container offset:(float)offset
@@ -131,11 +162,20 @@
     [container addSubview:subview];
     [subview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(container);
-        
-        
         make.bottom.equalTo(container).with.offset(-offset);
-        make.width.mas_equalTo(@(subview.fsSize.width));
-        make.height.mas_equalTo(@(subview.fsSize.height));
+        
+        if (0 == CGRectGetWidth(subview.frame)) {
+            make.width.equalTo(container);
+        }else{
+            make.width.mas_equalTo(@(CGRectGetWidth(subview.frame)));
+        }
+        
+        if (0 == CGRectGetHeight(subview.frame)) {
+            make.height.equalTo(container);
+        }else{
+            make.height.mas_equalTo(@(CGRectGetHeight(subview.frame)));
+        }
+        
     }];
 }
 

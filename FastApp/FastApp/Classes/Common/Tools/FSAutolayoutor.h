@@ -8,10 +8,6 @@
 
 #import "Masonry.h"
 
-//布局错误提示和错误断言
-#define FSLayoutZeroSizeErrorMsg @"The value of view's size must not be CGSizeZero"
-#define FSLayoutZeroSizeErrorAssert(view) NSAssert(!CGSizeEqualToSize(view.fsSize, CGSizeZero), FSLayoutZeroSizeErrorMsg)
-
 //等边距、全屏宽等上下、全屏高等左右
 #define FS_EqualMargins(margin) UIEdgeInsetsMake(margin, margin, margin, margin)
 #define FS_WidthEqualMargins(margin) UIEdgeInsetsMake(margin, 0, margin, 0)
