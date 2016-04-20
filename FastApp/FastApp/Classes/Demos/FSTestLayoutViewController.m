@@ -36,7 +36,7 @@
     NSString *filePath = [FSPathTools pathForKey:@"autolayoutGuide.plist" type:FSBundlePathType];
     NSDictionary *guides = [NSDictionary dictionaryWithContentsOfFile:filePath];
     
-    NSDictionary *attributes = @{NSFontAttributeName:SysFontWithSize(12),
+    NSDictionary *attributes = @{NSFontAttributeName:SysFontWithSize(18),
                                  NSForegroundColorAttributeName:RandomColorWithAlpha(1)};
     
     NSString *key = [NSString stringWithFormat:@"%ld",type];
