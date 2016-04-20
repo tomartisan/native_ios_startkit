@@ -335,6 +335,7 @@
 {
     UIWebView *webView = [[UIWebView alloc] initWithFrame:FSRectFromSize(size)];
     webView.delegate = delegate;
+    webView.scrollView.bounces = NO;
 
     if (![FSStringTools isEmpty:url]) {
         NSURLRequest *request = [FSNetTools getRequestWithURLString:url method:@"GET" timeOut:SERVER_CONNECT_TIMEOUT];
