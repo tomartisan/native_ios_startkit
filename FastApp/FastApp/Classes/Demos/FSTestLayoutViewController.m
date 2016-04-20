@@ -14,15 +14,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSAttributedString *guide = [self guideTextWithType:self.type];
-
-    switch (self.type) {
+    switch (_type) {
         case FSTestLayoutType11:
-        {
-            UIView *testView = [FSUICreator createTextViewWithSize:CGSizeZero aString:guide editEnable:NO scroolEnable:YES];
-            testView.backgroundColor = RandomColorWithAlpha(1);
-            [FSAutolayoutor layView:testView fullOfTheView:self.view];
-        }
+            [FSAutolayoutor layView:[self textViewWithSize:CGSizeZero type:_type] fullOfTheView:self.view];
             break;
             
         default:
@@ -31,13 +25,28 @@
     
 }
 
+- (UITextView *)textViewWithSize:(CGSize)size type:(NSInteger)type
+{
+    NSAttributedString *guide = [self guideTextWithType:type];
+    
+    UITextView *textView = [FSUICreator createTextViewWithSize:CGSizeZero aString:guide editEnable:NO scroolEnable:YES];
+    textView.backgroundColor = RandomColorWithAlpha(1);
+    
+    return textView;
+}
+
 - (NSAttributedString *)guideTextWithType:(NSInteger)type
 {
     NSString *filePath = [FSPathTools pathForKey:@"autolayoutGuide.plist" type:FSBundlePathType];
     NSDictionary *guides = [NSDictionary dictionaryWithContentsOfFile:filePath];
     
+    NSMutableParagraphStyle *pstyle = [[NSMutableParagraphStyle alloc] init];
+    pstyle.firstLineHeadIndent = 20;
+    pstyle.lineSpacing = 10;
+    
     NSDictionary *attributes = @{NSFontAttributeName:SysFontWithSize(18),
-                                 NSForegroundColorAttributeName:RandomColorWithAlpha(1)};
+                                 NSForegroundColorAttributeName:RandomColorWithAlpha(1),
+                                 NSParagraphStyleAttributeName:pstyle};
     
     NSString *key = [NSString stringWithFormat:@"%ld",type];
     NSAttributedString *guideText = [[NSAttributedString alloc] initWithString:guides[key] attributes:attributes];
