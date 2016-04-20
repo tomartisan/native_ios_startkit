@@ -68,12 +68,13 @@
 - (UIButton *)reConnectBtn
 {
     if (!_reConnectBtn) {
-        _reConnectBtn = [FSUICreator createButtonWithTitle:@"网络已断开，点击重试"
+        _reConnectBtn = [FSUICreator createButtonWithTitle:@"您已处于离线中，点击重新上线 :)"
                                                       size:CGSizeZero
-                                                titleColor:[UIColor lightGrayColor]
-                                                      font:[UIFont systemFontOfSize:22]
+                                                titleColor:[UIColor yellowColor]
+                                                      font:[UIFont systemFontOfSize:20]
                                                     target:self
                                                     action:@selector(refreshPage:)];
+        _reConnectBtn.backgroundColor = ColorWithAlpha(0,0,0,0.85);
     }
     return _reConnectBtn;
 }
