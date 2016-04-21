@@ -11,7 +11,7 @@
 
 @implementation CommonScrollView
 {
-    DCPicScrollView *_adScrollView;
+    __weak DCPicScrollView *_adScrollView;
 }
 
 - (void)prepareScrollViewsWithUrls:(NSArray<NSString *> *)urls
