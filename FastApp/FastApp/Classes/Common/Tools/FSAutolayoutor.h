@@ -53,11 +53,13 @@ typedef NS_ENUM(NSInteger,FSLayoutAlignmentType)
 
 
 //以下方法均为外部定位，如果不指定type值，则默认在目标控件中间位置
++ (void)layView:(UIView *)sourceView toTheLeftOfTheView:(UIView *)targetView span:(float)span;
++ (void)layView:(UIView *)sourceView toTheLeftOfTheView:(UIView *)targetView span:(float)span alignmentType:(FSLayoutAlignmentType)alignmentType;
+
+
 + (void)layView:(UIView *)sourceView toTheRightOfTheView:(UIView *)targetView span:(float)span;
 + (void)layView:(UIView *)sourceView toTheRightOfTheView:(UIView *)targetView span:(float)span alignmentType:(FSLayoutAlignmentType)alignmentType;
 
-+ (void)layView:(UIView *)sourceView toTheLeftOfTheView:(UIView *)targetView span:(float)span;
-+ (void)layView:(UIView *)sourceView toTheLeftOfTheView:(UIView *)targetView span:(float)span alignmentType:(FSLayoutAlignmentType)alignmentType;
 
 + (void)layView:(UIView *)sourceView aboveTheView:(UIView *)targetView span:(float)span;
 + (void)layView:(UIView *)sourceView aboveTheView:(UIView *)targetView span:(float)span alignmentType:(FSLayoutAlignmentType)alignmentType;

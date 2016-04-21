@@ -181,9 +181,20 @@
 
 
 //根据类型，外部定位
++ (void)layView:(UIView *)sourceView toTheLeftOfTheView:(UIView *)targetView span:(float)span
+{
+    [self layView:sourceView toTheLeftOfTheView:targetView span:span alignmentType:AlignmentCenter];
+}
++ (void)layView:(UIView *)sourceView toTheLeftOfTheView:(UIView *)targetView span:(float)span alignmentType:(FSLayoutAlignmentType)alignmentType
+{
+    
+}
+
+
+
 + (void)layView:(UIView *)sourceView toTheRightOfTheView:(UIView *)targetView span:(float)span
 {
-
+    [self layView:sourceView toTheRightOfTheView:targetView span:span alignmentType:AlignmentCenter];
 }
 + (void)layView:(UIView *)sourceView toTheRightOfTheView:(UIView *)targetView span:(float)span alignmentType:(FSLayoutAlignmentType)alignmentType
 {
@@ -191,19 +202,10 @@
 }
 
 
-+ (void)layView:(UIView *)sourceView toTheLeftOfTheView:(UIView *)targetView span:(float)span
-{
-
-}
-+ (void)layView:(UIView *)sourceView toTheLeftOfTheView:(UIView *)targetView span:(float)span alignmentType:(FSLayoutAlignmentType)alignmentType
-{
-
-}
-
 
 + (void)layView:(UIView *)sourceView aboveTheView:(UIView *)targetView span:(float)span
 {
-
+    [self layView:sourceView aboveTheView:targetView span:span alignmentType:AlignmentCenter];
 }
 + (void)layView:(UIView *)sourceView aboveTheView:(UIView *)targetView span:(float)span alignmentType:(FSLayoutAlignmentType)alignmentType
 {
@@ -213,7 +215,7 @@
 
 + (void)layView:(UIView *)sourceView belowTheView:(UIView *)targetView span:(float)span
 {
-
+    [self layView:sourceView belowTheView:targetView span:span alignmentType:AlignmentCenter];
 }
 + (void)layView:(UIView *)sourceView belowTheView:(UIView *)targetView span:(float)span alignmentType:(FSLayoutAlignmentType)alignmentType
 {

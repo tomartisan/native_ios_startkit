@@ -88,8 +88,35 @@
             [FSAutolayoutor layView:[self viewWithSize:CGSizeMake(0, 150)] atTheBottomMiddleOfTheView:self.view offset:10];
             break;
             
-            
         default:
+        {
+            UIView *targetView = [self viewWithSize:CGSizeMake(120, 120)];
+            [FSAutolayoutor layView:targetView atCenterOfTheView:self.view];
+            float span = 0;
+            switch (_type) {
+                case FSTestLayoutType51:
+                    [FSAutolayoutor layView:[self viewWithSize:CGSizeMake(30, 30)] toTheLeftOfTheView:targetView span:span alignmentType:AlignmentTop];
+                    [FSAutolayoutor layView:[self viewWithSize:CGSizeMake(30, 30)] toTheLeftOfTheView:targetView span:span];
+                    [FSAutolayoutor layView:[self viewWithSize:CGSizeMake(30, 30)] toTheLeftOfTheView:targetView span:span alignmentType:AlignmentBottom];
+                    break;
+                case FSTestLayoutType52:
+                    [FSAutolayoutor layView:[self viewWithSize:CGSizeMake(30, 30)] toTheRightOfTheView:targetView span:span alignmentType:AlignmentTop];
+                    [FSAutolayoutor layView:[self viewWithSize:CGSizeMake(30, 30)] toTheRightOfTheView:targetView span:span];
+                    [FSAutolayoutor layView:[self viewWithSize:CGSizeMake(30, 30)] toTheRightOfTheView:targetView span:span alignmentType:AlignmentBottom];
+                    break;
+                case FSTestLayoutType53:
+                    [FSAutolayoutor layView:[self viewWithSize:CGSizeMake(30, 30)] aboveTheView:targetView span:span alignmentType:AlignmentLeft];
+                    [FSAutolayoutor layView:[self viewWithSize:CGSizeMake(30, 30)] aboveTheView:targetView span:span];
+                    [FSAutolayoutor layView:[self viewWithSize:CGSizeMake(30, 30)] aboveTheView:targetView span:span alignmentType:AlignmentRight];
+                    break;
+                case FSTestLayoutType54:
+                    [FSAutolayoutor layView:[self viewWithSize:CGSizeMake(30, 30)] belowTheView:targetView span:span alignmentType:AlignmentLeft];
+                    [FSAutolayoutor layView:[self viewWithSize:CGSizeMake(30, 30)] belowTheView:targetView span:span];
+                    [FSAutolayoutor layView:[self viewWithSize:CGSizeMake(30, 30)] belowTheView:targetView span:span alignmentType:AlignmentRight];
+                    break;
+                default:break;
+            }
+        }
             break;
     }
     
