@@ -34,11 +34,6 @@ typedef NS_ENUM(NSInteger,FSTestLayoutType)
     FSTestLayoutType42=42,
     FSTestLayoutType43=43,
     FSTestLayoutType44=44,
-    
-    FSTestLayoutType51=51,
-    FSTestLayoutType52=52,
-    FSTestLayoutType53=53,
-    FSTestLayoutType54=54
 };
 
 //自动布局工具演示

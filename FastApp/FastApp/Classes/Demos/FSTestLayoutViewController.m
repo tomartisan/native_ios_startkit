@@ -89,47 +89,51 @@
             break;
             
         default:
-        {
-            UIView *targetView = [self viewWithSize:CGSizeMake(120, 120)];
-            [FSAutolayoutor layView:targetView atCenterOfTheView:self.view];
-            float span = 0;
-            switch (_type) {
-                case FSTestLayoutType51:
-                    [FSAutolayoutor layView:[self viewWithSize:CGSizeMake(30, 30)] toTheLeftOfTheView:targetView span:span alignmentType:AlignmentTop];
-                    [FSAutolayoutor layView:[self viewWithSize:CGSizeMake(30, 30)] toTheLeftOfTheView:targetView span:span];
-                    [FSAutolayoutor layView:[self viewWithSize:CGSizeMake(30, 30)] toTheLeftOfTheView:targetView span:span alignmentType:AlignmentBottom];
-                    break;
-                case FSTestLayoutType52:
-                    [FSAutolayoutor layView:[self viewWithSize:CGSizeMake(30, 30)] toTheRightOfTheView:targetView span:span alignmentType:AlignmentTop];
-                    [FSAutolayoutor layView:[self viewWithSize:CGSizeMake(30, 30)] toTheRightOfTheView:targetView span:span];
-                    [FSAutolayoutor layView:[self viewWithSize:CGSizeMake(30, 30)] toTheRightOfTheView:targetView span:span alignmentType:AlignmentBottom];
-                    break;
-                case FSTestLayoutType53:
-                    [FSAutolayoutor layView:[self viewWithSize:CGSizeMake(30, 30)] aboveTheView:targetView span:span alignmentType:AlignmentLeft];
-                    [FSAutolayoutor layView:[self viewWithSize:CGSizeMake(30, 30)] aboveTheView:targetView span:span];
-                    [FSAutolayoutor layView:[self viewWithSize:CGSizeMake(30, 30)] aboveTheView:targetView span:span alignmentType:AlignmentRight];
-                    break;
-                case FSTestLayoutType54:
-                    [FSAutolayoutor layView:[self viewWithSize:CGSizeMake(30, 30)] belowTheView:targetView span:span alignmentType:AlignmentLeft];
-                    [FSAutolayoutor layView:[self viewWithSize:CGSizeMake(30, 30)] belowTheView:targetView span:span];
-                    [FSAutolayoutor layView:[self viewWithSize:CGSizeMake(30, 30)] belowTheView:targetView span:span alignmentType:AlignmentRight];
-                    break;
-                default:break;
-            }
-        }
+            [self outerlayoutTest];
             break;
     }
     
 }
 
+- (void)outerlayoutTest
+{
+    UIView *targetView = [self viewWithSize:squareViewSize];
+    [FSAutolayoutor layView:targetView atCenterOfTheView:self.view];
+    
+    float span = 10;
+    
+    [FSAutolayoutor layView:[self viewWithText:@"左上"] toTheLeftOfTheView:targetView span:span alignmentType:AlignmentTop];
+    [FSAutolayoutor layView:[self viewWithText:@"左中"] toTheLeftOfTheView:targetView span:span];
+    [FSAutolayoutor layView:[self viewWithText:@"左下"] toTheLeftOfTheView:targetView span:span alignmentType:AlignmentBottom];
+    
+    [FSAutolayoutor layView:[self viewWithText:@"右上"] toTheRightOfTheView:targetView span:span alignmentType:AlignmentTop];
+    [FSAutolayoutor layView:[self viewWithText:@"右中"] toTheRightOfTheView:targetView span:span];
+    [FSAutolayoutor layView:[self viewWithText:@"右下"] toTheRightOfTheView:targetView span:span alignmentType:AlignmentBottom];
+    
+    [FSAutolayoutor layView:[self viewWithText:@"中左"] aboveTheView:targetView span:span alignmentType:AlignmentLeft];
+    [FSAutolayoutor layView:[self viewWithText:@"中上"] aboveTheView:targetView span:span];
+    [FSAutolayoutor layView:[self viewWithText:@"中右"] aboveTheView:targetView span:span alignmentType:AlignmentRight];
+    
+    [FSAutolayoutor layView:[self viewWithText:@"下左"] belowTheView:targetView span:span alignmentType:AlignmentLeft];
+    [FSAutolayoutor layView:[self viewWithText:@"下中"] belowTheView:targetView span:span];
+    [FSAutolayoutor layView:[self viewWithText:@"下右"] belowTheView:targetView span:span alignmentType:AlignmentRight];
+}
+
 - (UITextView *)viewWithSize:(CGSize)size
-{    
+{
     UITextView *textView = [FSUICreator createTextViewWithSize:size
                                                        aString:[self guideTextWithType:_type]
                                                     editEnable:NO
                                                   scroolEnable:YES];
     textView.backgroundColor = RandomColorWithAlpha(1);
     return textView;
+}
+
+- (UILabel *)viewWithText:(NSString *)text
+{
+    UILabel *textLabel = [FSUICreator createLabelWithSize:CGSizeMake(35, 35) text:text sysFontSize:14];
+    textLabel.backgroundColor = RandomColorWithAlpha(1);
+    return textLabel;
 }
 
 - (NSAttributedString *)guideTextWithType:(NSInteger)type
