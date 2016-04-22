@@ -187,7 +187,14 @@
 }
 + (void)layView:(UIView *)sourceView toTheLeftOfTheView:(UIView *)targetView span:(float)span alignmentType:(FSLayoutAlignmentType)alignmentType
 {
-    
+    FSLayoutZeroSizeErrorAssert(sourceView);
+    if (AlignmentTop == alignmentType || AlignmentBottom == alignmentType || AlignmentCenter == alignmentType) {
+        
+    }else{
+        NSException *exp = [NSException exceptionWithName:@"位置类型使用错误异常"
+                                                   reason:@"亲，本方法的位置类型只能是：AlignmentTop、AlignmentBottom或AlignmentCenter" userInfo:nil];
+        @throw exp;
+    }
 }
 
 
@@ -198,7 +205,14 @@
 }
 + (void)layView:(UIView *)sourceView toTheRightOfTheView:(UIView *)targetView span:(float)span alignmentType:(FSLayoutAlignmentType)alignmentType
 {
-
+    FSLayoutZeroSizeErrorAssert(sourceView);
+    if (AlignmentTop == alignmentType || AlignmentBottom == alignmentType || AlignmentCenter == alignmentType) {
+        
+    }else{
+        NSException *exp = [NSException exceptionWithName:@"位置类型使用错误异常"
+                                                   reason:@"亲，本方法的位置类型只能是：AlignmentTop、AlignmentBottom或AlignmentCenter" userInfo:nil];
+        @throw exp;
+    }
 }
 
 
@@ -209,7 +223,14 @@
 }
 + (void)layView:(UIView *)sourceView aboveTheView:(UIView *)targetView span:(float)span alignmentType:(FSLayoutAlignmentType)alignmentType
 {
-
+    FSLayoutZeroSizeErrorAssert(sourceView);
+    if (AlignmentLeft == alignmentType || AlignmentRight == alignmentType || AlignmentCenter == alignmentType) {
+        
+    }else{
+        NSException *exp = [NSException exceptionWithName:@"位置类型使用错误异常"
+                                                   reason:@"亲，本方法的位置类型只能是：AlignmentLeft、AlignmentRight或AlignmentCenter" userInfo:nil];
+        @throw exp;
+    }
 }
 
 
@@ -219,7 +240,14 @@
 }
 + (void)layView:(UIView *)sourceView belowTheView:(UIView *)targetView span:(float)span alignmentType:(FSLayoutAlignmentType)alignmentType
 {
-
+    FSLayoutZeroSizeErrorAssert(sourceView);
+    if (AlignmentLeft == alignmentType || AlignmentRight == alignmentType || AlignmentCenter == alignmentType) {
+        
+    }else{
+        NSException *exp = [NSException exceptionWithName:@"位置类型使用错误异常"
+                                                   reason:@"亲，本方法的位置类型只能是：AlignmentLeft、AlignmentRight或AlignmentCenter" userInfo:nil];
+        @throw exp;
+    }
 }
 
 
