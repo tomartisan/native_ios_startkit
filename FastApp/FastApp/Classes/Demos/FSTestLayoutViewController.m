@@ -145,7 +145,7 @@
     pstyle.firstLineHeadIndent = 20;
     pstyle.lineSpacing = 10;
     
-    NSDictionary *attributes = @{NSFontAttributeName:SysFontWithSize(18),
+    NSDictionary *attributes = @{NSFontAttributeName:PFBFontWithSize(16),
                                  NSForegroundColorAttributeName:RandomColorWithAlpha(1),
                                  NSParagraphStyleAttributeName:pstyle};
 
