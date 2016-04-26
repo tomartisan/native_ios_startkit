@@ -170,6 +170,7 @@ typedef NS_ENUM(NSInteger,MBProgressTipType)
 + (void)show:(NSString *)text  type:(MBProgressTipType)type completion:(void (^)(void))completion
 {
     if (![FSStringTools isEmpty:text]) {
+        [self hideHUDForView:[UIApplication sharedApplication].keyWindow animated:NO];
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:NO];
         hud.mode = MBProgressHUDModeCustomView;
         switch (type) {

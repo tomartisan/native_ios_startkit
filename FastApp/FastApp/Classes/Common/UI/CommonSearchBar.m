@@ -13,7 +13,16 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        [[[[self.subviews objectAtIndex:0] subviews] objectAtIndex:0] removeFromSuperview];
+        [self p_removeSeachBarBackgroundView];
+    }
+    return self;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self p_removeSeachBarBackgroundView];
     }
     return self;
 }
@@ -67,6 +76,11 @@
             }
         }
     }
+}
+
+- (void)p_removeSeachBarBackgroundView
+{
+    [[[[self.subviews objectAtIndex:0] subviews] objectAtIndex:0] removeFromSuperview];
 }
 
 @end
