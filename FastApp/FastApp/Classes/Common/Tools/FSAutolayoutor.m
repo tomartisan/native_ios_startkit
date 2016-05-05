@@ -240,7 +240,7 @@
     [sourceView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(@(CGRectGetWidth(sourceView.frame)));
         make.height.mas_equalTo(@(CGRectGetHeight(sourceView.frame)));
-        make.top.equalTo(targetView).with.offset(-CGRectGetWidth(sourceView.frame)-span);
+        make.top.equalTo(targetView).with.offset(-CGRectGetHeight(sourceView.frame)-span);
         if (AlignmentLeft == alignmentType) {
             make.left.equalTo(targetView);
         }else if (AlignmentRight == alignmentType){
@@ -263,7 +263,7 @@
     [sourceView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(@(CGRectGetWidth(sourceView.frame)));
         make.height.mas_equalTo(@(CGRectGetHeight(sourceView.frame)));
-        make.bottom.equalTo(targetView).with.offset(CGRectGetWidth(sourceView.frame)+span);
+        make.bottom.equalTo(targetView).with.offset(CGRectGetHeight(sourceView.frame)+span);
         if (AlignmentLeft == alignmentType) {
             make.left.equalTo(targetView);
         }else if (AlignmentRight == alignmentType){
