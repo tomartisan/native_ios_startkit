@@ -338,7 +338,7 @@
     webView.scrollView.bounces = NO;
 
     if (![FSStringTools isEmpty:url]) {
-        NSURLRequest *request = [FSNetTools getRequestWithURLString:url method:@"GET" timeOut:SERVER_CONNECT_TIMEOUT];
+        NSURLRequest *request = [FSNetTools getRequestWithURLString:url method:@"GET" timeOut:FS_Timeout];
         [webView loadRequest:request];
     }
     

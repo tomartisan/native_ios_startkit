@@ -45,10 +45,10 @@
 - (void)showRefreshActionView:(NSNotification *)notification
 {
     switch ([notification.object intValue]) {
-        case NoConnectionError:
+        case FSNetStatusNotReachable:
             [FSAutolayoutor layView:self.reConnectBtn fullOfTheView:self.view];
             break;
-        case RequestFailedError:
+        case HttpStatusFalseCode:
             [MBProgressHUD showError:@"请求失败，请稍后再试"];
             break;
     }

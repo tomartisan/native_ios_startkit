@@ -72,7 +72,7 @@
       completionHandler:(void (^)(NSURLResponse *response, NSURL *filePath, NSError *error))completionHandler
 {
     if (![FSStringTools isEmpty:url]) {
-        NSURLRequest *req = [FSNetTools getRequestWithURLString:url method:@"GET" timeOut:SERVER_CONNECT_TIMEOUT];
+        NSURLRequest *req = [FSNetTools getRequestWithURLString:url method:@"GET" timeOut:FS_Timeout];
         [self.manager downloadTaskWithRequest:req progress:downloadProgress destination:destination completionHandler:completionHandler];
     }
     if (data) {
@@ -164,7 +164,7 @@
         _manager = [AFHTTPSessionManager manager];
         _manager.requestSerializer = [AFHTTPRequestSerializer serializer];
         _manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-        _manager.requestSerializer.timeoutInterval = SERVER_CONNECT_TIMEOUT;
+        _manager.requestSerializer.timeoutInterval = FS_Timeout;
     }
     return _manager;
 }

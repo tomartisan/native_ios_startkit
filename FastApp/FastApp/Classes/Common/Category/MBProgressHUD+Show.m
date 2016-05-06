@@ -158,11 +158,9 @@ typedef NS_ENUM(NSInteger,MBProgressTipType)
 {
     [MBProgressHUD stopLoadding];
     if ([FSNetTools sharedInstance].netReachable) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:ServerRequestFailure
-                                                            object:@(RequestFailedError)];
+        [[NSNotificationCenter defaultCenter] postNotificationName:ServerRequestFailure object:@(HttpStatusFalseCode)];
     }else{
-        [[NSNotificationCenter defaultCenter] postNotificationName:ServerRequestFailure
-                                                            object:@(NoConnectionError)];
+        [[NSNotificationCenter defaultCenter] postNotificationName:ServerRequestFailure object:@(FSNetStatusNotReachable)];
     }
 }
 

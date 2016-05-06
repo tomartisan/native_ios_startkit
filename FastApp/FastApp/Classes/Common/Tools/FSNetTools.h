@@ -8,11 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSInteger, NetWorkErrorType)
-{
-    NoConnectionError,//无网络
-    RequestFailedError//请求失败
-};
 
 @interface FSNetTools : NSObject
 

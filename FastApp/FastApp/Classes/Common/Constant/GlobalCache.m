@@ -20,7 +20,7 @@ SharedInstanceBuilder(GlobalCache)
             _appServerUrl = cachedUrl;
         }else{
             //默认链接线上正式服务器
-            _appServerUrl = [NSURL URLWithString:API_SERVER_URL];
+            _appServerUrl = [NSURL URLWithString:FS_AppServer];
         }
     }
     return _appServerUrl;
