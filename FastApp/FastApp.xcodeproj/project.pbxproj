@@ -20,7 +20,7 @@
 		86814E3E1C8D95230097BC8C /* FSNetTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E3D1C8D95230097BC8C /* FSNetTools.m */; };
 		86814E411C8D95A00097BC8C /* FSStringTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E401C8D95A00097BC8C /* FSStringTools.m */; };
 		86814E441C8D962C0097BC8C /* SecutiryTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E431C8D962C0097BC8C /* SecutiryTools.m */; };
-		86814E471C8D96F30097BC8C /* TimerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E461C8D96F30097BC8C /* TimerButton.m */; };
+		86814E471C8D96F30097BC8C /* FSTimerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E461C8D96F30097BC8C /* FSTimerButton.m */; };
 		86814E4A1C8D97440097BC8C /* CommonScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E491C8D97440097BC8C /* CommonScrollView.m */; };
 		86814E4E1C8D97BC0097BC8C /* DCPicScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E4D1C8D97BC0097BC8C /* DCPicScrollView.m */; };
 		86814E511C8D98210097BC8C /* FSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E501C8D98210097BC8C /* FSNavigationController.m */; };
@@ -82,8 +82,8 @@
 		86814E401C8D95A00097BC8C /* FSStringTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSStringTools.m; sourceTree = "<group>"; };
 		86814E421C8D962C0097BC8C /* SecutiryTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecutiryTools.h; sourceTree = "<group>"; };
 		86814E431C8D962C0097BC8C /* SecutiryTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecutiryTools.m; sourceTree = "<group>"; };
-		86814E451C8D96F30097BC8C /* TimerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerButton.h; sourceTree = "<group>"; };
-		86814E461C8D96F30097BC8C /* TimerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerButton.m; sourceTree = "<group>"; };
+		86814E451C8D96F30097BC8C /* FSTimerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTimerButton.h; sourceTree = "<group>"; };
+		86814E461C8D96F30097BC8C /* FSTimerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTimerButton.m; sourceTree = "<group>"; };
 		86814E481C8D97430097BC8C /* CommonScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonScrollView.h; sourceTree = "<group>"; };
 		86814E491C8D97440097BC8C /* CommonScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonScrollView.m; sourceTree = "<group>"; };
 		86814E4C1C8D97BC0097BC8C /* DCPicScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPicScrollView.h; sourceTree = "<group>"; };
@@ -309,8 +309,8 @@
 			children = (
 				86CE81131C915AB000FF9CDB /* CommonSearchBar.h */,
 				86CE81141C915AB000FF9CDB /* CommonSearchBar.m */,
-				86814E451C8D96F30097BC8C /* TimerButton.h */,
-				86814E461C8D96F30097BC8C /* TimerButton.m */,
+				86814E451C8D96F30097BC8C /* FSTimerButton.h */,
+				86814E461C8D96F30097BC8C /* FSTimerButton.m */,
 				86814E481C8D97430097BC8C /* CommonScrollView.h */,
 				86814E491C8D97440097BC8C /* CommonScrollView.m */,
 				86814E4F1C8D98210097BC8C /* FSNavigationController.h */,
@@ -532,7 +532,7 @@
 				86814E3E1C8D95230097BC8C /* FSNetTools.m in Sources */,
 				86FD459A1CB4EBE500C1EC12 /* FSOtherViewController.m in Sources */,
 				86814E3B1C8D94D50097BC8C /* MBProgressHUD+Show.m in Sources */,
-				86814E471C8D96F30097BC8C /* TimerButton.m in Sources */,
+				86814E471C8D96F30097BC8C /* FSTimerButton.m in Sources */,
 				86814E2A1C8D92EE0097BC8C /* FSCacheTools.m in Sources */,
 				86FD45F21CBCA36C00C1EC12 /* UITextField+FSLimitString.m in Sources */,
 				86CE81151C915AB000FF9CDB /* CommonSearchBar.m in Sources */,
