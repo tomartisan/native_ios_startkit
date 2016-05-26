@@ -23,13 +23,13 @@
     }];
 }
 + (void)layView:(UIView *)view atCenterOfTheView:(UIView *)superView
-{    
+{
     FSLayoutZeroSizeErrorAssert(view);
     [superView addSubview:view];
+    __weak typeof(self) weakSelf = self;
     [view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(superView);
-        make.width.mas_equalTo(@(CGRectGetWidth(view.frame)));
-        make.height.mas_equalTo(@(CGRectGetHeight(view.frame)));
+        [weakSelf fs_setWidthOrHeightForView:view targetView:superView maker:make];
     }];
 }
 + (void)layView:(UIView *)view atTheView:(UIView *)superView margins:(UIEdgeInsets)margins
@@ -50,42 +50,33 @@
 {
     FSLayoutZeroSizeErrorAssert(subview);
     [container addSubview:subview];
+    __weak typeof(self) weakSelf = self;
     [subview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(container).with.offset(offset.width);
         make.top.equalTo(container).with.offset(offset.height);
-        make.width.mas_equalTo(@(CGRectGetWidth(subview.frame)));
-        make.height.mas_equalTo(@(CGRectGetHeight(subview.frame)));
+        [weakSelf fs_setWidthOrHeightForView:subview targetView:container maker:make];
     }];
 }
 + (void)layView:(UIView *)subview atTheLeftMiddleOfTheView:(UIView *)container offset:(float)offset
 {
     FSLayoutZeroSizeErrorAssert(subview);
     [container addSubview:subview];
+    __weak typeof(self) weakSelf = self;
     [subview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(container);
         make.left.equalTo(container).with.offset(offset);
-        if (0 == CGRectGetWidth(subview.frame)) {
-            make.width.equalTo(container);
-        }else{
-            make.width.mas_equalTo(@(CGRectGetWidth(subview.frame)));
-        }
-        
-        if (0 == CGRectGetHeight(subview.frame)) {
-            make.height.equalTo(container);
-        }else{
-            make.height.mas_equalTo(@(CGRectGetHeight(subview.frame)));
-        }
+        [weakSelf fs_setWidthOrHeightForView:subview targetView:container maker:make];
     }];
 }
 + (void)layView:(UIView *)subview atTheLeftBottomOfTheView:(UIView *)container offset:(CGSize)offset
 {
     FSLayoutZeroSizeErrorAssert(subview);
     [container addSubview:subview];
+    __weak typeof(self) weakSelf = self;
     [subview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(container).with.offset(offset.width);
         make.bottom.equalTo(container).with.offset(-offset.height);
-        make.width.mas_equalTo(@(CGRectGetWidth(subview.frame)));
-        make.height.mas_equalTo(@(CGRectGetHeight(subview.frame)));
+        [weakSelf fs_setWidthOrHeightForView:subview targetView:container maker:make];
     }];
 }
 
@@ -94,42 +85,32 @@
 {
     FSLayoutZeroSizeErrorAssert(subview);
     [container addSubview:subview];
+    __weak typeof(self) weakSelf = self;
     [subview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(container).with.offset(-offset.width);
         make.top.equalTo(container).with.offset(offset.height);
-        make.width.mas_equalTo(@(CGRectGetWidth(subview.frame)));
-        make.height.mas_equalTo(@(CGRectGetHeight(subview.frame)));
-    }];
+        [weakSelf fs_setWidthOrHeightForView:subview targetView:container maker:make];    }];
 }
 + (void)layView:(UIView *)subview atTheRightMiddleOfTheView:(UIView *)container offset:(float)offset
 {
     FSLayoutZeroSizeErrorAssert(subview);
     [container addSubview:subview];
+    __weak typeof(self) weakSelf = self;
     [subview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(container);
         make.right.equalTo(container).with.offset(-offset);
-        if (0 == CGRectGetWidth(subview.frame)) {
-            make.width.equalTo(container);
-        }else{
-            make.width.mas_equalTo(@(CGRectGetWidth(subview.frame)));
-        }
-        
-        if (0 == CGRectGetHeight(subview.frame)) {
-            make.height.equalTo(container);
-        }else{
-            make.height.mas_equalTo(@(CGRectGetHeight(subview.frame)));
-        }
+        [weakSelf fs_setWidthOrHeightForView:subview targetView:container maker:make];
     }];
 }
 + (void)layView:(UIView *)subview atTheRightBottomOfTheView:(UIView *)container offset:(CGSize)offset
 {
     FSLayoutZeroSizeErrorAssert(subview);
     [container addSubview:subview];
+    __weak typeof(self) weakSelf = self;
     [subview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(container).with.offset(-offset.width);
         make.bottom.equalTo(container).with.offset(-offset.height);
-        make.width.mas_equalTo(@(CGRectGetWidth(subview.frame)));
-        make.height.mas_equalTo(@(CGRectGetHeight(subview.frame)));
+        [weakSelf fs_setWidthOrHeightForView:subview targetView:container maker:make];
     }];
 }
 
@@ -138,44 +119,22 @@
 {
     FSLayoutZeroSizeErrorAssert(subview);
     [container addSubview:subview];
+    __weak typeof(self) weakSelf = self;
     [subview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(container);
         make.top.equalTo(container).with.offset(offset);
-        
-        if (0 == CGRectGetWidth(subview.frame)) {
-            make.width.equalTo(container);
-        }else{
-            make.width.mas_equalTo(@(CGRectGetWidth(subview.frame)));
-        }
-        
-        if (0 == CGRectGetHeight(subview.frame)) {
-            make.height.equalTo(container);
-        }else{
-            make.height.mas_equalTo(@(CGRectGetHeight(subview.frame)));
-        }
-        
+        [weakSelf fs_setWidthOrHeightForView:subview targetView:container maker:make];
     }];
 }
 + (void)layView:(UIView *)subview atTheBottomMiddleOfTheView:(UIView *)container offset:(float)offset
 {
     FSLayoutZeroSizeErrorAssert(subview);
     [container addSubview:subview];
+    __weak typeof(self) weakSelf = self;
     [subview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(container);
         make.bottom.equalTo(container).with.offset(-offset);
-        
-        if (0 == CGRectGetWidth(subview.frame)) {
-            make.width.equalTo(container);
-        }else{
-            make.width.mas_equalTo(@(CGRectGetWidth(subview.frame)));
-        }
-        
-        if (0 == CGRectGetHeight(subview.frame)) {
-            make.height.equalTo(container);
-        }else{
-            make.height.mas_equalTo(@(CGRectGetHeight(subview.frame)));
-        }
-        
+        [weakSelf fs_setWidthOrHeightForView:subview targetView:container maker:make];
     }];
 }
 
@@ -189,9 +148,9 @@
 {
     FSLayoutZeroSizeErrorAssert(sourceView);
     [targetView.superview addSubview:sourceView];
+    __weak typeof(self) weakSelf = self;
     [sourceView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(@(CGRectGetWidth(sourceView.frame)));
-        make.height.mas_equalTo(@(CGRectGetHeight(sourceView.frame)));
+        [weakSelf fs_setWidthOrHeightForView:sourceView targetView:targetView.superview maker:make];
         make.left.equalTo(targetView).with.offset(-CGRectGetWidth(sourceView.frame)-span);
         if (AlignmentTop == alignmentType) {
             make.top.equalTo(targetView);
@@ -213,9 +172,9 @@
 {
     FSLayoutZeroSizeErrorAssert(sourceView);
     [targetView.superview addSubview:sourceView];
+    __weak typeof(self) weakSelf = self;
     [sourceView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(@(CGRectGetWidth(sourceView.frame)));
-        make.height.mas_equalTo(@(CGRectGetHeight(sourceView.frame)));
+        [weakSelf fs_setWidthOrHeightForView:sourceView targetView:targetView.superview maker:make];
         make.right.equalTo(targetView).with.offset(CGRectGetWidth(sourceView.frame)+span);
         if (AlignmentTop == alignmentType) {
             make.top.equalTo(targetView);
@@ -237,9 +196,9 @@
 {
     FSLayoutZeroSizeErrorAssert(sourceView);
     [targetView.superview addSubview:sourceView];
+    __weak typeof(self) weakSelf = self;
     [sourceView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(@(CGRectGetWidth(sourceView.frame)));
-        make.height.mas_equalTo(@(CGRectGetHeight(sourceView.frame)));
+        [weakSelf fs_setWidthOrHeightForView:sourceView targetView:targetView.superview maker:make];
         make.top.equalTo(targetView).with.offset(-CGRectGetHeight(sourceView.frame)-span);
         if (AlignmentLeft == alignmentType) {
             make.left.equalTo(targetView);
@@ -260,9 +219,9 @@
 {
     FSLayoutZeroSizeErrorAssert(sourceView);
     [targetView.superview addSubview:sourceView];
+    __weak typeof(self) weakSelf = self;
     [sourceView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(@(CGRectGetWidth(sourceView.frame)));
-        make.height.mas_equalTo(@(CGRectGetHeight(sourceView.frame)));
+        [weakSelf fs_setWidthOrHeightForView:sourceView targetView:targetView.superview maker:make];
         make.bottom.equalTo(targetView).with.offset(CGRectGetHeight(sourceView.frame)+span);
         if (AlignmentLeft == alignmentType) {
             make.left.equalTo(targetView);
@@ -272,6 +231,22 @@
             make.centerX.equalTo(targetView);
         }
     }];
+}
+
+#pragma mark - 设定空间宽高
++ (void)fs_setWidthOrHeightForView:(UIView *)sourceView targetView:(UIView *)targetView maker:(MASConstraintMaker *)make
+{
+    if (CGRectGetWidth(sourceView.frame) == 0) {
+        make.width.equalTo(targetView);
+    }else{
+        make.width.mas_equalTo(@(CGRectGetWidth(sourceView.frame)));
+    }
+    
+    if (CGRectGetHeight(sourceView.frame) == 0) {
+        make.height.equalTo(targetView);
+    }else{
+        make.height.mas_equalTo(@(CGRectGetHeight(sourceView.frame)));
+    }
 }
 
 @end
