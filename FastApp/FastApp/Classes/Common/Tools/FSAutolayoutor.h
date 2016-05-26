@@ -25,8 +25,11 @@ typedef NS_ENUM(NSInteger,FSLayoutAlignmentType)
 
 
 /**
- *  使用Masonry库封装的自动布局相关工具，自适应宽高（可指定最小宽高），支持旋屏
- *  其中：部分方法需要设置子控件大小(CGSize)值，否则布局系统则会抛出异常
+ *  使用Masonry库封装的、介于自动布局和手动布局间的轻量级局相关工具。
+ *  - 注意事项：
+ *   1、部分方法需要设置子控件大小(CGSize)值，否则布局系统则会抛出异常；
+ *   2、该工具请结合"FSUICreator"使用，具体用法参考DEMO；
+ *   3、本类的方法仅适合【两个元素间】的相对定位，如果多余两个参考元素，请使用原生Masonry实现
  */
 @interface FSAutolayoutor : NSObject
 
