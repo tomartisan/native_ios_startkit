@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		865B14211CF730D400053FD3 /* FSPositionTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 865B14201CF730D400053FD3 /* FSPositionTools.m */; };
 		86814DF61C8D78B80097BC8C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814DF51C8D78B80097BC8C /* main.m */; };
 		86814DF91C8D78B80097BC8C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814DF81C8D78B80097BC8C /* AppDelegate.m */; };
 		86814E011C8D78B80097BC8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86814E001C8D78B80097BC8C /* Assets.xcassets */; };
@@ -52,6 +53,8 @@
 
 /* Begin PBXFileReference section */
 		58D8C9C1603382FB6F260223 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		865B141F1CF730D400053FD3 /* FSPositionTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSPositionTools.h; sourceTree = "<group>"; };
+		865B14201CF730D400053FD3 /* FSPositionTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSPositionTools.m; sourceTree = "<group>"; };
 		86814DF11C8D78B80097BC8C /* FastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86814DF51C8D78B80097BC8C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		86814DF71C8D78B80097BC8C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -300,6 +303,8 @@
 				86814E621C8D9ABD0097BC8C /* FSServerCommunicator.m */,
 				86FED4EC1CAA7A12000C31F2 /* FSPathTools.h */,
 				86FED4ED1CAA7A12000C31F2 /* FSPathTools.m */,
+				865B141F1CF730D400053FD3 /* FSPositionTools.h */,
+				865B14201CF730D400053FD3 /* FSPositionTools.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -520,6 +525,7 @@
 				86B87B281C945FD7008AE45D /* UIView+FSAutoLayout.m in Sources */,
 				86814E211C8D81D50097BC8C /* FSAutolayoutor.m in Sources */,
 				86814E271C8D91A10097BC8C /* GlobalCache.m in Sources */,
+				865B14211CF730D400053FD3 /* FSPositionTools.m in Sources */,
 				86CE81121C914DB400FF9CDB /* UIImage+FSUIImage.m in Sources */,
 				86814E411C8D95A00097BC8C /* FSStringTools.m in Sources */,
 				86FD458B1CB4BE9200C1EC12 /* FSTestLayoutViewController.m in Sources */,

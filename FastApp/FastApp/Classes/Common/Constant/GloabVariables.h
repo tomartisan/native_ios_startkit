@@ -65,3 +65,13 @@ typedef NS_ENUM(NSInteger,FSNetStateCode)
     FSNetStatusReachable,   //有网络
     FSNetStatusNotReachable //无网络
 };
+
+//位置类型
+typedef NS_ENUM(NSInteger,FSLayoutAlignmentType)
+{
+    AlignmentCenter=0,//默认居中
+    AlignmentTop,
+    AlignmentBottom,
+    AlignmentLeft,
+    AlignmentRight
+};

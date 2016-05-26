@@ -13,16 +13,6 @@
 #define FS_WidthEqualMargins(margin) UIEdgeInsetsMake(margin, 0, margin, 0)
 #define FS_HeightEqualMargins(margin) UIEdgeInsetsMake(0, margin, 0, margin)
 
-//位置类型
-typedef NS_ENUM(NSInteger,FSLayoutAlignmentType)
-{
-    AlignmentCenter=0,//默认居中
-    AlignmentTop,
-    AlignmentBottom,
-    AlignmentLeft,
-    AlignmentRight
-};
-
 
 /**
  *  使用Masonry库封装的、介于自动布局和手动布局间的轻量级局相关工具。
