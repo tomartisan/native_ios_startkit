@@ -23,10 +23,10 @@
     if (url) {
         [self.manager GET:url parameters:nil progress:progress
                   success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            [self handleResponse:responseObject Resp:obj completion:completion];
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            [MBProgressHUD handleErrorWithCode:error.code additional:task.response];
-        }];
+                      [self handleResponse:responseObject Resp:obj completion:completion];
+                  } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                      [MBProgressHUD handleErrorWithCode:error.code additional:task.response];
+                  }];
     }
 }
 
@@ -39,10 +39,10 @@
     if (url) {
         [self.manager POST:url parameters:param progress:progress
                    success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            [self handleResponse:responseObject Resp:obj completion:completion];
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            [MBProgressHUD handleErrorWithCode:error.code additional:task.response];
-        }];
+                       [self handleResponse:responseObject Resp:obj completion:completion];
+                   } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                       [MBProgressHUD handleErrorWithCode:error.code additional:task.response];
+                   }];
     }
 }
 
@@ -61,7 +61,7 @@
             [self handleResponse:responseObject Resp:nil completion:completion];
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             [MBProgressHUD handleErrorWithCode:error.code additional:task.response];
-        }]; 
+        }];
     }
 }
 
@@ -87,13 +87,23 @@
             progress:(void (^)(NSProgress *progress))progress
           completion:(void (^)(BOOL success,id respData))completion
 {
-    NSString *url = [self urlWithUri:uri params:param];
-    if (url) {
+    NSString *url = [NSString stringWithFormat:@"%@%@",[GlobalCache sharedInstance].appServerUrl,uri];
+    NSMutableString *mUrl = [NSMutableString stringWithString:url];
+    if ([param isKindOfClass:[NSString class]]) {
+        [mUrl appendString:param];
+    }
+    if ([param isKindOfClass:[NSDictionary class]]) {
+        [mUrl appendString:[FSStringTools paramStringFromDict:param]];
+    }
+    NSString *logMsg = [NSString stringWithFormat:@"Get Request with url: %@",mUrl];
+    log(logMsg);
+    if (mUrl) {
         if (sign) {
-            //加密规则...
+            //自定义加密规则...
+            
             
         }
-        [self doGetWithUrl:url respObj:obj progress:progress completion:completion];
+        [self doGetWithUrl:mUrl respObj:obj progress:progress completion:completion];
     }
 }
 
@@ -104,10 +114,13 @@
              progress:(void (^)(NSProgress *progress))progress
            completion:(void (^)(BOOL success,id respData))completion
 {
-    NSString *url = [self urlWithUri:uri params:param];
+    NSString *url = [NSString stringWithFormat:@"%@%@",[GlobalCache sharedInstance].appServerUrl,uri];
+    NSString *logMsg = [NSString stringWithFormat:@"Post Request url is: %@ and params is: %@",url,param];
+    log(logMsg);
     if (url) {
         if (sign) {
-            //加密规则...
+            //自定义加密规则...
+            
             
         }
         [self doPostWithUrl:url param:param respObj:obj progress:progress completion:completion];
@@ -124,8 +137,8 @@
             NSString *originString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
             if (originString && [NSJSONSerialization isValidJSONObject:originString]) {
                 responseObject = [NSJSONSerialization JSONObjectWithData:[originString dataUsingEncoding:NSUTF8StringEncoding]
-                                                             options:NSJSONReadingMutableLeaves
-                                                               error:nil];
+                                                                 options:NSJSONReadingMutableLeaves
+                                                                   error:nil];
             }
             if (![FSStringTools isEmpty:originString]) {
                 responseObject = originString;
@@ -141,20 +154,6 @@
         [MBProgressHUD showError:@"数据解析异常"];
         log(excep.reason)
     }
-}
-
-- (NSString *)urlWithUri:(NSString *)uri params:(id)params
-{
-    NSString *url = [NSString stringWithFormat:@"%@%@",[GlobalCache sharedInstance].appServerUrl,uri];
-    NSMutableString *mUrl = [NSMutableString stringWithString:url];
-    if ([params isKindOfClass:[NSString class]]) {
-        [mUrl appendString:params];
-    }
-    if ([params isKindOfClass:[NSDictionary class]]) {
-        [mUrl appendString:[FSStringTools paramStringFromDict:params]];
-    }
-    log(mUrl)
-    return mUrl;
 }
 
 #pragma mark - getter
