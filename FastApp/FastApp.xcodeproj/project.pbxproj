@@ -34,6 +34,7 @@
 		86814E661C8D9C0E0097BC8C /* NSData+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E651C8D9C0E0097BC8C /* NSData+Encryption.m */; };
 		86A1DEC61CB28D920093DA2B /* FSTestDownLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A1DEC51CB28D920093DA2B /* FSTestDownLoadViewController.m */; };
 		86B87B281C945FD7008AE45D /* UIView+FSAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B87B271C945FD7008AE45D /* UIView+FSAutoLayout.m */; };
+		86BEEE871D06A35B000D76AC /* FSBaseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 86BEEE861D06A35B000D76AC /* FSBaseResponse.m */; };
 		86CE81121C914DB400FF9CDB /* UIImage+FSUIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CE81111C914DB400FF9CDB /* UIImage+FSUIImage.m */; };
 		86CE81151C915AB000FF9CDB /* CommonSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CE81141C915AB000FF9CDB /* CommonSearchBar.m */; };
 		86EE657D1CC5F7C3009194C4 /* autolayoutGuide.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86EE657C1CC5F7C3009194C4 /* autolayoutGuide.plist */; };
@@ -111,6 +112,8 @@
 		86A1DEC51CB28D920093DA2B /* FSTestDownLoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTestDownLoadViewController.m; sourceTree = "<group>"; };
 		86B87B261C945FD7008AE45D /* UIView+FSAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FSAutoLayout.h"; sourceTree = "<group>"; };
 		86B87B271C945FD7008AE45D /* UIView+FSAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FSAutoLayout.m"; sourceTree = "<group>"; };
+		86BEEE851D06A35B000D76AC /* FSBaseResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSBaseResponse.h; sourceTree = "<group>"; };
+		86BEEE861D06A35B000D76AC /* FSBaseResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSBaseResponse.m; sourceTree = "<group>"; };
 		86CE81101C914DB400FF9CDB /* UIImage+FSUIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FSUIImage.h"; sourceTree = "<group>"; };
 		86CE81111C914DB400FF9CDB /* UIImage+FSUIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FSUIImage.m"; sourceTree = "<group>"; };
 		86CE81131C915AB000FF9CDB /* CommonSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonSearchBar.h; sourceTree = "<group>"; };
@@ -229,9 +232,9 @@
 		86814E111C8D7C440097BC8C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				86BEEE841D06A350000D76AC /* Models */,
 				86814E121C8D7C440097BC8C /* Category */,
 				86814E131C8D7C440097BC8C /* Constant */,
-				86814E141C8D7C440097BC8C /* Model */,
 				86814E151C8D7C440097BC8C /* Security */,
 				86814E161C8D7C440097BC8C /* Tools */,
 				86814E171C8D7C440097BC8C /* UI */,
@@ -266,13 +269,6 @@
 				86814E261C8D91A10097BC8C /* GlobalCache.m */,
 			);
 			path = Constant;
-			sourceTree = "<group>";
-		};
-		86814E141C8D7C440097BC8C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		86814E151C8D7C440097BC8C /* Security */ = {
@@ -371,6 +367,15 @@
 				86EE657C1CC5F7C3009194C4 /* autolayoutGuide.plist */,
 			);
 			path = Demos;
+			sourceTree = "<group>";
+		};
+		86BEEE841D06A350000D76AC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				86BEEE851D06A35B000D76AC /* FSBaseResponse.h */,
+				86BEEE861D06A35B000D76AC /* FSBaseResponse.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		C3804B58DD944F4BE7B77976 /* Pods */ = {
@@ -557,6 +562,7 @@
 				86814E511C8D98210097BC8C /* FSNavigationController.m in Sources */,
 				86814E441C8D962C0097BC8C /* SecutiryTools.m in Sources */,
 				86814E351C8D94370097BC8C /* GTMBase64.m in Sources */,
+				86BEEE871D06A35B000D76AC /* FSBaseResponse.m in Sources */,
 				86814DF61C8D78B80097BC8C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

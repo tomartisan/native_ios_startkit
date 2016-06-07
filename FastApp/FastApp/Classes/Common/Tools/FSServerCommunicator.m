@@ -8,6 +8,7 @@
 
 #import "FSServerCommunicator.h"
 #import "AFNetworking.h"
+#import "FSBaseResponse.h"
 
 @interface FSServerCommunicator ()
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
@@ -133,20 +134,15 @@
             completion:(void (^)(BOOL success,id respData))completion;
 {
     @try{
-        if([responseObject isKindOfClass:[NSData class]]){
-            NSString *originString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-            if (originString && [NSJSONSerialization isValidJSONObject:originString]) {
-                responseObject = [NSJSONSerialization JSONObjectWithData:[originString dataUsingEncoding:NSUTF8StringEncoding]
-                                                                 options:NSJSONReadingMutableLeaves
-                                                                   error:nil];
+        if(responseObject && [responseObject isKindOfClass:[NSData class]]){
+            id data = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+            FSBaseResponse *response = [FSBaseResponse mj_objectWithKeyValues:data];
+            if (HttpStatusSuccessCode == response.code) {
+                id finalData = (nil == ObjType) ? response.data : [ObjType mj_objectWithKeyValues:response.data];
+                completion((nil == finalData) ? NO : YES ,finalData);
+            }else{
+                [MBProgressHUD handleErrorWithCode:response.code additional:response.msg];
             }
-            if (![FSStringTools isEmpty:originString]) {
-                responseObject = originString;
-            }
-        }
-        if (responseObject) {
-            id data = (nil == ObjType) ? responseObject : [ObjType mj_objectWithKeyValues:responseObject];
-            completion((nil == data) ? NO : YES,data);
             return;
         }
         [MBProgressHUD handleErrorWithCode:HttpStatusReturnNullCode additional:nil];
