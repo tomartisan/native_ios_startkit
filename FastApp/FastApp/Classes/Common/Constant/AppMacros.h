@@ -19,11 +19,13 @@
 #define KDeviceHeight [UIScreen mainScreen].bounds.size.height
 #define FullViewWidth self.frame.size.width
 #define FullViewHeight self.frame.size.height
-#define FullVCRect CGRectMake(0,0, KDeviceWidth, KDeviceHeight-64)
+
 #define SINGLE_LINE_ADJUST_OFFSET   ((1 / [UIScreen mainScreen].scale) / 2)
 
 //满屏CGRect
-#define FullScreenRect [UIScreen mainScreen].bounds)
+#define FullScreenRect [UIScreen mainScreen].bounds
+#define FullVCRect CGRectMake(0,0, KDeviceWidth, KDeviceHeight-64)
+#define FullTabbarVCRect CGRectMake(0,0, KDeviceWidth, KDeviceHeight-64-49)
 
 // -------------------------------------------------    颜色定义开始  -------------------------------//
 #define COLOR(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
