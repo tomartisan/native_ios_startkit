@@ -135,11 +135,33 @@
 {
     @try{
         if(responseObject && [responseObject isKindOfClass:[NSData class]]){
-            id data = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
-            FSBaseResponse *response = [FSBaseResponse mj_objectWithKeyValues:data];
+            
+            FSBaseResponse *response = [FSBaseResponse mj_objectWithKeyValues:[responseObject mj_JSONObject]];
+            
             if (HttpStatusSuccessCode == response.code) {
-                id finalData = (nil == ObjType) ? response.data : [ObjType mj_objectWithKeyValues:response.data];
+                
+                id finalData = nil;
+                id jsonObject = [response.data mj_JSONObject];
+                
+                if (nil == ObjType) {
+                    finalData = jsonObject;
+                }else if ([jsonObject isKindOfClass:[NSDictionary class]]){
+                    finalData = [ObjType mj_objectWithKeyValues:jsonObject];
+                }else if ([jsonObject isKindOfClass:[NSArray class]]){
+                    /**
+                     *  特别提示：此处ObjType模型中有个数组属性，数组里面又要装着其他模型时，需要在ObjType的m文件中实现+mj_objectClassInArray
+                     *
+                     *   + (NSDictionary *)mj_objectClassInArray
+                     *   {
+                     *      return @{@"arrayPropertyName":[Model class]};
+                     *   }
+                     *
+                     */
+                    finalData = [ObjType mj_objectArrayWithKeyValuesArray:jsonObject];
+                }
+                
                 completion((nil == finalData) ? NO : YES ,finalData);
+                
             }else{
                 [MBProgressHUD handleErrorWithCode:response.code additional:response.msg];
             }
