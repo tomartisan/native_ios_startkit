@@ -75,7 +75,7 @@
 
 //日志打印
 #if isDevelopModel
-#define log(msg,...) NSLog(@"%@ ===> %s line at %d" , msg, __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#define log(msg) NSLog(@"%@ ===> Func is: %s line at: %d" , msg , __PRETTY_FUNCTION__, __LINE__);
 #else
 #define log(msg) ((void)0);
 #endif
