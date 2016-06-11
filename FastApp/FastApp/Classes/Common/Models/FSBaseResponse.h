@@ -17,7 +17,7 @@
 //服务器返回的错误信息
 @property (nonatomic, copy) NSString *msg;
 
-//服务器返回的数据
-@property (nonatomic, copy) NSString *data;
+//服务器返回的数据（可能是字符串，可能是数组，可能是字典）
+@property (nonatomic) id data;
 
 @end
