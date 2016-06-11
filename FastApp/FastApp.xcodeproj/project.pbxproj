@@ -32,6 +32,7 @@
 		86814E601C8D9A570097BC8C /* FSDeviceTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E5F1C8D9A570097BC8C /* FSDeviceTools.m */; };
 		86814E631C8D9ABD0097BC8C /* FSServerCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E621C8D9ABD0097BC8C /* FSServerCommunicator.m */; };
 		86814E661C8D9C0E0097BC8C /* NSData+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E651C8D9C0E0097BC8C /* NSData+Encryption.m */; };
+		868AEDA21D0C595500F2AF87 /* FSBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 868AEDA11D0C595500F2AF87 /* FSBaseModel.m */; };
 		86A1DEC61CB28D920093DA2B /* FSTestDownLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A1DEC51CB28D920093DA2B /* FSTestDownLoadViewController.m */; };
 		86B87B281C945FD7008AE45D /* UIView+FSAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B87B271C945FD7008AE45D /* UIView+FSAutoLayout.m */; };
 		86BEEE871D06A35B000D76AC /* FSBaseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 86BEEE861D06A35B000D76AC /* FSBaseResponse.m */; };
@@ -108,6 +109,8 @@
 		86814E621C8D9ABD0097BC8C /* FSServerCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSServerCommunicator.m; sourceTree = "<group>"; };
 		86814E641C8D9C0E0097BC8C /* NSData+Encryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Encryption.h"; sourceTree = "<group>"; };
 		86814E651C8D9C0E0097BC8C /* NSData+Encryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Encryption.m"; sourceTree = "<group>"; };
+		868AEDA01D0C595500F2AF87 /* FSBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSBaseModel.h; sourceTree = "<group>"; };
+		868AEDA11D0C595500F2AF87 /* FSBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSBaseModel.m; sourceTree = "<group>"; };
 		86A1DEC41CB28D920093DA2B /* FSTestDownLoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTestDownLoadViewController.h; sourceTree = "<group>"; };
 		86A1DEC51CB28D920093DA2B /* FSTestDownLoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTestDownLoadViewController.m; sourceTree = "<group>"; };
 		86B87B261C945FD7008AE45D /* UIView+FSAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FSAutoLayout.h"; sourceTree = "<group>"; };
@@ -374,6 +377,8 @@
 			children = (
 				86BEEE851D06A35B000D76AC /* FSBaseResponse.h */,
 				86BEEE861D06A35B000D76AC /* FSBaseResponse.m */,
+				868AEDA01D0C595500F2AF87 /* FSBaseModel.h */,
+				868AEDA11D0C595500F2AF87 /* FSBaseModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -536,6 +541,7 @@
 				86FD458B1CB4BE9200C1EC12 /* FSTestLayoutViewController.m in Sources */,
 				86FD45A01CB4ECA300C1EC12 /* FSUIDemoViewController.m in Sources */,
 				86814E4E1C8D97BC0097BC8C /* DCPicScrollView.m in Sources */,
+				868AEDA21D0C595500F2AF87 /* FSBaseModel.m in Sources */,
 				86814E631C8D9ABD0097BC8C /* FSServerCommunicator.m in Sources */,
 				86814E601C8D9A570097BC8C /* FSDeviceTools.m in Sources */,
 				86814E5A1C8D996B0097BC8C /* FSWebViewController.m in Sources */,

@@ -20,6 +20,7 @@
 #import "UITextField+FSLimitString.h"
 
 //Usefull Tools
+#import "FSBaseModel.h"
 #import "AppMacros.h"
 #import "GloabVariables.h"
 #import "MessageKey.h"
