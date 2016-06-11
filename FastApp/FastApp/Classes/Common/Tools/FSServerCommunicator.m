@@ -128,20 +128,24 @@
     }
 }
 
-#pragma mark - response handler
+#pragma mark - response handler（统一错误处理，统一返回值处理）
 - (void)handleResponse:(id)responseObject
                   Resp:(Class)ObjType
             completion:(void (^)(BOOL success,id respData))completion;
 {
-    @try{
-        if(responseObject && [responseObject isKindOfClass:[NSData class]]){
+    @try {
+        
+        id originData = [responseObject mj_JSONObject];
+        log(originData)
+        
+        id finalData = nil;
+        FSBaseResponse *response = [FSBaseResponse mj_objectWithKeyValues:originData];
+        
+        if(![FSStringTools isEmpty:response.data]){
             
-            FSBaseResponse *response = [FSBaseResponse mj_objectWithKeyValues:[responseObject mj_JSONObject]];
+            id jsonObject = [response.data mj_JSONObject];
             
             if (HttpStatusSuccessCode == response.code) {
-                
-                id finalData = nil;
-                id jsonObject = [response.data mj_JSONObject];
                 
                 if (nil == ObjType) {
                     finalData = jsonObject;
@@ -160,17 +164,17 @@
                     finalData = [ObjType mj_objectArrayWithKeyValuesArray:jsonObject];
                 }
                 
-                completion((nil == finalData) ? NO : YES ,finalData);
-                
-            }else{
+            } else {
                 [MBProgressHUD handleErrorWithCode:response.code additional:response.msg];
             }
-            return;
+        } else {
+            [MBProgressHUD handleErrorWithCode:HttpStatusReturnNullCode additional:nil];
         }
-        [MBProgressHUD handleErrorWithCode:HttpStatusReturnNullCode additional:nil];
+        completion((nil == finalData) ? NO : YES ,finalData);
     }@catch(NSException *excep){
-        [MBProgressHUD showError:@"数据解析异常"];
         log(excep.reason)
+        completion(NO,nil);
+        [MBProgressHUD showError:@"数据解析异常"];
     }
 }
 
