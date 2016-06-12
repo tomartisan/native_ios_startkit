@@ -37,5 +37,14 @@
 
 + (NSString *)paramStringFromDict:(NSDictionary *)dict;
 
+/**
+ *  将数组遍历返回由值拼接的字符串
+ *
+ *  @param array     字符串数组
+ *  @param connector 值之间连接的符号，默认英文逗号
+ *
+ *  @return 拼接后的字符串
+ */
++ (NSString *)stringFromArray:(NSArray<NSString *> *)array connector:(NSString *)connector;
 
 @end

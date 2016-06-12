@@ -220,6 +220,17 @@
     return paramsString;
 }
 
-
++ (NSString *)stringFromArray:(NSArray<NSString *> *)array connector:(NSString *)connector
+{
+    if (array.count ==0) return @"";
+    if (array.count == 1) return array.firstObject;
+    
+    NSMutableString *sb = [NSMutableString stringWithString:@""];
+    connector = ([FSStringTools isEmpty:connector]) ? @"," : connector;
+    for (NSString *str in array) {
+        [sb appendFormat:@"%@%@",str,connector];
+    }
+    return [sb substringToIndex:sb.length-1];
+}
 
 @end
