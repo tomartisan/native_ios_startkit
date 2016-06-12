@@ -36,7 +36,22 @@
                             text:(NSString *)text
                      sysFontSize:(int)fontSize
 {
+    UILabel *label = [self createLabelWithSize:size text:text sysFontSize:fontSize adjustText:YES];
+    return label;
+}
+
++ (UILabel *)createLabelWithSize:(CGSize)size
+                            text:(NSString *)text
+                     sysFontSize:(int)fontSize
+                      adjustText:(BOOL)scale
+{
     UILabel *label = [self createLabelWithSize:size text:text color:FSBlackColor font:SysFontWithSize(fontSize)];
+    if (scale) {
+        label.adjustsFontSizeToFitWidth = YES;
+    }else{
+        label.numberOfLines = 0;
+        label.lineBreakMode = NSLineBreakByTruncatingTail;
+    }
     return label;
 }
 
@@ -49,8 +64,6 @@
     label.text = text;
     label.textColor = color;
     label.font = font;
-    label.numberOfLines = 0;
-    label.lineBreakMode = NSLineBreakByTruncatingTail;
     return label;
 }
 
@@ -71,6 +84,7 @@
     UILabel *label = [self createLabelWithSize:[aText size] aText:aText bgColor:nil];
     return label;
 }
+
 
 //For UIButton
 + (UIButton *)createButtonWithTitle:(NSString *)title

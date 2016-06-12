@@ -39,6 +39,11 @@ typedef NS_ENUM(NSInteger,BtnImgDirectionType)
 
 + (UILabel *)createLabelWithSize:(CGSize)size
                             text:(NSString *)text
+                     sysFontSize:(int)fontSize
+                      adjustText:(BOOL)scale;
+
++ (UILabel *)createLabelWithSize:(CGSize)size
+                            text:(NSString *)text
                            color:(UIColor *)color
                             font:(UIFont *)font;
 
