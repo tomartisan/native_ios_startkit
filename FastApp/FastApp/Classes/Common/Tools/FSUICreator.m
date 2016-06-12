@@ -45,10 +45,12 @@
                            color:(UIColor *)color
                             font:(UIFont *)font
 {
-    NSAttributedString *aText = [[NSAttributedString alloc] initWithString:text
-                                                                attributes:@{NSFontAttributeName:font,
-                                                                             NSForegroundColorAttributeName:color}];
-    UILabel *label = [self createLabelWithSize:size aText:aText bgColor:nil];
+    UILabel *label = [[UILabel alloc] initWithFrame:FSRectFromSize(size)];
+    label.text = text;
+    label.textColor = color;
+    label.font = font;
+    label.numberOfLines = 0;
+    label.lineBreakMode = NSLineBreakByTruncatingTail;
     return label;
 }
 
@@ -56,11 +58,9 @@
                            aText:(NSAttributedString *)aText
                          bgColor:(UIColor *)bgColor
 {
-    UILabel *label = [[UILabel alloc] initWithFrame:FSRectFromSize(size)];
+    UILabel *label = [self createLabelWithSize:size text:nil color:nil font:nil];
     label.attributedText = aText;
     label.backgroundColor = bgColor;
-    label.numberOfLines = 0;
-    label.lineBreakMode = NSLineBreakByTruncatingTail;
     return label;
 }
 
@@ -71,7 +71,6 @@
     UILabel *label = [self createLabelWithSize:[aText size] aText:aText bgColor:nil];
     return label;
 }
-
 
 //For UIButton
 + (UIButton *)createButtonWithTitle:(NSString *)title
