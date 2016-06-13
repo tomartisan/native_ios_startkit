@@ -47,9 +47,10 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        UIImageView *placeHolderImageView = [[UIImageView alloc] initWithFrame:self.bounds];
-        placeHolderImageView.image = [UIImage imageWithNamed:imgName];
+        self.placeImage = [UIImage imageWithNamed:imgName];
         
+        UIImageView *placeHolderImageView = [[UIImageView alloc] initWithFrame:self.bounds];
+        placeHolderImageView.image = self.placeImage;
         placeHolderImageView.userInteractionEnabled = YES;
         [placeHolderImageView addGestureRecognizer:[[UITapGestureRecognizer alloc]
                                                     initWithTarget:self
@@ -79,37 +80,38 @@
 
 - (void)setImages:(NSArray<NSString *> *)images
 {
+    _images = images;
+    
     [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [obj removeFromSuperview];
     }];
     
-    if(images.count == 1) {
+    if(_images.count == 1) {
         
         UIImageView *img = [[UIImageView alloc] initWithFrame:self.bounds];
-        [self addSubview:img];
         _centerImageView = img;
         
         UIView *titleView = [self creatLabelBgView];
-        
         _titleLabel = (UILabel *)titleView.subviews.firstObject;
         
-        [self addSubview:titleView];
-        _isNetwork = [self isNetworkString:images.firstObject];
-        
+        _isNetwork = [self isNetworkString:_images.firstObject];
         if (_isNetwork) {
-            [img sd_setImageWithURL:[NSURL URLWithString:images.firstObject] placeholderImage:self.placeImage];
+            [img sd_setImageWithURL:[NSURL URLWithString:_images.firstObject] placeholderImage:self.placeImage];
         } else {
-            img.image = [UIImage imageWithNamed:images.firstObject];
+            img.image = [UIImage imageWithNamed:_images.firstObject];
         }
         
         img.userInteractionEnabled = YES;
         [img addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageViewDidTap)]];
         
+        [self addSubview:titleView];
+        [self addSubview:img];
     } else {
         [self prepareScrollView];
-        [self setImageUrlStrings:images];
+        [self setImageUrlStrings:_images];
         [self setMaxImageCount:self.imageUrlStrings.count];
     }
+    
 }
 
 - (void)setMaxImageCount:(NSInteger)MaxImageCount {
@@ -241,9 +243,8 @@
 
 
 
-- (UIView *)creatLabelBgView {
-    
-    
+- (UIView *)creatLabelBgView
+{
     UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, myHeight-pageSize, myWidth, pageSize)];
     v.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
     
