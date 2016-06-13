@@ -3,7 +3,8 @@
 //  DCPicScrollView
 //
 //  Created by dengchen on 15/12/4.
-//  Copyright © 2015年 name. All rights reserved.
+//  Updated by tangkunyin on 16/3/7.
+//  Copyright © 2016年 www.shuoit.net. All rights reserved.
 //
 
 #define myWidth self.frame.size.width
@@ -42,6 +43,74 @@
     BOOL _hasTitle;
 }
 
+- (instancetype)initWithFrame:(CGRect)frame placeHolderImage:(NSString *)imgName
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        UIImageView *placeHolderImageView = [[UIImageView alloc] initWithFrame:self.bounds];
+        placeHolderImageView.image = [UIImage imageWithNamed:imgName];
+        
+        placeHolderImageView.userInteractionEnabled = YES;
+        [placeHolderImageView addGestureRecognizer:[[UITapGestureRecognizer alloc]
+                                                    initWithTarget:self
+                                                    action:@selector(imageViewDidTap)]];
+        [self addSubview:placeHolderImageView];
+    }
+    return self;
+}
+
++ (instancetype)picScrollViewWithFrame:(CGRect)frame images:(NSArray<NSString *> *)imgs
+{
+    return  [[DCPicScrollView alloc] initWithFrame:frame WithImageNames:imgs];
+}
+
+#pragma mark - private initilized
+- (instancetype)initWithFrame:(CGRect)frame WithImageNames:(NSArray<NSString *> *)ImageName
+{
+    if (ImageName.count < 1) {
+        return nil;
+    }
+    self = [super initWithFrame:frame];
+    
+    self.images = ImageName;
+    
+    return self;
+}
+
+- (void)setImages:(NSArray<NSString *> *)images
+{
+    [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj removeFromSuperview];
+    }];
+    
+    if(images.count == 1) {
+        
+        UIImageView *img = [[UIImageView alloc] initWithFrame:self.bounds];
+        [self addSubview:img];
+        _centerImageView = img;
+        
+        UIView *titleView = [self creatLabelBgView];
+        
+        _titleLabel = (UILabel *)titleView.subviews.firstObject;
+        
+        [self addSubview:titleView];
+        _isNetwork = [self isNetworkString:images.firstObject];
+        
+        if (_isNetwork) {
+            [img sd_setImageWithURL:[NSURL URLWithString:images.firstObject] placeholderImage:self.placeImage];
+        } else {
+            img.image = [UIImage imageWithNamed:images.firstObject];
+        }
+        
+        img.userInteractionEnabled = YES;
+        [img addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageViewDidTap)]];
+        
+    } else {
+        [self prepareScrollView];
+        [self setImageUrlStrings:images];
+        [self setMaxImageCount:self.imageUrlStrings.count];
+    }
+}
 
 - (void)setMaxImageCount:(NSInteger)MaxImageCount {
     _MaxImageCount = MaxImageCount;
@@ -60,50 +129,6 @@
         self.imageViewDidTapAtIndex(_currentIndex);
     }
 }
-
-+ (instancetype)picScrollViewWithFrame:(CGRect)frame WithImageUrls:(NSArray<NSString *> *)imageUrl {
-    return  [[DCPicScrollView alloc] initWithFrame:frame WithImageNames:imageUrl];
-}
-
-- (instancetype)initWithFrame:(CGRect)frame WithImageNames:(NSArray<NSString *> *)ImageName {
-    if (ImageName.count < 1) {
-        return nil;
-    }
-    
-    self = [super initWithFrame:frame];
-    
-    if(ImageName.count == 1) {
-        
-        UIImageView *img = [[UIImageView alloc] initWithFrame:self.bounds];
-        [self addSubview:img];
-        _centerImageView = img;
-        
-        UIView *titleView = [self creatLabelBgView];
-        
-        _titleLabel = (UILabel *)titleView.subviews.firstObject;
-        
-        [self addSubview:titleView];
-        _isNetwork = [self isNetworkString:ImageName.firstObject];
-        
-        if (_isNetwork) {
-            [img sd_setImageWithURL:[NSURL URLWithString:ImageName.firstObject] placeholderImage:self.placeImage];
-        }else {
-            img.image = [UIImage imageWithNamed:ImageName.firstObject];
-        }
-        
-        img.userInteractionEnabled = YES;
-        [img addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageViewDidTap)]];
-        
-        return self;
-    }
-    
-    [self prepareScrollView];
-    [self setImageUrlStrings:ImageName];
-    [self setMaxImageCount:self.imageUrlStrings.count];
-    
-    return self;
-}
-
 
 - (void)prepareScrollView {
     
@@ -241,6 +266,88 @@
     _titleLabel.font = font;
 }
 
+
+
+- (void)changeImageLeft:(NSInteger)LeftIndex center:(NSInteger)centerIndex right:(NSInteger)rightIndex {
+    
+    [_leftImageView sd_setImageWithURL:[self imageUrlWithIndex:LeftIndex] placeholderImage:self.placeImage];
+    [_centerImageView sd_setImageWithURL:[self imageUrlWithIndex:centerIndex] placeholderImage:self.placeImage];
+    [_rightImageView sd_setImageWithURL:[self imageUrlWithIndex:rightIndex] placeholderImage:self.placeImage];
+    
+    if (_hasTitle) {
+        _titleLabel.text = [self.titleData objectAtIndex:centerIndex];
+    }
+    
+    [_scrollView setContentOffset:CGPointMake(myWidth, 0)];
+}
+
+-(void)setPlaceImage:(UIImage *)placeImage {
+    
+    _placeImage = placeImage;
+    
+    if (!_isNetwork) return;
+    
+    if (_MaxImageCount < 2 && _centerImageView) {
+        _centerImageView.image = _placeImage;
+    }else {
+        [self changeImageLeft:_MaxImageCount-1 center:0 right:1];
+    }
+}
+
+- (NSURL *)imageUrlWithIndex:(NSInteger)index {
+    if (index < 0||index >= self.imageUrlStrings.count) {
+        return nil;
+    }
+    NSURL *imageUrl = [NSURL URLWithString:self.imageUrlStrings[index]];
+    return imageUrl;
+}
+
+
+- (void)scorll {
+    [_scrollView setContentOffset:CGPointMake(_scrollView.contentOffset.x + myWidth, 0) animated:YES];
+}
+
+- (void)setAutoScrollDelay:(NSTimeInterval)AutoScrollDelay {
+    _AutoScrollDelay = AutoScrollDelay;
+    [self removeTimer];
+    [self setUpTimer];
+}
+
+- (void)setUpTimer {
+    if (_AutoScrollDelay < 0.5||_timer != nil) return;
+    
+    _timer = [NSTimer timerWithTimeInterval:_AutoScrollDelay target:self selector:@selector(scorll) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
+}
+
+- (void)removeTimer {
+    if (_timer == nil) return;
+    [_timer invalidate];
+    _timer = nil;
+}
+
+- (void)setImageUrlStrings:(NSArray *)imageUrlStrings
+{
+    _imageUrlStrings = imageUrlStrings;
+    _imageData = [NSMutableDictionary dictionaryWithCapacity:_imageUrlStrings.count];
+    
+    _isNetwork = [self isNetworkString:imageUrlStrings.firstObject];
+    
+    if (!_isNetwork) {
+        for (NSString *name in imageUrlStrings) {
+            [self.imageData setObject:[UIImage imageWithNamed:name] forKey:name];
+        }
+    }
+}
+
+- (BOOL)isNetworkString:(NSString *)string
+{
+    if ([string hasPrefix:@"http://"] || [string hasPrefix:@"https://"]) {
+        return YES;
+    }
+    return NO;
+}
+
 #pragma mark scrollViewDelegate
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
@@ -296,83 +403,6 @@
         _PageControl.currentPage = _currentIndex;
     }
     
-}
-
-- (void)changeImageLeft:(NSInteger)LeftIndex center:(NSInteger)centerIndex right:(NSInteger)rightIndex {
-    
-    [_leftImageView sd_setImageWithURL:[self imageUrlWithIndex:LeftIndex] placeholderImage:self.placeImage];
-    [_centerImageView sd_setImageWithURL:[self imageUrlWithIndex:centerIndex] placeholderImage:self.placeImage];
-    [_rightImageView sd_setImageWithURL:[self imageUrlWithIndex:rightIndex] placeholderImage:self.placeImage];
-    
-    if (_hasTitle) {
-        _titleLabel.text = [self.titleData objectAtIndex:centerIndex];
-    }
-    
-    [_scrollView setContentOffset:CGPointMake(myWidth, 0)];
-}
-
--(void)setPlaceImage:(UIImage *)placeImage {
-    if (!_isNetwork) return;
-    
-    _placeImage = placeImage;
-    if (_MaxImageCount < 2 && _centerImageView) {
-        _centerImageView.image = _placeImage;
-    }else {
-        [self changeImageLeft:_MaxImageCount-1 center:0 right:1];
-    }
-}
-
-- (NSURL *)imageUrlWithIndex:(NSInteger)index {
-    if (index < 0||index >= self.imageUrlStrings.count) {
-        return nil;
-    }
-    NSURL *imageUrl = [NSURL URLWithString:self.imageUrlStrings[index]];
-    return imageUrl;
-}
-
-
-- (void)scorll {
-    [_scrollView setContentOffset:CGPointMake(_scrollView.contentOffset.x + myWidth, 0) animated:YES];
-}
-
-- (void)setAutoScrollDelay:(NSTimeInterval)AutoScrollDelay {
-    _AutoScrollDelay = AutoScrollDelay;
-    [self removeTimer];
-    [self setUpTimer];
-}
-
-- (void)setUpTimer {
-    if (_AutoScrollDelay < 0.5||_timer != nil) return;
-    
-    _timer = [NSTimer timerWithTimeInterval:_AutoScrollDelay target:self selector:@selector(scorll) userInfo:nil repeats:YES];
-    [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
-}
-
-- (void)removeTimer {
-    if (_timer == nil) return;
-    [_timer invalidate];
-    _timer = nil;
-}
-
-- (void)setImageUrlStrings:(NSArray *)imageUrlStrings {
-    _imageUrlStrings = imageUrlStrings;
-    _imageData = [NSMutableDictionary dictionaryWithCapacity:_imageUrlStrings.count];
-    
-    _isNetwork = [self isNetworkString:imageUrlStrings.firstObject];
-    
-    if (!_isNetwork) {
-        for (NSString *name in imageUrlStrings) {
-            [self.imageData setObject:[UIImage imageWithNamed:name] forKey:name];
-        }
-    }
-}
-
-- (BOOL)isNetworkString:(NSString *)string
-{
-    if ([string hasPrefix:@"http://"] || [string hasPrefix:@"https://"]) {
-        return YES;
-    }
-    return NO;
 }
 
 -(void)dealloc {

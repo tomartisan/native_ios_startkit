@@ -9,36 +9,40 @@
 #import "CommonScrollView.h"
 #import "DCPicScrollView.h"
 
+@interface CommonScrollView ()
+@property (nonatomic, strong) DCPicScrollView *adScrollView;
+@end
+
 @implementation CommonScrollView
-{
-    __weak DCPicScrollView *_adScrollView;
-}
+
 
 - (void)prepareScrollViewsWithUrls:(NSArray<NSString *> *)urls
 {
-    if (urls && !_adScrollView) {
-        //内部使用SDWebImage实现图片加载
-        _adScrollView = [DCPicScrollView picScrollViewWithFrame:CGRectMake(0, 0,
-                                                                           CGRectGetWidth(self.frame),
-                                                                           CGRectGetHeight(self.frame))
-                                                  WithImageUrls:urls];
-        
-        _adScrollView.pageIndicatorTintColor = FSGrayColor;
-        _adScrollView.currentPageIndicatorTintColor = FSWhiteColor;
-        _adScrollView.AutoScrollDelay = 4.0f;
-        _adScrollView.placeImage = [UIImage imageWithNamed:@"advertiseDefault"];
-        
-        [self addSubview:_adScrollView];
+    if (urls.count > 0) {
+        self.adScrollView.images = urls;
+        [self addSubview:self.adScrollView];
     }
 }
 
 - (void)actionForImageTaped:(void (^)(NSInteger index))action
 {
-    [_adScrollView setImageViewDidTapAtIndex:^(NSInteger index) {
+    [self.adScrollView setImageViewDidTapAtIndex:^(NSInteger index) {
         if (action) {
             action(index);
         }
     }];
+}
+
+#pragma mark - getters 保证唯一性
+- (DCPicScrollView *)adScrollView
+{
+    if (!_adScrollView) {
+        _adScrollView = [[DCPicScrollView alloc] initWithFrame:self.bounds placeHolderImage:@"banner"];
+        _adScrollView.pageIndicatorTintColor = FSGrayColor;
+        _adScrollView.currentPageIndicatorTintColor = FSWhiteColor;
+        _adScrollView.AutoScrollDelay = 3.0f;
+    }
+    return _adScrollView;
 }
 
 @end
