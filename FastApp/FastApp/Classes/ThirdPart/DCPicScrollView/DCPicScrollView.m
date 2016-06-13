@@ -16,7 +16,7 @@
 
 @property (nonatomic,strong) NSMutableDictionary *imageData;
 
-@property (nonatomic,strong) NSArray *imageUrlStrings;
+@property (nonatomic,copy) NSArray *imageUrlStrings;
 
 @end
 
@@ -83,11 +83,10 @@
         _titleLabel = (UILabel *)titleView.subviews.firstObject;
         
         [self addSubview:titleView];
-        _isNetwork = [ImageName.firstObject hasPrefix:@"http://"];
+        _isNetwork = [self isNetworkString:ImageName.firstObject];
         
         if (_isNetwork) {
-            NSURL *imageUrl = [NSURL URLWithString:ImageName.firstObject];
-            [img sd_setImageWithURL:imageUrl placeholderImage:_placeImage];
+            [img sd_setImageWithURL:[NSURL URLWithString:ImageName.firstObject] placeholderImage:self.placeImage];
         }else {
             img.image = [UIImage imageWithNamed:ImageName.firstObject];
         }
@@ -301,9 +300,9 @@
 
 - (void)changeImageLeft:(NSInteger)LeftIndex center:(NSInteger)centerIndex right:(NSInteger)rightIndex {
     
-    [_leftImageView sd_setImageWithURL:[self imageUrlWithIndex:LeftIndex] placeholderImage:_placeImage];
-    [_centerImageView sd_setImageWithURL:[self imageUrlWithIndex:centerIndex] placeholderImage:_placeImage];
-    [_rightImageView sd_setImageWithURL:[self imageUrlWithIndex:rightIndex] placeholderImage:_placeImage];
+    [_leftImageView sd_setImageWithURL:[self imageUrlWithIndex:LeftIndex] placeholderImage:self.placeImage];
+    [_centerImageView sd_setImageWithURL:[self imageUrlWithIndex:centerIndex] placeholderImage:self.placeImage];
+    [_rightImageView sd_setImageWithURL:[self imageUrlWithIndex:rightIndex] placeholderImage:self.placeImage];
     
     if (_hasTitle) {
         _titleLabel.text = [self.titleData objectAtIndex:centerIndex];
@@ -359,13 +358,21 @@
     _imageUrlStrings = imageUrlStrings;
     _imageData = [NSMutableDictionary dictionaryWithCapacity:_imageUrlStrings.count];
     
-    _isNetwork = [imageUrlStrings.firstObject hasPrefix:@"http://"];
+    _isNetwork = [self isNetworkString:imageUrlStrings.firstObject];
     
     if (!_isNetwork) {
         for (NSString *name in imageUrlStrings) {
             [self.imageData setObject:[UIImage imageWithNamed:name] forKey:name];
         }
     }
+}
+
+- (BOOL)isNetworkString:(NSString *)string
+{
+    if ([string hasPrefix:@"http://"] || [string hasPrefix:@"https://"]) {
+        return YES;
+    }
+    return NO;
 }
 
 -(void)dealloc {

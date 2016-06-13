@@ -28,10 +28,14 @@ typedef NS_ENUM(NSUInteger, PageControlStyle) {
 //图片被点击会调用该block
 @property (nonatomic,copy) void(^imageViewDidTapAtIndex)(NSInteger index); //index从0开始
 
-/*@parameter imageUrl
- imageUrlString或imageName
- 网络加载urlsring必须为http:// 开头,
- //本地加载只需图片名字数组
+
+/**
+ *  初始化方法
+ *
+ *  @param frame    滚动图大小
+ *  @param imageUrl 如果从网络加载，则该参数为合法可用的URLs，否则将使图片名称数组
+ *
+ *  @return 滚动图实例
  */
 + (instancetype)picScrollViewWithFrame:(CGRect)frame WithImageUrls:(NSArray<NSString *> *)imageUrl;
 
