@@ -135,11 +135,14 @@
 {
     @try {
         
-        id originData = [responseObject mj_JSONObject];
-        log(originData)
+        id resultData = [responseObject mj_JSONObject];
+        FSBaseResponse *response = [FSBaseResponse mj_objectWithKeyValues:resultData];
         
-        id finalData = nil;
-        FSBaseResponse *response = [FSBaseResponse mj_objectWithKeyValues:originData];
+        //对于不需要返回数据的操作
+        if ([FSStringTools isEmpty:response.data] && HttpStatusSuccessCode == response.code) {
+            completion(YES ,response.msg);
+            return;
+        }
         
         if(![FSStringTools isEmpty:response.data]){
             
@@ -148,9 +151,9 @@
             if (HttpStatusSuccessCode == response.code) {
                 
                 if (nil == ObjType) {
-                    finalData = jsonObject;
+                    resultData = jsonObject;
                 }else if ([jsonObject isKindOfClass:[NSDictionary class]]){
-                    finalData = [ObjType mj_objectWithKeyValues:jsonObject];
+                    resultData = [ObjType mj_objectWithKeyValues:jsonObject];
                 }else if ([jsonObject isKindOfClass:[NSArray class]]){
                     /**
                      *  特别提示：此处ObjType模型中有个数组属性，数组里面又要装着其他模型时，需要在ObjType的m文件中实现+mj_objectClassInArray
@@ -161,7 +164,7 @@
                      *   }
                      *
                      */
-                    finalData = [ObjType mj_objectArrayWithKeyValuesArray:jsonObject];
+                    resultData = [ObjType mj_objectArrayWithKeyValuesArray:jsonObject];
                 }
                 
             } else {
@@ -170,7 +173,7 @@
         } else {
             [MBProgressHUD handleErrorWithCode:HttpStatusReturnNullCode additional:nil];
         }
-        completion((nil == finalData) ? NO : YES ,finalData);
+        completion((nil == resultData) ? NO : YES ,resultData);
     }@catch(NSException *excep){
         log(excep.reason)
         completion(NO,nil);
