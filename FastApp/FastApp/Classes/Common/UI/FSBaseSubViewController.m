@@ -9,37 +9,36 @@
 #import "FSBaseSubViewController.h"
 
 @implementation FSBaseSubViewController
-{
-    UISwipeGestureRecognizer *_backGesture;
-}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.hidesBackButton = YES;
-    self.backUseGesture = YES;
+    
+    self.navigationItem.hidesBackButton = YES;
+    
     //自定义返回按钮
     UIButton *backBtn = [FSUICreator createButtonWithNormalImage:@"prev"
                                                 highlightedImage:@"prev"
                                                           target:self
                                                           action:@selector(backToParentController)];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
+    
+    //增加左划返回的手势支持
+    UISwipeGestureRecognizer *backGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+                                                                                      action:@selector(backToParentController)];
+    backGesture.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:backGesture];
 }
 
 
 -(void)backToParentController
 {
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (void)setBackUseGesture:(BOOL)backUseGesture
-{
-    _backUseGesture = backUseGesture;
-    if (_backUseGesture && !_backGesture) {
-        _backGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(backToParentController)];
-        _backGesture.direction = UISwipeGestureRecognizerDirectionRight;
-        [self.view addGestureRecognizer:_backGesture];
-    }else{
-        [self.view removeGestureRecognizer:_backGesture];
+    if ([self.navigationController respondsToSelector:@selector(popViewControllerAnimated:)]) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    if ([self respondsToSelector:@selector(dismissViewControllerAnimated:completion:)]) {
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 

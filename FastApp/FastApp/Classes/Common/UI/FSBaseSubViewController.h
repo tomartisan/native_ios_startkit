@@ -8,12 +8,13 @@
 
 #import "FSBaseViewController.h"
 
+//支持使用手势返回，即:右滑动也可以返回上层
 @interface FSBaseSubViewController : FSBaseViewController
 
-//使用手势返回即，右滑动也可以 返回上层。默认开启
-@property (nonatomic, assign) BOOL backUseGesture;
 
-//需要返回根视图时，请重写此方法
+/**
+ *  需要返回根视图时，请重写此方法
+ */
 -(void)backToParentController;
 
 @end
