@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26DE2404DFB2E90CD4124190 /* Pods_FastApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 530F65F944D29DC72B8711C4 /* Pods_FastApp.framework */; };
 		865B14211CF730D400053FD3 /* FSPositionTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 865B14201CF730D400053FD3 /* FSPositionTools.m */; };
 		86814DF61C8D78B80097BC8C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814DF51C8D78B80097BC8C /* main.m */; };
 		86814DF91C8D78B80097BC8C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814DF81C8D78B80097BC8C /* AppDelegate.m */; };
@@ -50,10 +51,11 @@
 		86FD45F71CBE2B6000C1EC12 /* introduce.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86FD45F61CBE2B6000C1EC12 /* introduce.plist */; };
 		86FED4EE1CAA7A12000C31F2 /* FSPathTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FED4ED1CAA7A12000C31F2 /* FSPathTools.m */; };
 		86FED4F91CABA5F4000C31F2 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86FED4F81CABA5F4000C31F2 /* CoreMedia.framework */; };
-		ABE7405D03CB4C6C81049CA4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D8C9C1603382FB6F260223 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		530F65F944D29DC72B8711C4 /* Pods_FastApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FastApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5463CD1B1CEF02C798477830 /* Pods-FastApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FastApp/Pods-FastApp.release.xcconfig"; sourceTree = "<group>"; };
 		58D8C9C1603382FB6F260223 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		865B141F1CF730D400053FD3 /* FSPositionTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSPositionTools.h; sourceTree = "<group>"; };
 		865B14201CF730D400053FD3 /* FSPositionTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSPositionTools.m; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 		86FED4EF1CAB6800000C31F2 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		86FED4F21CAB6981000C31F2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		86FED4F81CABA5F4000C31F2 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		AA03640DC1F387AFFFA9DACF /* Pods-FastApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FastApp/Pods-FastApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C9C2781E8891DA49860E6480 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D8C71976E8CF56F2C0B94D30 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,7 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86FED4F91CABA5F4000C31F2 /* CoreMedia.framework in Frameworks */,
-				ABE7405D03CB4C6C81049CA4 /* libPods.a in Frameworks */,
+				26DE2404DFB2E90CD4124190 /* Pods_FastApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +391,8 @@
 			children = (
 				D8C71976E8CF56F2C0B94D30 /* Pods.debug.xcconfig */,
 				C9C2781E8891DA49860E6480 /* Pods.release.xcconfig */,
+				AA03640DC1F387AFFFA9DACF /* Pods-FastApp.debug.xcconfig */,
+				5463CD1B1CEF02C798477830 /* Pods-FastApp.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -399,6 +404,7 @@
 				86FED4F21CAB6981000C31F2 /* AVFoundation.framework */,
 				86FED4EF1CAB6800000C31F2 /* AVKit.framework */,
 				58D8C9C1603382FB6F260223 /* libPods.a */,
+				530F65F944D29DC72B8711C4 /* Pods_FastApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -410,12 +416,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 86814E081C8D78B80097BC8C /* Build configuration list for PBXNativeTarget "FastApp" */;
 			buildPhases = (
-				E7565750469641554E158534 /* Check Pods Manifest.lock */,
+				E7565750469641554E158534 /* [CP] Check Pods Manifest.lock */,
 				86814DED1C8D78B80097BC8C /* Sources */,
 				86814DEE1C8D78B80097BC8C /* Frameworks */,
 				86814DEF1C8D78B80097BC8C /* Resources */,
-				4C1FF72B0EC884153FAAB991 /* Embed Pods Frameworks */,
-				C555EA69C0B432F82CBE185B /* Copy Pods Resources */,
+				4C1FF72B0EC884153FAAB991 /* [CP] Embed Pods Frameworks */,
+				C555EA69C0B432F82CBE185B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -480,44 +486,44 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4C1FF72B0EC884153FAAB991 /* Embed Pods Frameworks */ = {
+		4C1FF72B0EC884153FAAB991 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FastApp/Pods-FastApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C555EA69C0B432F82CBE185B /* Copy Pods Resources */ = {
+		C555EA69C0B432F82CBE185B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FastApp/Pods-FastApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E7565750469641554E158534 /* Check Pods Manifest.lock */ = {
+		E7565750469641554E158534 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -660,7 +666,7 @@
 		};
 		86814E091C8D78B80097BC8C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8C71976E8CF56F2C0B94D30 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = AA03640DC1F387AFFFA9DACF /* Pods-FastApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -676,7 +682,7 @@
 		};
 		86814E0A1C8D78B80097BC8C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9C2781E8891DA49860E6480 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 5463CD1B1CEF02C798477830 /* Pods-FastApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = NO;

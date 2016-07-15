@@ -1,0 +1,6 @@
+framework module Pods_FastApp {
+  umbrella header "Pods-FastApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
