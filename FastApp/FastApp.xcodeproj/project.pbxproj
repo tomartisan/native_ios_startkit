@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		26DE2404DFB2E90CD4124190 /* Pods_FastApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 530F65F944D29DC72B8711C4 /* Pods_FastApp.framework */; };
+		862A02751D3BD8E30017C050 /* FSCommnetsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 862A02741D3BD8E30017C050 /* FSCommnetsView.m */; };
 		865B14211CF730D400053FD3 /* FSPositionTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 865B14201CF730D400053FD3 /* FSPositionTools.m */; };
 		86814DF61C8D78B80097BC8C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814DF51C8D78B80097BC8C /* main.m */; };
 		86814DF91C8D78B80097BC8C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814DF81C8D78B80097BC8C /* AppDelegate.m */; };
@@ -23,7 +24,7 @@
 		86814E411C8D95A00097BC8C /* FSStringTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E401C8D95A00097BC8C /* FSStringTools.m */; };
 		86814E441C8D962C0097BC8C /* SecutiryTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E431C8D962C0097BC8C /* SecutiryTools.m */; };
 		86814E471C8D96F30097BC8C /* FSTimerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E461C8D96F30097BC8C /* FSTimerButton.m */; };
-		86814E4A1C8D97440097BC8C /* CommonScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E491C8D97440097BC8C /* CommonScrollView.m */; };
+		86814E4A1C8D97440097BC8C /* FSSlideShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E491C8D97440097BC8C /* FSSlideShowView.m */; };
 		86814E4E1C8D97BC0097BC8C /* DCPicScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E4D1C8D97BC0097BC8C /* DCPicScrollView.m */; };
 		86814E511C8D98210097BC8C /* FSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E501C8D98210097BC8C /* FSNavigationController.m */; };
 		86814E541C8D987A0097BC8C /* FSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E531C8D98790097BC8C /* FSBaseViewController.m */; };
@@ -38,7 +39,7 @@
 		86B87B281C945FD7008AE45D /* UIView+FSAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B87B271C945FD7008AE45D /* UIView+FSAutoLayout.m */; };
 		86BEEE871D06A35B000D76AC /* FSBaseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 86BEEE861D06A35B000D76AC /* FSBaseResponse.m */; };
 		86CE81121C914DB400FF9CDB /* UIImage+FSUIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CE81111C914DB400FF9CDB /* UIImage+FSUIImage.m */; };
-		86CE81151C915AB000FF9CDB /* CommonSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CE81141C915AB000FF9CDB /* CommonSearchBar.m */; };
+		86CE81151C915AB000FF9CDB /* FSSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CE81141C915AB000FF9CDB /* FSSearchBar.m */; };
 		86EE657D1CC5F7C3009194C4 /* autolayoutGuide.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86EE657C1CC5F7C3009194C4 /* autolayoutGuide.plist */; };
 		86FD458B1CB4BE9200C1EC12 /* FSTestLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FD458A1CB4BE9200C1EC12 /* FSTestLayoutViewController.m */; };
 		86FD45901CB4EAE700C1EC12 /* FSUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FD458C1CB4EAE700C1EC12 /* FSUserViewController.m */; };
@@ -57,6 +58,8 @@
 		530F65F944D29DC72B8711C4 /* Pods_FastApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FastApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5463CD1B1CEF02C798477830 /* Pods-FastApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FastApp/Pods-FastApp.release.xcconfig"; sourceTree = "<group>"; };
 		58D8C9C1603382FB6F260223 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		862A02731D3BD8E30017C050 /* FSCommnetsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCommnetsView.h; sourceTree = "<group>"; };
+		862A02741D3BD8E30017C050 /* FSCommnetsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCommnetsView.m; sourceTree = "<group>"; };
 		865B141F1CF730D400053FD3 /* FSPositionTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSPositionTools.h; sourceTree = "<group>"; };
 		865B14201CF730D400053FD3 /* FSPositionTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSPositionTools.m; sourceTree = "<group>"; };
 		86814DF11C8D78B80097BC8C /* FastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,8 +94,8 @@
 		86814E431C8D962C0097BC8C /* SecutiryTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecutiryTools.m; sourceTree = "<group>"; };
 		86814E451C8D96F30097BC8C /* FSTimerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTimerButton.h; sourceTree = "<group>"; };
 		86814E461C8D96F30097BC8C /* FSTimerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTimerButton.m; sourceTree = "<group>"; };
-		86814E481C8D97430097BC8C /* CommonScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonScrollView.h; sourceTree = "<group>"; };
-		86814E491C8D97440097BC8C /* CommonScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonScrollView.m; sourceTree = "<group>"; };
+		86814E481C8D97430097BC8C /* FSSlideShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSlideShowView.h; sourceTree = "<group>"; };
+		86814E491C8D97440097BC8C /* FSSlideShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSlideShowView.m; sourceTree = "<group>"; };
 		86814E4C1C8D97BC0097BC8C /* DCPicScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPicScrollView.h; sourceTree = "<group>"; };
 		86814E4D1C8D97BC0097BC8C /* DCPicScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPicScrollView.m; sourceTree = "<group>"; };
 		86814E4F1C8D98210097BC8C /* FSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSNavigationController.h; sourceTree = "<group>"; };
@@ -121,8 +124,8 @@
 		86BEEE861D06A35B000D76AC /* FSBaseResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSBaseResponse.m; sourceTree = "<group>"; };
 		86CE81101C914DB400FF9CDB /* UIImage+FSUIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FSUIImage.h"; sourceTree = "<group>"; };
 		86CE81111C914DB400FF9CDB /* UIImage+FSUIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FSUIImage.m"; sourceTree = "<group>"; };
-		86CE81131C915AB000FF9CDB /* CommonSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonSearchBar.h; sourceTree = "<group>"; };
-		86CE81141C915AB000FF9CDB /* CommonSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonSearchBar.m; sourceTree = "<group>"; };
+		86CE81131C915AB000FF9CDB /* FSSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSearchBar.h; sourceTree = "<group>"; };
+		86CE81141C915AB000FF9CDB /* FSSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSearchBar.m; sourceTree = "<group>"; };
 		86EE657C1CC5F7C3009194C4 /* autolayoutGuide.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = autolayoutGuide.plist; sourceTree = "<group>"; };
 		86FD45891CB4BE9200C1EC12 /* FSTestLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTestLayoutViewController.h; sourceTree = "<group>"; };
 		86FD458A1CB4BE9200C1EC12 /* FSTestLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTestLayoutViewController.m; sourceTree = "<group>"; };
@@ -314,12 +317,12 @@
 		86814E171C8D7C440097BC8C /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				86CE81131C915AB000FF9CDB /* CommonSearchBar.h */,
-				86CE81141C915AB000FF9CDB /* CommonSearchBar.m */,
+				86CE81131C915AB000FF9CDB /* FSSearchBar.h */,
+				86CE81141C915AB000FF9CDB /* FSSearchBar.m */,
 				86814E451C8D96F30097BC8C /* FSTimerButton.h */,
 				86814E461C8D96F30097BC8C /* FSTimerButton.m */,
-				86814E481C8D97430097BC8C /* CommonScrollView.h */,
-				86814E491C8D97440097BC8C /* CommonScrollView.m */,
+				86814E481C8D97430097BC8C /* FSSlideShowView.h */,
+				86814E491C8D97440097BC8C /* FSSlideShowView.m */,
 				86814E4F1C8D98210097BC8C /* FSNavigationController.h */,
 				86814E501C8D98210097BC8C /* FSNavigationController.m */,
 				86814E521C8D98790097BC8C /* FSBaseViewController.h */,
@@ -330,6 +333,8 @@
 				86814E591C8D996B0097BC8C /* FSWebViewController.m */,
 				86814E5B1C8D99F70097BC8C /* FSStarRatingBar.h */,
 				86814E5C1C8D99F70097BC8C /* FSStarRatingBar.m */,
+				862A02731D3BD8E30017C050 /* FSCommnetsView.h */,
+				862A02741D3BD8E30017C050 /* FSCommnetsView.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -552,16 +557,17 @@
 				86814E601C8D9A570097BC8C /* FSDeviceTools.m in Sources */,
 				86814E5A1C8D996B0097BC8C /* FSWebViewController.m in Sources */,
 				86814E541C8D987A0097BC8C /* FSBaseViewController.m in Sources */,
+				862A02751D3BD8E30017C050 /* FSCommnetsView.m in Sources */,
 				86814E3E1C8D95230097BC8C /* FSNetTools.m in Sources */,
 				86FD459A1CB4EBE500C1EC12 /* FSOtherViewController.m in Sources */,
 				86814E3B1C8D94D50097BC8C /* MBProgressHUD+Show.m in Sources */,
 				86814E471C8D96F30097BC8C /* FSTimerButton.m in Sources */,
 				86814E2A1C8D92EE0097BC8C /* FSCacheTools.m in Sources */,
 				86FD45F21CBCA36C00C1EC12 /* UITextField+FSLimitString.m in Sources */,
-				86CE81151C915AB000FF9CDB /* CommonSearchBar.m in Sources */,
+				86CE81151C915AB000FF9CDB /* FSSearchBar.m in Sources */,
 				86814E5D1C8D99F70097BC8C /* FSStarRatingBar.m in Sources */,
 				86814DF91C8D78B80097BC8C /* AppDelegate.m in Sources */,
-				86814E4A1C8D97440097BC8C /* CommonScrollView.m in Sources */,
+				86814E4A1C8D97440097BC8C /* FSSlideShowView.m in Sources */,
 				86FD45971CB4EBD500C1EC12 /* FSIndexViewController.m in Sources */,
 				86FED4EE1CAA7A12000C31F2 /* FSPathTools.m in Sources */,
 				86814E661C8D9C0E0097BC8C /* NSData+Encryption.m in Sources */,

@@ -1,5 +1,5 @@
 //
-//  CommonSearchBar.h
+//  FSSearchBar.h
 //  FastApp
 //
 //  Created by tangkunyin on 15/7/11.
@@ -14,7 +14,7 @@ typedef NS_ENUM(NSInteger, UISearchBarIconStyle)
     UISearchIconCustomStyle
 };
 
-@interface CommonSearchBar : UISearchBar
+@interface FSSearchBar : UISearchBar
 
 @property (nonatomic, assign) int textFieldBoderWidth;
 @property (nonatomic, assign) int textFieldHeight;

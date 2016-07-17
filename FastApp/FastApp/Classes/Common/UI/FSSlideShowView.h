@@ -1,5 +1,5 @@
 //
-//  CommonScrollView.h
+//  FSSlideShowView.h
 //  FastApp
 //
 //  Created by tangkunyin on 16/3/7.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 //图片轮播公用组件
-@interface CommonScrollView : UIView
+@interface FSSlideShowView : UIView
 
 - (void)prepareScrollViewsWithUrls:(NSArray<NSString *> *)urls;
 - (void)actionForImageTaped:(void (^)(NSInteger index))action;

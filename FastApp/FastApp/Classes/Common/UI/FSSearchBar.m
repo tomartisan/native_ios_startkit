@@ -1,14 +1,14 @@
 //
-//  CommonSearchBar.m
+//  FSSearchBar.m
 //  FastApp
 //
 //  Created by tangkunyin on 15/7/11.
 //  Copyright (c) 2015年 www.shuoit.net. All rights reserved.
 //
 
-#import "CommonSearchBar.h"
+#import "FSSearchBar.h"
 
-@implementation CommonSearchBar
+@implementation FSSearchBar
 
 - (instancetype)init
 {

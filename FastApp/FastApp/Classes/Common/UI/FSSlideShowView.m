@@ -1,19 +1,19 @@
 //
-//  CommonScrollView.m
+//  FSSlideShowView.m
 //  FastApp
 //
 //  Created by tangkunyin on 16/3/7.
 //  Copyright © 2016年 www.shuoit.net. All rights reserved.
 //
 
-#import "CommonScrollView.h"
+#import "FSSlideShowView.h"
 #import "DCPicScrollView.h"
 
-@interface CommonScrollView ()
+@interface FSSlideShowView ()
 @property (nonatomic, strong) DCPicScrollView *adScrollView;
 @end
 
-@implementation CommonScrollView
+@implementation FSSlideShowView
 
 
 - (void)prepareScrollViewsWithUrls:(NSArray<NSString *> *)urls
