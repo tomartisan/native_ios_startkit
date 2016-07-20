@@ -75,7 +75,6 @@
             if (RemainTitlePureTimeType == weakSelf.type) {
                 remainTime = [NSString stringWithFormat:@"(%.2ds)",timeOutInSecond];
             }
-            log(remainTime)
             dispatch_async(dispatch_get_main_queue(), ^{
                 [weakSelf setTitle:remainTime forState:UIControlStateNormal];
             });

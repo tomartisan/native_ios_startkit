@@ -75,9 +75,9 @@
 
 //日志打印
 #if isDevelopModel
-#define log(msg) NSLog(@"%@ ===> Func is: %s line at: %d" , msg , __PRETTY_FUNCTION__, __LINE__);
+#define FSLog(...) NSLog(__VA_ARGS__);NSLog(@"Function is: %s line at: %d" ,__PRETTY_FUNCTION__, __LINE__)
 #else
-#define log(msg) ((void)0);
+#define FSLog(...) ((void)0)
 #endif
 
 //拨打电话

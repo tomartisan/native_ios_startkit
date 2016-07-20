@@ -68,7 +68,7 @@ SharedInstanceBuilder(FSNetTools)
 - (void)setNetReachable:(BOOL)netReachable
 {
     _netReachable = netReachable;
-    log(_netReachable ? @"网络已连接" : @"网络已断开");
+    FSLog(@"当前网络状态为：%@",_netReachable ? @"已连接" : @"已断开");
     if (!_netReachable) {
         [[NSNotificationCenter defaultCenter] postNotificationName:ServerRequestFailure object:@(FSNetStatusNotReachable)];
     }

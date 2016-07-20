@@ -96,8 +96,7 @@
     if ([param isKindOfClass:[NSDictionary class]]) {
         [mUrl appendString:[FSStringTools paramStringFromDict:param]];
     }
-    NSString *logMsg = [NSString stringWithFormat:@"Get Request with url: %@",mUrl];
-    log(logMsg);
+    FSLog(@"Get Request with url: %@", mUrl);
     if (mUrl) {
         if (sign) {
             //自定义加密规则...
@@ -116,8 +115,7 @@
            completion:(void (^)(BOOL success,id respData))completion
 {
     NSString *url = [NSString stringWithFormat:@"%@%@",[GlobalCache sharedInstance].appServerUrl,uri];
-    NSString *logMsg = [NSString stringWithFormat:@"Post Request url is: %@ and params is: %@",url,param];
-    log(logMsg);
+    FSLog(@"Post Request url is: %@ and params is: %@",url,param);
     if (url) {
         if (sign) {
             //自定义加密规则...
@@ -175,7 +173,7 @@
         }
         completion((nil == resultData) ? NO : YES ,resultData);
     }@catch(NSException *excep){
-        log(excep.reason)
+        FSLog(@"数据解析异常: %@",excep.reason);
         completion(NO,nil);
         [MBProgressHUD showError:@"数据解析异常"];
     }
