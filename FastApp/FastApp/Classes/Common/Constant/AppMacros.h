@@ -70,7 +70,7 @@
 }
 
 //"performSelector may cause a leak because its selector is unknown"警告原因及其解决办法
-#define XM_SuppressPerformSelectorLeakWarning(Stuff) \
+#define SuppressPerformSelectorLeakWarning(Stuff) \
 do { \
 _Pragma("clang diagnostic push") \
 _Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
