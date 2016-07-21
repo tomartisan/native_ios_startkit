@@ -1,10 +1,3 @@
 nguage: objective-c
-os: osx
-osx_image: xcode7.3
-xcode_project: FastApp.xcodeproj
+xcode_workspace: FastApp.xcworkspace
 xcode_scheme: FastApp
-
-script: xcodebuild -project FastApp.xcodeproj -scheme FastApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6s,OS=latest' test
-
-git:
-  submodules: false
