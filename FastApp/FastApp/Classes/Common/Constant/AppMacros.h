@@ -69,6 +69,15 @@
     return instance;\
 }
 
+//"performSelector may cause a leak because its selector is unknown"警告原因及其解决办法
+#define XM_SuppressPerformSelectorLeakWarning(Stuff) \
+do { \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
+Stuff; \
+_Pragma("clang diagnostic pop") \
+} while (0)
+
 //app版本信息(升级版本号和编译版本号)
 #define AppVersionNumber [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleShortVersionString"]
 #define AppBuildVersionNumber [[[NSBundle mainBundle] infoDictionary] valueForKey:(NSString *)kCFBundleVersionKey]
