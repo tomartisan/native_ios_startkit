@@ -1,8 +1,5 @@
 platform :ios,	'8.0'
 
-#开启动态编译，确保支持Swift
-use_frameworks!
-
 target "FastApp" do
 
 pod 'Masonry', '~> 1.0.0'

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		26DE2404DFB2E90CD4124190 /* Pods_FastApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 530F65F944D29DC72B8711C4 /* Pods_FastApp.framework */; };
 		862A02751D3BD8E30017C050 /* FSCommnetsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 862A02741D3BD8E30017C050 /* FSCommnetsView.m */; };
 		865B14211CF730D400053FD3 /* FSPositionTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 865B14201CF730D400053FD3 /* FSPositionTools.m */; };
 		86814DF61C8D78B80097BC8C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814DF51C8D78B80097BC8C /* main.m */; };
@@ -55,9 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		530F65F944D29DC72B8711C4 /* Pods_FastApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FastApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5463CD1B1CEF02C798477830 /* Pods-FastApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FastApp/Pods-FastApp.release.xcconfig"; sourceTree = "<group>"; };
-		58D8C9C1603382FB6F260223 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		862A02731D3BD8E30017C050 /* FSCommnetsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCommnetsView.h; sourceTree = "<group>"; };
 		862A02741D3BD8E30017C050 /* FSCommnetsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCommnetsView.m; sourceTree = "<group>"; };
 		865B141F1CF730D400053FD3 /* FSPositionTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSPositionTools.h; sourceTree = "<group>"; };
@@ -160,7 +157,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				86FED4F91CABA5F4000C31F2 /* CoreMedia.framework in Frameworks */,
-				26DE2404DFB2E90CD4124190 /* Pods_FastApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,8 +404,6 @@
 				86FED4F81CABA5F4000C31F2 /* CoreMedia.framework */,
 				86FED4F21CAB6981000C31F2 /* AVFoundation.framework */,
 				86FED4EF1CAB6800000C31F2 /* AVKit.framework */,
-				58D8C9C1603382FB6F260223 /* libPods.a */,
-				530F65F944D29DC72B8711C4 /* Pods_FastApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -623,7 +617,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -661,7 +655,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -678,7 +672,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/FastApp-Pre.pch";
 				INFOPLIST_FILE = FastApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.shuoit.ios.fastApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -694,7 +688,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/FastApp-Pre.pch";
 				INFOPLIST_FILE = FastApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.shuoit.ios.fastApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
