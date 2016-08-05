@@ -78,6 +78,15 @@ Stuff; \
 _Pragma("clang diagnostic pop") \
 } while (0)
 
+//"MethodDeprecatedSelectorWarning"方法过时解决办法(严重不推荐使用，除非做了严格判断知道会出问题时用来消除警告)
+#define MethodDeprecatedSelectorWarning(Stuff) \
+do { \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Wdeprecated-declarations\"") \
+Stuff; \
+_Pragma("clang diagnostic pop") \
+} while (0)
+
 //app版本信息(升级版本号和编译版本号)
 #define AppVersionNumber [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleShortVersionString"]
 #define AppBuildVersionNumber [[[NSBundle mainBundle] infoDictionary] valueForKey:(NSString *)kCFBundleVersionKey]
