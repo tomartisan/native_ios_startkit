@@ -5,7 +5,7 @@
 
 ## 使用
  
-> 使用前请注意分支版本，当前为`Swift`版，默认使用`Carthage`作为依赖管理器；如果需要使用`Objective-C`和`CocoaPods`，请切换`master`分支
+> 使用前请注意分支版本，当前为`swift`版(基于3x)，支持iOS8以上平台，使用`Carthage`作为依赖管理器。如果需要使用`Objective-C`和`CocoaPods`，请切换`master`分支
 
 ```shell
 	git clone https://github.com/tangkunyin/FastApp.git
@@ -23,9 +23,14 @@
 
 ## 关于
 
-由于实际开发中所用到的大部分基础代码相似或相同，所选第三方库也基本一致。为了加快项目开发效率，我写了这个基础模板。取名为`FastApp`，目的就是想减少不必要的时间损失。
+由于实际开发中所用到的大部分基础代码相似或相同，所选第三方库也基本一致。为了加快项目开发效率，我写了这个基础模板。取名为`FastApp`，目的就是想减少不必要的时间损失。目前，该项目整合的第三方类库有：
+1. `SnapKit`：纯swift实现的自动布局工具；
+2. `AFNetworking`、：网络请求工具；
+3. `MJExtension`、：数据模型转换工具；
+4. `Kingfisher`：轻量级的纯swift图片下载和缓存库，可取代SDWebImage；
+5. `MBProgressHUD`：吐丝工具
 
-目前，该项目整合了常用的第三方类库如：`Masonry`、`AFNetworking`、`MJRefresh`、`MJExtension`、`MBProgressHUD`，`SDWebImage`。部分工具对这些框架进行了进一步封装。使其使用更便捷。当然，我也尽可能加入必要的宏或字符串工具类、加密工具类、打分控件、轮播图实现等。
+其中，部分工具对这些框架进行了进一步封装。使其使用更便捷。当然，我也尽可能加入必要的常量工具或字符串工具类、加密工具类、打分控件、轮播图实现等。
 
 其中，`FSUICreator`封装了常用的UI创建方法，`FSPositionTools`和`FSAutolayoutor`则实现了更简单易用的UI布局的方法，你只需两行代 码即可搞定UI创建、自动布局。
 
