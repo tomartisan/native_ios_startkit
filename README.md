@@ -12,7 +12,10 @@
 
 	cd FastApp
 	
-	carthage update --platform iOS
+	carthage bootstrap
+	
+	#当需要更新项目中第三方库的最新的编译版本时，请执行如下命令：
+	#carthage update --platform iOS
 	
 ```
 
