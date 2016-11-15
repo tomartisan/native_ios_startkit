@@ -1,0 +1,7 @@
+github "SnapKit/SnapKit" ~> 3.1.0
+github "AFNetworking/AFNetworking" ~> 3.1.0
+github "onevcat/Rainbow" ~> 1.1
+github "onevcat/Kingfisher" ~> 3.2.0
+github "jdg/MBProgressHUD" ~> 1.0.0
+github "CoderMJLee/MJRefresh" ~> 3.1.0
+github "CoderMJLee/MJRefresh" ~> 3.0.10
