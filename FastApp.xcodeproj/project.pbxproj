@@ -35,6 +35,11 @@
 		86814E661C8D9C0E0097BC8C /* NSData+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E651C8D9C0E0097BC8C /* NSData+Encryption.m */; };
 		868AEDA21D0C595500F2AF87 /* FSBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 868AEDA11D0C595500F2AF87 /* FSBaseModel.m */; };
 		86A1DEC61CB28D920093DA2B /* FSTestDownLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A1DEC51CB28D920093DA2B /* FSTestDownLoadViewController.m */; };
+		86AF9C6C1DDB29C700B1B684 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86AF9C671DDB29C700B1B684 /* AFNetworking.framework */; };
+		86AF9C6D1DDB29C700B1B684 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86AF9C681DDB29C700B1B684 /* Kingfisher.framework */; };
+		86AF9C6E1DDB29C700B1B684 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86AF9C691DDB29C700B1B684 /* MBProgressHUD.framework */; };
+		86AF9C6F1DDB29C700B1B684 /* MJExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86AF9C6A1DDB29C700B1B684 /* MJExtension.framework */; };
+		86AF9C701DDB29C700B1B684 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86AF9C6B1DDB29C700B1B684 /* SnapKit.framework */; };
 		86B87B281C945FD7008AE45D /* UIView+FSAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B87B271C945FD7008AE45D /* UIView+FSAutoLayout.m */; };
 		86BEEE871D06A35B000D76AC /* FSBaseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 86BEEE861D06A35B000D76AC /* FSBaseResponse.m */; };
 		86CE81121C914DB400FF9CDB /* UIImage+FSUIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CE81111C914DB400FF9CDB /* UIImage+FSUIImage.m */; };
@@ -50,7 +55,6 @@
 		86FD45F21CBCA36C00C1EC12 /* UITextField+FSLimitString.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FD45F11CBCA36C00C1EC12 /* UITextField+FSLimitString.m */; };
 		86FD45F71CBE2B6000C1EC12 /* introduce.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86FD45F61CBE2B6000C1EC12 /* introduce.plist */; };
 		86FED4EE1CAA7A12000C31F2 /* FSPathTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FED4ED1CAA7A12000C31F2 /* FSPathTools.m */; };
-		86FED4F91CABA5F4000C31F2 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86FED4F81CABA5F4000C31F2 /* CoreMedia.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,7 +69,6 @@
 		86814E001C8D78B80097BC8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86814E051C8D78B80097BC8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86814E191C8D7D400097BC8C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		86814E1B1C8D7E710097BC8C /* FastApp-Pre.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FastApp-Pre.pch"; sourceTree = "<group>"; };
 		86814E1C1C8D812D0097BC8C /* FSUICreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSUICreator.h; sourceTree = "<group>"; };
 		86814E1D1C8D812D0097BC8C /* FSUICreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSUICreator.m; sourceTree = "<group>"; };
 		86814E1F1C8D81D50097BC8C /* FSAutolayoutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSAutolayoutor.h; sourceTree = "<group>"; };
@@ -114,6 +117,11 @@
 		868AEDA11D0C595500F2AF87 /* FSBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSBaseModel.m; sourceTree = "<group>"; };
 		86A1DEC41CB28D920093DA2B /* FSTestDownLoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTestDownLoadViewController.h; sourceTree = "<group>"; };
 		86A1DEC51CB28D920093DA2B /* FSTestDownLoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTestDownLoadViewController.m; sourceTree = "<group>"; };
+		86AF9C671DDB29C700B1B684 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
+		86AF9C681DDB29C700B1B684 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		86AF9C691DDB29C700B1B684 /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
+		86AF9C6A1DDB29C700B1B684 /* MJExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MJExtension.framework; path = Carthage/Build/iOS/MJExtension.framework; sourceTree = "<group>"; };
+		86AF9C6B1DDB29C700B1B684 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		86B87B261C945FD7008AE45D /* UIView+FSAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FSAutoLayout.h"; sourceTree = "<group>"; };
 		86B87B271C945FD7008AE45D /* UIView+FSAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FSAutoLayout.m"; sourceTree = "<group>"; };
 		86BEEE851D06A35B000D76AC /* FSBaseResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSBaseResponse.h; sourceTree = "<group>"; };
@@ -142,9 +150,6 @@
 		86FD45F61CBE2B6000C1EC12 /* introduce.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = introduce.plist; sourceTree = "<group>"; };
 		86FED4EC1CAA7A12000C31F2 /* FSPathTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSPathTools.h; sourceTree = "<group>"; };
 		86FED4ED1CAA7A12000C31F2 /* FSPathTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSPathTools.m; sourceTree = "<group>"; };
-		86FED4EF1CAB6800000C31F2 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
-		86FED4F21CAB6981000C31F2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		86FED4F81CABA5F4000C31F2 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +157,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86FED4F91CABA5F4000C31F2 /* CoreMedia.framework in Frameworks */,
+				86AF9C6C1DDB29C700B1B684 /* AFNetworking.framework in Frameworks */,
+				86AF9C6D1DDB29C700B1B684 /* Kingfisher.framework in Frameworks */,
+				86AF9C6E1DDB29C700B1B684 /* MBProgressHUD.framework in Frameworks */,
+				86AF9C6F1DDB29C700B1B684 /* MJExtension.framework in Frameworks */,
+				86AF9C701DDB29C700B1B684 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,7 +205,6 @@
 				86814E001C8D78B80097BC8C /* Assets.xcassets */,
 				86814E051C8D78B80097BC8C /* Info.plist */,
 				86814DF51C8D78B80097BC8C /* main.m */,
-				86814E1B1C8D7E710097BC8C /* FastApp-Pre.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -385,9 +393,11 @@
 		C7E8E020466F7B95B04CF07B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				86FED4F81CABA5F4000C31F2 /* CoreMedia.framework */,
-				86FED4F21CAB6981000C31F2 /* AVFoundation.framework */,
-				86FED4EF1CAB6800000C31F2 /* AVKit.framework */,
+				86AF9C671DDB29C700B1B684 /* AFNetworking.framework */,
+				86AF9C681DDB29C700B1B684 /* Kingfisher.framework */,
+				86AF9C691DDB29C700B1B684 /* MBProgressHUD.framework */,
+				86AF9C6A1DDB29C700B1B684 /* MJExtension.framework */,
+				86AF9C6B1DDB29C700B1B684 /* SnapKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -402,6 +412,7 @@
 				86814DED1C8D78B80097BC8C /* Sources */,
 				86814DEE1C8D78B80097BC8C /* Frameworks */,
 				86814DEF1C8D78B80097BC8C /* Resources */,
+				86AF9C711DDB2A6D00B1B684 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -463,6 +474,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		86AF9C711DDB2A6D00B1B684 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/AFNetworking.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MBProgressHUD.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MJExtension.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		86814DED1C8D78B80097BC8C /* Sources */ = {
@@ -606,7 +638,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/FastApp-Pre.pch";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = FastApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -621,7 +657,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/FastApp-Pre.pch";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = FastApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
