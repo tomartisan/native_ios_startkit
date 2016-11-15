@@ -12,6 +12,7 @@
 
 	cd FastApp
 	
+	carthage update --platform iOS
 	
 ```
 
