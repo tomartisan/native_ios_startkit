@@ -1,3 +1,5 @@
+# Swift版本正在改造中，如有需要请使用Objective-C版！！！
+
 ## FastApp（iOS开发脚手架）
 
 > ​	The scaffold code for iOS develop 
