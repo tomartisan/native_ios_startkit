@@ -23,16 +23,22 @@ func colorWithRGB(_ r:CGFloat,g:CGFloat,b:CGFloat,alpha:CGFloat) -> UIColor {
     return UIColor.init(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: alpha)
 }
 
+func colorWithHexValue(_ hexValue:Int) -> UIColor {
+    let _r:CGFloat = CGFloat(Float((hexValue & 0xFF0000) >> 16))
+    let _g:CGFloat = CGFloat(Float((hexValue & 0xFF00) >> 16))
+    let _b:CGFloat = CGFloat(Float((hexValue & 0xFF) >> 16))
+    return colorWithRGB(_r, g: _g, b: _b, alpha: 1)
+}
+
 func grayColor(_ rgb:CGFloat) -> UIColor {
     return colorWithRGB(rgb, g: rgb, b: rgb, alpha: 1)
 }
 
+
 func randomColorWithAlpha(_ alpha:CGFloat) -> UIColor {
-    
     let rValue:CGFloat = CGFloat(Float(arc4random_uniform(255))/255.0)
     let gValue:CGFloat = CGFloat(Float(arc4random_uniform(255))/255.0)
     let bValue:CGFloat = CGFloat(Float(arc4random_uniform(255))/255.0)
-    
     return colorWithRGB(rValue, g: gValue, b: bValue, alpha: alpha)
 }
 
