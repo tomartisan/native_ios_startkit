@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		86814E011C8D78B80097BC8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86814E001C8D78B80097BC8C /* Assets.xcassets */; };
 		86814E1A1C8D7D400097BC8C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86814E191C8D7D400097BC8C /* Default-568h@2x.png */; };
+		8690870B1DDF1D2E00867153 /* GlobalEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8690870A1DDF1D2E00867153 /* GlobalEnum.swift */; };
 		86AF9C6C1DDB29C700B1B684 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86AF9C671DDB29C700B1B684 /* AFNetworking.framework */; };
 		86AF9C6D1DDB29C700B1B684 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86AF9C681DDB29C700B1B684 /* Kingfisher.framework */; };
 		86AF9C6E1DDB29C700B1B684 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86AF9C691DDB29C700B1B684 /* MBProgressHUD.framework */; };
@@ -28,6 +29,7 @@
 		86814E001C8D78B80097BC8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86814E051C8D78B80097BC8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86814E191C8D7D400097BC8C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		8690870A1DDF1D2E00867153 /* GlobalEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalEnum.swift; sourceTree = "<group>"; };
 		86AF9C671DDB29C700B1B684 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
 		86AF9C681DDB29C700B1B684 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		86AF9C691DDB29C700B1B684 /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			children = (
 				86AF9D101DDEACC400B1B684 /* GlobalContants.swift */,
 				86AF9D121DDEAD8E00B1B684 /* GlobalUIFunctions.swift */,
+				8690870A1DDF1D2E00867153 /* GlobalEnum.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86AF9C941DDC41C600B1B684 /* AppDelegate.swift in Sources */,
+				8690870B1DDF1D2E00867153 /* GlobalEnum.swift in Sources */,
 				86AF9C961DDC421300B1B684 /* FSAppHomeViewController.swift in Sources */,
 				86AF9D131DDEAD8E00B1B684 /* GlobalUIFunctions.swift in Sources */,
 				86AF9D111DDEACC400B1B684 /* GlobalContants.swift in Sources */,
