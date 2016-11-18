@@ -33,16 +33,17 @@ struct GlobalContants {
     
     // 通用视觉规范
     struct Color {
-        static let BlueColor: UIColor = colorWithRGB(0, g: 153, b: 255) // 主色调（蓝色）
-        static let OrangeColor: UIColor = colorWithRGB(242, g: 109, b: 95) // 辅色调（橙色）
-        static let YellowColor: UIColor = colorWithRGB(239, g: 166, b: 68) // 辅色调（黄色）
-        static let WhiteColor: UIColor = grayColor(255) // 纯白
-        static let BlackColor: UIColor = grayColor(53) // 标题文字（浅黑色）
-        static let GrayColor: UIColor = grayColor(102) // 正文文字（灰色）
-        static let LightGrayColor: UIColor = grayColor(153) // 标注文字（浅灰色）
-        static let CommonBgColor: UIColor = grayColor(248) // 背景色
-        static let SeparatorLineColor: UIColor = grayColor(232) // 分割线颜色
-        static let TranslucentColor: UIColor = colorWithRGB(0, g: 0, b: 0, alpha: 0.55) // 半透明颜色
+        static let FSWhiteColor:UIColor = colorWithRGB(255, g: 255, b: 255)          //纯白
+        static let FSBlueColor:UIColor = colorWithRGB(0, g: 153, b: 255)             //蓝色
+        static let FSOrangeColor:UIColor = colorWithRGB(253, g: 106, b: 60)          //橙色
+        static let FSYellowColor:UIColor = colorWithRGB(239, g: 166, b: 68)          //黄色
+        static let FSBlackColor:UIColor = colorWithRGB(68, g: 68, b: 68)             //浅黑色
+        static let FSGrayColor:UIColor = colorWithRGB(102, g: 102, b: 102)           //灰色
+        static let FSlightGrayColor:UIColor = colorWithRGB(153, g:153, b:153)        //浅灰色
+        static let FSCoffeeColor:UIColor = colorWithRGB(185,g: 152,b: 99)            //咖啡色
+        static let FSCommonBgColor:UIColor = colorWithRGB(248, g: 248, b: 248)       //灰白色
+        static let FSSeparatorLineColor:UIColor = colorWithRGB(232, g: 232, b: 232)  //分割线颜色
+        static let FSTranslucentColor:UIColor = colorWithRGB(0,g: 0,b: 0, alpha: 0.55)//半透明颜色
     }
     
     // 通用字体
