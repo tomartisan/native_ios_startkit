@@ -1,18 +1,30 @@
 //
 //  GlobalUIFunctions.swift
 //  FastApp
-//
+
 //  Created by tangkunyin on 2016/11/18.
 //  Copyright © 2016年 www.shuoit.net. All rights reserved.
 //
 
 import UIKit
 
-/**
- *  
- *    全局UI相关工具函数定义 
- *
- */
+
+//  全局UI相关工具函数定义
+func kVCWidth(_ obj:UIViewController) -> CGFloat {
+    return obj.view.frame.size.width
+}
+
+func kVCHeight(_ obj:UIViewController) -> CGFloat {
+    return obj.view.frame.size.height
+}
+
+func kViewWidth(_ obj:UIView) -> CGFloat {
+    return obj.frame.size.width
+}
+
+func kViewHeight(_ obj:UIView) -> CGFloat {
+    return obj.frame.size.width
+}
 
 //: 全局颜色工具函数定义
 func colorWithRGB(_ r:CGFloat,g:CGFloat,b:CGFloat) -> UIColor {
