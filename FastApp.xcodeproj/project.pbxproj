@@ -19,6 +19,8 @@
 		86AF9C981DDC460D00B1B684 /* FSTestLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF9C971DDC460D00B1B684 /* FSTestLayoutViewController.swift */; };
 		86AF9C9F1DDC46C300B1B684 /* autolayoutGuide.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86AF9C9D1DDC46C300B1B684 /* autolayoutGuide.plist */; };
 		86AF9CA01DDC46C300B1B684 /* introduce.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86AF9C9E1DDC46C300B1B684 /* introduce.plist */; };
+		86AF9D111DDEACC400B1B684 /* GlobalContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF9D101DDEACC400B1B684 /* GlobalContants.swift */; };
+		86AF9D131DDEAD8E00B1B684 /* GlobalUIFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF9D121DDEAD8E00B1B684 /* GlobalUIFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		86AF9C971DDC460D00B1B684 /* FSTestLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTestLayoutViewController.swift; sourceTree = "<group>"; };
 		86AF9C9D1DDC46C300B1B684 /* autolayoutGuide.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = autolayoutGuide.plist; sourceTree = "<group>"; };
 		86AF9C9E1DDC46C300B1B684 /* introduce.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = introduce.plist; sourceTree = "<group>"; };
+		86AF9D101DDEACC400B1B684 /* GlobalContants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalContants.swift; sourceTree = "<group>"; };
+		86AF9D121DDEAD8E00B1B684 /* GlobalUIFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalUIFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,8 @@
 		86814E131C8D7C440097BC8C /* Constant */ = {
 			isa = PBXGroup;
 			children = (
+				86AF9D101DDEACC400B1B684 /* GlobalContants.swift */,
+				86AF9D121DDEAD8E00B1B684 /* GlobalUIFunctions.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -306,6 +312,8 @@
 			files = (
 				86AF9C941DDC41C600B1B684 /* AppDelegate.swift in Sources */,
 				86AF9C961DDC421300B1B684 /* FSAppHomeViewController.swift in Sources */,
+				86AF9D131DDEAD8E00B1B684 /* GlobalUIFunctions.swift in Sources */,
+				86AF9D111DDEACC400B1B684 /* GlobalContants.swift in Sources */,
 				86AF9C981DDC460D00B1B684 /* FSTestLayoutViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +419,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_PREFIX_HEADER = "";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = FastApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -439,6 +448,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_PREFIX_HEADER = "";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = FastApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
