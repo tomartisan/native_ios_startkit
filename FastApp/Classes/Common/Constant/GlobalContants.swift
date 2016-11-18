@@ -14,7 +14,38 @@ import UIKit
  */
 struct GlobalContants {
     
-    // 通用UI尺寸
+    
+    /// 开发模式
+    static let isDevelopModel:Bool = true
+    
+    /// 服务器连接超时时间
+    static let FS_Timeout:Double = 45.0
+    
+    /// API服务器地址
+    static let FS_AppServer:String = "http://www.shuoit.net"
+    
+    /// DES3 KEY (必须是24位)
+    static let FS_DesKey:String = "123456781234567812345678"
+    
+    /// MD5 KEY (8位)
+    static let FS_Md5Key:String = "88888888"
+    
+    /// 分页每页的条数
+    static let FS_PageRows:Int = 10
+    
+    
+    /// 事件消息key定义
+    struct MessageKey {
+        
+        //网络请求失败
+        static let ServerRequestFailure: String = "ServerRequestFailure"
+        
+        //轮播图点击事件
+        static let ScrollImageViewClicked: String = "ScrollImageViewClicked"
+    }
+    
+    
+    /// 通用UI尺寸
     struct UI {
         
         static let deviceWidth: CGFloat = UIScreen.main.bounds.size.width
@@ -31,7 +62,7 @@ struct GlobalContants {
         
     }
     
-    // 通用视觉规范
+    /// 通用视觉规范
     struct Color {
         static let FSWhiteColor:UIColor = colorWithRGB(255, g: 255, b: 255)          //纯白
         static let FSBlueColor:UIColor = colorWithRGB(0, g: 153, b: 255)             //蓝色
@@ -46,7 +77,7 @@ struct GlobalContants {
         static let FSTranslucentColor:UIColor = colorWithRGB(0,g: 0,b: 0, alpha: 0.55)//半透明颜色
     }
     
-    // 通用字体
+    /// 通用字体
     struct Font {
         static let MainBodyFont: UIFont = htscFontWithSize(12)
         static let MainMenuFont: UIFont = htscFontWithSize(17)
