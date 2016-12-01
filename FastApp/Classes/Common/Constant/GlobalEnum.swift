@@ -8,6 +8,8 @@
 
 import Foundation
 
+// http://swift.gg/2015/11/20/advanced-practical-enum-examples/
+
 // 位置类型
 enum FSLayoutAlignmentType:Int {
     case AlignmentCenter = 0, AlignmentTop , AlignmentBottom , AlignmentLeft , AlignmentRight
