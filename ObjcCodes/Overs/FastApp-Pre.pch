@@ -1,0 +1,39 @@
+
+//
+//  FastApp-Pre.pch
+//  FastApp
+//
+//  Created by tangkunyin on 16/3/7.
+//  Copyright © 2016年 www.shuoit.net. All rights reserved.
+//
+
+#ifdef __OBJC__
+
+//Third Libs
+#import "MJExtension.h"
+#import "UIImageView+WebCache.h"
+
+//diy categories
+#import "UIView+FSAutoLayout.h"
+#import "MBProgressHUD+Show.h"
+#import "UIImage+FSUIImage.h"
+#import "UITextField+FSLimitString.h"
+
+//Usefull Tools
+#import "FSBaseModel.h"
+#import "AppMacros.h"
+#import "GloabVariables.h"
+#import "MessageKey.h"
+#import "FSPathTools.h"
+#import "GlobalCache.h"
+#import "FSCacheTools.h"
+#import "FSStringTools.h"
+#import "FSDeviceTools.h"
+#import "SecutiryTools.h"
+#import "FSNetTools.h"
+#import "FSPositionTools.h"
+#import "FSAutolayoutor.h"
+#import "FSUICreator.h"
+
+
+#endif
