@@ -1,4 +1,0 @@
-sudo: required
-language: objective-c
-xcode_workspace: FastApp.xcworkspace
-xcode_scheme: FastApp
