@@ -23,7 +23,6 @@
 		86AF9D111DDEACC400B1B684 /* GlobalContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF9D101DDEACC400B1B684 /* GlobalContants.swift */; };
 		86AF9D131DDEAD8E00B1B684 /* GlobalUIFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF9D121DDEAD8E00B1B684 /* GlobalUIFunctions.swift */; };
 		86D932021DF11ABC0007946E /* GlobalUtilsFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D932011DF11ABC0007946E /* GlobalUtilsFunction.swift */; };
-		86D932041DF11E020007946E /* ObjcCodes in Resources */ = {isa = PBXBuildFile; fileRef = 86D932031DF11E020007946E /* ObjcCodes */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +45,6 @@
 		86AF9D101DDEACC400B1B684 /* GlobalContants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalContants.swift; sourceTree = "<group>"; };
 		86AF9D121DDEAD8E00B1B684 /* GlobalUIFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalUIFunctions.swift; sourceTree = "<group>"; };
 		86D932011DF11ABC0007946E /* GlobalUtilsFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalUtilsFunction.swift; sourceTree = "<group>"; };
-		86D932031DF11E020007946E /* ObjcCodes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ObjcCodes; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +66,6 @@
 		86814DE81C8D78B80097BC8C = {
 			isa = PBXGroup;
 			children = (
-				86D932031DF11E020007946E /* ObjcCodes */,
 				86814DF31C8D78B80097BC8C /* FastApp */,
 				86814DF21C8D78B80097BC8C /* Products */,
 				C7E8E020466F7B95B04CF07B /* Frameworks */,
@@ -287,7 +284,6 @@
 				86AF9C9F1DDC46C300B1B684 /* autolayoutGuide.plist in Resources */,
 				86AF9CA01DDC46C300B1B684 /* introduce.plist in Resources */,
 				86814E011C8D78B80097BC8C /* Assets.xcassets in Resources */,
-				86D932041DF11E020007946E /* ObjcCodes in Resources */,
 				86814E1A1C8D7D400097BC8C /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
