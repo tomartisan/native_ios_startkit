@@ -1,13 +1,12 @@
 //
-//  GlobalUIFunctions.swift
+//  FSUIFuncDefines.swift
 //  FastApp
-
-//  Created by tangkunyin on 2016/11/18.
-//  Copyright © 2016年 www.shuoit.net. All rights reserved.
+//
+//  Created by tangkunyin on 2017/4/22.
+//  Copyright © 2017年 www.shuoit.net. All rights reserved.
 //
 
 import UIKit
-
 
 //  全局UI相关工具函数定义
 func kVCWidth(_ obj:UIViewController) -> CGFloat {
@@ -70,5 +69,6 @@ func pfbFontWithSize(_ size:CGFloat) -> UIFont {
 func htscFontWithSize(_ size:CGFloat) -> UIFont {
     return UIFont.init(name: "Heiti SC", size: size)!
 }
+
 
 

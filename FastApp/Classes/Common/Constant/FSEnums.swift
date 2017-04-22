@@ -1,9 +1,9 @@
 //
-//  GlobalEnum.swift
+//  FSEnums.swift
 //  FastApp
 //
-//  Created by tangkunyin on 2016/11/18.
-//  Copyright © 2016年 www.shuoit.net. All rights reserved.
+//  Created by tangkunyin on 2017/4/22.
+//  Copyright © 2017年 www.shuoit.net. All rights reserved.
 //
 
 import Foundation
