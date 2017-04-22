@@ -16,7 +16,7 @@
 ```
 git clone https://github.com/tangkunyin/FastApp.git
 cd FastApp
-carthage bootstrap
+carthage update
 	
 #当需要更新项目中第三方库的最新的编译版本时，请执行如下命令：
 #carthage update --platform iOS	
