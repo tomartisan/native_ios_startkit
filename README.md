@@ -17,10 +17,10 @@
 git clone https://github.com/tangkunyin/FastApp.git
 cd FastApp
 
-# 如果直接carthage update，则同时编译iOS、tvOS等版本，后果就是异常的慢
-carthage update --platform iOS
+# 此过程比较耗时，建议耐心等待
+carthage bootstrap
 	
-#当需要更新项目中第三方库的最新的编译版本时，请执行如下命令：
+#当需要增加或更新项目中第三方库的最新的编译版本时，请执行如下命令：
 carthage update Box
 ## 或者
 carthage update Box1 Box2	
