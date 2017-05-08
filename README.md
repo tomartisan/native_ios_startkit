@@ -36,7 +36,7 @@ carthage update Box1 Box2
 
 1. `SnapKit`：纯swift实现的自动布局工具；
 2. `Alamofire`、：继`AFNetworking`后的纯Swift网络请求工具；
-3. `Kingfisher、APNGKit：喵大神系列，分别是图片、APNG播放；
+3. `Kingfisher、APNGKit`：喵大神系列，分别是图片、APNG播放；
 4. `SwiftyJSON`：JSON工具，没啥好解释的；
 5. `MBProgressHUD`：吐丝、进度的工具，由于暂时没找到更好的纯Swift版本，暂由此混合编程替代。
 
