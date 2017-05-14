@@ -44,7 +44,7 @@
     [self stopLoadding];
 }
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     [self stopLoadding];
     NSString *localErrorDes = [error.userInfo valueForKey:NSLocalizedDescriptionKey];

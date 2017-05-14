@@ -51,10 +51,12 @@
 		86FD45F71CBE2B6000C1EC12 /* introduce.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86FD45F61CBE2B6000C1EC12 /* introduce.plist */; };
 		86FED4EE1CAA7A12000C31F2 /* FSPathTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FED4ED1CAA7A12000C31F2 /* FSPathTools.m */; };
 		86FED4F91CABA5F4000C31F2 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86FED4F81CABA5F4000C31F2 /* CoreMedia.framework */; };
+		ACD23A25AA803FA93764F055 /* libPods-FastApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D49FED677833A649CA2BB3F /* libPods-FastApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5463CD1B1CEF02C798477830 /* Pods-FastApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FastApp/Pods-FastApp.release.xcconfig"; sourceTree = "<group>"; };
+		6D49FED677833A649CA2BB3F /* libPods-FastApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FastApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		862A02731D3BD8E30017C050 /* FSCommnetsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCommnetsView.h; sourceTree = "<group>"; };
 		862A02741D3BD8E30017C050 /* FSCommnetsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCommnetsView.m; sourceTree = "<group>"; };
 		865B141F1CF730D400053FD3 /* FSPositionTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSPositionTools.h; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86FED4F91CABA5F4000C31F2 /* CoreMedia.framework in Frameworks */,
+				ACD23A25AA803FA93764F055 /* libPods-FastApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +407,7 @@
 				86FED4F81CABA5F4000C31F2 /* CoreMedia.framework */,
 				86FED4F21CAB6981000C31F2 /* AVFoundation.framework */,
 				86FED4EF1CAB6800000C31F2 /* AVKit.framework */,
+				6D49FED677833A649CA2BB3F /* libPods-FastApp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -526,7 +530,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
