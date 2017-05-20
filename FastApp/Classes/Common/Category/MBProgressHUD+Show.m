@@ -39,23 +39,16 @@ typedef NS_ENUM(NSInteger,MBProgressTipType)
 }
 + (void)loaddingWithMessage:(NSString *)message
 {
-    UIView *loadingView = [[[UIApplication sharedApplication].keyWindow subviews] lastObject];
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    UIView *loadingView = [[window subviews] lastObject];
     if (![loadingView isKindOfClass:[MBProgressHUD class]]) {
-        UIWindow * window = [UIApplication sharedApplication].keyWindow;
-        MBProgressHUD *mbHud = [[MBProgressHUD alloc] initWithView:window];
+        MBProgressHUD *mbHud = [MBProgressHUD showHUDAddedTo:window animated:NO];
         mbHud.mode = MBProgressHUDModeIndeterminate;
-        
         mbHud.bezelView.color = GRAYCOLOR(200);
-        
         mbHud.detailsLabel.text = message;
         mbHud.detailsLabel.textColor = FSBlackColor;
-        mbHud.removeFromSuperViewOnHide = YES;
-        
-        [window addSubview:mbHud];
-        [mbHud showAnimated:YES];
         
 //      mbHud.activityIndicatorColor = FSBlackColor; Deprecate: use this below
-
         [UIActivityIndicatorView appearanceWhenContainedInInstancesOfClasses:@[[MBProgressHUD class]]].color = FSBlackColor;
     }
 }
