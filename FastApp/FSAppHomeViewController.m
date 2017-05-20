@@ -13,12 +13,14 @@
 #import "FSOtherViewController.h"
 #import "FSShopingViewController.h"
 #import "FSUserViewController.h"
+#import "MBProgressHUD+Show.h"
 
 
 @implementation FSAppHomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.delegate = self;
     
     [self addAllChildViewControllers];
 }
@@ -67,6 +69,13 @@
     FSNavigationController *nav = [[FSNavigationController alloc] initWithRootViewController:childController];
     
     [self addChildViewController:nav];
+}
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+    [MBProgressHUD showMessage:[NSString stringWithFormat:@"这是：%@ 演示",viewController.title] completion:^{
+        NSLog(@"你刚刚点了：%@",viewController.title);
+    }];
 }
 
 @end

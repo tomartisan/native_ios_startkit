@@ -8,6 +8,6 @@
 
 #import "FSBaseViewController.h"
 
-@interface FSAppHomeViewController : UITabBarController
+@interface FSAppHomeViewController : UITabBarController <UITabBarControllerDelegate>
 
 @end

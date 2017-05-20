@@ -42,17 +42,21 @@ typedef NS_ENUM(NSInteger,MBProgressTipType)
     UIView *loadingView = [[[UIApplication sharedApplication].keyWindow subviews] lastObject];
     if (![loadingView isKindOfClass:[MBProgressHUD class]]) {
         UIWindow * window = [UIApplication sharedApplication].keyWindow;
-        MBProgressHUD *mbHud = [[MBProgressHUD alloc] initWithWindow:window];
+        MBProgressHUD *mbHud = [[MBProgressHUD alloc] initWithView:window];
         mbHud.mode = MBProgressHUDModeIndeterminate;
-        mbHud.activityIndicatorColor = FSBlackColor;
         
-        mbHud.color = GRAYCOLOR(200);
-        mbHud.detailsLabelText = message;
-        mbHud.detailsLabelColor = FSBlackColor;
+        mbHud.bezelView.color = GRAYCOLOR(200);
+        
+        mbHud.detailsLabel.text = message;
+        mbHud.detailsLabel.textColor = FSBlackColor;
         mbHud.removeFromSuperViewOnHide = YES;
         
         [window addSubview:mbHud];
-        [mbHud show:YES];
+        [mbHud showAnimated:YES];
+        
+//      mbHud.activityIndicatorColor = FSBlackColor; Deprecate: use this below
+
+        [UIActivityIndicatorView appearanceWhenContainedInInstancesOfClasses:@[[MBProgressHUD class]]].color = FSBlackColor;
     }
 }
 
@@ -74,14 +78,14 @@ typedef NS_ENUM(NSInteger,MBProgressTipType)
         if (!mbHud) {
             mbHud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
             mbHud.mode = mode;
-            mbHud.color = GRAYCOLOR(200);
-            mbHud.labelColor = FSBlackColor;
+            mbHud.bezelView.color = GRAYCOLOR(200);
+            mbHud.label.textColor = FSBlackColor;
         }
         if (fractionCompleted == 1.0f) {
-            [mbHud hide:YES];
+            [mbHud hideAnimated:YES];
         }else{
             mbHud.progress = fractionCompleted;
-            mbHud.labelText = message;
+            mbHud.label.text = message;
         }
     });
 }
@@ -182,9 +186,9 @@ typedef NS_ENUM(NSInteger,MBProgressTipType)
                 hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageWithNamed:@"Checkmark-error"]];
                 break;
         }
-        hud.color = GRAYCOLOR(200);
-        hud.detailsLabelText = text;
-        hud.detailsLabelColor = FSBlackColor;
+        hud.bezelView.color = GRAYCOLOR(200);
+        hud.detailsLabel.text = text;
+        hud.detailsLabel.textColor = FSBlackColor;
         hud.removeFromSuperViewOnHide = YES;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(600 * NSEC_PER_MSEC)), dispatch_get_main_queue(), ^{
             dispatch_async(dispatch_get_main_queue(), ^{
