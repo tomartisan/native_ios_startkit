@@ -9,6 +9,8 @@
 
 #ifdef __OBJC__
 
+#import <WebKit/WebKit.h>
+
 //Third Libs
 #import "MJExtension.h"
 #import "UIImageView+WebCache.h"

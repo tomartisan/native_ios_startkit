@@ -340,14 +340,15 @@
     return tableView;
 }
 
-+ (UIWebView *)createWebViewWithSize:(CGSize)size
++ (WKWebView *)createWebViewWithSize:(CGSize)size
                               webUrl:(NSString *)url
                              baseURL:(NSURL *)baseUrl
                           htmlString:(NSString *)htmlString
-                            delegate:(id<UIWebViewDelegate>)delegate
+                            delegate:(id)delegate
 {
-    UIWebView *webView = [[UIWebView alloc] initWithFrame:FSRectFromSize(size)];
-    webView.delegate = delegate;
+    WKWebView *webView = [[WKWebView alloc] initWithFrame:FSRectFromSize(size)];
+    webView.UIDelegate = delegate;
+    webView.navigationDelegate = delegate;
     webView.scrollView.bounces = NO;
 
     if (![FSStringTools isEmpty:url]) {

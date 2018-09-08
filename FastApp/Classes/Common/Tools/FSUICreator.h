@@ -146,12 +146,12 @@ typedef NS_ENUM(NSInteger,BtnImgDirectionType)
                                 delegate:(id<UITableViewDelegate, UITableViewDataSource>)delegate;
 
 
-//For UIWebView
-+ (UIWebView *)createWebViewWithSize:(CGSize)size
+//For WebView
++ (WKWebView *)createWebViewWithSize:(CGSize)size
                               webUrl:(NSString *)url
                              baseURL:(NSURL *)baseUrl
                           htmlString:(NSString *)htmlString
-                            delegate:(id<UIWebViewDelegate>)delegate;
+                            delegate:(id)delegate;
 
 
 @end

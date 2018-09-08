@@ -18,12 +18,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"微博"
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"博客"
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:self
                                                                             action:@selector(viewWebsite:)];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"说IT"
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"源码"
                                                                               style:UIBarButtonItemStylePlain
                                                                              target:self
                                                                              action:@selector(viewWebsite:)];
@@ -56,7 +56,7 @@
 
 - (void)viewWebsite:(UIBarButtonItem *)bar
 {
-    NSString *webUrl = [bar.title isEqualToString:@"微博"] ? @"http://weibo.com/tangkunyin" : @"http://shuoit.net";
+    NSString *webUrl = [bar.title isEqualToString:@"博客"] ? @"https://www.tangkunyin.com" : @"https://github.com/tangkunyin/FastApp";
     FSWebViewController *webVC = [[FSWebViewController alloc] initWithTitle:bar.title webUrl:webUrl];
     [self.navigationController pushViewController:webVC animated:YES];
 }

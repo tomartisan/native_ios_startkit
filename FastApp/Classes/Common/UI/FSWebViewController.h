@@ -8,9 +8,9 @@
 
 #import "FSBaseSubViewController.h"
 
-@interface FSWebViewController : FSBaseSubViewController <UIWebViewDelegate>
+@interface FSWebViewController : FSBaseSubViewController <WKUIDelegate, WKNavigationDelegate>
 
-@property (nonatomic, strong) UIWebView *webView;
+@property (nonatomic, strong) WKWebView *webView;
 
 - (instancetype)initWithTitle:(NSString *)title webUrl:(NSString *)url;
 
