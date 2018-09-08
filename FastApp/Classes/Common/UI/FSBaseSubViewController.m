@@ -10,12 +10,12 @@
 
 @implementation FSBaseSubViewController
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.hidesBackButton = YES;
     
     self.navigationItem.hidesBackButton = YES;
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
     
     //自定义返回按钮
     UIButton *backBtn = [FSUICreator createButtonWithNormalImage:@"prev"
@@ -23,14 +23,7 @@
                                                           target:self
                                                           action:@selector(backToParentController)];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
-    
-    //增加左划返回的手势支持
-    UISwipeGestureRecognizer *backGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self
-                                                                                      action:@selector(backToParentController)];
-    backGesture.direction = UISwipeGestureRecognizerDirectionRight;
-    [self.view addGestureRecognizer:backGesture];
 }
-
 
 -(void)backToParentController
 {

@@ -14,10 +14,10 @@
 {
     UINavigationBar *bar = [UINavigationBar appearance];
     bar.barTintColor = FSCoffeeColor;
+    bar.barStyle = UIBarStyleBlack;
     NSDictionary* textAttributes = @{NSForegroundColorAttributeName:FSWhiteColor,NSFontAttributeName:SysFontWithSize(16)};
     [bar setTitleTextAttributes:textAttributes];
     
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UIBarButtonItem appearance] setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
 }
 

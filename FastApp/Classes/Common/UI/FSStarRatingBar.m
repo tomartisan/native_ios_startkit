@@ -60,8 +60,8 @@
     CGPoint touchPoint = [touch locationInView:self];
     CGFloat maxTouchPoint = _starArray.count * (_imageWidth + _itemSpace);
     [_starArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        UIImageView *imageView = [_starArray objectAtIndex:idx];
-        if ((touchPoint.x > 0) && (touchPoint.x < maxTouchPoint) && (touchPoint.y > 0) && (touchPoint.y < _imageWidth)) {
+        UIImageView *imageView = [self->_starArray objectAtIndex:idx];
+        if ((touchPoint.x > 0) && (touchPoint.x < maxTouchPoint) && (touchPoint.y > 0) && (touchPoint.y < self->_imageWidth)) {
             imageView.highlighted = (imageView.frame.origin.x < touchPoint.x) ? YES : NO;
             //            int score = (int)(touchPoint.x/_imageWidth);  该方式打分不准，待优化...
         }
@@ -69,7 +69,7 @@
     //根据实际上亮的星星数决定分数
     __block int lightStarCount = 0;
     [_starArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        UIImageView *imageView = [_starArray objectAtIndex:idx];
+        UIImageView *imageView = [self->_starArray objectAtIndex:idx];
         if (imageView.highlighted) {
             lightStarCount++;
         }

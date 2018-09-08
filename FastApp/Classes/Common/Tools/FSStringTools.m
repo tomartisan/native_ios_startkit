@@ -26,14 +26,14 @@
 //编码
 + (NSString *)urlEncodeWithUTF8:(NSString *)sourceString
 {
-    NSString *encoderStr = [sourceString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *encoderStr = [sourceString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     return encoderStr;
 }
 
 //解码
 + (NSString *)urlDecodeWithUTF8:(NSString *)sourceString
 {
-    NSString *decoderStr = [sourceString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *decoderStr = [sourceString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     return decoderStr;
 }
 
