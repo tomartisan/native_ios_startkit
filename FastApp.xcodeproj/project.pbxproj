@@ -35,6 +35,9 @@
 		86814E661C8D9C0E0097BC8C /* NSData+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 86814E651C8D9C0E0097BC8C /* NSData+Encryption.m */; };
 		868AEDA21D0C595500F2AF87 /* FSBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 868AEDA11D0C595500F2AF87 /* FSBaseModel.m */; };
 		86A1DEC61CB28D920093DA2B /* FSTestDownLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A1DEC51CB28D920093DA2B /* FSTestDownLoadViewController.m */; };
+		86B7CCFF2143748B004C44E9 /* UIView+FSMarkDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B7CCFE2143748B004C44E9 /* UIView+FSMarkDownView.m */; };
+		86B7CD0321437757004C44E9 /* markdown.css in Resources */ = {isa = PBXBuildFile; fileRef = 86B7CD0121437757004C44E9 /* markdown.css */; };
+		86B7CD0421437757004C44E9 /* showdown.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 86B7CD0221437757004C44E9 /* showdown.min.js */; };
 		86B87B281C945FD7008AE45D /* UIView+FSAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B87B271C945FD7008AE45D /* UIView+FSAutoLayout.m */; };
 		86BEEE871D06A35B000D76AC /* FSBaseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 86BEEE861D06A35B000D76AC /* FSBaseResponse.m */; };
 		86CE81121C914DB400FF9CDB /* UIImage+FSUIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CE81111C914DB400FF9CDB /* UIImage+FSUIImage.m */; };
@@ -117,6 +120,10 @@
 		868AEDA11D0C595500F2AF87 /* FSBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSBaseModel.m; sourceTree = "<group>"; };
 		86A1DEC41CB28D920093DA2B /* FSTestDownLoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTestDownLoadViewController.h; sourceTree = "<group>"; };
 		86A1DEC51CB28D920093DA2B /* FSTestDownLoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTestDownLoadViewController.m; sourceTree = "<group>"; };
+		86B7CCFD2143748B004C44E9 /* UIView+FSMarkDownView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+FSMarkDownView.h"; sourceTree = "<group>"; };
+		86B7CCFE2143748B004C44E9 /* UIView+FSMarkDownView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+FSMarkDownView.m"; sourceTree = "<group>"; };
+		86B7CD0121437757004C44E9 /* markdown.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = markdown.css; sourceTree = "<group>"; };
+		86B7CD0221437757004C44E9 /* showdown.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = showdown.min.js; sourceTree = "<group>"; };
 		86B87B261C945FD7008AE45D /* UIView+FSAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FSAutoLayout.h"; sourceTree = "<group>"; };
 		86B87B271C945FD7008AE45D /* UIView+FSAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FSAutoLayout.m"; sourceTree = "<group>"; };
 		86BEEE851D06A35B000D76AC /* FSBaseResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSBaseResponse.h; sourceTree = "<group>"; };
@@ -263,6 +270,8 @@
 				86B87B271C945FD7008AE45D /* UIView+FSAutoLayout.m */,
 				86FD45F01CBCA36C00C1EC12 /* UITextField+FSLimitString.h */,
 				86FD45F11CBCA36C00C1EC12 /* UITextField+FSLimitString.m */,
+				86B7CCFD2143748B004C44E9 /* UIView+FSMarkDownView.h */,
+				86B7CCFE2143748B004C44E9 /* UIView+FSMarkDownView.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -341,6 +350,7 @@
 		86814E181C8D7C440097BC8C /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				86B7CD0021437757004C44E9 /* JSLibs */,
 				86814E4B1C8D97BC0097BC8C /* DCPicScrollView */,
 				86814E311C8D94370097BC8C /* GMTBase64 */,
 			);
@@ -377,6 +387,15 @@
 				86EE657C1CC5F7C3009194C4 /* autolayoutGuide.plist */,
 			);
 			path = Demos;
+			sourceTree = "<group>";
+		};
+		86B7CD0021437757004C44E9 /* JSLibs */ = {
+			isa = PBXGroup;
+			children = (
+				86B7CD0121437757004C44E9 /* markdown.css */,
+				86B7CD0221437757004C44E9 /* showdown.min.js */,
+			);
+			path = JSLibs;
 			sourceTree = "<group>";
 		};
 		86BEEE841D06A350000D76AC /* Models */ = {
@@ -480,7 +499,9 @@
 				86EE657D1CC5F7C3009194C4 /* autolayoutGuide.plist in Resources */,
 				86814E011C8D78B80097BC8C /* Assets.xcassets in Resources */,
 				86814E1A1C8D7D400097BC8C /* Default-568h@2x.png in Resources */,
+				86B7CD0421437757004C44E9 /* showdown.min.js in Resources */,
 				86FD45F71CBE2B6000C1EC12 /* introduce.plist in Resources */,
+				86B7CD0321437757004C44E9 /* markdown.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,6 +588,7 @@
 				86814E511C8D98210097BC8C /* FSNavigationController.m in Sources */,
 				86814E441C8D962C0097BC8C /* SecutiryTools.m in Sources */,
 				86814E351C8D94370097BC8C /* GTMBase64.m in Sources */,
+				86B7CCFF2143748B004C44E9 /* UIView+FSMarkDownView.m in Sources */,
 				86BEEE871D06A35B000D76AC /* FSBaseResponse.m in Sources */,
 				86814DF61C8D78B80097BC8C /* main.m in Sources */,
 			);
