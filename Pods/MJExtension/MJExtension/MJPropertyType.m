@@ -13,22 +13,25 @@
 
 @implementation MJPropertyType
 
-static NSMutableDictionary *types_;
-+ (void)initialize
-{
-    types_ = [NSMutableDictionary dictionary];
-}
-
 + (instancetype)cachedTypeWithCode:(NSString *)code
 {
     MJExtensionAssertParamNotNil2(code, nil);
     
-    MJPropertyType *type = types_[code];
+    static NSMutableDictionary *types;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        types = [NSMutableDictionary dictionary];
+    });
+    
+    MJExtensionSemaphoreCreate
+    MJExtensionSemaphoreWait
+    MJPropertyType *type = types[code];
     if (type == nil) {
         type = [[self alloc] init];
         type.code = code;
-        types_[code] = type;
+        types[code] = type;
     }
+    MJExtensionSemaphoreSignal
     return type;
 }
 

@@ -1,43 +1,52 @@
 PODS:
-  - AFNetworking (3.1.0):
-    - AFNetworking/NSURLSession (= 3.1.0)
-    - AFNetworking/Reachability (= 3.1.0)
-    - AFNetworking/Security (= 3.1.0)
-    - AFNetworking/Serialization (= 3.1.0)
-    - AFNetworking/UIKit (= 3.1.0)
-  - AFNetworking/NSURLSession (3.1.0):
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.1.0)
-  - AFNetworking/Security (3.1.0)
-  - AFNetworking/Serialization (3.1.0)
-  - AFNetworking/UIKit (3.1.0):
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - Masonry (1.0.1)
-  - MBProgressHUD (1.0.0)
-  - MJExtension (3.0.10)
-  - MJRefresh (3.1.1)
-  - SDWebImage (3.7.6):
-    - SDWebImage/Core (= 3.7.6)
-  - SDWebImage/Core (3.7.6)
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.1.0)
+  - MJExtension (3.0.15.1)
+  - MJRefresh (3.1.15.7)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
 
 DEPENDENCIES:
-  - AFNetworking (~> 3.1.0)
-  - Masonry (~> 1.0.0)
-  - MBProgressHUD (~> 1.0.0)
-  - MJExtension (~> 3.0.10)
-  - MJRefresh (~> 3.1.0)
-  - SDWebImage (~> 3.7.6)
+  - AFNetworking (~> 3.2.1)
+  - Masonry (~> 1.1.0)
+  - MBProgressHUD (~> 1.1.0)
+  - MJExtension (~> 3.0.15.1)
+  - MJRefresh (~> 3.1.15.6)
+  - SDWebImage (~> 4.4.2)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - Masonry
+    - MBProgressHUD
+    - MJExtension
+    - MJRefresh
+    - SDWebImage
 
 SPEC CHECKSUMS:
-  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
-  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
-  MJRefresh: 70a47c5543b567cdaf70ead5a6e99ce820652eb9
-  SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
+  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
 
-PODFILE CHECKSUM: bf17f001451098097ee6282fa329844b95107412
+PODFILE CHECKSUM: e20b6a26e4515eadfa59749d219b7b6e48fd4727
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.5.3

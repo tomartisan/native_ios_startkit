@@ -30,6 +30,7 @@
 #define MJRefreshLabelFont [UIFont boldSystemFontOfSize:14]
 
 // 常量
+UIKIT_EXTERN const CGFloat MJRefreshLabelLeftInset;
 UIKIT_EXTERN const CGFloat MJRefreshHeaderHeight;
 UIKIT_EXTERN const CGFloat MJRefreshFooterHeight;
 UIKIT_EXTERN const CGFloat MJRefreshFastAnimationDuration;
@@ -64,3 +65,12 @@ UIKIT_EXTERN NSString *const MJRefreshHeaderNoneLastDateText;
 MJRefreshState oldState = self.state; \
 if (state == oldState) return; \
 [super setState:state];
+
+// 异步主线程执行，不强持有Self
+#define MJRefreshDispatchAsyncOnMainQueue(x) \
+__weak typeof(self) weakSelf = self; \
+dispatch_async(dispatch_get_main_queue(), ^{ \
+typeof(weakSelf) self = weakSelf; \
+{x} \
+});
+
