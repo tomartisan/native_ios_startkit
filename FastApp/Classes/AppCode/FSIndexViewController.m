@@ -8,9 +8,10 @@
 
 #import "FSIndexViewController.h"
 #import "FSWebViewController.h"
+#import "FSMarkDownView.h"
 
 @interface FSIndexViewController ()
-@property (nonatomic, strong) UITextView *textView;
+@property (nonatomic, strong) FSMarkDownView *textView;
 @end
 
 @implementation FSIndexViewController
@@ -18,40 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"博客"
-                                                                             style:UIBarButtonItemStylePlain
-                                                                            target:self
-                                                                            action:@selector(viewWebsite:)];
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"源码"
-                                                                              style:UIBarButtonItemStylePlain
-                                                                             target:self
-                                                                             action:@selector(viewWebsite:)];
-    
+    [self buildNavigationItems];
     [FSAutolayoutor layView:self.textView fullOfTheView:self.view];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    self.textView.attributedText = [self prepareIntrocueText];
-}
-
-- (NSAttributedString *)prepareIntrocueText
-{
-    NSMutableAttributedString *introText = [[NSMutableAttributedString alloc] init];
-    NSArray *introTexts = [NSArray arrayWithContentsOfFile:[FSPathTools pathForKey:@"introduce.plist" type:FSBundlePathType]];
-    
-    [introTexts enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        
-        NSDictionary *attributes = @{NSFontAttributeName:SysFontWithSize(12),
-                                     NSForegroundColorAttributeName:RandomColorWithAlpha(1)};
-        
-        NSString *introduce = [NSString stringWithFormat:@"\n%ld. %@\n\n",idx+1,obj];
-        
-        [introText appendAttributedString:[[NSAttributedString alloc] initWithString:introduce attributes:attributes]];
-    }];
-    
-    return introText;
 }
 
 - (void)viewWebsite:(UIBarButtonItem *)bar
@@ -61,10 +30,28 @@
     [self.navigationController pushViewController:webVC animated:YES];
 }
 
-- (UITextView *)textView
+- (void)buildNavigationItems
+{
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"博客"
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:self
+                                                                            action:@selector(viewWebsite:)];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"源码"
+                                                                              style:UIBarButtonItemStylePlain
+                                                                             target:self
+                                                                             action:@selector(viewWebsite:)];
+}
+
+- (FSMarkDownView *)textView
 {
     if (!_textView) {
-        _textView = [FSUICreator createTextViewWithSize:CGSizeZero aString:nil editEnable:NO scroolEnable:YES];
+        _textView = [[FSMarkDownView alloc] initWithFrame:CGRectZero];
+        
+        NSString *path = [FSPathTools pathForKey:@"index-readme.md" type:FSBundlePathType];
+        NSString *content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+        
+        _textView.content = content;
     }
     return _textView;
 }

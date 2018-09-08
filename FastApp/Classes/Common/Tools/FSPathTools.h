@@ -67,4 +67,9 @@ typedef NS_ENUM(NSInteger,FSPathType)
  */
 + (NSString *)tmpPath;
 
+/**
+ *  @return 资源文件目录
+ */
++ (NSString *)bundlePath;
+
 @end

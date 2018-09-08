@@ -78,4 +78,9 @@
     return NSTemporaryDirectory();
 }
 
++ (NSString *)bundlePath
+{
+    return [[NSBundle mainBundle] bundlePath];
+}
+
 @end
