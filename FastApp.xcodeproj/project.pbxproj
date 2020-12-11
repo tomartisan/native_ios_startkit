@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -192,6 +192,7 @@
 		86814DF31C8D78B80097BC8C /* FastApp */ = {
 			isa = PBXGroup;
 			children = (
+				86A1DEC31CB28AB70093DA2B /* Examples */,
 				86814E0D1C8D7C440097BC8C /* Classes */,
 				86814DF41C8D78B80097BC8C /* Supporting Files */,
 			);
@@ -216,29 +217,10 @@
 		86814E0D1C8D7C440097BC8C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				86A1DEC31CB28AB70093DA2B /* Demos */,
-				86814E0E1C8D7C440097BC8C /* AppCode */,
 				86814E111C8D7C440097BC8C /* Common */,
 				86814E181C8D7C440097BC8C /* ThirdPart */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		86814E0E1C8D7C440097BC8C /* AppCode */ = {
-			isa = PBXGroup;
-			children = (
-				86FD458F1CB4EAE700C1EC12 /* FSUserViewController.h */,
-				86FD458C1CB4EAE700C1EC12 /* FSUserViewController.m */,
-				86FD45951CB4EBD500C1EC12 /* FSIndexViewController.h */,
-				86FD45961CB4EBD500C1EC12 /* FSIndexViewController.m */,
-				86FD45981CB4EBE500C1EC12 /* FSOtherViewController.h */,
-				86FD45991CB4EBE500C1EC12 /* FSOtherViewController.m */,
-				86FD459B1CB4EC1C00C1EC12 /* FSShopingViewController.h */,
-				86FD459C1CB4EC1C00C1EC12 /* FSShopingViewController.m */,
-				86FD459E1CB4ECA300C1EC12 /* FSUIDemoViewController.h */,
-				86FD459F1CB4ECA300C1EC12 /* FSUIDemoViewController.m */,
-			);
-			path = AppCode;
 			sourceTree = "<group>";
 		};
 		86814E111C8D7C440097BC8C /* Common */ = {
@@ -373,9 +355,19 @@
 			path = DCPicScrollView;
 			sourceTree = "<group>";
 		};
-		86A1DEC31CB28AB70093DA2B /* Demos */ = {
+		86A1DEC31CB28AB70093DA2B /* Examples */ = {
 			isa = PBXGroup;
 			children = (
+				86FD458F1CB4EAE700C1EC12 /* FSUserViewController.h */,
+				86FD458C1CB4EAE700C1EC12 /* FSUserViewController.m */,
+				86FD45951CB4EBD500C1EC12 /* FSIndexViewController.h */,
+				86FD45961CB4EBD500C1EC12 /* FSIndexViewController.m */,
+				86FD45981CB4EBE500C1EC12 /* FSOtherViewController.h */,
+				86FD45991CB4EBE500C1EC12 /* FSOtherViewController.m */,
+				86FD459B1CB4EC1C00C1EC12 /* FSShopingViewController.h */,
+				86FD459C1CB4EC1C00C1EC12 /* FSShopingViewController.m */,
+				86FD459E1CB4ECA300C1EC12 /* FSUIDemoViewController.h */,
+				86FD459F1CB4ECA300C1EC12 /* FSUIDemoViewController.m */,
 				86B7CD0821438E2B004C44E9 /* index-readme.md */,
 				86A1DEC41CB28D920093DA2B /* FSTestDownLoadViewController.h */,
 				86A1DEC51CB28D920093DA2B /* FSTestDownLoadViewController.m */,
@@ -383,7 +375,7 @@
 				86FD458A1CB4BE9200C1EC12 /* FSTestLayoutViewController.m */,
 				86EE657C1CC5F7C3009194C4 /* autolayoutGuide.plist */,
 			);
-			path = Demos;
+			path = Examples;
 			sourceTree = "<group>";
 		};
 		86B7CD0021437757004C44E9 /* JSLibs */ = {
@@ -475,6 +467,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
