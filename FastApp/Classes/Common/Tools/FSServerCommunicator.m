@@ -22,12 +22,11 @@
           completion:(void (^)(BOOL success,id respData))completion
 {
     if (url) {
-        [self.manager GET:url parameters:nil progress:progress
-                  success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                      [self handleResponse:responseObject Resp:obj completion:completion];
-                  } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                      [MBProgressHUD handleErrorWithCode:error.code additional:task.response];
-                  }];
+        [self.manager GET:url parameters:nil headers:nil progress:progress success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            [self handleResponse:responseObject Resp:obj completion:completion];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            [MBProgressHUD handleErrorWithCode:error.code additional:task.response];
+        }];
     }
 }
 
@@ -38,12 +37,11 @@
            completion:(void (^)(BOOL success,id respData))completion
 {
     if (url) {
-        [self.manager POST:url parameters:param progress:progress
-                   success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                       [self handleResponse:responseObject Resp:obj completion:completion];
-                   } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                       [MBProgressHUD handleErrorWithCode:error.code additional:task.response];
-                   }];
+        [self.manager POST:url parameters:param headers:nil progress:progress success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            [self handleResponse:responseObject Resp:obj completion:completion];
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            [MBProgressHUD handleErrorWithCode:error.code additional:task.response];
+        }];
     }
 }
 
@@ -56,13 +54,13 @@
                completion:(void (^)(BOOL success,id respData))completion
 {
     if (url) {
-        [self.manager POST:url parameters:param constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        [self.manager POST:url parameters:param headers:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
             [formData appendPartWithFileData:fileData name:fileName fileName:fileName mimeType:mimeType];
         } progress:progress success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             [self handleResponse:responseObject Resp:nil completion:completion];
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             [MBProgressHUD handleErrorWithCode:error.code additional:task.response];
-        }];
+        } ];
     }
 }
 
