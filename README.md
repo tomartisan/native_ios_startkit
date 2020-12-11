@@ -54,7 +54,7 @@ If you want be more efficient in development. Just clone the repo [shellbox](htt
 
 ## License
 
-FastApp is available under the MIT license. See the [LICENSE](https://opensource.org/licenses/MIT) file for more info.
+FastApp is available under the MIT license. See the [LICENSE](https://opensource.org/licenses/MIT) for more info.
 
 
 
