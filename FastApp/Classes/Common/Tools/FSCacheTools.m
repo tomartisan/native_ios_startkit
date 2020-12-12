@@ -14,35 +14,36 @@
 + (id)dataForKey:(NSString *)key
 {
     NSString *filePath = [NSString stringWithFormat:@"%@/%@",[FSPathTools libCachePath],key];
-    return [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
+    
+    return [NSKeyedUnarchiver unarchivedObjectOfClass:[NSString  class] fromData:[NSData dataWithContentsOfFile:filePath] error:nil];
 }
 
 + (id)tmpDataForKey:(NSString *)key
 {
     NSString *filePath = [NSString stringWithFormat:@"%@/%@",[FSPathTools tmpPath],key];
-    return [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
+    return [NSKeyedUnarchiver unarchivedObjectOfClass:[NSString  class] fromData:[NSData dataWithContentsOfFile:filePath] error:nil];
 }
 
 + (id)dataWithPath:(NSString *)path
 {
-    return [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+    return [NSKeyedUnarchiver unarchivedObjectOfClass:[NSString  class] fromData:[NSData dataWithContentsOfFile:path] error:nil];
 }
 
 + (BOOL)cacheData:(id)data forKey:(NSString *)key
 {
     NSString *filePath = [NSString stringWithFormat:@"%@/%@",[FSPathTools libCachePath],key];
-    return [NSKeyedArchiver archiveRootObject:data toFile:filePath];
+    return [[NSKeyedArchiver archivedDataWithRootObject:data requiringSecureCoding:YES error:nil] writeToFile:filePath atomically:YES];
 }
 
 + (BOOL)cacheTmpData:(id)data forKey:(NSString *)key
 {
     NSString *filePath = [NSString stringWithFormat:@"%@/%@",[FSPathTools tmpPath],key];
-    return [NSKeyedArchiver archiveRootObject:data toFile:filePath];
+    return [[NSKeyedArchiver archivedDataWithRootObject:data requiringSecureCoding:YES error:nil] writeToFile:filePath atomically:YES];
 }
 
 + (BOOL)saveData:(id)data toPath:(NSString *)path
 {
-    return [NSKeyedArchiver archiveRootObject:data toFile:path];
+    return [[NSKeyedArchiver archivedDataWithRootObject:data requiringSecureCoding:YES error:nil] writeToFile:path atomically:YES];
 }
 
 + (NSURL *)getCachedApiServerUrl

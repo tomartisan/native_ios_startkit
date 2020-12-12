@@ -15,20 +15,20 @@
  * standard markDown text content
  * @return content
  */
-@property (nonatomic, copy) NSString *content;
+@property (nonatomic, copy) NSString  * _Nullable content;
 
 
 /**
  * standard markDown text content url
  * @return content
  */
-@property (nonatomic, copy) NSString *contentUrl;
+@property (nonatomic, copy) NSString * _Nullable contentUrl;
 
 
 
 @property (nonatomic, nonnull, copy, readonly) NSString *htmlString;
 
 
-- (instancetype)initWithFrame:(CGRect)frame;
+- (instancetype _Nonnull)initWithFrame:(CGRect)frame;
 
 @end
