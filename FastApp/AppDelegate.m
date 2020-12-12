@@ -14,7 +14,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {    
-    //添加网络监听
+    // Add network listener
     [[FSNetTools sharedInstance] addNetworkStatusListener];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];

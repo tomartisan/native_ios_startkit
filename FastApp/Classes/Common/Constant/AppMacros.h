@@ -50,7 +50,8 @@
 // -------------------------------------------------    字体定义开始  -------------------------------//
 #define SysFontWithSize(s) [UIFont systemFontOfSize:s]
 #define PFNFontWithSize(s) [UIFont fontWithName:@"PingFangSC-Regular" size:s]
-#define PFBFontWithSize(s) [UIFont fontWithName:@"PingFangSC-Thin" size:s]
+#define PFTFontWithSize(s) [UIFont fontWithName:@"PingFangSC-Thin" size:s]
+#define PFBFontWithSize(s) [UIFont fontWithName:@"PingFangSC-Bold" size:s]
 #define HTFontWithSize(s) [UIFont fontWithName:@"Heiti SC" size:s]
 
 // -------------------------------------------------    工具定义开始  -------------------------------//

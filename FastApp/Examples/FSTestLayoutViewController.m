@@ -125,14 +125,15 @@
                                                        aString:[self guideTextWithType:_type]
                                                     editEnable:NO
                                                   scroolEnable:YES];
-    textView.backgroundColor = RandomColorWithAlpha(1);
+//    textView.backgroundColor = RandomColorWithAlpha(1);
+    textView.backgroundColor = FSBlueColor;
     return textView;
 }
 
 - (UILabel *)viewWithText:(NSString *)text
 {
     UILabel *textLabel = [FSUICreator createLabelWithSize:CGSizeMake(35, 35) text:text sysFontSize:14];
-    textLabel.backgroundColor = RandomColorWithAlpha(1);
+    textLabel.backgroundColor = FSCommonBgColor;
     return textLabel;
 }
 
@@ -145,8 +146,8 @@
     pstyle.firstLineHeadIndent = 20;
     pstyle.lineSpacing = 10;
     
-    NSDictionary *attributes = @{NSFontAttributeName:PFBFontWithSize(16),
-                                 NSForegroundColorAttributeName:RandomColorWithAlpha(1),
+    NSDictionary *attributes = @{NSFontAttributeName:SysFontWithSize(16),
+                                 NSForegroundColorAttributeName:FSWhiteColor,
                                  NSParagraphStyleAttributeName:pstyle};
 
     NSString *guide = [guides valueForKey:[NSString stringWithFormat:@"%ld",type]];

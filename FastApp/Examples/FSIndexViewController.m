@@ -25,19 +25,19 @@
 
 - (void)viewWebsite:(UIBarButtonItem *)bar
 {
-    NSString *webUrl = [bar.title isEqualToString:@"博客"] ? @"https://www.tangkunyin.com" : @"https://github.com/tangkunyin/FastApp";
+    NSString *webUrl = [bar.title isEqualToString:@"Blog"] ? @"https://shuoit.net" : @"https://github.com/tangkunyin";
     FSWebViewController *webVC = [[FSWebViewController alloc] initWithTitle:bar.title webUrl:webUrl];
     [self.navigationController pushViewController:webVC animated:YES];
 }
 
 - (void)buildNavigationItems
 {
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"博客"
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Blog"
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:self
                                                                             action:@selector(viewWebsite:)];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"源码"
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Github"
                                                                               style:UIBarButtonItemStylePlain
                                                                              target:self
                                                                              action:@selector(viewWebsite:)];

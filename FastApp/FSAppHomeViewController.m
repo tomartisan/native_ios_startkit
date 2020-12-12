@@ -28,25 +28,25 @@
 
 - (void)addAllChildViewControllers
 {
-    //首页说明
+    //Example Homepage
     FSIndexViewController *indexVC = [[FSIndexViewController alloc] init];
-    [self addChildViewController:indexVC title:@"首页" image:@"11" selectedImage:@"12"];
+    [self addChildViewController:indexVC title:@"Home" image:@"11" selectedImage:@"12"];
     
-    //界面使用
+    //Example Autolayout demo
     FSUIDemoViewController *uiVC = [[FSUIDemoViewController alloc] init];
-    [self addChildViewController:uiVC title:@"界面" image:@"21" selectedImage:@"22"];
+    [self addChildViewController:uiVC title:@"Layout" image:@"21" selectedImage:@"22"];
     
-    //其他工具使用
+    //Example Tools
     FSOtherViewController *othersVC = [[FSOtherViewController alloc] init];
-    [self addChildViewController:othersVC title:@"其他" image:@"31" selectedImage:@"32"];
+    [self addChildViewController:othersVC title:@"Other" image:@"31" selectedImage:@"32"];
     
-    //购物模块
+    //Example ShopCart
     FSShopingViewController *shopVC = [[FSShopingViewController alloc] init];
-    [self addChildViewController:shopVC title:@"购物" image:@"41" selectedImage:@"42"];
+    [self addChildViewController:shopVC title:@"Cart" image:@"41" selectedImage:@"42"];
     
-    //用户模块
+    //Example User
     FSUserViewController *hisVc = [[FSUserViewController alloc] init];
-    [self addChildViewController:hisVc title:@"用户" image:@"51" selectedImage:@"52"];
+    [self addChildViewController:hisVc title:@"User" image:@"51" selectedImage:@"52"];
 }
 
 
@@ -73,8 +73,8 @@
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 {
-    [MBProgressHUD showMessage:[NSString stringWithFormat:@"这是：%@ 演示",viewController.title] completion:^{
-        NSLog(@"你刚刚点了：%@",viewController.title);
+    [MBProgressHUD showMessage:[NSString stringWithFormat:@"This：%@ demo",viewController.title] completion:^{
+        NSLog(@"you have been clicked：%@",viewController.title);
     }];
 }
 
