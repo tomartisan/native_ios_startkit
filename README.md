@@ -4,7 +4,7 @@
 
 Use **FastApp** you can makes creating standard iOS app more simple.
 
-FastApp is build on the mainstream frameworks and use **Masonry** to auto layout.
+FastApp is build on the mainstream frameworks and use **SnapKit** to auto layout.
 
 ### Build-in frameworks
 
@@ -15,7 +15,7 @@ FastApp is build on the mainstream frameworks and use **Masonry** to auto layout
 - SwiftyJSON
 - MBProgressHUD(Objc version)
 
-Some tools have been developed based on the above libraries. Such as **FSAutolayoutor**, **FSServerCommunicator**, **MBProgressHUD+Show**, etc.
+Some tools were built on top of the above libraries. Such as **FSAutolayoutor**, **FSServerCommunicator**, **MBProgressHUD+Show**, etc.
 
 It's also provide many common ui components. That means you don’t need to develop from zero. Just rename project and your want to renamed...
 
