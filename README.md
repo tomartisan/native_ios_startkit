@@ -15,7 +15,7 @@ FastApp is build on the mainstream frameworks and use **Masonry** to auto layout
 - MJRefresh
 - MJExtension
 
-Some tools have been developed based on the above libraries. Such as **FSAutolayoutor**, **FSServerCommunicator**, **MBProgressHUD+Show**, etc.
+Some tools were built on top of the above libraries. Such as **FSAutolayoutor**, **FSServerCommunicator**, **MBProgressHUD+Show**, etc.
 
 It's also provide many common ui components. That means you don’t need to develop from zero. Just rename project and your want to renamed...
 
