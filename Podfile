@@ -1,4 +1,7 @@
-platform :ios,	'13.6'
+source 'https://cdn.cocoapods.org/'
+
+
+platform :ios,	'13.0'
 
 target "FastApp" do
 
